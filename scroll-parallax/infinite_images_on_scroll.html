@@ -31,16 +31,83 @@
     font-family: "Roboto", sans-serif;
 */
 body{
+    background-color: #152b41;
+}
+.container{
+    width: 320px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.container > div{
+    margin: 20px 10px;
+    background-color: #000;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    overflow: hidden;
+}
+.container > div img{
+    display: block;
 }
 </style>
 </head>
 <body>
 
-<div class="">
-    
+<div class="container">
+    <div><img src="../resources/image/image1.jpg" alt=""></div>
+    <div><img src="../resources/image/image2.jpg" alt=""></div>
+    <div><img src="../resources/image/image3.jpg" alt=""></div>
+    <div><img src="../resources/image/image4.jpg" alt=""></div>
 </div>
 
 <script>
+const container = document.querySelector('.container');
+let startCount = 5;
+let imageNum = 1;
+const createImage = (index) => {
+    const div = document.createElement('div');
+    const img = document.createElement('img');
+    container.appendChild(div);
+    img.setAttribute('src',`https://picsum.photos/300/200?random=${index}`);
+    div.appendChild(img);
+    gsap.set(div, {scale: 0});
+    gsap.set(img, {opcity:1, filter: 'contrast(5)'});
+
+    gsap.to(div, {
+        scrollTrigger: {
+            trigger: div,
+            start: 'top bottom',
+            end: 'top 50%',
+            scrub: true
+        },
+        scale: 1,
+        ease: Back.easeOut.config(2)
+    });
+    gsap.to(img, {
+        scrollTrigger: {
+            trigger: div,
+            start: 'top bottom',
+            end: 'top 50%',
+            scrub: true
+        },
+        opacity: 1,
+        filter: 'contrast(1)'
+    })
+}
+for (let i = 0; i < startCount; i++){
+    createImage(imageNum++);
+}
+ScrollTrigger.create({
+    trigger: document.body,
+    start: 'top top',
+    end: 'bottom bottom',
+    onUpdate: (self) => {
+        let progress = self.progress.toFixed(2);
+        if(progress >= 0.9 && self.direction === 1){
+            createImage(imageNum++);
+            ScrollTrigger.refresh();
+        }
+    }
+})
 </script>
 
 </body>
