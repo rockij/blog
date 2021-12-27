@@ -12,7 +12,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -20,23 +19,43 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
 <title></title>
 <style>
-/*
-    font-family: 'Poppins', sans-serif;
-    font-family: 'Anonymous Pro', sans-serif;
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Courier Prime', monospace;
-    font-family: 'Oleo Script', cursive;
-    font-family: 'Open Sans', sans-serif;
-    font-family: "Roboto", sans-serif;
-*/
-body{
+.stack {
+  display: grid;
+  width: fit-content;
+}
+.stack > * {
+  grid-area: 1 / -1;
+}
+.title {
+  align-self: end;
+  padding: 1rem;
+  font: 900 32px system-ui;
+}
+.tag {
+  justify-self: end;
+  align-self: start;
+  margin-block-start: 1rem;
+  font: 500 18px system-ui;
+  padding: 1rem;
+  background: limegreen;
+}
+img {
+  max-width: 100%;
+  min-width: 280px;
 }
 </style>
 </head>
 <body>
 
-<div class="">
-    
+<div class="stack">
+    <img src='https://images.unsplash.com/photo-1487700160041-babef9c3cb55?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNDA3ODYyMg&ixlib=rb-1.2.1&q=80&w=400'
+        alt=''>
+    <div class="title">
+        Plant
+    </div>
+    <div class="tag">
+        On sale!
+    </div>
 </div>
 
 <script>
