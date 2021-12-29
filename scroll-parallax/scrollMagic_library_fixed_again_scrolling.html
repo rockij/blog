@@ -15,8 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
@@ -31,18 +30,94 @@
     font-family: 'Open Sans', sans-serif;
     font-family: "Roboto", sans-serif;
 */
-body{
+section{
+    height: 500px;
+}
+section:nth-of-type(even){
+    background: #ccc;
+}
+.target{
+    width: 500px;
+    margin: 0 auto;
+    padding-bottom: 300px;
+}
+.target .content{
+    position: relative;
+    top: auto;
+    width: 100%;
+    margin: 0 auto;
+    background: #3498db;
+    color: #fff;
+    text-align: center;
+    height: 100px;
+}
+.target.active .content{
+    position: fixed;
+    top: 400px;
+    width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 </style>
 </head>
 <body>
 
-<div class="">
-    
-</div>
+<h1>Sticky Elements</h1>
+<section>
+    <h2>section 1</h2>
+</section>
+<section>
+    <h2>section 2</h2>
+</section>
+<section>
+    <h2>section 3</h2>
+    <div class="target">
+        <div class="content">
+            Sticky Element
+        </div>
+    </div>
+</section>
+<section>
+    <h2>section 4</h2>
+</section>
 
 <script>
+var target = $('.target');
+    targetContent = target.find('.content'),
+    targetOST = target.offset().top;
+
+$(window).scroll(function(){
+    var currentSCT = $(this).scrollTop();
+    if(currentSCT >= targetOST - 400){
+        target.addClass('active');
+        targetContent.css({
+            position:'fixed',
+            top:'400px',
+        });
+        if(currentSCT >= targetOST - 100){
+            target.removeClass('active');
+            targetContent.css({
+                position:'relative',
+                top:'auto'
+            });
+            target.css({
+                paddingTop:'300px',
+                paddingBottom:0
+            });
+        }
+    }else{
+        target.removeClass('active');
+        targetContent.css({
+            position:'relative',
+            top:'auto'
+        });
+        target.css({
+            paddingTop:0,
+            paddingBottom:'300px'
+        });
+    }
+})
 </script>
 
 </body>
-</html>       
+</html>

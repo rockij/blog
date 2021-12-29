@@ -54,18 +54,18 @@
                         <li data-filter=".workspace">workspace</li>
                         <li data-filter=".basic">basic</li>
                         <li data-filter=".form">form</li>
+                        <li data-filter=".graph">graph</li>
                         <li data-filter=".icon-loading">icon-loading</li>
                         <li data-filter=".menu-accordion">menu-accordion</li>
                         <li data-filter=".mouse-effect">mouse-effect</li>
                         <li data-filter=".popup">popup</li>
                         <li data-filter=".scroll-parallax">scroll-parallax</li>
                         <li data-filter=".text-animate">text-animate</li>
-                        <li data-filter=".slide-page">slide-page</li>
+                        <li data-filter=".slide">slide</li>
+                        <li data-filter=".page-bg">page-bg</li>
                         <li data-filter=".etc">etc</li>
                         <li data-filter=".jquery-plugin">jquery-plugin</li>
                         <li data-filter=".outlink">outlink</li>
-                        
-                        <li data-filter=".pc">pc</li>
                     </ul>
                 </div>
             </div>
@@ -96,19 +96,21 @@
                             <li>내용이 긴 페이지에서는 content-visibility를 고려한다 <a href="https://css-tricks.com/almanac/properties/c/content-visibility/" target="_blank">참고</a></li>
                             <li>css anmation 사용시 will-change를 고려한다 <a href="https://css-tricks.com/almanac/properties/w/will-change/" target="_blank">참고</a></li>
                             <li>페이지에 있는 다른 요소의 레이아웃이나 스타일에 영향을 미치지 않도록 하려면 contain:strict 사용 <a href="https://medium.com/@johan.isaksson/how-i-made-googles-data-grid-scroll-10x-faster-with-one-line-of-css-78cb1e8d9cb1" target="_blank">참고</a></li>
+                            <li>jquery 앞 1과 3 버전의 차이가 있음 1버전은 transition 바로 시작이 안됨</li>
                             <!-- <li> <a href="" target="_blank">참고</a></li> -->
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- /한줄팁 -->
-            
+
             <!-- 자주볼것 -->
             <div>
                 <div class="mix box-item one-line-tip">
                     <button class="text" onclick="$(this).parent().toggleClass('open')">자주볼것 전체보기 <ion-icon name="folder-open-outline"></ion-icon></button>
                     <div class="text">
                         <ul>
+                            <li>codepen Kevin css Tip of the Day <a href="https://codepen.io/search/pens?q=css+tip+of+the+day&show_forks=false" target="_blank">연결</a></li>
                             <li>이미지 렌더링 속성정의 image-rendering:auto │ crisp-edges │ pixelated <a href="https://css-tricks.com/almanac/properties/i/image-rendering/" target="_blank">연결</a></li>
                             <li>링크,버튼 완전한 가이드 <a href="https://css-tricks.com/a-complete-guide-to-links-and-buttons/" target="_blank">연결</a></li>
                             <li>랜드마크에 대해서 <a href="https://www.htmhell.dev/tips/landmarks/" target="_blank">연결</a></li>
@@ -120,6 +122,9 @@
                             <li>Git에서 완벽한 커밋 만들기(길다) <a href="https://css-tricks.com/creating-the-perfect-commit-in-git/" target="_blank">연결</a></li>
                             <li>CSS gap속성(길다) <a href="https://css-tricks.com/minding-the-gap/" target="_blank">연결</a></li>
                             <li>CSS rotate에 대해서 <a href="https://css-tricks.com/almanac/properties/r/rotate/" target="_blank">연결</a></li>
+                            <li>모바일에서 유닛을 표시하는 요령 브라우저에서 툴바 잘림 해결? <a href="https://css-tricks.com/the-trick-to-viewport-units-on-mobile/" target="_blank">연결</a></li>
+                            <li>키 프레임 애니메이션을 지연시키는 새로운 방법 <a href="https://css-tricks.com/a-new-way-to-delay-keyframes-animations/" target="_blank">연결</a></li>
+                            <li>CSS 애니메이션을 재생하고 일시 중지하는 방법 <a href="https://css-tricks.com/how-to-play-and-pause-css-animations-with-css-custom-properties/" target="_blank">연결</a></li>
                             <!-- <li> <a href="" target="_blank">연결</a></li> -->
                         </ul>
                     </div>
@@ -127,271 +132,366 @@
             </div>
             <!-- /자주볼것 -->
 
-            <!-- jquery-plugin -->
+            <!-- workspace(작업도움) -->
             <div>
-                <div class="mix box-item jquery-plugin">
+                <div class="mix box-item workspace">
                     <h2 class="text">
-                        <a href="https://jqueryui.com/selectmenu/" target="_blank">select 태그를 div태그로 복제하고 확장 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                        <a href="basic/worksheet.html" target="_blank">작업물 보기 리스트 - 워크시트</a>
                     </h2>
                 </div>
-                <div class="mix box-item jquery-plugin">
-                    <h2 class="text">
-                        <a href="https://projects.calebevans.me/jcanvas/" target="_blank">jCanvas - 레이어, 애니메이션, 이벤트 등을 활용할 수 있는 캔버스 기반 앱을 빠르게 만들 수 있다. <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item jquery-plugin">
-                    <h2 class="text">
-                        <a href="http://www.decorplanit.com/plugin/" target="_blank">autoNumeric – 통화 형식 지정이 쉬워졌습니다. <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item jquery-plugin">
-                    <h2 class="text">
-                        <a href="http://ressio.github.io/lazy-load-xt/" target="_blank">Lazy Load XT for jQuery – 내장된 이미지, 비디오 및 기타 미디어의 지연 로드를 위한 모바일 지향의 빠르고 확장 가능 <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item jquery-plugin">
-                    <h2 class="text">
-                        <a href="https://formstone.it/components/asap/" target="_blank">Pronto – 더 빠른 페이지 로드를 위한 jQuery 플러그인. 폼스톤 라이브러리의 일부 <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item jquery-plugin">
-                    <h2 class="text">
-                        <a href="http://vdw.github.io/HideSeek/" target="_blank">jQuery HideSeek – 간단하지만 사용자 정의 가능한 라이브 검색 <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item jquery-plugin">
-                    <h2 class="text">
-                        <a href="https://formstone.it/components/mediaquery/" target="_blank">Rubberband – 반응형 미디어 쿼리 이벤트를 위한 <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item jquery-plugin">
-                    <h2 class="text">
-                        <a href="http://vodkabears.github.io/vide/" target="_blank">Vide – 비디오 배경용 jQuery 플러그인 <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-            </div>
-            <!-- /jquery-plugin -->
 
-            <!-- etc -->
-            <div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://bonsaibrowser.com/" target="_blank">프로그래머가 명확하게 생각할 수 있도록 도와주는 연구용 웹 브라우저 - bonsai <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://css-tricks.com/grainy-gradients/" target="_blank">거친 그라디언트 <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://cleanup.pictures/" target="_blank">이미지에서 개체 제거 <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="etc/print_contents_div_element.html" target="_blank">Div 요소의 내용 인쇄</a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="etc/SVG_TV_noise_effects.html" target="_blank">SVG TV 노이즈 효과</a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://codepen.io/search/pens?q=css+tip+of+the+day&show_forks=false" target="_blank">codepen Kevin css Tip of the Day <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://www.unscreen.com/upload" target="_blank">비디오, GIF 배경 제거 <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://chrome.google.com/webstore/detail/nimbus-screenshot-screen/bpconcjcammlapcogcnnelfmaeghhagj/related?hl=ko&" target="_blank">웹사이트 캡쳐 크롬플러그인 - Nimbus Screenshot <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://motion.dev/" target="_blank">작은 크f기
-                            엄청난 성능 Web Animations API를 기반 라이브러리 - motion.dev <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://polyfill.io/v3/" target="_blank">다양한 브라우저 지원 - polyfill <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://9elements.github.io/fancy-border-radius/" target="_blank">css만을 이용한 border-radius 커스텀 <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="etc/zig_zag_border.html" target="_blank">화살표 모양의 border</a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://grid.layoutit.com/" target="_blank">css grid layout generate <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://css-tricks.com/the-trick-to-viewport-units-on-mobile/" target="_blank">모바일에서 유닛을 표시하는 요령 브라우저에서 툴바 잘림 해결? <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://www.kunkalabs.com/mixitup/" target="_blank">애니메이션 필터링, 정렬, 삽입, 제거 등을 위한 고성능의 종속성 없는 라이브러리 mixitup.js <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://animejs.com/" target="_blank">단순하지만 강력한 API를 갖춘 가벼운 JavaScript 애니메이션 라이브러리 Anime.js <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://threejs.org/" target="_blank">3D 그리기 three.js <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="etc/image_preload.html" target="_blank">image - 이미지 미리로드 preload</a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
-                    <h2 class="text">
-                        <a href="https://www.colorzilla.com/gradient-editor/" target="_blank">editor - CSS 그라디언트 편집기 - gradient-editor <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item etc">
+                <div class="mix box-item workspace">
                     <h2 class="text">
                         <a href="https://www.myintervals.com/emogrifier.php" target="_blank">editor - import css inline style로 자동 추가 - emogrifier <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item etc">
+                <div class="mix box-item workspace">
                     <h2 class="text">
-                        <a href="http://naver.github.io/egjs/" target="_blank">원하는 방식으로 웹 애플리케이션을 구축할 수 있는 가장 쉽고 빠른 방법 제공 - egjs <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                        <a href="https://www.colorzilla.com/gradient-editor/" target="_blank">editor - CSS 그라디언트 편집기 - gradient-editor <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item etc">
+                <div class="mix box-item workspace">
                     <h2 class="text">
-                        <a href="https://gibbok.github.io/animatelo/" target="_blank">css animation 라이브러리 - animatelo <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                        <a href="etc/image_preload.html" target="_blank">image - 이미지 미리로드 preload</a>
                     </h2>
                 </div>
-                <div class="mix box-item etc">
+                <div class="mix box-item workspace">
                     <h2 class="text">
-                        <a href="https://animate.style/" target="_blank">css animation 라이브러리 - animate.css <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                        <a href="https://grid.layoutit.com/" target="_blank">css grid layout generate <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item etc">
+                <div class="mix box-item workspace">
                     <h2 class="text">
-                        <a href="http://vivify.mkcreative.cz/" target="_blank">css animation 라이브러리 - vivify <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                        <a href="https://9elements.github.io/fancy-border-radius/" target="_blank">css만을 이용한 border-radius 커스텀 <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item etc">
+                <div class="mix box-item workspace">
                     <h2 class="text">
-                        <a href="https://www.boxfactura.com/pulltorefresh.js/" target="_blank">끌어당기며 새로고침 해주는 PulltoRefresh.js <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                        <a href="https://bonsaibrowser.com/" target="_blank">프로그래머가 명확하게 생각할 수 있도록 도와주는 연구용 웹 브라우저 - bonsai <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item etc">
+                <div class="mix box-item workspace">
                     <h2 class="text">
-                        <a href="slide-page/css_circular_rotating_slider_reflection.html" target="_blank">circular rotating reflection</a>
+                        <a href="http://necolas.github.io/normalize.css/" target="_blank">normalize.css <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item etc">
+                <div class="mix box-item workspace">
                     <h2 class="text">
-                        <a href="https://css-tricks.com/a-new-way-to-delay-keyframes-animations/" target="_blank">키 프레임 애니메이션을 지연시키는 새로운 방법 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                        <a href="https://docs.emmet.io/cheat-sheet/" target="_blank">vscode emmet문법 <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item etc">
+                <div class="mix box-item workspace">
                     <h2 class="text">
-                        <a href="https://css-tricks.com/hide-scrollbars-during-an-animation/" target="_blank">애니메이션 중 스크롤바 숨기기 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                        <a href="https://rockij.github.io/portfolio/project/min/010pay/resources/html/ui/template.html" target="_blank">웹퍼블리싱 가이드 sample</a>
                     </h2>
                 </div>
-                <div class="mix box-item etc">
+                <div class="mix box-item workspace">
                     <h2 class="text">
-                        <a href="https://css-tricks.com/how-to-play-and-pause-css-animations-with-css-custom-properties/" target="_blank">CSS 사용자 정의 속성을 사용하여 CSS 애니메이션을 재생하고 일시 중지하는 방법 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                        <a href="https://autoprefixer.github.io/" target="_blank">CSS 자동 접두사 <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item etc pc">
+                <div class="mix box-item workspace">
                     <h2 class="text">
-                        <a href="etc/3D_flip_santa_card.html" target="_blank">3D flip santa card</a>
+                        <a href="https://animxyz.com/" target="_blank">CSS 애니메이션 툴킷 <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item etc pc">
+                <div class="mix box-item workspace">
                     <h2 class="text">
-                        <a href="etc/website_intro_gsap.html" target="_blank">website - intro(gsap)</a>
+                        <a href="https://caninclude.glitch.me/" target="_blank">부모내에 어떤 자식요소 배치가 가능한지 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item workspace">
+                    <h2 class="text">
+                        <a href="https://caninclude.glitch.me/" target="_blank">부모내에 어떤 자식요소 배치가 가능한지 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item workspace">
+                    <h2 class="text">
+                        <a href="https://bennettfeely.com/clippy/" target="_blank">CSS clip-path maker <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item workspace">
+                    <h2 class="text">
+                        <a href="https://webpagetest.org/" target="_blank">WebPageTest를 사용한 성능 테스트 <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
             </div>
-            <!-- /etc -->
+            <!-- /workspace -->
 
-            <!-- slide-page -->
+            <!-- basic -->
             <div>
-                <div class="mix box-item slide-page">
+                <div class="mix box-item basic">
                     <h2 class="text">
-                        <a href="slide-page/diagonal_stripes_wipe_animation.html" target="_blank">대각선 줄무늬 지우기 애니메이션</a>
+                        <a href="basic/print_contents_div_element.html" target="_blank">Div 요소의 내용 인쇄</a>
                     </h2>
                 </div>
-                <div class="mix box-item slide-page">
+                <div class="mix box-item basic">
                     <h2 class="text">
-                        <a href="slide-page/swiper-4.5.1/demos/010-default.html" target="_blank">swiper 슬라이드 IE 호환성 문제 해결</a>
+                        <a href="basic/grid/absolute_positioning_modern.html" target="_blank">grid를 이용한 덜 절대적인 위치 잡기</a>
                     </h2>
                 </div>
-                <div class="mix box-item slide-page">
+                <div class="mix box-item basic">
                     <h2 class="text">
-                        <a href="https://lea.verou.me/2021/03/inverted-lightness-variables/" target="_blank">5분 만에 어두운 모드, 반전된 밝기 변수 사용 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                        <a href="https://css-tricks.com/supports-selector/" target="_blank">@supports selector() <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item slide-page">
+                <div class="mix box-item basic">
                     <h2 class="text">
-                        <a href="slide-page/full_dark_mode_only_css.html" target="_blank">CSS 속성이 1개뿐인 풀 다크 모드?!</a>
+                        <a href="basic/css_focus-visible(instead-focus).html" target="_blank">css focus-visible(:focus 대신 사용)</a>
                     </h2>
-                </div>                
-                <div class="mix box-item slide-page">
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/css_all.html" target="_blank">css all 속성에 대해서</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/responsive_full-screen_background.html" target="_blank">반응형 전체 화면 배경</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/write_better_css_logical_properties.html" target="_blank">논리적 속성을 사용하여 더 나은 CSS 작성</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/shadows_transparent_PNG.html" target="_blank">투명한 PNG 이미지 그림자 적용</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/grid/flexbox_design_patterns_projects.html" target="_blank">프로젝트에서 사용할 수 있는 Flexbox 디자인 패턴</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/auto_margin.html" target="_blank">css auto-margin 정렬</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/easily_overlap_content.html" target="_blank">그리드로 쉽게 콘텐츠 겹침</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/how_to_create_background_video.html" target="_blank">배경 비디오를 만드는 방법</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/css_background_blend_mode.html" target="_blank">background-blend-mode에 대해서</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/css_calc().html" target="_blank">CSS calc() 에 대해서</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/css_object-fit.html" target="_blank">CSS object-fit을 사용하여 이미지를 제어하는 방법</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/grid/responsive_no_media_queries.html" target="_blank">미디어 쿼리가 없는 반응형 CSS 그리드!</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/background_repeat_space.html" target="_blank">배경반복 값 space에 대해서</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/double_border_width_diffrent_colors.html" target="_blank">다른 색상의 CSS 이중 테두리</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/table_responsive_flexbox.html" target="_blank">반응형테이블 - flexbox</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/table_responsive_horizontal_scrolling.html" target="_blank">반응형테이블 - 수평스크롤링</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/sticky_footer_technique.html" target="_blank">영리한 고정 바닥글 기법</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/grdient_drop_shadow.html" target="_blank">그림자 그라디언트</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/stiped_background_pattern.html" target="_blank">줄무늬 배경</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/dot_background_pattern.html" target="_blank">도트 배경</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/touch-action.html" target="_blank">css touch-action 한눈에보기</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/css가상요소_marker.html" target="_blank">css 가상요소 선택자 - marker</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=besthuman01&logNo=220509888830" target="_blank">모바일에서 input type 속성 비교 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="https://css-tricks.com/almanac/properties/s/scroll-behavior/" target="_blank">CSS scroll-behavior <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="https://css-tricks.com/using-the-specificity-of-where-as-a-css-reset/" target="_blank">CSS 재설정으로 :where() 의 특수성 사용 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="https://css-tricks.com/almanac/selectors/f/fullscreen/" target="_blank">:fullscreen 선택자 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/css_mix-blend-mode_사용.html" target="_blank">mix-blend-mode 사용 예시 (isolation)</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/css_inset_layout.html" target="_blank">inset을 이용한 full 레이아웃</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/input.html" target="_blank">input에 관하여</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/유동적인_타이포그래피_clamp().html" target="_blank">유동적인 타이포그래피 css함수 - clamp()</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/reflected_text.html" target="_blank">반전 그림자 표현 reflected text</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/skeleton_screen.html" target="_blank">skeleton screen</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/skeleton_screen2.html" target="_blank">skeleton screen 여러개</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/sticky_footer_flex.html" target="_blank">flex sticky 이용한 footer고정</a>
+                    </h2>
+                </div>
+                <div class="mix box-item basic">
+                    <h2 class="text">
+                        <a href="basic/winHeight.html" target="_blank">헤더푸터 계산을 통한 상/하단 고정 레이아웃</a>
+                    </h2>
+                </div>
+            </div>
+            <!-- /basic -->
+
+            <!-- slide -->
+            <div>
+                <div class="mix box-item slide">
+                    <h2 class="text">
+                        <a href="slide/css_circular_rotating_slider_reflection.html" target="_blank">circular rotating reflection</a>
+                    </h2>
+                </div>
+                <div class="mix box-item slide">
+                    <h2 class="text">
+                        <a href="slide/swiper-4.5.1/demos/010-default.html" target="_blank">swiper 슬라이드 IE 호환성 문제 해결</a>
+                    </h2>
+                </div>
+                <div class="mix box-item slide">
                     <h2 class="text">
                         <a href="https://splidejs.com/" target="_blank">종속성 없이 순수 JavaScript로 작성된 가볍고 강력하며 유연한 슬라이더 - Splide <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item slide-page">
+                <div class="mix box-item slide">
                     <h2 class="text">
                         <a href="https://swiperjs.com/" target="_blank">가장 현대적인 모바일 터치 슬라이더 - swiper <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item slide-page">
+                <div class="mix box-item slide">
                     <h2 class="text">
                         <a href="https://owlcarousel2.github.io/OwlCarousel2/" target="_blank">js가 가벼운 반응형, 터치지원 슬라이드 - OwlCarousel2 <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item slide-page">
+                <div class="mix box-item slide">
                     <h2 class="text">
                         <a href="https://glidejs.com/" target="_blank">js가 가벼운 자동정지/시작이 가능한 슬라이드 - glide <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item slide-page">
+                <div class="mix box-item slide">
                     <h2 class="text">
                         <a href="https://nickpiscitelli.github.io/Glider.js/" target="_blank">js가 가벼운 슬라이드 - Glider <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item slide-page">
+                <div class="mix box-item slide">
                     <h2 class="text">
-                        <a href="slide-page/css-only_carousel_slider.html" target="_blank">오직css만을 이용한 슬라이드(auto)</a>
-                    </h2>
-                </div>
-                <div class="mix box-item slide-page">
-                    <h2 class="text">
-                        <a href="slide-page/wavy_section_animation.html" target="_blank">3개 이미지가 겹쳐서 웨이브하는 background</a>
+                        <a href="slide/css-only_carousel_slider.html" target="_blank">오직css만을 이용한 슬라이드(auto)</a>
                     </h2>
                 </div>
             </div>
-            <!-- /slide-page -->
+            <!-- /slide -->
+
+            <!-- page-background -->
+            <div>
+                <div class="mix box-item page-bg">
+                    <h2 class="text">
+                        <a href="page-bg/diagonal_stripes_wipe_animation.html" target="_blank">대각선 줄무늬 지우기 애니메이션</a>
+                    </h2>
+                </div>
+                <div class="mix box-item page-bg">
+                    <h2 class="text">
+                        <a href="https://lea.verou.me/2021/03/inverted-lightness-variables/" target="_blank">5분 만에 어두운 모드, 반전된 밝기 변수 사용 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item page-bg">
+                    <h2 class="text">
+                        <a href="page-bg/full_dark_mode_only_css.html" target="_blank">CSS 속성이 1개뿐인 풀 다크 모드?!</a>
+                    </h2>
+                </div>
+                <div class="mix box-item page-bg">
+                    <h2 class="text">
+                        <a href="page-bg/wavy_section_animation.html" target="_blank">3개 이미지가 겹쳐서 웨이브하는 background</a>
+                    </h2>
+                </div>
+                <div class="mix box-item page-bg">
+                    <h2 class="text">
+                        <a href="page-bg/zig_zag_border.html" target="_blank">화살표 모양의 border</a>
+                    </h2>
+                </div>
+            </div>
+            <!-- /page-background -->
 
             <!-- text-animate -->
             <div>
@@ -415,7 +515,7 @@
                         <a href="text-animate/gradient_background_animation.html" target="_blank">그라디언트 배경 animation</a>
                     </h2>
                 </div>
-                <div class="mix box-item text-animate pc">
+                <div class="mix box-item text-animate">
                     <h2 class="text">
                         <a href="text-animate/text_reveal_animation.html" target="_blank">blur효과가 들어간 좁혀졌다 넓어졌다 animation</a>
                     </h2>
@@ -460,7 +560,7 @@
                         <a href="text-animate/weight_count/html.html" target="_blank">per를 이용한 weight, bar 카운팅</a>
                     </h2>
                 </div>
-                <div class="mix box-item text-animate pc">
+                <div class="mix box-item text-animate">
                     <h2 class="text">
                         <a href="text-animate/3D_text_effect_animation_gsap.html" target="_blank">text - 3D effect 시간 순서에 따라 입체적 노출(gsap)</a>
                     </h2>
@@ -485,7 +585,7 @@
                         <a href="text-animate/coming_soon_js2.html" target="_blank">coming soon timer effect2</a>
                     </h2>
                 </div>
-                <div class="mix box-item text-animate pc">
+                <div class="mix box-item text-animate">
                     <h2 class="text">
                         <a href="text-animate/css3D_isometric_text_vanilla.html" target="_blank">js를 이용한 3D isometric text</a>
                     </h2>
@@ -537,6 +637,41 @@
             <div>
                 <div class="mix box-item scroll-parallax">
                     <h2 class="text">
+                        <a href="https://css-tricks.com/hide-scrollbars-during-an-animation/" target="_blank">애니메이션 중 스크롤바 숨기기 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item scroll-parallax">
+                    <h2 class="text">
+                        <a href="icon-loading/svg_animation_onscroll.html" target="_blank">SVG그리기 애니메이션 on scroll</a>
+                    </h2>
+                </div>
+                <div class="mix box-item scroll-parallax">
+                    <h2 class="text">
+                        <a href="scroll-parallax/stunning_parallax_scrolling.html" target="_blank">창의적인 시차 스크롤링 - jarallax.js</a>
+                    </h2>
+                </div>
+                <div class="mix box-item scroll-parallax">
+                    <h2 class="text">
+                        <a href="scroll-parallax/dribbble-Like_swiping_animation.html" target="_blank">드리블과 같은 스와이프 애니메이션</a>
+                    </h2>
+                </div>
+                <div class="mix box-item scroll-parallax">
+                    <h2 class="text">
+                        <a href="scroll-parallax/scrollMagic_library_fixed_again_scrolling.html" target="_blank">스크롤시 고정되다가 다시 올라가는 애니메이션 - scrollMagic</a>
+                    </h2>
+                </div>
+                <div class="mix box-item scroll-parallax">
+                    <h2 class="text">
+                        <a href="scroll-parallax/ScrollTrigger_GSAP_page_scroll.html" target="_blank">ScrollTrigger GSAP 간단한 사용법</a>
+                    </h2>
+                </div>
+                <div class="mix box-item scroll-parallax">
+                    <h2 class="text">
+                        <a href="scroll-parallax/gsap_scrolltrigger_plugin_tutorial.html" target="_blank">GSAP의 ScrollTrigger 플러그인 튜토리얼</a>
+                    </h2>
+                </div>
+                <div class="mix box-item scroll-parallax">
+                    <h2 class="text">
                         <a href="scroll-parallax/infinite_images_on_scroll.html" target="_blank">스크롤에 대한 무한한 이미지</a>
                     </h2>
                 </div>
@@ -575,17 +710,17 @@
                         <a href="scroll-parallax/fullscreen_video_background_fadeout_scroll.html" target="_blank">스크롤시 비디오 배경 fadeout</a>
                     </h2>
                 </div>
-                <div class="mix box-item scroll-parallax pc">
+                <div class="mix box-item scroll-parallax">
                     <h2 class="text">
                         <a href="scroll-parallax/blobs-parallax/index.html" target="_blank">blobs parallax simple style - jquery.enllax.js</a>
                     </h2>
                 </div>
-                <div class="mix box-item scroll-parallax pc">
+                <div class="mix box-item scroll-parallax">
                     <h2 class="text">
                         <a href="scroll-parallax/parallax_scrolling_effects_mountain.html" target="_blank">parallax 다른 이미지들 순차적적 움직임 - no js</a>
                     </h2>
                 </div>
-                <div class="mix box-item scroll-parallax pc">
+                <div class="mix box-item scroll-parallax">
                     <h2 class="text">
                         <a href="scroll-parallax/fullpage_scroll_no_js.html" target="_blank">탭선택시 해당영역 스크롤 이동 - no js</a>
                     </h2>
@@ -600,7 +735,7 @@
                         <a href="scroll-parallax/transform_effects_on_scroll_skewed.html" target="_blank">스크롤시 기울어진 배경 전환</a>
                     </h2>
                 </div>
-                <div class="mix box-item scroll-parallax pc">
+                <div class="mix box-item scroll-parallax">
                     <h2 class="text">
                         <a href="scroll-parallax/simple_sticky_navbar_smooth_scroll.html" target="_blank">탭선택시, 스크롤시 부드러운 화면 스크롤</a>
                     </h2>
@@ -610,12 +745,12 @@
                         <a href="scroll-parallax/scroll_transform.html" target="_blank">transform을 이용한 스크롤 시에 상단 동그란 움직임</a>
                     </h2>
                 </div>
-                <div class="mix box-item scroll-parallax pc">
+                <div class="mix box-item scroll-parallax">
                     <h2 class="text">
                         <a href="scroll-parallax/hide_header_on_scroll_up_show.html" target="_blank">스크롤 시작하면 헤더 노출 맨위로 올라가면 없어짐</a>
                     </h2>
                 </div>
-                <div class="mix box-item scroll-parallax pc">
+                <div class="mix box-item scroll-parallax">
                     <h2 class="text">
                         <a href="scroll-parallax/skewd_header.html" target="_blank">css로 만든 화살표 모양의 헤더</a>
                     </h2>
@@ -639,7 +774,7 @@
                     <h2 class="text">
                         <a href="http://markdalgleish.com/projects/stellar.js" target="_blank">쉽게 사용이 가능한 시차스크롤 - stellar.js <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
-                </div>                
+                </div>
                 <div class="mix box-item scroll-parallax">
                     <h2 class="text">
                         <a href="https://css-tricks.com/debouncing-throttling-explained-examples/" target="_blank">예를 통해 설명된 디바운싱 및 스로틀링 스크롤 끝에 리스트 추가하는 방법 포함 <ion-icon name="arrow-redo-outline"></ion-icon></a>
@@ -650,12 +785,12 @@
                         <a href="https://dixonandmoe.com/rellax/" target="_blank">경량의 js의 Parallax Library - Rellax.js <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item scroll-parallax pc">
+                <div class="mix box-item scroll-parallax">
                     <h2 class="text">
                         <a href="scroll-parallax/add_smooth_scrolling_experience_vanilla.html" target="_blank">스크롤시 부드럽게 내려가는 smooth scrolling</a>
                     </h2>
                 </div>
-                <div class="mix box-item scroll-parallax pc">
+                <div class="mix box-item scroll-parallax">
                     <h2 class="text">
                         <a href="scroll-parallax/block_reveal_on_scroll.html" target="_blank">scroll 지나가며 겹치는 시점에 맞춰 내용보임</a>
                     </h2>
@@ -754,7 +889,7 @@
                     <h2 class="text">
                         <a href="https://css-tricks.com/how-to-create-a-realistic-motion-blur-with-css-transitions/" target="_blank">CSS 전환으로 사실적인 모션 블러를 만드는 방법 <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
-                </div>                
+                </div>
                 <div class="mix box-item mouse-effect">
                     <h2 class="text">
                         <a href="mouse-effect/3D_flip_card_image_hover.html" target="_blank">click - 버튼의 파급 효과를 재현하는 방법 <ion-icon name="arrow-redo-outline"></ion-icon></a>
@@ -942,7 +1077,7 @@
                 </div>
                 <div class="mix box-item menu-accordion">
                     <h2 class="text">
-                        <a href="menu-accordion/accordion_faq.html" target="_blank">accordion - css, js 이용 faq스타일</a>
+                        <a href="menu-accordion/accordion_faq_es6.html" target="_blank">accordion - css, js 이용 faq스타일</a>
                     </h2>
                 </div>
                 <div class="mix box-item menu-accordion">
@@ -1002,6 +1137,11 @@
             <div>
                 <div class="mix box-item icon-loading">
                     <h2 class="text">
+                        <a href="icon-loading/creative_animation_neumorphism.html" target="_blank">뉴모피즘 세로바 애니메이션</a>
+                    </h2>
+                </div>
+                <div class="mix box-item icon-loading">
+                    <h2 class="text">
                         <a href="icon-loading/fractional_SVG_stars.html" target="_blank">CSS를 사용한 분수 SVG 별</a>
                     </h2>
                 </div>
@@ -1024,7 +1164,7 @@
                     <h2 class="text">
                         <a href="https://svgbox.net/iconsets" target="_blank">현재 15 개의 아이콘 세트 와 4,623개의 아이콘 - SVGBox <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
-                </div>                
+                </div>
                 <div class="mix box-item icon-loading">
                     <h2 class="text">
                         <a href="icon-loading/water_drops_drawing.html" target="_blank">css만 이용해 물방울 모양 그리기</a>
@@ -1038,11 +1178,6 @@
                 <div class="mix box-item icon-loading">
                     <h2 class="text">
                         <a href="icon-loading/confetti_fallling.html" target="_blank">색종이 떨어지는 애니메이션</a>
-                    </h2>
-                </div>
-                <div class="mix box-item icon-loading">
-                    <h2 class="text">
-                        <a href="icon-loading/svg_animation_onscroll.html" target="_blank">SVG그리기 애니메이션 on scroll</a>
                     </h2>
                 </div>
                 <div class="mix box-item icon-loading">
@@ -1184,12 +1319,17 @@
                     <h2 class="text">
                         <a href="icon-loading/stairs_loader_css.html" target="_blank">공이 계단을 오르는데 끝에 가면 반대로 다시 오르기 loading</a>
                     </h2>
-                </div>                
+                </div>
             </div>
             <!-- /icon-loading -->
 
             <!-- form -->
             <div>
+                <div class="mix box-item form">
+                    <h2 class="text">
+                        <a href="form/multi_handle_range_slider.html" target="_blank">멀티 핸들 레인지 슬라이더</a>
+                    </h2>
+                </div>
                 <div class="mix box-item form">
                     <h2 class="text">
                         <a href="form/options_password_revealing_inputs.html" target="_blank">비밀번호 공개 입력 옵션</a>
@@ -1222,11 +1362,6 @@
                 </div>
                 <div class="mix box-item form">
                     <h2 class="text">
-                        <a href="form/vertical_skills_bar_graph.html" target="_blank">세로 스킬바 그래프</a>
-                    </h2>
-                </div>
-                <div class="mix box-item form">
-                    <h2 class="text">
                         <a href="form/get_current_date_js.html" target="_blank">현재날짜 가져오기</a>
                     </h2>
                 </div>
@@ -1239,13 +1374,13 @@
                     <h2 class="text">
                         <a href="https://www.cssscript.com/mobile-ios-date-picker-rolldate/" target="_blank">iOS 스타일 날짜 선택기 – rolldate <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
-                </div>                
+                </div>
                 <div class="mix box-item form">
                     <h2 class="text">
                         <a href="form/morphing_form_search_icon_to_search_bar.html" target="_blank">검색 - 돋보기 hover 입력할 수 있도록 커짐</a>
                     </h2>
                 </div>
-                <div class="mix box-item form pc">
+                <div class="mix box-item form">
                     <h2 class="text">
                         <a href="form/age_calculator.html" target="_blank">달력 - 과거로부터 얼마나 지났나</a>
                     </h2>
@@ -1253,14 +1388,14 @@
                 <div class="mix box-item form">
                     <h2 class="text">
                         <a href="form/live_character_count_es6.html" target="_blank">글쓰기 실시간 카운팅</a>
-                    </h2>                    
+                    </h2>
                 </div>
                 <div class="mix box-item form">
                     <h2 class="text">
                         <a href="form/how_to_auto_resize_textarea.html" target="_blank">textarea 쓰는 글의 크기만큼 자동 리사이징</a>
                     </h2>
                 </div>
-                <div class="mix box-item form pc">
+                <div class="mix box-item form">
                     <h2 class="text">
                         <a href="form/3D_flip_form_toggle.html" target="_blank">3D flip form toggle</a>
                     </h2>
@@ -1338,255 +1473,155 @@
             </div>
             <!-- /form -->
 
-            <!-- basic -->
+            <!-- graph -->
             <div>
-                <div class="mix box-item basic">
+                <div class="mix box-item graph">
                     <h2 class="text">
-                        <a href="basic/grid/absolute_positioning_modern.html" target="_blank">grid를 이용한 덜 절대적인 위치 잡기</a>
+                        <a href="graph/animated_skills_bars.html" target="_blank">애니메이션 스킬바</a>
                     </h2>
                 </div>
-                <div class="mix box-item basic">
+                <div class="mix box-item graph">
                     <h2 class="text">
-                        <a href="https://css-tricks.com/supports-selector/" target="_blank">@supports selector() <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/css_focus-visible(instead-focus).html" target="_blank">css focus-visible(:focus 대신 사용)</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/css_all.html" target="_blank">css all 속성에 대해서</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/responsive_full-screen_background.html" target="_blank">반응형 전체 화면 배경</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/write_better_css_logical_properties.html" target="_blank">논리적 속성을 사용하여 더 나은 CSS 작성</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/shadows_transparent_PNG.html" target="_blank">투명한 PNG 이미지 그림자 적용</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/flexbox_design_patterns_projects.html" target="_blank">프로젝트에서 사용할 수 있는 Flexbox 디자인 패턴</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/auto_margin.html" target="_blank">css auto-margin 정렬</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/easily_overlap_content.html" target="_blank">그리드로 쉽게 콘텐츠 겹침</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/how_to_create_background_video.html" target="_blank">배경 비디오를 만드는 방법</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/css_background_blend_mode.html" target="_blank">background-blend-mode에 대해서</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/css_calc().html" target="_blank">CSS calc() 에 대해서</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/css_object-fit.html" target="_blank">CSS object-fit을 사용하여 이미지를 제어하는 방법</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/grid/responsive_no_media_queries.html" target="_blank">미디어 쿼리가 없는 반응형 CSS 그리드!</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/background_repeat_space.html" target="_blank">배경반복 값 space에 대해서</a>
-                    </h2>
-                </div>                
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="https://autoprefixer.github.io/" target="_blank">CSS 자동 접두사 <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/double_border_width_diffrent_colors.html" target="_blank">다른 색상의 CSS 이중 테두리</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/table_responsive_flexbox.html" target="_blank">반응형테이블 - flexbox</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/table_responsive_horizontal_scrolling.html" target="_blank">반응형테이블 - 수평스크롤링</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/worksheet.html" target="_blank">작업물 보기 리스트 - 워크시트</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/sticky_footer_technique.html" target="_blank">영리한 고정 바닥글 기법</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/grdient_drop_shadow.html" target="_blank">그림자 그라디언트</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/stiped_background_pattern.html" target="_blank">줄무늬 배경</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/dot_background_pattern.html" target="_blank">도트 배경</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="https://docs.emmet.io/cheat-sheet/" target="_blank">vscode emmet문법</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/touch-action.html" target="_blank">css touch-action 한눈에보기</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/css가상요소_marker.html" target="_blank">css 가상요소 선택자 - marker</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=besthuman01&logNo=220509888830" target="_blank">모바일에서 input type 속성 비교 <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="http://necolas.github.io/normalize.css/" target="_blank">normalize.css <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="https://css-tricks.com/almanac/properties/s/scroll-behavior/" target="_blank">CSS scroll-behavior <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="https://css-tricks.com/using-the-specificity-of-where-as-a-css-reset/" target="_blank">CSS 재설정으로 :where() 의 특수성 사용 <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="https://css-tricks.com/almanac/selectors/f/fullscreen/" target="_blank">:fullscreen 선택자 <ion-icon name="arrow-redo-outline"></ion-icon></a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/css_mix-blend-mode_사용.html" target="_blank">mix-blend-mode 사용 예시 (isolation)</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/css_inset_layout.html" target="_blank">inset을 이용한 full 레이아웃</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/input.html" target="_blank">input에 관하여</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="../project/min/010pay/resources/html/ui/template.html" target="_blank">웹퍼블리싱 가이드 sample</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/유동적인_타이포그래피_clamp().html" target="_blank">유동적인 타이포그래피 css함수 - clamp()</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/reflected_text.html" target="_blank">반전 그림자 표현 reflected text</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/skeleton_screen.html" target="_blank">skeleton screen</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/skeleton_screen2.html" target="_blank">skeleton screen 여러개</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/sticky_footer_flex.html" target="_blank">flex sticky 이용한 footer고정</a>
-                    </h2>
-                </div>
-                <div class="mix box-item basic">
-                    <h2 class="text">
-                        <a href="basic/winHeight.html" target="_blank">헤더푸터 계산을 통한 상/하단 고정 레이아웃</a>
+                        <a href="graph/vertical_skills_bar_graph.html" target="_blank">세로 스킬바 그래프</a>
                     </h2>
                 </div>
             </div>
-            <!-- /basic -->
+            <!-- /graph -->
 
-            <!-- workspace(작업도움) -->
+            <!-- jquery-plugin -->
             <div>
-                <div class="mix box-item workspace">
+                <div class="mix box-item jquery-plugin">
                     <h2 class="text">
-                        <a href="https://animxyz.com/" target="_blank">CSS 애니메이션 툴킷</a>
+                        <a href="https://jqueryui.com/selectmenu/" target="_blank">select 태그를 div태그로 복제하고 확장 <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item workspace">
+                <div class="mix box-item jquery-plugin">
                     <h2 class="text">
-                        <a href="https://caninclude.glitch.me/" target="_blank">부모내에 어떤 자식요소 배치가 가능한지</a>
+                        <a href="https://projects.calebevans.me/jcanvas/" target="_blank">jCanvas - 레이어, 애니메이션, 이벤트 등을 활용할 수 있는 캔버스 기반 앱을 빠르게 만들 수 있다. <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item workspace">
+                <div class="mix box-item jquery-plugin">
                     <h2 class="text">
-                        <a href="https://caninclude.glitch.me/" target="_blank">부모내에 어떤 자식요소 배치가 가능한지</a>
+                        <a href="http://www.decorplanit.com/plugin/" target="_blank">autoNumeric – 통화 형식 지정이 쉬워졌습니다. <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item workspace">
+                <div class="mix box-item jquery-plugin">
                     <h2 class="text">
-                        <a href="https://bennettfeely.com/clippy/" target="_blank">CSS clip-path maker</a>
+                        <a href="http://ressio.github.io/lazy-load-xt/" target="_blank">Lazy Load XT for jQuery – 내장된 이미지, 비디오 및 기타 미디어의 지연 로드를 위한 모바일 지향의 빠르고 확장 가능 <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
-                <div class="mix box-item workspace">
+                <div class="mix box-item jquery-plugin">
                     <h2 class="text">
-                        <a href="https://webpagetest.org/" target="_blank">WebPageTest를 사용한 성능 테스트</a>
+                        <a href="https://formstone.it/components/asap/" target="_blank">Pronto – 더 빠른 페이지 로드를 위한 jQuery 플러그인. 폼스톤 라이브러리의 일부 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item jquery-plugin">
+                    <h2 class="text">
+                        <a href="http://vdw.github.io/HideSeek/" target="_blank">jQuery HideSeek – 간단하지만 사용자 정의 가능한 라이브 검색 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item jquery-plugin">
+                    <h2 class="text">
+                        <a href="https://formstone.it/components/mediaquery/" target="_blank">Rubberband – 반응형 미디어 쿼리 이벤트를 위한 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item jquery-plugin">
+                    <h2 class="text">
+                        <a href="http://vodkabears.github.io/vide/" target="_blank">Vide – 비디오 배경용 jQuery 플러그인 <ion-icon name="arrow-redo-outline"></ion-icon></a>
                     </h2>
                 </div>
             </div>
-            <!-- /workspace -->
+            <!-- /jquery-plugin -->
+
+            <!-- etc -->
+            <div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="https://css-tricks.com/grainy-gradients/" target="_blank">거친 그라디언트 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="https://cleanup.pictures/" target="_blank">이미지에서 개체 제거 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="etc/SVG_TV_noise_effects.html" target="_blank">SVG TV 노이즈 효과</a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="https://www.unscreen.com/upload" target="_blank">비디오, GIF 배경 제거 <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="https://chrome.google.com/webstore/detail/nimbus-screenshot-screen/bpconcjcammlapcogcnnelfmaeghhagj/related?hl=ko&" target="_blank">웹사이트 캡쳐 크롬플러그인 - Nimbus Screenshot <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="https://motion.dev/" target="_blank">작은크기 엄청난 성능 Web Animations API 기반 라이브러리 - motion.dev <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="https://polyfill.io/v3/" target="_blank">다양한 브라우저 지원 - polyfill <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="https://www.kunkalabs.com/mixitup/" target="_blank">애니메이션 필터링, 정렬, 삽입, 제거 등을 위한 고성능의 종속성 없는 라이브러리 mixitup.js <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="https://animejs.com/" target="_blank">단순하지만 강력한 API를 갖춘 가벼운 JavaScript 애니메이션 라이브러리 Anime.js <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="https://threejs.org/" target="_blank">3D 그리기 three.js <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="http://naver.github.io/egjs/" target="_blank">원하는 방식으로 웹 애플리케이션을 구축할 수 있는 가장 쉽고 빠른 방법 제공 - egjs <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="https://gibbok.github.io/animatelo/" target="_blank">css animation 라이브러리 - animatelo <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="https://animate.style/" target="_blank">css animation 라이브러리 - animate.css <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="http://vivify.mkcreative.cz/" target="_blank">css animation 라이브러리 - vivify <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="https://www.boxfactura.com/pulltorefresh.js/" target="_blank">끌어당기며 새로고침 해주는 PulltoRefresh.js <ion-icon name="arrow-redo-outline"></ion-icon></a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="etc/3D_flip_santa_card.html" target="_blank">3D flip santa card</a>
+                    </h2>
+                </div>
+                <div class="mix box-item etc">
+                    <h2 class="text">
+                        <a href="etc/website_intro_gsap.html" target="_blank">website - intro(gsap)</a>
+                    </h2>
+                </div>
+            </div>
+            <!-- /etc -->
 
         </div>
     </div>
