@@ -13,7 +13,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
@@ -31,19 +30,94 @@
     font-family: 'Oleo Script', cursive;
     font-family: 'Open Sans', sans-serif;
     font-family: "Roboto", sans-serif;
-    font-family: 'Quicksand', sans-serif;
 */
 body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1b1b1b;
+}
+h3{
+    position: relative;
+    font-size: 24px;
+    color: #999;
+    font-weight: 500;
+    margin-bottom:5px
+}
+#form{
+    position: relative;
+    border:2px solid #131313;
+    background: linear-gradient(#1e2024, #18181c);
+    border-radius: 4px;
+    overflow: hidden;
+}
+#form #email{
+    width: 300px;
+    outline: none;
+    background: transparent;
+    border:navajowhite;
+    padding: 12px 15px;
+    padding-right: 50px;
+    color: #fff;
+    font-size: 18px;
+}
+#form .indicator{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    background: #555;
+    border-radius: 50%;
+}
+#form.valid .indicator{
+    background: #0f0;
+    box-shadow: 0 0 5px #0f0,
+                0 0 10px #0f0,
+                0 0 20px #0f0,
+                0 0 40px #0f0;
+}
+#form.invalid .indicator{
+    background: #f00;
+    box-shadow: 0 0 5px #f00,
+                0 0 10px #f00,
+                0 0 20px #f00,
+                0 0 40px #f00;
 }
 </style>
 </head>
 <body>
 
 <div class="">
-    
+    <h3>Email Validation Check</h3>
+    <form id="form" action="">
+        <div class="inputbox">
+            <input type="text" id="email" placeholder="Enter Email Address" onkeyup="validate();">
+            <span class="indicator"></span>
+        </div>
+    </form>
 </div>
 
 <script>
+function validate(){
+    const form = document.getElementById('form');
+    const email = document.getElementById('email').value;
+    const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+
+    if(email.match(pattern)){
+        form.classList.add('valid')
+        form.classList.remove('invalid')
+    }else{
+        form.classList.add('invalid')
+        form.classList.remove('valid')
+    }
+    if(email == "") {
+        form.classList.remove('invalid')
+        form.classList.remove('valid')
+    }
+}
 </script>
 
 </body>
