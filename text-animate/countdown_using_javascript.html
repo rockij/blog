@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
+<title></title>
+<style>
+/*
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Courier Prime', monospace;
+    font-family: 'Oleo Script', cursive;
+    font-family: 'Open Sans', sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-family: 'Quicksand', sans-serif;
+*/
+:root{
+    --color-white: #fff;
+    --color-black: #202020;
+    --color-glass: rgba(255, 255, 255, .05);
+    --color-shadow: 0 0 25px rgba(0, 0, 0, .5)
+}
+*{
+    box-sizing: border-box;
+    color:var(--color-white);
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: url(../resources/image/image3.jpg) no-repeat 50% 50%;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.wrapper{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 16px;
+}
+.heading{
+    text-align: center;
+    margin-bottom: 4em;
+}
+.heading h1{
+    text-shadow: var(--color-shadow);
+    font-size: 6.2em;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+}
+.heading h3{
+    font-size: 1.9em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: var(--color-glass);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--color-shadow);
+    padding: 8px 30px;
+    display: inline-block;
+}
+.countdown{
+    width: 95vw;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px
+}
+.box{
+    width: 28vmin;
+    height: 29vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+span.num{
+    background-color: var(--color-glass);
+    backdrop-filter: blur(12px);
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 4em;
+    box-shadow: var(--color-shadow);
+    border-radius: 0.1em;
+}
+span.num::after{
+    content:'';
+    position: absolute;
+    background-color: var(--color-glass);
+    height: 100%;
+    width: 50%;
+    left: 0;
+}
+span.text{
+    font-size: 1em;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    display: block;
+    width: 80%;
+    position: relative;
+    text-align: center;
+    bottom: 20px;
+    padding: .7em 0;
+    font-weight: 600;
+    border-radius: .3em;
+    box-shadow: var(--color-shadow);
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="heading">
+        <h3>Countdown Till</h3>
+        <h1>2023</h1>
+    </div>
+    <div class="countdown">
+        <div class="box">
+            <span class="num" id="day-box">00</span>
+            <span class="text">Days</span>
+        </div>
+        <div class="box">
+            <span class="num" id="hr-box">00</span>
+            <span class="text">Hours</span>
+        </div>
+        <div class="box">
+            <span class="num" id="min-box">00</span>
+            <span class="text">Minutes</span>
+        </div>
+        <div class="box">
+            <span class="num" id="sec-box">00</span>
+            <span class="text">Seconds</span>
+        </div>
+    </div>
+</div>
+
+<script>
+let dayBox = document.getElementById('day-box');
+let hrBox = document.getElementById('hr-box');
+let minBox = document.getElementById('min-box');
+let secBox = document.getElementById('sec-box');
+let endDate = new Date(2023, 0, 1, 00 , 00);
+let endTime = endDate.getTime();
+
+function countdown(){
+    let todayDate = new Date();
+    let todayTime = todayDate.getTime();
+    let remainingTime = endTime - todayTime;
+    let oneMin = 60 * 1000;
+    let oneHr = 60 * oneMin;
+    let oneDay = 24 * oneHr;
+
+    let addZeroes = (num) => (num < 10 ? `0${num}` : num);
+
+    if(endTime < todayTime){
+        clearInterval(i);
+        document.querySelector('.countdown').innerHTML = `<h1>Countdown Has Expired</h1>`
+    }else{
+        let daysLeft = Math.floor(remainingTime / oneDay);
+        let hrsLeft = Math.floor((remainingTime % oneDay) / oneHr);
+        let minsLeft = Math.floor((remainingTime % oneHr) / oneMin);
+        let secsLeft = Math.floor((remainingTime % oneMin) / 1000);
+
+        dayBox.textContent = addZeroes(daysLeft);
+        hrBox.textContent = addZeroes(hrsLeft);
+        minBox.textContent = addZeroes(minsLeft);
+        secBox.textContent = addZeroes(secsLeft);
+    }
+}
+
+let i = setInterval(countdown, 1000);
+countdown();
+</script>
+
+</body>
+</html>       
