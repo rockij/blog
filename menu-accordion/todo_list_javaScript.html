@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
+<title></title>
+<style>
+/*
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Courier Prime', monospace;
+    font-family: 'Oleo Script', cursive;
+    font-family: 'Open Sans', sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-family: 'Quicksand', sans-serif;
+*/
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
+}
+.wrapper{
+    margin: 120px auto;
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    padding: 25px;
+}
+.wrapper header{
+    font-size: 30px;
+    font-weight: 600;
+}
+.wrapper .inputField{
+    display: flex;
+    height: 45px;
+    width: 100%;
+    margin-top: 25px;
+}
+.inputField input{
+    outline: none;
+    width: 85%;
+    height: 100%;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    border-radius: 3px;
+    padding-left: 15px;
+}
+.inputField button{
+    width: 60px;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: #8e49e8;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 5px;
+    opacity: .6;
+    pointer-events: none;
+}
+.inputField button.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.wrapper .todoList{
+    margin-top: 25px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+.todoList li{
+    height: 45px;
+    line-height: 45px;
+    position: relative;
+    background: #f2f2f2;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    padding: 0 15px;
+    cursor: default;
+    overflow: hidden;
+}
+.todoList li span{
+    position: absolute;
+    right: -45px;
+    color: #fff;
+    width: 45px;
+    text-align: center;
+    border-radius: 0 3px 3px 0;
+    background: #e74c3c;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.todoList li:hover span{
+    right:0
+}
+.wrapper .footer{
+    display: flex;
+    width: 100%;
+    margin-top: 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer button{
+    border: none;
+    outline: none;
+    background: #8e49e8;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 6px 10px;
+    opacity: .6;
+    pointer-events: none;
+}
+.footer button.active{
+    opacity: 1;
+    pointer-events: auto;
+} 
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <header>Todo App</header>
+    <div class="inputField">
+        <input type="text" placeholder="Add your new todo">
+        <button><ion-icon name="add-outline"></ion-icon></button>
+    </div>
+    <div class="todoList">
+        <!-- Data comes from local storage -->
+    </div>
+    <div class="footer">
+        <span>You have <span class="pendingNumb"></span> pending tasks</span>
+        <button>Clear All</button>
+    </div>
+</div>
+
+<script>
+const inputBox = document.querySelector('.inputField input'),
+addBtn = document.querySelector('.inputField button'),
+todoList = document.querySelector('.todoList'),
+deleteAllBtn = document.querySelector('.footer button');
+
+inputBox.onkeyup = () => {
+    let userData = inputBox.value; //getting user entered value
+    if(userData.trim() != 0){ //if user values aren't only spaces
+        addBtn.classList.add('active') //active the add button
+    }else{
+        addBtn.classList.remove('active') //unactive the add button
+    }
+}
+showTasks(); //calling showTasks function
+
+// if user click on the add button
+addBtn.onclick = ()=>{
+    let userData = inputBox.value; //getting user entered value
+    let getLocalStorage = localStorage.getItem('New Todo'); //getting localStorage
+    if(getLocalStorage == null){ //if localStorage is null
+        listArr = []; //creating blank array
+    }else{
+        listArr = JSON.parse(getLocalStorage); //transforming json string into a js object
+    }
+    listArr.push(userData); //pushing or adding user data
+    localStorage.setItem('New Todo', JSON.stringify(listArr)); //transforming js object into a json string
+    showTasks(); //calling showTasks function
+}
+
+// function to add task list inside ul
+function showTasks(){
+    let getLocalStorage = localStorage.getItem('New Todo') //getting localstorage
+    if(getLocalStorage == null){ //if localStorage is null
+        listArr = []; //creating blank array
+    }else{
+        listArr = JSON.parse(getLocalStorage); //transforming json string into a js object
+    }
+    const pendingNumb = document.querySelector('.pendingNumb');
+    pendingNumb.textContent = listArr.length; //passing the length value in pendingNumb
+    if(listArr.length > 0){ //if array length is greater than 0
+        deleteAllBtn.classList.add('active'); //active the clearall button
+    }else{
+        deleteAllBtn.classList.remove('active'); //unactive the clearall button
+    }
+    let newLiTag = '';
+    listArr.forEach((element, index) => {
+        newLiTag += `<li>${element} <span onclick="deleteTask(${index})"><ion-icon name="trash-outline"></ion-icon></span></li>`;
+    });
+    todoList.innerHTML = newLiTag; //adding new li tag inside ul tag
+    inputBox.value = ''; //once task added leave the input field blank
+}
+
+// delete task function
+function deleteTask(index){
+    let getLocalStorage = localStorage.getItem('New Todo');
+    listArr = JSON.parse(localStorage);
+    listArr.splice(index, 1) //delete or remove the particular indexed li
+    // after remove the li again update the local storage
+    localStorage.setItem('New Todo', JSON.stringify(listArr)); //transforming js object into a json string
+    showTasks(); //calling showTasks function
+}
+
+deleteAllBtn.onclick = ()=>{
+    listArr = []; //empty an array
+    // after delete all task again update the local storage
+    localStorage.setItem('New Todo', JSON.stringify(listArr)); //transforming js object into a json string
+    showTasks(); //calling showTasks function
+}
+</script>
+
+</body>
+</html>       
