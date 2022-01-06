@@ -15,7 +15,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -34,17 +33,77 @@
     font-family: "Roboto", sans-serif;
     font-family: 'Quicksand', sans-serif;
 */
+*{
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    font-weight: 600;
+}
 body{
+    background-color: #3264fe;
+}
+.container{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 20px 30px rgba(0,0,0,.15);
+    border-radius: 45px;
+}
+input[type="number"]{
+    appearance: textfield;
+    text-align: center;
+    font-size: 40px;
+    border:0;
+    background-color: #fff;
+    color: #202030;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+button{
+    color: #3264fe;
+    background-color: #fff;
+    border:0;
+    font-size: 40px;
+    cursor: pointer;
+}
+#decrement{
+    padding: 15px 5px 15px 25px;
+    border-radius: 45px 0 0 45px;
+}
+#increment{
+    padding: 15px 25px 15px 5px;
+    border-radius: 0 45px 45px 0;
 }
 </style>
 </head>
 <body>
 
-<div class="">
-    
+<div class="container">
+    <button id="decrement" onclick="stepper(this)"> - </button>
+    <input type="number" min="20" max="50" step="5" value="25" id="my-input" readonly>
+    <button id="increment" onclick="stepper(this)"> + </button>
 </div>
 
 <script>
+const myInput = document.getElementById('my-input');
+function stepper(btn){
+    let id = btn.getAttribute('id');
+    let min = myInput.getAttribute('min');
+    let max = myInput.getAttribute('max');
+    let step = myInput.getAttribute('step');
+    let val = myInput.getAttribute('value');
+    let calcStep = (id == 'increment') ? (step*1) : (step * -1);
+    let newValue = parseInt(val) + calcStep;
+    console.log(val);
+    if(newValue >= min && newValue <= max){
+        myInput.setAttribute('value', newValue);
+    }
+}
 </script>
 
 </body>

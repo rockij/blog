@@ -35,16 +35,83 @@
     font-family: 'Quicksand', sans-serif;
 */
 body{
+    background-color: #f5f5f5;
+}
+.container{
+    height: 15px;
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.slider{
+    appearance: none;
+    border-radius: 5px;
+    outline: none;
+    width: 90vw;
+    height: 15px;
+    position: absolute;
+    background-color: #fd7897;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.slider::-webkit-slider-thumb{
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+.slider::-webkit-slider-thumb:hover{
+    box-shadow: 0 0 0 3px #fd7897,
+                0 0 0 6px #fff;
+}
+.slider:active::-webkit-slider-thumb:hover{
+    box-shadow: 0 0 0 3px #fd7897,
+                0 0 0 6px #fff;
+}
+.box{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 20px;
+    font-size: 100px;
+}
+.fa{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 4px #fd7897;
+    background-image: linear-gradient(transparent 100px, #fd7897 100px);
+    background-size: 200px 200px;
+    -webkit-background-clip: text;
 }
 </style>
 </head>
 <body>
 
-<div class="">
-    
+<div class="box">
+    <i class="fa fa-heart" aria-hidden="true" id="heart"></i>
+</div>
+<div class="container">
+    <input type="range" min="0" max="100" value="50" class="slider" id="slider">
 </div>
 
 <script>
+var slider = document.getElementById('slider');
+var heart = document.getElementById('heart');
+
+heart.style.backgroundPosition = "0 "+"-"+slider.value+"px";
+slider.oninput = function(){
+    heart.style.backgroundPosition = "0 "+"-"+slider.value+"px";
+}
 </script>
 
 </body>
