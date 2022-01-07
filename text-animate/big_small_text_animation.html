@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -35,86 +36,88 @@
 */
 *{
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #222;
+    font-family: "Roboto", sans-serif;
 }
-.container{
+section{
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    background: #0e1623;
+    overflow: hidden;
 }
-.container .cigarette{
-    transform-style: preserve-3d;
-    animation: animate 15s linear infinite;
+section .text{
+    position: relative;
+    font-size: 5em;
+    text-align: center;
+    color: #00fe77;
+    -webkit-box-reflect: below -.26em linear-gradient(transparent, #0004);
 }
-@keyframes animate{
-    0%{
-        transform: perspective(1000px) rotateX(0deg) rotate(25deg);
-    }
-    100%{
-        transform: perspective(1000px) rotateX(360deg) rotate(25deg);
-    }
-}
-.container .cigarette span{
-    position: absolute;
-    color: #fff;
-    font-size: 1.35em;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 0.76em;
-    text-shadow: 0 2px 5px rgba(0,0,0,.25);
-    transform: translate(-50%, -50%) rotateX(calc(var(--i) * 36deg)) translateZ(25px);
-    background: rgba(0,0,0,.25);
-    transform-style: preserve-3d;
-}
-.container .cigarette span i{
-    font-style: normal;
-    color: #ec9535;
-}
-.container .cigarette span i::after{
-    content:'L';
-    color:#fff;
-    text-transform: lowercase;
-}
-.container .cigarette span i:last-child{
-    color: #f00;
-    filter: blur(2px);
-    text-shadow: -4px 0 2px #000,
-                 8px 0 20px #f00,
-                 8px 0 24px #f00,
-                 8px 0 0 #222,
-                 12px 0 #555,
-                 16px 0 #666,
-                 20px 0 #888,
-                 20px 0 #999;
+section .text span{
+    position: relative;
+    display: inline-block;
 }
 </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="cigarette">
-        <span style="--i:1"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:2"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:3"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:4"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:5"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:6"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:7"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:8"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:9"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:10"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-    </div>
-</div>
+<section>
+    <h2 class="text">AnimeJS Text Animation Effects</h2>
+</section>
 
+<!-- https://animejs.com/ -->
+<script src="../resources/js/anime.min.js"></script>
 <script>
+const text = document.querySelector('.text');
+text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+anime.timeline({
+    loop: true
+})
+
+.add({
+    targets: '.text span',
+    // [start value, end value]
+    translateY: [-600, 0],
+    scale: [10, 1],
+    opacity: [0 ,1],
+    easing: "easeOutExpo",
+    duration: 1500,
+    delay: anime.stagger(100),
+})
+
+.add({
+    targets: '.text span',
+    translateX: [0, -1000],
+    scale: [1, 1],
+    opacity: [1, 0],
+    easing: "easeOutExpo",
+    duration: 200,
+    delay: anime.stagger(100),
+})
+
+.add({
+    targets: '.text span',
+    translateX: [-1000, 0],
+    scale: [1, 1],
+    opacity: [0, 1],
+    easing: "easeOutExpo",
+    duration: 2000,
+    delay: anime.stagger(100),
+})
+
+.add({
+    targets: '.text span',
+    translateX: [0, 0],
+    scale: [1, 50],
+    opacity: [1, 0],
+    easing: "easeOutExpo",
+    duration: 2000,
+    delay: anime.stagger(100),
+})
 </script>
 
 </body>

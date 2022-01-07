@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -35,82 +36,104 @@
 */
 *{
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
-body{
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #222;
+    background: radial-gradient(#2e2e2e, #333);
 }
-.container{
+.infinite{
     position: relative;
+    width: 800px;
+    height: 160px;
+    background: #525252;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: perspective(500px) rotateX(30deg);
+}
+.infinite::before{
+    content:'';
+    position: absolute;
+    top:50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, #fff 0%, #fff 70%, #525252 70%, #525252 100%);
+    background-size: 120px;
+    animation: animateRoad 1s linear infinite;
+}
+@keyframes animateRoad{
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position: -120px;
+    }
+}
+.infinite::after{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background: #333;
+    bottom: -30px;
+    transform-origin: top;
+    transform: perspective(500px) rotateX(-25deg);
+}
+.shadow{
+    position: absolute;
+    left: 50%;
+    width: 95%;
+    transform: translateX(-50%);
+    bottom: 60px;
+    background: linear-gradient(rgba(0,0,0,.25), transparent);
+}
+.box{
+    position: absolute;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0004);
+    animation: animateBox 1s linear infinite;
 }
-.container .cigarette{
-    transform-style: preserve-3d;
-    animation: animate 15s linear infinite;
+@keyframes animateBox{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100px);
+    }
+}
+.square{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    transform-origin: bottom right;
+    animation: animate 1s linear infinite;
 }
 @keyframes animate{
     0%{
-        transform: perspective(1000px) rotateX(0deg) rotate(25deg);
+        transform: rotate(0deg);
     }
     100%{
-        transform: perspective(1000px) rotateX(360deg) rotate(25deg);
+        transform: rotate(90deg);
     }
-}
-.container .cigarette span{
-    position: absolute;
-    color: #fff;
-    font-size: 1.35em;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 0.76em;
-    text-shadow: 0 2px 5px rgba(0,0,0,.25);
-    transform: translate(-50%, -50%) rotateX(calc(var(--i) * 36deg)) translateZ(25px);
-    background: rgba(0,0,0,.25);
-    transform-style: preserve-3d;
-}
-.container .cigarette span i{
-    font-style: normal;
-    color: #ec9535;
-}
-.container .cigarette span i::after{
-    content:'L';
-    color:#fff;
-    text-transform: lowercase;
-}
-.container .cigarette span i:last-child{
-    color: #f00;
-    filter: blur(2px);
-    text-shadow: -4px 0 2px #000,
-                 8px 0 20px #f00,
-                 8px 0 24px #f00,
-                 8px 0 0 #222,
-                 12px 0 #555,
-                 16px 0 #666,
-                 20px 0 #888,
-                 20px 0 #999;
 }
 </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="cigarette">
-        <span style="--i:1"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:2"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:3"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:4"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:5"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:6"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:7"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:8"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:9"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:10"><i>Nooooo</i>Smooooooooking<i>│</i></span>
+    <div class="infinite">
+        <div class="shadow"></div>
+    </div>
+    <div class="box">
+        <div class="square"></div>
     </div>
 </div>
 

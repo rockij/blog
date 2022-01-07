@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,84 +34,87 @@
     font-family: "Roboto", sans-serif;
     font-family: 'Quicksand', sans-serif;
 */
-*{
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #222;
+    background: #607d8b;
 }
-.container{
+.tea{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 70px;
+    background: linear-gradient(#c57e65, #e28462);
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+.vapour{
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 1;
+    padding: 0 20px;
 }
-.container .cigarette{
-    transform-style: preserve-3d;
-    animation: animate 15s linear infinite;
+.vapour span{
+    position: relative;
+    bottom: 50px;
+    display: block;
+    margin: 0 2px 50px;
+    min-width: 8px;
+    height: 120px;
+    background: #fff;
+    border-radius: 50%;
+    animation: animate 5s linear infinite;
+    opacity: 0;
+    filter: blur(8px);
+    animation-delay: calc(var(--i) * -.5s);
 }
 @keyframes animate{
     0%{
-        transform: perspective(1000px) rotateX(0deg) rotate(25deg);
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+    15%{
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(-150px) scaleX(5);
+    }
+    95%{
+        opacity: 0;
     }
     100%{
-        transform: perspective(1000px) rotateX(360deg) rotate(25deg);
+        transform: translateY(-300px) scaleX(10);
     }
-}
-.container .cigarette span{
-    position: absolute;
-    color: #fff;
-    font-size: 1.35em;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 0.76em;
-    text-shadow: 0 2px 5px rgba(0,0,0,.25);
-    transform: translate(-50%, -50%) rotateX(calc(var(--i) * 36deg)) translateZ(25px);
-    background: rgba(0,0,0,.25);
-    transform-style: preserve-3d;
-}
-.container .cigarette span i{
-    font-style: normal;
-    color: #ec9535;
-}
-.container .cigarette span i::after{
-    content:'L';
-    color:#fff;
-    text-transform: lowercase;
-}
-.container .cigarette span i:last-child{
-    color: #f00;
-    filter: blur(2px);
-    text-shadow: -4px 0 2px #000,
-                 8px 0 20px #f00,
-                 8px 0 24px #f00,
-                 8px 0 0 #222,
-                 12px 0 #555,
-                 16px 0 #666,
-                 20px 0 #888,
-                 20px 0 #999;
 }
 </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="cigarette">
-        <span style="--i:1"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:2"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:3"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:4"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:5"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:6"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:7"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:8"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:9"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:10"><i>Nooooo</i>Smooooooooking<i>│</i></span>
+<div class="tea">
+    <div class="vapour">
+        <span style="--i:1;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:16;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:20;"></span>
+        <span style="--i:6;"></span>
+        <span style="--i:7;"></span>
+        <span style="--i:10;"></span>
+        <span style="--i:8;"></span>
+        <span style="--i:17;"></span>
+        <span style="--i:11;"></span>
+        <span style="--i:12;"></span>
+        <span style="--i:14;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:9;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:18;"></span>
     </div>
 </div>
 

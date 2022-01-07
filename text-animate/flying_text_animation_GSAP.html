@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,88 +34,95 @@
     font-family: "Roboto", sans-serif;
     font-family: 'Quicksand', sans-serif;
 */
-*{
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 body{
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: #222;
+    background-color: #fff;
+    overflow: hidden;
 }
-.container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.container .cigarette{
-    transform-style: preserve-3d;
-    animation: animate 15s linear infinite;
-}
-@keyframes animate{
-    0%{
-        transform: perspective(1000px) rotateX(0deg) rotate(25deg);
-    }
-    100%{
-        transform: perspective(1000px) rotateX(360deg) rotate(25deg);
-    }
-}
-.container .cigarette span{
-    position: absolute;
-    color: #fff;
-    font-size: 1.35em;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 0.76em;
-    text-shadow: 0 2px 5px rgba(0,0,0,.25);
-    transform: translate(-50%, -50%) rotateX(calc(var(--i) * 36deg)) translateZ(25px);
-    background: rgba(0,0,0,.25);
-    transform-style: preserve-3d;
-}
-.container .cigarette span i{
-    font-style: normal;
-    color: #ec9535;
-}
-.container .cigarette span i::after{
-    content:'L';
-    color:#fff;
-    text-transform: lowercase;
-}
-.container .cigarette span i:last-child{
-    color: #f00;
-    filter: blur(2px);
-    text-shadow: -4px 0 2px #000,
-                 8px 0 20px #f00,
-                 8px 0 24px #f00,
-                 8px 0 0 #222,
-                 12px 0 #555,
-                 16px 0 #666,
-                 20px 0 #888,
-                 20px 0 #999;
+#quote{
+    width: 80%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+    line-height: 1.6;
+    color: #333;
+    text-align: left;
 }
 </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="cigarette">
-        <span style="--i:1"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:2"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:3"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:4"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:5"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:6"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:7"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:8"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:9"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:10"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-    </div>
+<div id="quote">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis ex dolorem numquam est doloremque possimus necessitatibus soluta, sapiente dolorum voluptas, consectetur aut? Vitae tenetur ab, aut est autem ipsum natus!
 </div>
 
 <script>
+var quote = document.getElementById('quote'),
+    arr = quote.innerText.split(""),
+    html = "";
+
+for(var i=0; i<arr.length; i++){
+    if(arr[i] !== " "){
+        html += '<div style="position:relative;display:inline-block;">'+arr[i]+'</div>';
+    }else{
+        html += arr[i];
+    }
+}
+
+quote.innerHTML = html;
+
+var chars = quote.getElementsByTagName('div');
+
+var tl = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 1,
+    yoyo: true
+});
+
+tl.set("#quote", {perspective: 400});
+tl.from(chars, {
+    duration: 1.5,
+    opacity: 0,
+    x: gsap.utils.random(-300, 300, true),
+    y: gsap.utils.random(50, 300, true),
+    z: gsap.utils.random(0, 300, true),
+    rotate: gsap.utils.random(-90, 90, true),
+    scale: .1,
+    stagger: {
+        amount: 3
+    },
+    onComplete: bounce
+});
+
+function bounce(){
+    tl.pause();
+    gsap.to(chars, {
+        duration: .5,
+        color: "#ff0000",
+        y: -20,
+        ease: "power2.out",
+        stagger: {
+            form: 0,
+            amount: 5
+        }
+    });
+    gsap.to(chars, {
+        duration: .5,
+        delay: .5,
+        color: "#ff0000",
+        y: 0,
+        ease: "power2.out",
+        stagger: {
+            form: 0,
+            amount: 5
+        },
+        onComplete: function() {
+            tl.resume();
+        }
+    })
+}
 </script>
 
 </body>

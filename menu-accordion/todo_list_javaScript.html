@@ -215,7 +215,7 @@ function showTasks(){
 // delete task function
 function deleteTask(index){
     let getLocalStorage = localStorage.getItem('New Todo');
-    listArr = JSON.parse(localStorage);
+    listArr = JSON.parse(getLocalStorage);
     listArr.splice(index, 1) //특정 인덱스 리를 삭제 또는 제거
     // LI를 다시 제거한 후 로컬 스토리지를 업데이트
     localStorage.setItem('New Todo', JSON.stringify(listArr)); //js 개체를 json 문자열로 변환

@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,84 +34,74 @@
     font-family: "Roboto", sans-serif;
     font-family: 'Quicksand', sans-serif;
 */
-*{
+*, *::before, *::after{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 body{
+    background-color: #0e6ffc;
+    font-weight: 700;
+    font-size: 45px;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.wrapper{
+    box-sizing: content-box;
+    background-color: #fff;
+    height: 70px;
+    padding: 50px 30px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #222;
+    box-shadow: 0 20px 25px rgba(0,0,0,.2);
 }
-.container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.words{
+    overflow: hidden;
 }
-.container .cigarette{
-    transform-style: preserve-3d;
-    animation: animate 15s linear infinite;
+span{
+    display: block;
+    height: 100%;
+    padding-left: 10px;
+    color: #0e6ffc;
+    animation: spin_words 6s infinite;
 }
-@keyframes animate{
-    0%{
-        transform: perspective(1000px) rotateX(0deg) rotate(25deg);
+@keyframes spin_words{
+    10%{
+        transform: translateY(-112%);
+    }
+    25%{
+        transform: translateY(-100%);
+    }
+    35%{
+        transform: translateY(-212%);
+    }
+    50%{
+        transform: translateY(-200%);
+    }
+    60%{
+        transform: translateY(-312%);
+    }
+    75%{
+        transform: translateY(-300%);
+    }
+    85%{
+        transform: translateY(-412%);
     }
     100%{
-        transform: perspective(1000px) rotateX(360deg) rotate(25deg);
+        transform: translateY(-400%);
     }
-}
-.container .cigarette span{
-    position: absolute;
-    color: #fff;
-    font-size: 1.35em;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 0.76em;
-    text-shadow: 0 2px 5px rgba(0,0,0,.25);
-    transform: translate(-50%, -50%) rotateX(calc(var(--i) * 36deg)) translateZ(25px);
-    background: rgba(0,0,0,.25);
-    transform-style: preserve-3d;
-}
-.container .cigarette span i{
-    font-style: normal;
-    color: #ec9535;
-}
-.container .cigarette span i::after{
-    content:'L';
-    color:#fff;
-    text-transform: lowercase;
-}
-.container .cigarette span i:last-child{
-    color: #f00;
-    filter: blur(2px);
-    text-shadow: -4px 0 2px #000,
-                 8px 0 20px #f00,
-                 8px 0 24px #f00,
-                 8px 0 0 #222,
-                 12px 0 #555,
-                 16px 0 #666,
-                 20px 0 #888,
-                 20px 0 #999;
 }
 </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="cigarette">
-        <span style="--i:1"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:2"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:3"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:4"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:5"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:6"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:7"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:8"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:9"><i>Nooooo</i>Smooooooooking<i>│</i></span>
-        <span style="--i:10"><i>Nooooo</i>Smooooooooking<i>│</i></span>
+<div class="wrapper">
+    <p>Coding Is</p>
+    <div class="words">
+        <span>fantastic</span>
+        <span>interesting</span>
+        <span>awesome</span>
+        <span>incredible</span>
+        <span>fantastic</span>
     </div>
 </div>
 
