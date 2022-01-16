@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
+<title></title>
+<style>
+/*
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Courier Prime', monospace;
+    font-family: 'Oleo Script', cursive;
+    font-family: 'Open Sans', sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-family: 'Quicksand', sans-serif;
+*/
+.container{
+    width: 700px;
+    margin: 0 auto;
+}
+.slide_wrapper{
+    position: relative;
+    width: 660px;
+    margin: 0 auto;
+    padding-top: 200px;
+    overflow: hidden;
+}
+.slides{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 200px;
+    width: 100%;
+}
+.slides.animated{
+    transition: .5s ease-out;
+}
+.slides li{
+    width: 200px;
+    height: 200px;
+    background: #ccc;
+    position: absolute;
+}
+.slides li:not(:last-child){
+    margin-right: 30px;
+}
+.controls{
+    text-align: center;
+    margin-top: 50px;
+}
+.controls span{
+    background:#333;
+    padding: 10px 20px;
+    margin: 0 10px;
+    display: inline-block;
+    color: #fff;
+}
+
+@media (max-width: 700px){
+    .container{
+        width:100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .slide_wrapper{
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="slide_wrapper">
+        <ul class="slides">
+            <li>slide01</li>
+            <li>slide02</li>
+            <li>slide03</li>
+            <li>slide04</li>
+            <li>slide05</li>
+        </ul>
+        <p class="controls">
+            <span class="prev">prev</span>
+            <span class="next">next</span>
+        </p>
+    </div>
+</div>
+
+<script>
+var slides = document.querySelector('.slides'),
+    slide = document.querySelectorAll('.slides li'),
+    currentIdx = 0,
+    slideCount = slide.length,
+    slideWidth = 200,
+    slideMargin = 30,
+    moveAmt = slideWidth + slideMargin,
+    maxSlides = 3,
+    responsiveMargin = 20,
+    newslide,
+    newSlideWidth,
+    prevBtn = document.querySelector('.prev'),
+    nextBtn = document.querySelector('.next');
+    newslideWidth = slideWidth;
+
+    // 복사본 생성
+    for(var i = 0; i<slideCount; i++){
+        var cloneSlide = slide[i].cloneNode(true);
+        cloneSlide.classList.add('clone');
+        slides.appendChild(cloneSlide);
+    }
+    for(var i = slideCount -1; i>=0; i--){
+        var cloneSlide = slide[i].cloneNode(true);
+        cloneSlide.classList.add('clone');
+        slides.prepend(cloneSlide);
+    }
+
+    // 가로배열하기
+    function slideLayout(sw,sm){
+        newslide = document.querySelectorAll('.slides li');
+        moveAmt = sw + sm;
+        newslide.forEach(function(item,index){
+            item.style.left = moveAmt*index + 'px';
+            item.style.width = sw + 'px';
+        });
+    }
+    slideLayout(slideWidth, slideMargin);
+
+    // 중앙 배치하기
+    function setSlide(){
+        var ulMoveAmt = -slideCount * moveAmt + 'px';
+        slides.style.transform = 'translateX('+ulMoveAmt+')';
+        slides.classList.add('animated');
+    }
+    setSlide();
+
+    // 좌우 버튼 이동
+    nextBtn.addEventListener('click', function(){
+        moveSlide(currentIdx + 1);
+    });
+    prevBtn.addEventListener('click', function(){
+        moveSlide(currentIdx - 1);
+    });
+
+    // moveSlide 함수
+    function moveSlide(num){
+        slides.style.left = moveAmt * -num + 'px';
+        currentIdx = num;
+        if(currentIdx == slideCount || currentIdx == -slideCount) {
+            setTimeout(function(){
+                slides.classList.remove('animated');
+                slides.style.left = '0px';
+                currentIdx = 0;
+            }, 500);
+            setTimeout(function(){
+                slides.classList.add('animated');
+            }, 600);
+        }
+    }
+
+    // 자동슬라이드
+    var timer = undefined;
+    var slideWrapper = document.querySelector('.slide_wrapper');
+    function autoSlide(){
+        if(timer == undefined){
+            timer = setInterval(function(){
+                moveSlide(currentIdx + 1);
+            }, 3000);
+        }
+    }
+    autoSlide();
+    function stopSlide(){
+        clearInterval(timer);
+        timer = undefined;
+    }
+    slideWrapper.addEventListener('mouseenter', function(){
+        stopSlide();
+    });
+    slideWrapper.addEventListener('mouseleave', function(){
+        autoSlide();
+    });
+
+    // 반응형 슬라이드
+    window.addEventListener('resize', function(){
+        var currentWidth = document.querySelector('body').offsetWidth;
+        if(currentWidth < 700){
+            var slidesWidth = slides.offsetWidth;
+            newslideWidth = (slidesWidth - (responsiveMargin * maxSlides -1)) / 3;
+            responsiveMargin = 20;
+        }else{
+            newslideWidth = slideWidth;
+            responsiveMargin = 0;
+        }
+        if(currentWidth <= 500){
+            var slidesWidth = slides.offsetWidth;
+            moveAmt = newslideWidth;
+        }
+        slideLayout(newslideWidth, responsiveMargin);
+        setSlide();
+    });
+
+    function updateWidth(){
+        var currentSlides = document.querySelectorAll('.slides li');
+        var newSlideCount = currentSlides.length;
+        var newWidth = (slideWidth + slideMargin) * newSlideCount - slideMargin + 'px';
+        slides.style.width = newWidth;
+    }
+
+    function setInitialPos(){
+        var initialTranslateValue = -(slideWidth + slideMargin) * slideCount;
+        slides.style.transform = 'translateX('+initialTranslateValue+'px)'
+    }
+
+// makeClone();
+
+// function makeClone(){
+//     updateWidth();
+//     setInitialPos();
+//     setTimeout(function(){
+//         slides.classList.add('animated');
+//     },100);
+// }
+</script>
+
+</body>
+</html>       

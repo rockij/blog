@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
+<title></title>
+<style>
+/*
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Courier Prime', monospace;
+    font-family: 'Oleo Script', cursive;
+    font-family: 'Open Sans', sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-family: 'Quicksand', sans-serif;
+*/
+body{
+    height: 100vh;
+    background-color: #000;
+}
+.slider{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider .text{
+    position: relative;
+    z-index:3;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(0,0,0,.5);
+    text-align: center;
+}
+.slider .text h1{
+    margin: 0 0 .5em;
+    font-size: 3em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: textview .5s .3s ease-in-out forwards;
+}
+.slider .text p{
+    margin: 0;
+    font-size: 1.75em;
+    opacity: 0;
+    animation: textview .5s .4s ease-in-out forwards;
+}
+@keyframes textview{
+    0%{
+        opacity: 0;
+        transform: translate3d(0,40px,0);
+    }
+    100%{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+.slider .image{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider .image img{
+    position: relative;
+    height: 100%;
+    -webkit-mask:url(../resources/image/image5.png) no-repeat -3840px 0;
+            mask:url(../resources/image/image5.png) no-repeat -3840px 0;
+            /*  */
+    -webkit-mask-size:5760px 1080px;
+            mask-size:5760px 1080px;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+    -webkit-transition: -webkit-mask-position 0s 3.5s, transform 0s 4.8s;
+            transition: mask-position 0s 3.5s, transform 0s 4.8s;
+}
+.slider .image.on{
+    z-index: 2;
+}
+.slider .image.on img{
+    -webkit-mask-position:0 0;
+            mask-position:0 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: -webkit-mask-position 3.5s, transform 4.8s;
+            transition: ask-position 3.5s, transform 4.8s;
+}
+</style>
+</head>
+<body>
+
+<div class="slider">
+    <div class="image"><img src="../resources/image/image1.jpg" alt=""></div>
+    <div class="image"><img src="../resources/image/image2.jpg" alt=""></div>
+    <div class="image"><img src="../resources/image/image3.jpg" alt=""></div>
+    <div class="text">
+        <h1>Image Slider</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, aliquid?</p>
+    </div>
+</div>
+
+<script>
+var sliderImages = $('.slider .image');
+var sliderIndex = 0;
+function changeSlider(){
+    sliderIndex = (sliderIndex == sliderImages.length - 1) ? 0 : sliderIndex + 1;
+    $('.slider .image.on').removeClass('on');
+    sliderImages.eq(sliderIndex).addClass('on');
+}
+setInterval(changeSlider, 5000)
+</script>
+
+</body>
+</html>       
