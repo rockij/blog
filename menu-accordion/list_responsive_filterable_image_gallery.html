@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filterable Image Gallery | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- filter Items -->
+    <nav>
+      <div class="items">
+        <span class="item active" data-name="all">All</span>
+        <span class="item" data-name="bag">Bag</span>
+        <span class="item" data-name="shoe">Shoe</span>
+        <span class="item" data-name="watch">Watch</span>
+        <span class="item" data-name="camera">Camera</span>
+        <span class="item" data-name="headphone">Headphone</span>
+      </div>
+    </nav>
+    <!-- filter Images -->
+    <div class="gallery">
+      <div class="image" data-name="bag"><span><img src="../resources/image/image1.jpg" alt=""></span></div>
+      <div class="image" data-name="headphone"><span><img src="../resources/image/image2.jpg" alt=""></span></div>
+      <div class="image" data-name="camera"><span><img src="../resources/image/image3.jpg" alt=""></span></div>
+      <div class="image" data-name="shoe"><span><img src="../resources/image/image4.jpg" alt=""></span></div>
+      <div class="image" data-name="headphone"><span><img src="../resources/image/image5.png" alt=""></span></div>
+      <div class="image" data-name="watch"><span><img src="../resources/image/image1.jpg" alt=""></span></div>
+      <div class="image" data-name="shoe"><span><img src="../resources/image/image2.jpg" alt=""></span></div>
+      <div class="image" data-name="camera"><span><img src="../resources/image/image3.jpg" alt=""></span></div>
+    </div>
+  </div>
+  <!-- fullscreen img preview box -->
+  <div class="preview-box">
+    <div class="details">
+      <span class="title">Image Category: <p></p></span>
+      <span class="icon fas fa-times"></span>
+    </div>
+    <div class="image-box"><img src="" alt=""></div>
+  </div>
+  <div class="shadow"></div>
+
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+::selection{
+  color: #fff;
+  background: #007bff;
+}
+body{
+  padding: 10px;
+}
+.wrapper{
+  margin: 100px auto;
+  max-width: 1100px;
+}
+.wrapper nav{
+  display: flex;
+  justify-content: center;
+}
+.wrapper .items{
+  display: flex;
+  max-width: 720px;
+  width: 100%;
+  justify-content: space-between;
+}
+.items span{
+  padding: 7px 25px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #007bff;
+  border-radius: 50px;
+  border: 2px solid #007bff;
+  transition: all 0.3s ease;
+}
+.items span.active,
+.items span:hover{
+  color: #fff;
+  background: #007bff;
+}
+
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.gallery .image{
+  width: calc(100% / 4);
+  padding: 7px;
+}
+.gallery .image span{
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+.gallery .image img{
+  width: 100%;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+.gallery .image:hover img{
+  transform: scale(1.1);
+}
+.gallery .image.hide{
+  display: none;
+}
+.gallery .image.show{
+  animation: animate 0.4s ease;
+}
+@keyframes animate {
+  0%{
+    transform: scale(0.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+.preview-box{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: #fff;
+  max-width: 700px;
+  width: 100%;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 3px;
+  padding: 0 5px 5px 5px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+}
+.preview-box.show{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 0.3s ease;
+}
+.preview-box .details{
+  padding: 13px 15px 13px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.details .title{
+  display: flex;
+  font-size: 18px;
+  font-weight: 400;
+}
+.details .title p{
+  font-weight: 500;
+  margin-left: 5px;
+}
+.details .icon{
+  color: #007bff;
+  font-style: 22px;
+  cursor: pointer;
+}
+.preview-box .image-box{
+  width: 100%;
+  display: flex;
+}
+.image-box img{
+  width: 100%;
+  border-radius: 0 0 3px 3px;
+}
+.shadow{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  display: none;
+  background: rgba(0,0,0,0.4);
+}
+.shadow.show{
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .gallery .image{
+    width: calc(100% / 3);
+  }
+}
+@media (max-width: 800px) {
+  .gallery .image{
+    width: calc(100% / 2);
+  }
+}
+@media (max-width: 700px) {
+  .wrapper nav .items{
+    max-width: 600px;
+  }
+  nav .items span{
+    padding: 7px 15px;
+  }
+}
+@media (max-width: 600px) {
+  .wrapper{
+    margin: 30px auto;
+  }
+  .wrapper nav .items{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav .items span{
+    margin: 5px;
+  }
+  .gallery .image{
+    width: 100%;
+  }
+}
+</style>
+
+<script>
+// 모든 필수 요소 선택
+const filterItem = document.querySelector(".items");
+const filterImg = document.querySelectorAll(".gallery .image");
+
+window.onload = ()=>{ //after window loaded
+  filterItem.onclick = (selectedItem)=>{ //사용자가 filterItem div를 클릭하는 경우
+    if(selectedItem.target.classList.contains("item")){ //사용자가 선택한 항목에 .item 클래스가 있는 경우
+      filterItem.querySelector(".active").classList.remove("active"); //첫 번째 항목의 활성 클래스를 제거합니다.
+      selectedItem.target.classList.add("active"); //사용자가 선택한 항목에 해당 활성 클래스 추가
+      let filterName = selectedItem.target.getAttribute("data-name"); //사용자가 선택한 항목 및 파일 이름 변수에 저장소의 데이터 이름 값 가져오기
+      filterImg.forEach((image) => {
+        let filterImges = image.getAttribute("data-name"); //이미지 데이터 이름 값 가져오기
+        //사용자가 선택한 항목 data-name 값이 이미지 data-name 값과 같은 경우
+        //또는 사용자가 선택한 항목 데이터 이름 값이 "all"과 같습니다.
+        if((filterImges == filterName) || (filterName == "all")){
+          image.classList.remove("hide"); //먼저 이미지에서 클래스 숨기기
+          image.classList.add("show"); //이미지에 쇼 클래스 추가
+        }else{
+          image.classList.add("hide"); //이미지에 클래스 숨기기 추가
+          image.classList.remove("show"); //이미지에서 쇼 클래스를 제거
+        }
+      });
+    }
+  }
+  for (let i = 0; i < filterImg.length; i++) {
+    filterImg[i].setAttribute("onclick", "preview(this)"); //사용 가능한 모든 이미지에 onclick 특성 추가
+  }
+}
+
+//전체 화면 이미지 미리 보기 기능
+//모든 필수 요소 선택
+const previewBox = document.querySelector(".preview-box"),
+categoryName = previewBox.querySelector(".title p"),
+previewImg = previewBox.querySelector("img"),
+closeIcon = previewBox.querySelector(".icon"),
+shadow = document.querySelector(".shadow");
+
+function preview(element){
+  //사용자가 이미지를 클릭한 다음 본문의 스크롤 막대를 제거하여 사용자가 위아래로 스크롤할 수 없도록 합니다.
+  document.querySelector("body").style.overflow = "hidden";
+  let selectedPrevImg = element.querySelector("img").src; //사용자가 클릭한 이미지 원본 링크를 가져와 변수에 저장
+  let selectedImgCategory = element.getAttribute("data-name"); //사용자가 클릭한 이미지 데이터 이름 값 가져오기
+  previewImg.src = selectedPrevImg; //미리 보기 이미지 소스에서 사용자가 클릭한 이미지 소스 전달
+  categoryName.textContent = selectedImgCategory; //카테고리 이름에서 사용자가 클릭한 데이터 이름 값 전달
+  previewBox.classList.add("show"); //미리 보기 이미지 상자 표시
+  shadow.classList.add("show"); //옅은 회색 바탕을 보이다
+  closeIcon.onclick = ()=>{ //사용자가 미리 보기 상자의 닫기 아이콘을 클릭하는 경우
+    previewBox.classList.remove("show"); //미리 보기 상자를 숨기다
+    shadow.classList.remove("show"); //옅은 회색 바탕을 가리다
+    document.querySelector("body").style.overflow = "auto"; //스크롤바를 몸통으로 드러내다.
+  }
+}
+</script>
+
+</body>
+</html>

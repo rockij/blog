@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
+<title></title>
+<style>
+body {
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #0a3d62;
+}
+.dropdown-list {
+	position: relative;
+}
+
+.dropdown-list select {
+	pointer-events: none;
+	user-select: none;
+	padding: 10px 20px 10px 10px;
+	font-size: 14px;
+	height: 30px;
+	box-sizing: content-box;
+	border: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.dropdown-list ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.dropdown-list li {
+	padding: 10px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 30px;
+	color: #fff;
+	text-align: left;
+	transition: color .3s ease-in-out;
+}
+
+.dropdown-list .list {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: rgba(0,0,0,.1);
+	border-radius: 5px;
+	transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+}
+.dropdown-list .list li:hover {
+	color: #60a3bc;
+	cursor: pointer;
+}
+.dropdown-list:not(.open) .list {
+	opacity: 0;
+	pointer-events: none;
+}
+.dropdown-list.open .list {
+	opacity: 1;
+}
+
+.dropdown-list button {
+	position: absolute;
+	z-index: 2;
+	left: 0;
+	top: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	background-color: #3c6382;
+	border-radius: 5px;
+	cursor: pointer;
+	outline: none;
+	overflow: hidden;
+}
+.dropdown-list button ul {
+	transition: transform .3s ease-in-out;
+}
+
+.dropdown-list button .arrow {
+	position: absolute;
+	right: 10%;
+	transform: translateY(0);
+	opacity: 1;
+	transition: .3s ease-in-out;
+}
+.dropdown-list button .arrow.up {
+	bottom: 55%;
+}
+.dropdown-list button .arrow.dn {
+	top: 55%;
+}
+.dropdown-list button .arrow::before {
+	content: '';
+	display: block;
+	width: 5px;
+	height: 5px;
+	border-left: 2px solid #fff;
+	border-top: 2px solid #fff;
+}
+.dropdown-list button .arrow.up::before {
+	transform: rotate(45deg);
+}
+.dropdown-list button .arrow.dn::before {
+	transform: rotate(-135deg);
+}
+.dropdown-list.open button .arrow {
+	opacity: 0;
+}
+.dropdown-list.open button .arrow.up {
+	transform: translateY(-10px);
+}
+.dropdown-list.open button .arrow.dn {
+	transform: translateY(10px);
+}
+
+.youtube-link {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	color: #fff;
+	text-decoration: none;
+	font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<div class="dropdown-list">
+    <select name="" id="">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+        <option value="5">Option 5</option>
+    </select>
+</div>
+    
+<script>
+const dropdownLists = document.querySelectorAll(".dropdown-list");
+
+dropdownLists.forEach((obj) => {
+	let options = obj.querySelectorAll("select option");
+	let selected = 0;
+
+	let ul = document.createElement("ul");
+	options.forEach((option, index) => {
+		let li = document.createElement("li");
+		li.innerText = option.innerText;
+		ul.appendChild(li);
+		if (option.hasAttribute("selected")) {
+			selected = index;
+		}
+	});
+
+	let list = document.createElement("div");
+	list.classList.add("list");
+	list.appendChild(ul.cloneNode(true));
+
+	let button = document.createElement("button");
+	button.innerHTML = '<span class="arrow up"></span><span class="arrow dn"></span>';
+	button.appendChild(ul.cloneNode(true));
+
+	obj.appendChild(list);
+	obj.appendChild(button);
+
+	let listLi = list.querySelectorAll("li");
+	let buttonUl = button.querySelector("ul");
+
+	button.addEventListener("click", () => {
+		obj.classList.toggle("open");
+	});
+	document.addEventListener("click", (e) => {
+		if (!obj.contains(e.target)) {
+			obj.classList.remove("open");
+		}
+	});
+	listLi.forEach((li, index) => {
+		li.addEventListener("click", () => {
+			list.style.transform = `translateY(-${index*50}px)`;
+			buttonUl.style.transform = `translateY(-${index*50}px)`;
+			for (let i = 0; i < options.length; i++) {
+				if (i == index) {
+					options[i].setAttribute("selected","selected");
+				} else {
+					options[i].removeAttribute("selected");
+				}
+			}
+			setTimeout(() => {
+				obj.classList.remove("open");
+			}, 300);
+		});
+	});
+	listLi[selected].click();
+});
+</script>
+
+</body>
+</html>       
