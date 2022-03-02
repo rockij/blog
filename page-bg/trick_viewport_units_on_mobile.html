@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
+<title></title>
+<style>
+body {
+  background-color: #333;
+}
+
+.module {
+  height: 100vh; /* vh를 사용자 지정 속성을 지원하지 않는 브라우저의 예비로 사용 */
+  height: calc(var(--vh, 1vh) * 100);
+  margin: 0 auto;
+  max-width: 30%;
+}
+
+.module__item {
+  align-items: center;
+  display: flex;
+  height: 20%;
+  justify-content: center;
+}
+
+.module__item:nth-child(odd) {
+  background-color: #fff;
+  color: #F73859;
+}
+
+.module__item:nth-child(even) {
+  background-color: #F73859;
+  color: #F1D08A;
+}
+</style>
+</head>
+<body>
+
+<div class="module">
+    <div class="module__item">20%</div>
+    <div class="module__item">40%</div>
+    <div class="module__item">60%</div>
+    <div class="module__item">80%</div>
+    <div class="module__item">100%</div>
+</div>
+
+<script>
+// 먼저 뷰포트 높이를 구하고 1%를 곱하여 vh 단위의 값을 구합니다.
+let vh = window.innerHeight * 0.01;
+// 그런 다음 --vh 사용자 지정 속성의 값을 문서의 루트로 설정합니다.
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+// 우리는 크기 조정 이벤트를 듣는다.
+window.addEventListener('resize', () => {
+  // 우리는 이전과 같은 스크립트를 실행합니다.
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+</script>
+
+</body>
+</html>       
