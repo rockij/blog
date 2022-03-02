@@ -59,13 +59,17 @@ input.valid:valid {
 .range-vertical {
   -webkit-appearance: slider-vertical;
 }
+.blind{overflow:hidden;position:absolute;left:-9999px;width:0;height:0;text-indent:-9999px;}
 </style>
 </head>
 <body>
 
 <div>
-    <label for="number1">숫자입력 첫번째</label>
-    <input type="text" id="number1" class="text" placeholder="1234">
+    <label for="number1">
+        <span class="blind">숫자입력 첫번째</span>
+        <input type="text" id="number1" class="text" placeholder="1234">
+    </label>
+    <br>
     <label for="number1">숫자입력 두번째</label>
     <input type="text" id="number2" class="text" placeholder="45">
 </div>
