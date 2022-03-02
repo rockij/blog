@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
+<title></title>
+<style>
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(29, 29, 29);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notification{
+    width: 200px;
+    transform-origin: top center;
+    animation: bellring 2s ease infinite;
+}
+
+.ball{
+    // display: none;
+    transform-origin: top center;
+    animation: ballring 2s ease infinite;
+    animation-delay: 0.1s;
+}
+
+@keyframes bellring {
+    0% { transform: rotate(0); }
+    10% { transform: rotate(20deg); }
+    20% { transform: rotate(-20deg); }
+    30% { transform: rotate(15deg); }
+    40% { transform: rotate(-15deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(-10deg); }
+    70% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
+    100% { transform: rotate(0); }
+}
+
+@keyframes ballring {
+    0% { transform: rotate(0); }
+    10% { transform: rotate(-5deg); }
+    20% { transform: rotate(5deg); }
+    30% { transform: rotate(-4deg); }
+    40% { transform: rotate(4deg); }
+    50% { transform: rotate(-2deg); }
+    60% { transform: rotate(2deg); }
+    70% { transform: rotate(-1deg); }
+    80% { transform: rotate(1deg); }
+    100% { transform: rotate(0); }
+ }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <svg class="notification" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M39 8.99981C38.9986 10.0379 38.7663 11.0626 38.32 11.9998C37.8345 13.0256 37.1027 13.9154 36.19 14.5898H27.81C26.8972 13.9154 26.1655 13.0256 25.68 11.9998C25.2282 11.0511 24.9959 10.013 25.0001 8.96225C25.0043 7.91153 25.2449 6.87524 25.7043 5.93022C26.1636 4.98521 26.8297 4.15572 27.6534 3.50327C28.477 2.85083 29.4369 2.39216 30.462 2.1613C31.487 1.93043 32.5509 1.93328 33.5747 2.16965C34.5985 2.40601 35.5559 2.86982 36.376 3.52667C37.1961 4.18353 37.8578 5.01658 38.3121 5.96405C38.7663 6.91151 39.0014 7.94908 39 8.99981Z"
+            fill="#CCDBFD" />
+        <path
+            d="M38.3201 12.0002C37.8345 13.026 37.1028 13.9157 36.1901 14.5902H27.8101C26.8973 13.9157 26.1656 13.026 25.6801 12.0002C26.2488 10.8058 27.1443 9.7971 28.2629 9.09085C29.3814 8.38461 30.6772 8.00977 32.0001 8.00977C33.3229 8.00977 34.6187 8.38461 35.7372 9.09085C36.8558 9.7971 37.7513 10.8058 38.3201 12.0002V12.0002Z"
+            fill="#E2EAFC" />
+        <!-- class = "ball"  for adding animation in the ball of notification bell-->
+        <path class="ball"
+            d="M43.3099 54C42.7224 55.6911 41.7581 57.2264 40.4899 58.49C39.0563 59.9235 37.2827 60.9704 35.3349 61.533C33.3871 62.0956 31.3285 62.1555 29.3513 61.7071C27.3741 61.2587 25.5427 60.3167 24.0281 58.969C22.5135 57.6212 21.365 55.9117 20.6899 54H43.3099Z"
+            fill="#FFD6A5" />
+        <path class="ball"
+            d="M40.9999 54L40.5299 54.49C39.3751 55.6486 37.9956 56.5589 36.4761 57.1648C34.9567 57.7708 33.3294 58.0598 31.6942 58.0139C30.059 57.968 28.4504 57.5882 26.9673 56.898C25.4843 56.2077 24.158 55.2215 23.0699 54H40.9999Z"
+            fill="#FDFFB6" />
+        <path
+            d="M62 54H2L6.85 50.12C10.0171 47.5859 12.5737 44.3719 14.3306 40.7161C16.0876 37.0603 16.9999 33.0561 17 29C17 25.0218 18.5804 21.2064 21.3934 18.3934C24.2064 15.5804 28.0218 14 32 14C35.9782 14 39.7936 15.5804 42.6066 18.3934C45.4196 21.2064 47 25.0218 47 29C46.9965 33.0567 47.9072 37.0621 49.6644 40.7185C51.4217 44.3749 53.9802 47.5883 57.15 50.12L62 54Z"
+            fill="#AC9EFF" />
+        <path
+            d="M62 53.9998H21.14C25.558 49.0448 27.9996 42.6383 28 35.9998C28 32.0215 29.5804 28.2062 32.3934 25.3932C35.2065 22.5801 39.0218 20.9998 43 20.9998C43.5852 20.9959 44.1699 21.0327 44.75 21.1098C46.2256 23.4765 47.0053 26.2108 47 28.9998C46.9965 33.0565 47.9072 37.0619 49.6645 40.7183C51.4217 44.3747 53.9802 47.5881 57.15 50.1198L62 53.9998Z"
+            fill="#C1D3FE" />
+    </svg>
+</div>
+
+<script>
+</script>
+
+</body>
+</html>       

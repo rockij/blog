@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
+<title></title>
+<style>
+@charset "UTF-8";
+/* ------------------------------------------------------------
+ * リセット
+ * ------------------------------------------------------------ */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Titan One", cursive;
+  color: #fff;
+  background: linear-gradient(180deg, #ec7801 0%, #ec7801 30%, #65ae29 30%, #65ae29 40%, #e4000f 40%, #e4000f 50%, #6e392b 50%, #6e392b 70%, #ec7801 70%);
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+h1,
+h2 {
+  font-weight: normal;
+}
+
+/* ------------------------------------------------------------
+ * レイアウト
+ * ------------------------------------------------------------ */
+h1 {
+  font-size: 4rem;
+  font-weight: normal;
+  color: #ec1c24;
+  text-align: center;
+  -webkit-text-stroke: 2px #fff;
+}
+
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btns_item {
+  margin: 0 20px;
+  text-align: center;
+}
+.btns_item h2 {
+  margin-bottom: 0.5em;
+  font-size: 2rem;
+}
+
+/* ------------------------------------------------------------
+ * 共通変数
+ * ------------------------------------------------------------ */
+/* ------------------------------------------------------------
+ * #01
+ * ------------------------------------------------------------ */
+.btnMenu01 {
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+}
+.btnMenu01 span, .btnMenu01::before, .btnMenu01::after {
+  display: block;
+  width: 70%;
+  height: 8px;
+  margin: 12px auto;
+  content: "";
+  background-color: #fff;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+.btnMenu01.is-open span {
+  opacity: 0;
+}
+.btnMenu01.is-open::before {
+  transform: translateY(20px) rotate(-45deg);
+}
+.btnMenu01.is-open::after {
+  transform: translateY(-20px) rotate(45deg);
+}
+
+/* ------------------------------------------------------------
+ * #02
+ * ------------------------------------------------------------ */
+.btnMenu02 {
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+}
+.btnMenu02 > span {
+  display: block;
+  transition: all 0.4s ease-in-out;
+}
+.btnMenu02 > span > span, .btnMenu02 > span::before, .btnMenu02 > span::after {
+  display: block;
+  width: 70%;
+  height: 8px;
+  margin: 12px auto;
+  content: "";
+  background-color: #fff;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+.btnMenu02.is-open > span {
+  transform: rotate(180deg);
+}
+.btnMenu02.is-open > span > span {
+  opacity: 0;
+}
+.btnMenu02.is-open > span::before {
+  transform: translateY(20px) rotate(-45deg);
+}
+.btnMenu02.is-open > span::after {
+  transform: translateY(-20px) rotate(45deg);
+}
+
+/* ------------------------------------------------------------
+ * #03
+ * ------------------------------------------------------------ */
+.btnMenu03 {
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+}
+.btnMenu03 span, .btnMenu03::before, .btnMenu03::after {
+  display: block;
+  width: 70%;
+  height: 8px;
+  margin: 12px auto;
+  content: "";
+  background-color: #fff;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+.btnMenu03.is-open span {
+  transform: scale(0);
+}
+.btnMenu03.is-open::before {
+  transform: translateY(20px) rotate(135deg);
+}
+.btnMenu03.is-open::after {
+  transform: translateY(-20px) rotate(-135deg);
+}
+
+/* ------------------------------------------------------------
+ * #04
+ * ------------------------------------------------------------ */
+.btnMenu04 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  background-color: #000;
+}
+.btnMenu04 span,
+.btnMenu04 span::before,
+.btnMenu04 span::after {
+  display: block;
+  width: 70%;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.btnMenu04 span {
+  position: relative;
+  transition: all 0 0.3;
+}
+.btnMenu04 span::before, .btnMenu04 span::after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  content: "";
+}
+.btnMenu04 span::before {
+  top: 20px;
+  transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.btnMenu04 span::after {
+  bottom: 20px;
+  transition: bottom 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.btnMenu04.is-open span {
+  background: rgba(255, 255, 255, 0);
+}
+.btnMenu04.is-open span::before {
+  top: 0;
+  transition: top 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: rotate(-45deg);
+}
+.btnMenu04.is-open span::after {
+  bottom: 0;
+  transition: bottom 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: rotate(45deg);
+}
+</style>
+</head>
+<body>
+
+
+<h1>Animated Hamburger Menu</h1>
+<div class="btns">
+    <section class="btns_item">
+        <h2>#01</h2>
+        <button class="btnMenu01 js-btnMenu" type="button"><span></span></button>
+    </section>
+    <section class="btns_item">
+        <h2>#02</h2>
+        <button class="btnMenu02 js-btnMenu" type="button"><span><span></span></span></button>
+    </section>
+    <section class="btns_item">
+        <h2>#03</h2>
+        <button class="btnMenu03 js-btnMenu" type="button"><span></span></button>
+    </section>
+    <section class="btns_item">
+        <h2>#04</h2>
+        <button class="btnMenu04 js-btnMenu" type="button"><span></span></button>
+    </section>
+</div>
+
+<script>
+$(function() {
+  $('.js-btnMenu').on('click', function() {
+    $(this).toggleClass('is-open');
+  });
+});
+</script>
+
+</body>
+</html>       
