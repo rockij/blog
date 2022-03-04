@@ -94,7 +94,7 @@ head link[rel="stylesheet"] {
 
 head style:not(:empty),
 head script:not(:empty) {
-  max-height: 5em;
+  max-height: 10em;
   overflow: auto;
   background-color: #ffd;
   white-space: pre;
