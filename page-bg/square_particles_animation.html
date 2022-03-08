@@ -20,9 +20,7 @@
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
-<title></title>
+    <title></title>
 <style>
 /*
     font-family: 'Poppins', sans-serif;
@@ -35,16 +33,84 @@
     font-family: 'Quicksand', sans-serif;
 */
 body{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #242424;
+}
+#container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.particle{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border:2px solid #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3),
+                0 0 10px rgba(0,0,0,.3),
+                0 0 20px rgba(0,0,0,.3);
 }
 </style>
 <script>
+$(function(){
+
+let count = 100,
+    particleClass = "particle",
+    particleColors = ["#fb5607", "#ff006e", "#8338ec", "#3a86ff"],
+    container = document.getElementById("container"),
+    w = container.offsetWidth,
+    h = container.offsetHeight,
+    elem;
+for(let i = 0; i < count; i++){
+    elem = document.createElement('div');
+    elem.className = particleClass;
+    container.appendChild(elem);
+    let size = gsap.utils.random(10,20);
+    gsap.set(elem, {
+        width: size,
+        height: size,
+        x: gsap.utils.random(0, w),
+        y: gsap.utils.random(0, h) + (h * .5),
+        borderColor: gsap.utils.random(particleColors)
+    });
+    anime(elem);
+}
+function anime(elem){
+    gsap.to(elem, gsap.utils.random(5, 10), {
+        y: -(h / 2),
+        ease: 'none',
+        repeat: -1,
+        delay: -10
+    });
+    gsap.to(elem, gsap.utils.random(1, 6), {
+        x: '+=50',
+        ease: 'power1.inOut',
+        repeat: -1,
+        yoyo: true
+    });
+    gsap.to(elem, gsap.utils.random(1, 2), {
+        opacity: 0,
+        ease: 'power1.inOut',
+        repeat: -1,
+        yoyo: true
+    });
+    gsap.to(elem, gsap.utils.random(5, 10), {
+        rotate: 360,
+        ease: 'none',
+        repeat: -1,
+    });
+}
+});
 </script>
 </head>
 <body>
 
-<div class="">
-    
-</div>
+<div id="container"></div>
 
 </body>
 </html>       
