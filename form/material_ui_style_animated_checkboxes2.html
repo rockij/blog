@@ -102,7 +102,11 @@ body {
 
 .checkbox .icon::after {
   border: 3px solid transparent;
-  transition: height var(--duration) ease-in, width var(--duration) ease-out var(--duration), border-color var(--easing) var(--duration) var(--duration);
+    transition:
+        height var(--duration) ease-in,
+        width var(--duration) ease-out var(--duration),
+        border-color var(--easing) var(--duration) var(--duration)
+    ;
   width: 0px;
   height: 0px;
   bottom: 7px;
@@ -117,7 +121,11 @@ body {
   height: 20px;
   border-right-color: currentColor;
   border-bottom-color: currentColor;
-  transition: width var(--duration) ease-in, height var(--duration) ease-out var(--duration), border-color var(--easing) var(--duration);
+    transition:
+        width var(--duration) ease-in,
+        height var(--duration) ease-out var(--duration),
+        border-color var(--easing) var(--duration)
+    ;
 }
 
 #checkbox:checked + .checkbox .icon::before {
