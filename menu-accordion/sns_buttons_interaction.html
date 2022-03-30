@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
+<title></title>
+<style>
+body {
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #1e272e;
+}
+.sns-buttons {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.sns-buttons button {
+	position: relative;
+	z-index: 2;
+	width: 80px;
+	height: 80px;
+	font-size: 1.6em;
+	color: rgba(255,255,255,1);
+	background-color: rgba(255,255,255,0.15);
+	border: none;
+	cursor: pointer;
+	transition: .3s ease-in-out;
+}
+.sns-buttons:hover button {
+	color: rgba(255,255,255,0.05);
+	background-color: rgba(255,255,255,0.05);
+}
+.sns-buttons:hover button:hover {
+	color: rgba(255,255,255,1);
+	background-color: rgba(255,255,255,0.15);
+}
+.sns-buttons .hover-mark {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: 5px solid #0be881;
+	border-radius: 10px;
+	box-sizing: border-box;
+	opacity: 0;
+}
+
+
+.youtube-link {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	color: #fff;
+	text-decoration: none;
+	font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<div class="sns-buttons">
+    <button><i class="fab fa-youtube"></i></button>
+    <button><i class="fab fa-instagram"></i></button>
+    <button><i class="fab fa-facebook"></i></button>
+    <button><i class="fab fa-twitter"></i></button>
+    <button><i class="fab fa-linkedin"></i></button>
+    <div class="hover-mark"></div>
+</div>
+
+
+<a class="youtube-link" href="https://youtu.be/JczCoaPUDGs" target="_blank">https://youtu.be/JczCoaPUDGs</a>
+
+<script>
+const hoverMark = document.querySelector(".hover-mark");
+const snsButtons = document.querySelector(".sns-buttons");
+const buttons = snsButtons.querySelectorAll("button");
+
+let tlEnter, tlLeave;
+
+buttons.forEach(button => {
+	button.addEventListener("pointerenter", mouseEnter);
+	button.addEventListener("pointerleave", mouseLeave);
+});
+
+function mouseEnter(e) {
+	const targetRect = e.currentTarget.getBoundingClientRect();
+	const snsButtonsRect = snsButtons.getBoundingClientRect();
+
+	if (tlLeave) tlLeave.kill();
+
+	tlEnter = gsap.to(hoverMark, {
+		duration: 0.3,
+		x: targetRect.left - snsButtonsRect.left,
+		y: targetRect.top - snsButtonsRect.top,
+		width: targetRect.width,
+		height: targetRect.height,
+		opacity: 1
+	});
+}
+
+function mouseLeave(e) {
+	const snsButtonsRect = snsButtons.getBoundingClientRect();
+
+	tlLeave = gsap.to(hoverMark, {
+		duration: 0.3,
+		x: 0,
+		y: 0,
+		width: snsButtonsRect.width,
+		height: snsButtonsRect.height,
+		opacity: 0
+	});
+}
+</script>
+
+</body>
+</html>       

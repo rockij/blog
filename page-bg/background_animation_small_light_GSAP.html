@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
+<title></title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(https://images.unsplash.com/photo-1543589076-bddcb054f426?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80) no-repeat center center / cover;
+}
+.stage {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+.stage span {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #f0a77b;
+    box-shadow: 0 0 5px rgba(255,165,0,.5),
+                0 0 15px rgba(255,165,0,.5),
+                0 0 30px rgba(255,165,0,.5);
+    border-radius: 50%;
+    filter: blur(2px);
+    /* left: 100px;
+    top: 100px; */
+}
+.stage span.blur {
+    width: 150px;
+    height: 150px;
+    filter: blur(15px);
+    /* left: 200px;
+    top: 200px;
+    opacity: .2; */
+}
+
+.youtube-link {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	color: #fff;
+	text-decoration: none;
+	font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="stage">
+        <!--
+        <span></span>
+        <span class="blur"></span>
+        -->
+    </div>
+</div>
+
+<a class="youtube-link" href="https://youtu.be/EXO4T_9veI8" target="_blank">https://youtu.be/EXO4T_9veI8</a>
+
+<script>
+const count = 50;
+const blurCount = 10;
+const stage = document.querySelector(".stage");
+
+for (let i = 0; i < count; i++) {
+	setTimeout(() => {
+		makeLight(i);
+	}, 50 * i);
+}
+
+function makeLight(i) {
+	let span = document.createElement("span");
+	if (i < blurCount) {
+		span.classList.add("blur");
+	}
+	stage.appendChild(span);
+
+	gsap.set(span, {
+		left: gsap.utils.random(0, stage.offsetWidth),
+		top: gsap.utils.random(0, stage.offsetHeight),
+		scale: gsap.utils.random(.8, 1.2, .1),
+		opacity: 0
+	});
+
+	let tl = gsap.timeline({
+		paused: true,
+		onComplete: () => {
+			span.remove();
+			makeLight(i);
+		}
+	})
+
+	if (i < blurCount) {
+		tl.to(span, {
+			opacity: gsap.utils.random(.1, .2),
+			duration: .3
+		})
+		tl.to(span, {
+			x: gsap.utils.random(-100, 100),
+			y: gsap.utils.random(-100, 100),
+			duration: gsap.utils.random(5, 7, .2),
+			ease: Power0.easeNone
+		}, -.3)
+		tl.to(span, {
+			opacity: 0,
+			duration: .3
+		}, ">-.3")
+	} else {
+		tl.to(span, {
+			opacity: gsap.utils.random(.5, .8),
+			duration: .3
+		})
+		tl.to(span, {
+			x: gsap.utils.random(-40, 40),
+			y: gsap.utils.random(-40, 40),
+			duration: gsap.utils.random(5, 7, .2),
+			ease: Power0.easeNone
+		}, -.3)
+		tl.to(span, {
+			opacity: 0,
+			duration: .3
+		}, ">-.3")
+	}
+
+	
+
+	tl.play();
+}
+</script>
+
+</body>
+</html>       
