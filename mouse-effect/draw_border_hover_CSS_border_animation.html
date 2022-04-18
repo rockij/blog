@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
+<title></title>
+<style>
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #15161a;
+}
+button{
+    height: 100px;
+    width: 300px;
+    font-family: 'Poppins',sans-serif;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #17181d;
+    border: 6px solid #17fa8e;
+    color: #17fa8e;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    cursor: pointer;
+    outline: none;
+}
+button:before{
+    content: "";
+    position: absolute;
+    height: 25px;
+    width: 300px;
+    background-color: #17181d;
+    margin: auto;
+    left: -6px;
+    right: 0;
+    bottom: -6px;
+    transition: width 0.5s,
+                height 0.5s 0.5s;
+}
+button:after{
+    content: "";
+    position: absolute;
+    height: 25px;
+    width: 300px;
+    background-color: #17181d;
+    margin: auto;
+    left: -6px;
+    right: 0;
+    top: -6px;
+    transition: width 0.5s,
+                height 0.5s 0.5s;
+}
+
+button:hover:before,
+button:hover:after{
+    width: 0;
+    height: 6px;
+    transition: height 0.5s,
+                width 0.5s 0.5s;
+}
+</style>
+</head>
+<body>
+
+<button>HOVER ME</button>
+
+<script>
+</script>
+
+</body>
+</html>       
