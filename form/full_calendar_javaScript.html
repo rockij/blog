@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
+<title></title>
+<style>
+/*
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Courier Prime', monospace;
+    font-family: 'Oleo Script', cursive;
+    font-family: 'Open Sans', sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-family: 'Quicksand', sans-serif;
+*/
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+.calendar {
+    width: 600px;
+    margin: 50px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.year-month{
+    font-size: 35px;
+}
+.nav{
+    display: flex;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+.nav-btn{
+    width: 28px;
+    height: 30px;
+    border: none;
+    font-size: 16px;
+    line-height: 34px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.go-today{
+    width: 75px;
+    border-left:1px solid #333;
+    border-right:1px solid #333;
+}
+.days{
+    display: flex;
+    margin: 25px 0 10px;
+}
+.day{
+    width: calc(100% / 7);
+    text-align: center;
+}
+.dates {
+    display: flex;
+    flex-flow: row wrap;
+    height: 500px;
+    border-top:1px solid #333;
+    border-right:1px solid #333;
+}
+.date{
+    width: calc(100% / 7);
+    padding: 15px;
+    text-align: right;
+    border-bottom:1px solid #333;
+    border-left:1px solid #333;
+}
+.day:nth-child(7n + 1),
+.date:nth-child(7n + 1){
+    color:#d13e3e
+}
+.day:nth-child(7n),
+.date:nth-child(7n){
+    color:#396ee2
+}
+.other{
+    opacity: .3;
+}
+.today{
+    position: relative;
+    color: #fff;
+}
+.today::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-color: #f00;
+    border-radius: 50%;
+    content:'';
+}
+</style>
+</head>
+<body>
+
+<div class="calendar">
+    <div class="header">
+        <div class="year-month"></div>
+        <div class="nav">
+            <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
+            <button class="nav-btn go-today" onclick="goToday()">Today</button>
+            <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
+        </div>
+    </div>
+    <div class="main">
+        <div class="days">
+            <div class="day">일</div>
+            <div class="day">월</div>
+            <div class="day">화</div>
+            <div class="day">수</div>
+            <div class="day">목</div>
+            <div class="day">금</div>
+            <div class="day">토</div>
+        </div>
+        <div class="dates"></div>
+    </div>
+</div>
+
+<script>
+let date = new Date();
+
+const renderCalender = () => {
+
+    const viewYear = date.getFullYear();
+    const viewMonth = date.getMonth();
+    
+    document.querySelector('.year-month').textContent = `${viewYear}년 ${viewMonth + 1}월`;
+    
+    const prevLast = new Date(viewYear, viewMonth, 0);
+    const thisLast = new Date(viewYear, viewMonth + 1, 0);
+    
+    const PLDate = prevLast.getDate();
+    const PLDay = prevLast.getDay();
+    
+    const TLDate = thisLast.getDate();
+    const TLDay = thisLast.getDay();
+    
+    const prevDates = [];
+    const thisDates = [...Array(TLDate + 1).keys()].slice(1);
+    const nextDates = [];
+    
+    if (PLDay !== 6) {
+        for (let i = 0; i < PLDay + 1; i++){
+            prevDates.unshift(PLDate - i);
+        }
+    }
+    
+    for (let i = 1; i < 7 - TLDay; i++){
+        nextDates.push(i)
+    }
+    
+    const dates = prevDates.concat(thisDates, nextDates);
+    const firstDateIndex = dates.indexOf(1);
+    const lastDateIndex = dates.lastIndexOf(TLDate);
+    dates.forEach((date, i) => {
+        const condition = i >= firstDateIndex && i < lastDateIndex + 1
+                          ? 'this'
+                          : 'other';
+        dates[i] = `<div class="date"><span class=${condition}>${date}</span></div>`;
+    });
+    
+    document.querySelector('.dates').innerHTML = dates.join('');
+
+    const today = new Date();
+    if (viewMonth === today.getMonth() && viewYear === today.getFullYear()) {
+        for (let date of document.querySelectorAll('.this')) {
+            date.classList.add('today');
+            break;
+        }
+    }
+
+};
+
+renderCalender();
+
+const prevMonth = () => {
+    date.setMonth(date.getMonth() - 1);
+    renderCalender();
+};
+
+const nextMonth = () => {
+    date.setMonth(date.getMonth() + 1);
+    renderCalender();
+};
+
+const goToday = () => {
+    date = new Date();
+    renderCalender();
+};
+
+</script>
+
+</body>
+</html>       
