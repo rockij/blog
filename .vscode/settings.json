@@ -1,0 +1,9 @@
+{
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "prettier.tabWidth": 2,
+  "vetur.format.options.tabSize": 2,
+  "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+  "editor.useTabStops": true,
+  "diffEditor.ignoreTrimWhitespace": true
+}
