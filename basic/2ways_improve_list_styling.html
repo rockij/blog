@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .my-boring-list li::marker {
+        color: hsl(340 50% 50%);
+        font-weight: 900;
+        font-size: 0.8em;
+      }
+
+      .my-awesome-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        counter-reset: my-counter;
+      }
+      .my-awesome-list li {
+        counter-increment: my-counter;
+      }
+      .my-awesome-list li::before {
+        content: counter(my-counter);
+      }
+    </style>
+  </head>
+  <body>
+    <ol class="my-awesome-list">
+      <li>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum,
+        aspernatur.
+      </li>
+      <li>
+        Error alias illo possimus doloremque quis enim? Officia, cum
+        perferendis?
+      </li>
+      <li>
+        Architecto, eligendi praesentium? Illo tempore ab quod dolorem quos
+        inventore.
+      </li>
+      <li>
+        Sed, molestias soluta consectetur similique quod asperiores culpa
+        voluptas et!
+      </li>
+      <li>
+        Repellat architecto, exercitationem sed voluptate hic obcaecati
+        explicabo dolor beatae!
+      </li>
+      <li>
+        Dolore doloremque provident fugiat reprehenderit quo deserunt
+        perferendis illum eveniet.
+      </li>
+      <li>
+        Illum, quisquam nemo culpa assumenda consectetur ex molestiae! Eos,
+        architecto.
+      </li>
+    </ol>
+
+    <ol class="my-boring-list">
+      <li>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum,
+        aspernatur.
+      </li>
+      <li>
+        Error alias illo possimus doloremque quis enim? Officia, cum
+        perferendis?
+      </li>
+      <li>
+        Architecto, eligendi praesentium? Illo tempore ab quod dolorem quos
+        inventore.
+      </li>
+      <li>
+        Sed, molestias soluta consectetur similique quod asperiores culpa
+        voluptas et!
+      </li>
+      <li>
+        Repellat architecto, exercitationem sed voluptate hic obcaecati
+        explicabo dolor beatae!
+      </li>
+      <li>
+        Dolore doloremque provident fugiat reprehenderit quo deserunt
+        perferendis illum eveniet.
+      </li>
+      <li>
+        Illum, quisquam nemo culpa assumenda consectetur ex molestiae! Eos,
+        architecto.
+      </li>
+    </ol>
+  </body>
+</html>
