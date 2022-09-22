@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title></title>
+    <style>
+      .wrap {
+        position: relative;
+      }
+      .tooltip {
+        -webkit-clip-path: polygon(
+          0% 0%,
+          100% 0%,
+          100% calc(100% - 10px),
+          calc(50% + 10px) calc(100% - 10px),
+          50% 100%,
+          calc(50% - 10px) calc(100% - 10px),
+          0% calc(100% - 10px)
+        );
+        clip-path: polygon(
+          0% 0%,
+          100% 0%,
+          100% calc(100% - 10px),
+          calc(50% + 10px) calc(100% - 10px),
+          50% 100%,
+          calc(50% - 10px) calc(100% - 10px),
+          0% calc(100% - 10px)
+        );
+        font-size: 0;
+      }
+
+      .tooltip2 {
+        -webkit-mask-image: linear-gradient(#fff, #fff),
+          url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 18"><path d="M0,0c10.6919355,1.0289959,18.997036,8.6949739,18.9980297,18h0.0039406c0-9.3050261,8.3060932-16.9710045,18.9980297-18H0z"/></svg>');
+        mask-image: linear-gradient(#fff, #fff),
+          url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 18"><path d="M0,0c10.6919355,1.0289959,18.997036,8.6949739,18.9980297,18h0.0039406c0-9.3050261,8.3060932-16.9710045,18.9980297-18H0z"/></svg>');
+        -webkit-mask-position: 0 0, 50% 100%;
+        mask-position: 0 0, 50% 100%;
+        -webkit-mask-size: 100% calc(100% - 18px), 38px 18px;
+        mask-size: 100% calc(100% - 18px), 38px 18px;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        font-size: 0;
+        width: 100%;
+        max-width: 400px;
+      }
+      .tooltip2 + .tooltip2 {
+        margin-top: 20px;
+      }
+
+      svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        background: #e5e5e5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 90vh;
+        padding: 20px 10px;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 80vh;
+      }
+    </style>
+  </head>
+  <body>
+    https://css-tricks.com/perfect-tooltips-with-css-clipping-and-masking/
+    <br /><br />
+
+    <div class="wrap">
+      <div class="tooltip">
+        <img
+          src="https://images.unsplash.com/photo-1621508654686-809f23efdabc?cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMTcwMjcyOQ&ixlib=rb-1.2.1&q=85&w=800&h=400"
+        />
+      </div>
+    </div>
+
+    <svg>
+      <clipPath id="tooltip" clipPathUnits="objectBoundingBox">
+        <path
+          d="M1,0H0v0.9302195h0.4483962C0.477628,0.9342086,0.5003342,0.9639273,0.5003369,1h0.0000107 c0-0.0360727,0.022709-0.0657914,0.0519407-0.0697805H1V0z"
+        />
+      </clipPath>
+    </svg>
+
+    <div class="wrap">
+      <div class="tooltip2">
+        <img
+          src="https://images.unsplash.com/photo-1621508654686-809f23efdabc?cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMTcwMjcyOQ&ixlib=rb-1.2.1&q=85&w=800&h=400"
+        />
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="tooltip2">
+        <img
+          src="https://images.unsplash.com/photo-1622396481359-6f5c5f481566?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMjY2OTc5OA&ixlib=rb-1.2.1&q=80&w=400"
+        />
+      </div>
+    </div>
+
+    <script></script>
+  </body>
+</html>

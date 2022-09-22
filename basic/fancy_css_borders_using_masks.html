@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title></title>
+    <style>
+      .box {
+        display: inline-block;
+        width: 300px;
+        aspect-ratio: 1;
+        background: linear-gradient(
+          135deg,
+          #1f005c,
+          #5b0060,
+          #870160,
+          #ac255e,
+          #ca485c,
+          #e16b5c,
+          #f39060,
+          #ffb56b
+        );
+        --m: conic-gradient(
+              from -45deg at bottom,
+              #0000,
+              #000 1deg 89deg,
+              #0000 90deg
+            )
+            bottom/80px 51% repeat-x,
+          conic-gradient(
+              from 135deg at top,
+              #0000,
+              #000 1deg 89deg,
+              #0000 90deg
+            )
+            top / 80px 51% repeat-x;
+        -webkit-mask: var(--m);
+        mask: var(--m);
+      }
+
+      .box2 {
+        display: inline-block;
+        width: 300px;
+        aspect-ratio: 1;
+        background: linear-gradient(
+          135deg,
+          #1f005c,
+          #5b0060,
+          #870160,
+          #ac255e,
+          #ca485c,
+          #e16b5c,
+          #f39060,
+          #ffb56b
+        );
+        --m: conic-gradient(
+              from 45deg at left,
+              #0000,
+              #000 1deg 89deg,
+              #0000 90deg
+            )
+            left / 51% 80px repeat-y,
+          conic-gradient(
+              from -135deg at right,
+              #0000,
+              #000 1deg 89deg,
+              #0000 90deg
+            )
+            right/51% 80px repeat-y;
+        -webkit-mask: var(--m);
+        mask: var(--m);
+      }
+
+      .box3 {
+        --mask: linear-gradient(#000 0 0) center/calc(100% - 60px)
+            calc(100% - 60px) no-repeat,
+          conic-gradient(
+              from 135deg at top,
+              #0000,
+              #000 1deg 89deg,
+              #0000 90deg
+            )
+            0 0/60px 30px space no-repeat,
+          conic-gradient(
+              from -45deg at bottom,
+              #0000,
+              #000 1deg 89deg,
+              #0000 90deg
+            )
+            0 100%/60px 30px space no-repeat,
+          conic-gradient(
+              from 45deg at left,
+              #0000,
+              #000 1deg 89deg,
+              #0000 90deg
+            )
+            0 0/30px 60px no-repeat space,
+          conic-gradient(
+              from -135deg at right,
+              #0000,
+              #000 1deg 89deg,
+              #0000 90deg
+            )
+            100% 0/30px 60px no-repeat space;
+
+        display: inline-block;
+        width: 320px;
+        aspect-ratio: 1;
+        background: linear-gradient(
+          135deg,
+          #1f005c,
+          #5b0060,
+          #870160,
+          #ac255e,
+          #ca485c,
+          #e16b5c,
+          #f39060,
+          #ffb56b
+        );
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+      }
+
+      .box4 {
+        width: 200px;
+        margin-bottom: 10px;
+        aspect-ratio: 1;
+        background: linear-gradient(
+          135deg,
+          #1f005c,
+          #5b0060,
+          #870160,
+          #ac255e,
+          #ca485c,
+          #e16b5c,
+          #f39060,
+          #ffb56b
+        );
+      }
+      .box4.one {
+        -webkit-mask: radial-gradient(40px at 50% 100%, #0000 100%, red) 50% /
+          calc(2 * 40px) 100%;
+      }
+      .box4.one.good {
+        -webkit-mask: radial-gradient(40px at 50% 100%, #0000 98%, red) 50% /
+          calc(1.85 * 40px) 100%;
+      }
+
+      body {
+        background: linear-gradient(90deg, #ddd, #fff);
+      }
+    </style>
+  </head>
+  <body>
+    https://css-tricks.com/css-borders-using-masks/
+
+    <br />
+
+    <div class="box"><!-- top+bottom overview --></div>
+
+    <div class="box2"><!-- left + right overview --></div>
+
+    <div class="box3"><!-- Showing the issue with Space --></div>
+
+    <div class="box4 one good"><!-- Scooped CSS borders --></div>
+
+    <script></script>
+  </body>
+</html>
