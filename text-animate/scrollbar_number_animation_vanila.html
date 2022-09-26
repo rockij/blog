@@ -98,51 +98,53 @@
         bottom: 0;
         line-height: 24px;
       }
+      section{
+        height: 1000px;
+      }
     </style>
   </head>
   <body>
     <h1>Number Animation</h1>
 
+    <section></section>
     <div class="progress_wrap" data-num="45">
       <div class="bar"></div>
       <span>0</span>
     </div>
-
-    <br />
-
-    <div class="progress_wrap" data-num="80">
-      <div class="bar"></div>
-      <span>0</span>
-    </div>
-
-    <br />
-
-    <div class="progress_wrap" data-num="30">
-      <div class="bar"></div>
-      <span>0</span>
-    </div>
+    <section></section>
 
     <script>
-      let progressWrap = document.querySelectorAll(".progress_wrap");
+      let progressWrap = document.querySelector(".progress_wrap"),
+          triggerPoint = progressWrap.offsetTop - 400,
+          progressBar = progressWrap.querySelector(".bar"),
+          progressRate = progressWrap.querySelector("span"),
+          initialRate = 0,
+          numAnimation = null,
+          excuted = false, // 실행여부 거짓
+          targetRate = parseInt(progressWrap.getAttribute("data-num"));
 
-      progressWrap.forEach(item => {
-        numAnimation(item);
+      window.addEventListener('scroll', function(){
+        let scrollAmt = this.pageYOffset;
+        if(scrollAmt > triggerPoint) {
+          if(!excuted) {
+            startNumberAnimation();
+            excuted = true;
+          }
+        }
       });
 
-      function numAnimation(item) {
-        let initialRate = 0;
-        let targetRate = item.getAttribute("data-num");
-        let progressBar = item.querySelector(".bar");
-        let progressRate = item.querySelector("span");
-
-        let numAnim = setInterval(() => {
-          initialRate++;
-          if (initialRate == targetRate) {
-            clearInterval(numAnim);
-          }
-          progressBar.style.width = `${initialRate}%`;
-          progressRate.innerText = `${initialRate}%`;
-        }, 20);
+      function startNumberAnimation(){
+        // if(numAnimation == null) {
+          let numAnimation = setInterval(function () {
+            initialRate++;
+            if (initialRate == targetRate) {
+              clearInterval(numAnimation);
+              // numAnimation = null;
+            }
+            progressBar.style.width = `${initialRate}%`;
+            progressRate.innerText = `${initialRate}%`;
+          }, 20);
+        // }
       }
     </script>
   </body>
