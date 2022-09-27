@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #9679ff;
+      }
+      .container {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+      }
+      #touch-area {
+        background-color: #ffffff;
+        height: 30em;
+        width: 30em;
+        border-radius: 0.6em;
+      }
+      #output {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.2em;
+        background-color: #ffffff;
+        text-align: center;
+        padding: 0.8em 0;
+        border-radius: 0.3em;
+        margin-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="touch-area"></div>
+      <p id="output">Swipe Across The Above Area</p>
+    </div>
+
+    <script>
+      let touchArea = document.getElementById("touch-area");
+      let output = document.getElementById("output");
+
+      // 초기 마우스 X및 Y위치 = 0
+      let mouseX,
+        initialX = 0;
+      let mouseY,
+        initialY = 0;
+      let isSwiped;
+
+      // 터치, 마우스 이벤트
+      let events = {
+        mouse: {
+          down: "mousedown",
+          move: "mousemove",
+          up: "mouseup",
+        },
+        touch: {
+          down: "touchstart",
+          move: "touchmove",
+          up: "touchend",
+        },
+      };
+
+      let deviceType = "";
+      // 장치 감지
+      const isTouchDevice = () => {
+        try {
+          //We try to create TouchEvent (it would fail for desktops and throw error)
+          document.createEvent("TouchEvent");
+          deviceType = "touch";
+          return true;
+        } catch (e) {
+          deviceType = "mouse";
+          return false;
+        }
+      };
+
+      // 왼쪽 및 위로 이동 영역
+      let rectLeft = touchArea.getBoundingClientRect().left;
+      let rectTop = touchArea.getBoundingClientRect().top;
+
+      // 마우스 터치의 정확한 x, y 위치 확인
+      const getXY = (e) => {
+        mouseX = (!isTouchDevice() ? e.pageX : e.touches[0].pageX) - rectLeft;
+        mouseY = (!isTouchDevice() ? e.pageY : e.touches[0].pageY) - rectTop;
+      };
+
+      isTouchDevice();
+
+      //Start Swipe
+      touchArea.addEventListener(events[deviceType].down, (event) => {
+        isSwiped = true;
+        //Get X and Y Position
+        getXY(event);
+        initialX = mouseX;
+        initialY = mouseY;
+      });
+
+      //Mousemove / touchmove
+      touchArea.addEventListener(events[deviceType].move, (event) => {
+        if (!isTouchDevice()) {
+          event.preventDefault();
+        }
+        if (isSwiped) {
+          getXY(event);
+          let diffX = mouseX - initialX;
+          let diffY = mouseY - initialY;
+          if (Math.abs(diffY) > Math.abs(diffX)) {
+            output.innerText = diffY > 0 ? "Down" : "Up";
+          } else {
+            output.innerText = diffX > 0 ? "Right" : "Left";
+          }
+        }
+      });
+
+      //Stop Drawing
+      touchArea.addEventListener(events[deviceType].up, () => {
+        isSwiped = false;
+      });
+
+      touchArea.addEventListener("mouseleave", () => {
+        isSwiped = false;
+      });
+
+      window.onload = () => {
+        isSwiped = false;
+      };
+    </script>
+  </body>
+</html>
