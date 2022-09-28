@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title></title>
+    <style>
+      .box {
+        width: 300px;
+        aspect-ratio: 1.5;
+        background: radial-gradient(circle 30px at top left, #0000 98%, red) top
+            left,
+          radial-gradient(circle 30px at top right, #0000 98%, blue) top right,
+          radial-gradient(circle 30px at bottom left, #0000 98%, green) bottom
+            left,
+          radial-gradient(circle 30px at bottom right, #0000 98%, purple) bottom
+            right;
+        background-size: 51% 51%;
+        background-repeat: no-repeat;
+      }
+
+      .box2 {
+        display: inline-block;
+        width: 300px;
+        aspect-ratio: 1.5;
+        background: linear-gradient(45deg, blue, red);
+      }
+      .mask {
+        -webkit-mask: radial-gradient(circle 30px at top left, #0000 98%, #000)
+            top left,
+          radial-gradient(circle 30px at top right, #0000 98%, #000) top right,
+          radial-gradient(circle 30px at bottom left, #0000 98%, #000) bottom
+            left,
+          radial-gradient(circle 30px at bottom right, #0000 98%, #000) bottom
+            right;
+        -webkit-mask-size: 51% 51%;
+        -webkit-mask-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="https://css-tricks.com/cut-corners-using-css-mask-and-clip-path-properties/"
+      target="_blank"
+      >https://css-tricks.com/cut-corners-using-css-mask-and-clip-path-properties/</a
+    >
+    <br /><br />
+    <div class="box"></div>
+    <br />
+    <div class="box2 mask"></div>
+    <img class="mask" src="https://picsum.photos/id/1069/200/200" />
+
+    <script></script>
+  </body>
+</html>
