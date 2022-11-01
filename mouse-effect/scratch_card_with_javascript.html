@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
+    <title></title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        background: linear-gradient(135deg, #c3a3f1, #6414e9);
+      }
+      .container {
+        width: 31em;
+        height: 31em;
+        background-color: #f5f5f5;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        border-radius: 0.6em;
+      }
+      .base,
+      #scratch {
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        cursor: grabbing;
+        border-radius: 0.3em;
+      }
+      .base {
+        background-color: #ffffff;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 1.2em 2.5em rgba(16, 2, 96, 0.15);
+      }
+      .base h3 {
+        font-weight: 600;
+        font-size: 1.5em;
+        color: #17013b;
+      }
+      .base h4 {
+        font-weight: 400;
+        color: #746e7e;
+      }
+      #scratch {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="base">
+        <h4>You Won</h4>
+        <h3>$10</h3>
+      </div>
+      <canvas id="scratch" width="200" height="200"></canvas>
+    </div>
+
+    <script>
+      let canvas = document.getElementById('scratch');
+      let context = canvas.getContext('2d');
+      const init = () => {
+        let gradientColor = context.createLinearGradient(0, 0, 135, 135);
+        gradientColor.addColorStop(0, '#c3a3f1');
+        gradientColor.addColorStop(1, '#6414e9');
+        context.fillStyle = gradientColor;
+        context.fillRect(0, 0, 200, 200);
+      };
+
+      // 처음에 마우스 X 및 마우스 Y 위치는 0
+      let mouseX = 0;
+      let mouseY = 0;
+      let isDragged = false;
+
+      // 터치 및 마우스 이벤트
+      let events = {
+        mouse: {
+          down: 'mousedown',
+          move: 'mousemove',
+          up: 'mouseup',
+        },
+        touch: {
+          down: 'touchstart',
+          move: 'touchmove',
+          up: 'touchend',
+        },
+      };
+
+      let deviceType = '';
+
+      // Detech touch device
+      const isTouchDevice = () => {
+        try {
+          // 터치 이벤트를 만듦. 데스크톱에서 실패하고 오류가 발생할 수 있다.
+          document.createEvent('TouchEvent');
+          deviceType = 'touch';
+          return true;
+        } catch (e) {
+          deviceType = 'mouse';
+          return false;
+        }
+      }
+
+      // 캔버스의 왼쪽과 맨 위로 이동
+      let rectLeft = canvas.getBoundingClientRect().left;
+      let rectTop = canvas.getBoundingClientRect().top;
+
+      // 마우스/터치의 정확한 x 및 y 위치
+      const getXY = (e) => {
+        mouseX = (!isTouchDevice() ? e.pageX : e.touches[0].pageX) - rectLeft;
+        mouseY = (!isTouchDevice() ? e.pageY : e.touches[0].pageY) - rectTop;
+      };
+
+      isTouchDevice();
+
+      // Start Scratch
+      canvas.addEventListener(events[deviceType].down, (event) => {
+        isDragged = true;
+        // Get x and y position
+        getXY(event);
+        scratch(mouseX, mouseY);
+      });
+
+      // mousemove / touchmove
+      canvas.addEventListener(events[deviceType].move, (event) => {
+        if (!isTouchDevice()) {
+          event.preventDefault();
+        }
+        if (isDragged) {
+          getXY(event);
+          scratch(mouseX, mouseY);
+        }
+      });
+
+      // stop drawing
+      canvas.addEventListener(events[deviceType].up, () => {
+        isDragged = false;
+      });
+
+      //If mouse leaves the square
+      canvas.addEventListener("mouseleave", () => {
+        isDragged = false;
+      });
+
+      const scratch = (x, y) => {
+        // destination-out은 기존 캔버스 내용 뒤에 새 도형을 그린다.
+        context.globalCompositeOperation = 'destination-out';
+        context.beginPath();
+        // 호는 원을 만듭니다 - x, y, screw, 시작 각도, 끝 각도
+        context.arc(x, y, 12, 0, 2 * Math.PI);
+        context.fill();
+      };
+
+      window.onload = init();
+
+    </script>
+  </body>
+</html>
