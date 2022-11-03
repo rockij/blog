@@ -24,25 +24,8 @@ body {
   width: 95%;
   margin: 0 auto;
 }
-#search-container {
-  margin: 1em 0;
-}
-#search-container input {
-  background-color: transparent;
-  width: 40%;
-  border-bottom: 2px solid darkkhaki;
-  padding: 1em 0.3em;
-}
-#search-container input:focus {
-  border-bottom-color: darkkhaki;
-}
-#search-container button {
-  padding: 1em 2em;
-  margin-left: 1em;
-  background-color: darkkhaki;
-  color: #000;
-  border-radius: 5px;
-  margin-top: 0.5em;
+h1 {
+  padding: 20px 0;
 }
 .button-value {
   border: 2px solid darkkhaki;
@@ -66,20 +49,17 @@ body {
   margin-top: 10px;
 }
 .card a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   text-decoration: none;
   color: #999;
 }
+.button-value {
+  text-transform: uppercase;
+}
 .outlink::after {
-  content:'';
-  width: 7px;
-  height: 7px;
-  border-width: 1px 1px 0 0;
-  border-style: solid;
-  border-color: #999;
+  content:'➜';
   margin-left: 4px;
-  transform: rotate(45deg);
 }
 .hide {
   display: none;
@@ -90,65 +70,47 @@ body {
 <body>
 
 <div class="wrapper">
-  <div id="search-container">
+  <!-- <div id="search-container">
     <input
       type="search"
       id="search-input"
       placeholder="Search product name here.."
     />
     <button id="search">Search</button>
-  </div>
+  </div> -->
+  <h1>
+    <img
+      src="https://rockij.github.io/portfolio/resource/image/logo-ijung.png"
+      alt="logo"
+    />
+  </h1>
   <div id="buttons">
-    <button class="button-value" onclick="filterProduct('all')">All</button>
+    <button class="button-value" onclick="filterProduct('all')">all</button>
     <button class="button-value" onclick="filterProduct('basic')">
       basic
     </button>
     <button class="button-value" onclick="filterProduct('workspace')">
       workspace
     </button>
-    <button class="button-value" onclick="filterProduct('Jacket')">
-      Jacket
+    <button class="button-value" onclick="filterProduct('css-trick')">
+      css-trick
     </button>
-    <button class="button-value" onclick="filterProduct('Watch')">
-      Watch
+    <button class="button-value" onclick="filterProduct('mouse-effect')">
+      mouse-effect
     </button>
   </div>
   <div id="products"></div>
 </div>
 
+<script src="resources/js/blogItem/basic.js"></script>
+<script src="resources/js/blogItem/workspace.js"></script>
 <script>
 let products = {
   data: [
-    {
-      productName: "item정렬 방식 flex vs grid",
-      category: "basic",
-      url: "basic/flex_grid_item_layout_compare.html",
-    },
-    {
-      productName: "CSS로 목록 스타일을 개선하는 2가지 방법",
-      category: "basic",
-      url: "basic/2ways_improve_list_styling.html",
-    },
-    {
-      productName: "guide - 웹퍼블리싱 가이드 sample",
-      category: "workspace",
-      url: "https://rockij.github.io/portfolio/project/min/010pay/resources/html/ui/template.html",
-    },
-    {
-      productName: "CSS 변수 모음 Open-Props",
-      category: "workspace",
-      url: "https://open-props.style/",
-      linkType: 'outlink',
-    },
-    // {
-    //   productName: "",
-    //   category: "",
-    //   url: "",
-    //   linkType: 'outlink',
-    // },
+    ...basic,
+    ...workspace,
   ]
 };
-
 for (let i of products.data) {
   // create card
   let card = document.createElement('div');
@@ -163,7 +125,7 @@ for (let i of products.data) {
   name.setAttribute('target', '_blank');
   name.classList.add('project-name');
   name.classList.add(i.linkType);
-  name.innerText = i.productName.toUpperCase();
+  name.innerText = i.productName.toLowerCase();
   container.appendChild(name);
   card.appendChild(container);
   document.getElementById('products').appendChild(card);
@@ -173,7 +135,9 @@ function filterProduct(value) {
   let buttons = document.querySelectorAll('.button-value');
   buttons.forEach((button) => {
     // 값이 내부 값인지 확인
-    if (value.toUpperCase() == button.innerText.toUpperCase()) {
+    console.log(value);
+    console.log(button.innerText);
+    if (value.toLowerCase() == button.innerText.toLowerCase()) {
       button.classList.add('active');
     } else {
       button.classList.remove('active');
@@ -198,23 +162,23 @@ function filterProduct(value) {
 }
 
 // search button click
-document.getElementById('search').addEventListener('click', () => {
-  let searchInput = document.getElementById('search-input').value;
-  let elements = document.querySelectorAll('.product-name');
-  let cards = document.querySelectorAll('.card');
+// document.getElementById('search').addEventListener('click', () => {
+//   let searchInput = document.getElementById('search-input').value;
+//   let elements = document.querySelectorAll('.product-name');
+//   let cards = document.querySelectorAll('.card');
 
-  // loop through all elements
-  elements.forEach((element, index) => {
-    // 텍스트에 검색 값이 포함되어 있는지 확인
-    if (element.innerText.includes(searchInput.toUpperCase())) {
-      // display matching card
-      cards[index].classList.remove('hide');
-    } else {
-      // hide others
-      cards[index].classList.add('hide');
-    }
-  });
-});
+//   // loop through all elements
+//   elements.forEach((element, index) => {
+//     // 텍스트에 검색 값이 포함되어 있는지 확인
+//     if (element.innerText.includes(searchInput.toLowerCase())) {
+//       // display matching card
+//       cards[index].classList.remove('hide');
+//     } else {
+//       // hide others
+//       cards[index].classList.add('hide');
+//     }
+//   });
+// });
 
 window.onload = () => {
   filterProduct('all');
