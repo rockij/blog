@@ -17,20 +17,31 @@
   border: none;
   outline: none;
 }
-body {
+html, body {
   background-color: #101010;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: transparent;
+  }  
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #101010;
+  }  
 }
 .wrapper {
   width: 95%;
   margin: 0 auto;
 }
 h1 {
-  padding: 20px 0;
+  padding: 20px 0 5px;
 }
 .button-value {
   border: 2px solid darkkhaki;
-  padding: 1em 2.2em;
+  padding: 12px 20px;
   border-radius: 3em;
+  margin-top: 10px;
   background-color: transparent;
   color: darkkhaki;
   cursor: pointer;
@@ -86,29 +97,30 @@ h1 {
   </h1>
   <div id="buttons">
     <button class="button-value" onclick="filterProduct('all')">all</button>
-    <button class="button-value" onclick="filterProduct('basic')">
-      basic
-    </button>
-    <button class="button-value" onclick="filterProduct('workspace')">
-      workspace
-    </button>
-    <button class="button-value" onclick="filterProduct('css-trick')">
-      css-trick
-    </button>
-    <button class="button-value" onclick="filterProduct('mouse-effect')">
-      mouse-effect
-    </button>
+    <button class="button-value" onclick="filterProduct('basic')">basic</button>
+    <button class="button-value" onclick="filterProduct('workspace')">workspace</button>
+    <button class="button-value" onclick="filterProduct('flex-grid')">flex-grid</button>
+    <button class="button-value" onclick="filterProduct('image')">image</button>
+    <button class="button-value" onclick="filterProduct('form')">form</button>
+    <button class="button-value" onclick="filterProduct('icon-loading')">icon-loading</button>
+    <button class="button-value" onclick="filterProduct('background-border')">background-border</button>
+    <button class="button-value" onclick="filterProduct('text-effect')">text-effect</button>
+    <button class="button-value" onclick="filterProduct('mouse-effect')">mouse-effect</button>
+    <button class="button-value" onclick="filterProduct('scroll-parallax')">scroll-parallax</button>
+    <button class="button-value" onclick="filterProduct('slide')">slide</button>
+    <button class="button-value" onclick="filterProduct('layout')">layout</button>
+    <button class="button-value" onclick="filterProduct('css-trick')">css-trick</button>
   </div>
   <div id="products"></div>
 </div>
 
-<script src="resources/js/blogItem/basic.js"></script>
 <script src="resources/js/blogItem/workspace.js"></script>
+<script src="resources/js/blogItem/basic.js"></script>
 <script>
 let products = {
   data: [
-    ...basic,
     ...workspace,
+    ...basic,
   ]
 };
 for (let i of products.data) {
