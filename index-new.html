@@ -127,7 +127,7 @@ for (let i of products.data) {
   // create card
   let card = document.createElement('div');
   // 카드에는 범주가 있어야 하며 처음에는 숨겨져 있어야 한다.
-  card.classList.add('card', i.category, 'hide');
+  card.classList.add('card', i.category, i.category2, 'hide');
   // container
   let container = document.createElement('div');
   container.classList.add('container');

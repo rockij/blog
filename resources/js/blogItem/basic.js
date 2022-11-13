@@ -33,7 +33,8 @@ let basic = [
   },
   {
     productName: "@supports selector()",
-    category: `${'basic','css-trick'}`,
+    category: 'basic',
+    category2: 'css-trick',
     url: "https://css-tricks.com/supports-selector/",
     linkType: 'outlink',
   },
@@ -59,7 +60,8 @@ let basic = [
   },
   {
     productName: "투명한 PNG 이미지 그림자 적용",
-    category: `${'image', 'background-border'}`,
+    category: 'image',
+    category2: 'background-border',
     url: "basic/shadows_transparent_PNG.html",
   },
   {
