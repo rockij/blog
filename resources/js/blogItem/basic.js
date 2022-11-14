@@ -301,6 +301,12 @@ let basic = [
     url: "page-bg/background_gradient_embraced.html",
     linkType: 'outlink',
   },
+  {
+    productName: "배경 이미지의 불투명도를 낮추다",
+    category: "background-border",
+    category2: "image",
+    url: "page-bg/lower_opacity_background_image.html",
+  },
   // {
   //   productName: "",
   //   category: `${'', ''}`,
