@@ -539,6 +539,16 @@ let items = [
     category: 'scroll-parallax',
     url: 'scroll-parallax/reveal_elements_on_page_scroll.html',
   },
+  {
+    productName: 'fullpage - 풀페이지 반응형 구간에 따라 풀페이지 죽이고 살리기',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/fullpage.js_destory_and_rebuild_base.html',
+  },
+  {
+    productName: 'scrollTrigger - 스크롤 콘텐츠에 대한 고정 탐색 중지(js)',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/stop_fixed_navigations_covering_content_scroll.html',
+  },
   // {
   //   productName: '',
   //   category: '',
