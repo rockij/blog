@@ -7,7 +7,7 @@ let outlink = [
   },
   {
     productName: "처음으로 css grid 배우기",
-    category: 'flex-grid',
+    category: 'layout',
     url: "https://dev.to/thouravi/learning-css-grid-for-the-first-time-5amb",
     linkType: 'outlink',
   },
@@ -101,6 +101,31 @@ let outlink = [
     category: 'text-effect',
     category2: 'animation',
     url: 'https://camwiegert.github.io/baffle/',
+    linkType: 'outlink',
+  },
+  {
+    productName: 'parallax - 자바 스크립트로 시차 효과를 얻는 가장 쉬운 방법 simplePARALLAX.js',
+    category: 'scroll-parallax',
+    url: 'https://simpleparallax.com/',
+    linkType: 'outlink',
+  },
+  {
+    productName: '애니메이션 중 스크롤바 숨기기(css-tricks)',
+    category: 'scroll-parallax',
+    category2: 'css-trick',
+    url: 'https://css-tricks.com/hide-scrollbars-during-an-animation/',
+    linkType: 'outlink',
+  },
+  {
+    productName: 'scrollTrigger - AOS 애니메이션 sample(codepen)',
+    category: 'scroll-parallax',
+    url: 'https://codepen.io/letsbleachthis/pen/zewKYE',
+    linkType: 'outlink',
+  },
+  {
+    productName: 'parallax - 경량의 js Library(Rellax.js)',
+    category: 'scroll-parallax',
+    url: 'https://dixonandmoe.com/rellax/',
     linkType: 'outlink',
   },
   // {

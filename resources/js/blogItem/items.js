@@ -1,7 +1,7 @@
 let items = [
   {
     productName: "item정렬 방식 flex vs grid",
-    category: 'flex-grid',
+    category: 'layout',
     url: "basic/flex_grid_item_layout_compare.html",
   },
   {
@@ -16,7 +16,7 @@ let items = [
   },
   {
     productName: "grid를 이용한 덜 절대적인 위치 잡기",
-    category: 'flex-grid',
+    category: 'layout',
     url: "basic/grid/absolute_positioning_modern.html",
   },
   {
@@ -47,18 +47,18 @@ let items = [
   },
   {
     productName: "프로젝트에서 사용할 수 있는 flexbox 디자인 패턴",
-    category: 'flex-grid',
+    category: 'layout',
     url: "basic/flex/flexbox_design_patterns_projects.html",
   },
   {
     productName: "css auto-margin 정렬",
-    category: 'flex-grid',
+    category: 'layout',
     category2: 'layout',
     url: "basic/auto_margin.html",
   },
   {
     productName: "그리드로 쉽게 콘텐츠 겹침",
-    category: 'flex-grid',
+    category: 'layout',
     url: "basic/grid/easily_overlap_content.html",
   },
   {
@@ -548,6 +548,155 @@ let items = [
     productName: 'scrollTrigger - 스크롤 콘텐츠에 대한 고정 탐색 중지(js)',
     category: 'scroll-parallax',
     url: 'scroll-parallax/stop_fixed_navigations_covering_content_scroll.html',
+  },
+  {
+    productName: 'header - 교차로 관찰자가 있는 고정 헤더(js)',
+    category: 'scroll-parallax',
+    category2: 'layout',
+    url: 'scroll-parallax/fixed_header_intersection_observer.html',
+  },
+  {
+    productName: 'scrollTrigger - 수평 미디어 스크롤러 생성',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/horizontal_media_scroller.html',
+  },
+  {
+    productName: 'scrollTrigger - 스크롤 마지막에 리스트 추가 (lodash.min.js)',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/infnite_scrolling_throttled.html',
+  },
+  {
+    productName: 'scrollTrigger - Typography 모션 효과(GSAP)',
+    category: 'scroll-parallax',
+    category2: 'text-effect',
+    url: 'scroll-parallax/scrollTrigger_typography_animation_GSAP.html',
+  },
+  {
+    productName: 'scrollTrigger - scroll 길이에 맞춰 SVG그리기',
+    category: 'scroll-parallax',
+    category2: 'icon-loading',
+    url: 'scroll-parallax/svg_animation_onscroll.html',
+  },
+  {
+    productName: 'parallax - 창의적인 시차 스크롤링(jarallax.js)',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/stunning_parallax_scrolling.html',
+  },
+  {
+    productName: 'scrollTrigger - 스크롤시 고정되다가 다시 올라가는 애니메이션(scrollMagic)',
+    category: 'scroll-parallax',
+    category2: 'layout',
+    url: 'scroll-parallax/scrollMagic_library_fixed_again_scrolling.html',
+  },
+  {
+    productName: 'ScrollTrigger - GSAP 간단한 사용법',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/ScrollTrigger_GSAP_page_scroll.html',
+  },
+  {
+    productName: 'image-more - 스크롤에 대한 무한한 이미지',
+    category: 'scroll-parallax',
+    category2: 'image',
+    url: 'scroll-parallax/infinite_images_on_scroll.html',
+  },
+  {
+    productName: 'scrollbar - 크리에이티브 페이지 스크롤 진행률 표시줄(js)',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/creative_page_scroll_progress_bar.html',
+  },
+  {
+    productName: 'header - 스크롤시 헤더 탐색 위로 올리면 다시 노출(js)',
+    category: 'scroll-parallax',
+    category2: 'layout',
+    url: 'scroll-parallax/reveal_nav_on_scroll.html',
+  },
+  {
+    productName: 'header - 스크롤 시작하면 헤더 노출 맨위로 올라가면 없어짐(js)',
+    category: 'scroll-parallax',
+    category2: 'layout',
+    url: 'scroll-parallax/hide_header_on_scroll_up_show.html',
+  },
+  {
+    productName: 'header - 스크롤시 헤더 탐색 위로 올리면 다시 노출2(js)',
+    category: 'scroll-parallax',
+    category2: 'layout',
+    url: 'scroll-parallax/hide_menu_on_scroll_sticky_navbar.html',
+  },
+  {
+    productName: 'shadow - 스크롤시 그림자 노출여부',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/gradient_scroll_shadow.html',
+  },
+  {
+    productName: 'progress - 페이지 스크롤시 원형 진행률 표시줄',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/page_scroll_percentage_circular_progress_bar.html',
+  },
+  {
+    productName: 'scrollTrigger - 스크롤시 비디오 배경 fadeout',
+    category: 'scroll-parallax',
+    category2: 'background-border',
+    url: 'scroll-parallax/fullscreen_video_background_fadeout_scroll.html',
+  },
+  {
+    productName: 'parallax - 다른 이미지들 순차적적 움직임',
+    category: 'scroll-parallax',
+    category2: 'image',
+    url: 'scroll-parallax/parallax_scrolling_effects_mountain.html',
+  },
+  {
+    productName: 'scrollTrigger - 스크롤시 시차 물결 효과',
+    category: 'scroll-parallax',
+    category2: 'background-border',
+    url: 'scroll-parallax/parallax_water_wave_scrolling_effect.html',
+  },
+  {
+    productName: 'scrollTrigger - 스크롤시 기울어진 배경 평평하게 전환',
+    category: 'scroll-parallax',
+    category2: 'background-border',
+    url: 'scroll-parallax/transform_effects_on_scroll_skewed.html',
+  },
+  {
+    productName: 'scroll-behavior - 탭선택시, 스크롤시 부드러운 화면 스크롤(no js)',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/simple_sticky_navbar_smooth_scroll.html',
+  },
+  {
+    productName: 'transform - 스크롤시 상단 동그라미 평평하게',
+    category: 'scroll-parallax',
+    category2: 'background-border',
+    url: 'scroll-parallax/scroll_transform.html',
+  },
+  {
+    productName: 'indicator - 스크롤 길이 체크',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/scroll_indicator.html',
+  },
+  {
+    productName: 'scroll-snap - fullpage scroll',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/fullpage_scrolling_pure_css_scroll.html',
+  },
+  {
+    productName: 'smooth scrolling - 스크롤시 부드럽게',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/add_smooth_scrolling_experience_vanilla.html',
+  },
+  {
+    productName: 'parallax - 다음 장면이 이전 장면을 덮고 형태',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/create_a_parallax_scrolling_effects_using_only_htmlcss.html',
+  },
+  {
+    productName: 'scrollTrigger - 스크롤 할수록 보여지는 크게 커짐',
+    category: 'scroll-parallax',
+    category2: 'icon-loading',
+    url: 'scroll-parallax/image_transform_scroll_css3_vanilla.html',
+  },
+  {
+    productName: 'parallax - 간단한 parallax scrolling(no js)',
+    category: 'scroll-parallax',
+    url: 'scroll-parallax/pure_css_parallax_scrolling_nojs.html',
   },
   // {
   //   productName: '',
