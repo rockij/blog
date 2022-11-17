@@ -717,7 +717,8 @@ let items = [
   },
   {
     productName: 'scrollTrigger - scrolling 전체영역 한칸씩 덮기(gsap)',
-    category: '',
+    category: 'scroll-parallax',
+    category2: 'layout',
     url: 'scroll-parallax/Smooth_scrolling_on_full_landing_sections.html',
   },
   {
