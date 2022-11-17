@@ -128,6 +128,32 @@ let outlink = [
     url: 'https://dixonandmoe.com/rellax/',
     linkType: 'outlink',
   },
+  {
+    productName: '플로팅 요소를 생성을 위한 툴킷 (floating-ui)',
+    category: 'layout',
+    url: 'https://floating-ui.com/',
+    linkType: 'outlink',
+  },
+  {
+    productName: '애니메이션 툴팁 추가(tippy.js)',
+    category: 'popup',
+    url: 'https://atomiks.github.io/tippyjs/',
+    linkType: 'outlink',
+  },
+  {
+    productName: 'hover - jQuery를 위한 60+fps 경량 시차 호버 효과 - tilt.js',
+    category: 'mouse-effect',
+    category2: 'animation',
+    url: 'https://gijsroge.github.io/tilt.js/',
+    linkType: 'outlink',
+  },
+  {
+    productName: 'hover 라이브러리(hover.css)',
+    category: 'mouse-effect',
+    category2: 'animation',
+    url: 'https://ianlunn.github.io/Hover/',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
