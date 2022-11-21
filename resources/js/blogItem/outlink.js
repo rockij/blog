@@ -154,6 +154,18 @@ let outlink = [
     url: 'https://ianlunn.github.io/Hover/',
     linkType: 'outlink',
   },
+  {
+    productName: '현재 15 개의 아이콘 세트 와 4,623개의 아이콘 - SVGBox',
+    category: 'icon-loading',
+    url: 'https://svgbox.net/iconsets',
+    linkType: 'outlink',
+  },
+  {
+    productName: '프로그레스 바 프리 로더 Pace JS',
+    category: 'icon-loading',
+    url: 'https://codebyzach.github.io/pace/',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
