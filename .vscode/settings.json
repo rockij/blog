@@ -6,5 +6,5 @@
   "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
   "editor.useTabStops": true,
   "diffEditor.ignoreTrimWhitespace": true,
-  "editor.fontSize": 12
+  "editor.fontSize": 13
 }
