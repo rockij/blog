@@ -200,6 +200,12 @@ let outlink = [
     url: 'https://css-tricks.com/my-struggle-to-use-and-animate-a-conic-gradient-in-svg/',
     linkType: 'outlink',
   },
+  {
+    productName: 'calendar - iOS 스타일 날짜 선택기(rolldate)',
+    category: 'calendar',
+    url: 'https://www.cssscript.com/mobile-ios-date-picker-rolldate/',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
