@@ -1522,6 +1522,78 @@ let items = [
     category: 'form',
     url: 'form/show_hide_password_toggle.html',
   },
+  {
+    productName: '겹치는 막대 차트',
+    category: 'chart-graph',
+    url: 'graph/overlapping_bar_chart.html',
+  },
+  {
+    productName: '원 그라데이션 경계 애니메이션(only-css)',
+    category: 'background-border',
+    category2: 'animation',
+    url: 'graph/circle_gradient_border_animation.html',
+  },
+  {
+    productName: 'jquery-circle-progress 이용한 동그라미 진행률',
+    category: 'chart-graph',
+    url: 'graph/circular_progress_bar_jquery.html',
+  },
+  {
+    productName: '동적 동그라미 진행률(conic-gradient)',
+    category: 'chart-graph',
+    url: 'graph/dynamic_circular_progress_bar.html',
+  },
+  {
+    productName: '멋진 타임 타이머(jquery)',
+    category: 'chart-graph',
+    url: 'graph/awesome_time_timer.html',
+  },
+  {
+    productName: 'Javascript를 사용한 제품 필터 및 검색',
+    category: 'form',
+    url: 'etc/product_filter_search_javascript.html',
+  },
+  {
+    productName: 'CSS 마스크 및 클립 경로 속성을 사용하여 모서리를 자르는 트릭',
+    category: 'background-border',
+    url: 'etc/cut_corners_mask_clip-path_properties.html',
+  },
+  {
+    productName: '픽셀 타일 이미지 아트(Only Css)',
+    category: 'image',
+    url: 'etc/pixel_image_pixelated_tiles.html',
+  },
+  {
+    productName: '사용자 브라우저 및 OS 검색',
+    category: 'basic',
+    url: 'etc/detect_user_browser_os_using.html',
+  },
+  {
+    productName: '키 누르기 및 키 코드 검색',
+    category: 'basic',
+    url: 'etc/detect_key_presses_key_code.html',
+  },
+  {
+    productName: '세로로 잘라지면서 3D Flip animation',
+    category: 'image',
+    url: 'etc/3Dflip_hover_animation.html',
+  },
+  {
+    productName: '거친 그라디언트(css-tricks)',
+    category: 'background-border',
+    url: 'https://css-tricks.com/grainy-gradients/',
+  },
+  {
+    productName: 'SVG TV 노이즈 효과',
+    category: 'etc',
+    url: 'etc/SVG_TV_noise_effects.html',
+  },
+  {
+    productName: '3D flip santa card',
+    category: 'etc',
+    category2: 'animation',
+    url: 'etc/3D_flip_santa_card.html',
+  },
   // {
   //   productName: '',
   //   category: '',

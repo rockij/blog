@@ -206,6 +206,19 @@ let outlink = [
     url: 'https://www.cssscript.com/mobile-ios-date-picker-rolldate/',
     linkType: 'outlink',
   },
+  {
+    productName: '이미지에서 개체 제거',
+    category: 'image',
+    url: 'https://cleanup.pictures/',
+    linkType: 'outlink',
+  },
+  {
+    productName: '비디오, GIF 배경 제거',
+    category: 'image',
+    category2: 'background-border',
+    url: 'https://www.unscreen.com/upload',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
