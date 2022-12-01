@@ -219,6 +219,12 @@ let outlink = [
     url: 'https://www.unscreen.com/upload',
     linkType: 'outlink',
   },
+  {
+    productName: '거친 그라디언트(css-tricks)',
+    category: 'background-border',
+    url: 'https://css-tricks.com/grainy-gradients/',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
