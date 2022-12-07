@@ -1165,10 +1165,10 @@ let items = [
     url: 'html/isometric_cube.html',
   },
   {
-    productName: 'rotating_border_animation.html',
+    productName: '박스 주변 테두리로 라인회전 animation',
     category: 'background-border',
     category2: 'animation',
-    url: 'html/rotate - 박스 주변 테두리로 라인회전 animation',
+    url: 'rotating_border_animation.html',
   },
   {
     productName: '뾰족한 그림자가 양끝에 나와있는 카드',
