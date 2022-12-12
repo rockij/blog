@@ -13,7 +13,7 @@ let workspace = [
   {
     productName: "guide - 작업물 보기 리스트(worksheet)",
     category: "workspace",
-    url: "basic/worksheet.html",
+    url: "html/worksheet.html",
   },
   {
     productName: "WebPageTest를 사용한 성능 테스트",

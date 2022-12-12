@@ -20,12 +20,12 @@ html, body {
 @media (prefers-color-scheme: dark) {
   body {
     background-color: transparent;
-  }  
+  }
 }
 @media (prefers-color-scheme: light) {
   body {
     background-color: #101010;
-  }  
+  }
 }
 .wrapper {
   width: 95%;
@@ -78,6 +78,15 @@ nav a {
   color: darkkhaki;
   margin-right: 30px;
 }
+#preview {
+  position: fixed;
+  top: 320px; right: 0;
+  height: calc(100vh - 320px);
+  width: 50%;
+  border-width: 2px 0 0 2px;
+  border-style:  solid;
+  border-color: #333;
+}
 </style>
 </head>
 
@@ -117,6 +126,7 @@ nav a {
     <button class="button-value" onclick="filterProduct('etc')">etc</button>
   </div>
   <div id="products"></div>
+  <iframe id="preview" src="" frameborder="0"></iframe>
 </div>
 
 <script src="resources/js/blogItem/workspace.js"></script>
@@ -133,6 +143,7 @@ let products = {
 for (let i of products.data) {
   // create card
   let card = document.createElement('div');
+  let preview = document.querySelector('#preview');
   // 카드에는 범주가 있어야 하며 처음에는 숨겨져 있어야 한다.
   card.classList.add('card', i.category, i.category2, 'hide');
   // container
@@ -148,6 +159,9 @@ for (let i of products.data) {
   container.appendChild(name);
   card.appendChild(container);
   document.getElementById('products').appendChild(card);
+  name.addEventListener('mouseover', () => {
+    preview.setAttribute('src', i.url);
+  });
 }
 
 function filterProduct(value) {
@@ -162,7 +176,7 @@ function filterProduct(value) {
       button.classList.remove('active');
     }
   });
-  
+
   // select all cards
   let elements = document.querySelectorAll('.card');
   // loop through all cards
