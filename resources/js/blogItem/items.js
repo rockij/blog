@@ -1589,6 +1589,11 @@ let items = [
     category2: 'animation',
     url: 'html/3D_flip_santa_card.html',
   },
+  {
+    productName: 'OTP 입력 필드',
+    category: 'form',
+    url: 'html/otp_input_field.html',
+  },
   // {
   //   productName: '',
   //   category: '',
