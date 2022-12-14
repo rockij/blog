@@ -24,7 +24,7 @@ body {
 
 <body>
 
-<div id="time" role="timer" aria-atomic="true">0:00</div>
+<div id="time" role="timer" aria-atomic="true">0:00남음</div>
 <ul>
   <li>aria-atomic : 래퍼의 모든 콘텐츠를 발표하도록 하는 추가 속성 해당 속성은 true</li>
   <li>
@@ -39,10 +39,8 @@ body {
 <script>
 var secondsRemaining;
 var intervalHandle;
-var intervalArea;
 
 function tick(){
-	// grab the h1
 	var timeDisplay = document.getElementById("time");
 
 	// turn the seconds into mm:ss
@@ -64,9 +62,8 @@ function tick(){
 	if (secondsRemaining === 0){
 		alert("Done!");
 		clearInterval(intervalHandle);
-		resetPage();
 	}
-  if (secondsRemaining%10 === 0){
+  if (secondsRemaining%5 === 0){
     console.log("5Done!");
     timeDisplay.setAttribute('aria-live', 'assertive');
     timeDisplay.setAttribute('role', 'alert');
@@ -75,9 +72,8 @@ function tick(){
       timeDisplay.setAttribute('role', 'timer');
     }, 999);
   }
-  console.log(secondsRemaining);
+  // console.log(secondsRemaining);
 
-	//subtract from seconds remaining
 	secondsRemaining--;
 
 }
@@ -108,7 +104,6 @@ function startCountdown(){
 	//every second, call the "tick" function
 	// have to make it into a variable so that you can stop the interval later!!!
 	intervalHandle = setInterval(tick, 1000);
-	// intervalAria = setInterval(aria, 5000);
 
 }
 
