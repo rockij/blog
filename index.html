@@ -42,7 +42,7 @@ h1 img {
 }
 .button-value {
   border: 2px solid darkkhaki;
-  padding: 9px 16px;
+  padding: 7px 16px;
   border-radius: 3em;
   margin-top: 10px;
   background-color: transparent;
@@ -80,7 +80,7 @@ nav {
 }
 nav a {
   color: darkkhaki;
-  margin-right: 30px;
+  padding-right: 30px;
 }
 #preview {
   position: fixed;
@@ -90,6 +90,26 @@ nav a {
   border-width: 2px 0 0 2px;
   border-style:  solid;
   border-color: #333;
+}
+@media (max-width: 586px) { 
+  #preview {
+    display: none;
+  }
+  #buttons {
+    width: auto;
+  }
+  .button-value {
+    padding: 10px 20px;
+  }
+  nav {
+    flex-direction: column;
+    top: 15px;
+    left: 160px;
+  }
+  nav a {
+    margin-right: 0;
+    padding: 10px;
+  }
 }
 </style>
 </head>
@@ -127,6 +147,7 @@ nav a {
     <button class="button-value" onclick="filterProduct('animation')">animation</button>
     <button class="button-value" onclick="filterProduct('css-trick')">css-trick</button>
     <button class="button-value" onclick="filterProduct('calendar')">calendar</button>
+    <button class="button-value" onclick="filterProduct('a11y')">a11y</button>
     <button class="button-value" onclick="filterProduct('etc')">etc</button>
   </div>
   <div id="products"></div>
@@ -135,6 +156,7 @@ nav a {
 
 <script src="resources/js/blogItem/workspace.js"></script>
 <script src="resources/js/blogItem/items.js"></script>
+<script src="resources/js/blogItem/a11y.js"></script>
 <script src="resources/js/blogItem/outlink.js"></script>
 <script>
 let products = {
@@ -142,6 +164,7 @@ let products = {
     ...workspace,
     ...items,
     ...outlink,
+    ...a11y,
   ]
 };
 for (let i of products.data) {

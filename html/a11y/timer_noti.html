@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+<title></title>
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+}
+#number {
+  font-family: monospace;
+  color: #cc0000;
+  font-weight: bold;
+  font-size: 1.25em;
+  vertical-align: middle;
+}
+</style>
+</head>
+
+<body>
+
+  <div id="countdown" role="timer" aria-atomic="true">
+    <span id="number">30</span> seconds left!
+  </div>
+
+<script>
+function decrement() {
+  let numElement = document.querySelector('#number');
+  let liveRegion = document.querySelector('#countdown');
+  let newNumber = parseInt(numElement.textContent - 1);
+
+  if (newNumber > -1) {
+    numElement.textContent = newNumber;
+  }
+
+  if(newNumber == 10) {
+    liveRegion.setAttribute('aria-live', 'assertive');
+    liveRegion.setAttribute('role', 'alert');
+    setTimeout(function() {
+      liveRegion.removeAttribute('aria-live');
+      liveRegion.setAttribute('role', 'timer');
+    }, 999);
+  }
+}
+window.setInterval(function() {
+  decrement();
+}, 1000);
+</script>
+
+</body>
+</html>
