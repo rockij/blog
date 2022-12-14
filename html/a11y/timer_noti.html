@@ -37,15 +37,15 @@ body {
 </ul>
 
 <script>
-var secondsRemaining;
-var intervalHandle;
+let secondsRemaining;
+let intervalHandle;
 
 function tick(){
-	var timeDisplay = document.getElementById("time");
+	const timeDisplay = document.getElementById("time");
 
 	// turn the seconds into mm:ss
-	var min = Math.floor(secondsRemaining / 60);
-	var sec = secondsRemaining - (min * 60);
+	let min = Math.floor(secondsRemaining / 60);
+	let sec = secondsRemaining - (min * 60);
 
 	//add a leading zero (as a string value) if seconds less than 10
 	if (sec < 10) {
@@ -53,17 +53,18 @@ function tick(){
 	}
 
 	// concatenate with colon
-	var message = min.toString() + ':' + sec + '남음';
+	let message = min.toString() + ':' + sec + '남음';
 
 	// now change the display
 	timeDisplay.innerHTML = message;
 
 	// stop is down to zero
 	if (secondsRemaining === 0){
-		alert("Done!");
+		// alert("Done!");
 		clearInterval(intervalHandle);
 	}
-  if (secondsRemaining%5 === 0){
+  // 10초 마다 읽어주기
+  if (secondsRemaining%10 === 0){
     console.log("5Done!");
     timeDisplay.setAttribute('aria-live', 'assertive');
     timeDisplay.setAttribute('role', 'alert');
@@ -83,14 +84,13 @@ function aria() {
 		alert("AriaDone!");
 		clearInterval(intervalArea);
 	}
-
 	secondsRemaining--;
 }
 
 function startCountdown(){
 
 	// get countents of the "minutes" text box
-	var minutes = 1;
+	let minutes = 1;
 	
 	// check if not a number
 	if (isNaN(minutes)){
@@ -102,15 +102,13 @@ function startCountdown(){
 	secondsRemaining = minutes * 60;
 	
 	//every second, call the "tick" function
-	// have to make it into a variable so that you can stop the interval later!!!
+	// have to make it into a letiable so that you can stop the interval later!!!
 	intervalHandle = setInterval(tick, 1000);
 
 }
 
 window.onload = function(){
-
   startCountdown();
-
 }
 
 </script>
