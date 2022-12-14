@@ -1436,9 +1436,9 @@ let items = [
     url: 'html/checkbox_3d_rotation.html',
   },
   {
-    productName: 'No-JS_typing_suggestions.html',
+    productName: 'html/input - js필요할거 같지만 필요없는 입력요소',
     category: 'form',
-    url: 'html/input - js필요할거 같지만 필요없는 입력요소(only pc)',
+    url: 'html/No-JS_typing_suggestions.html',
   },
   {
     productName: 'input - 검색입력 Google 검색 엔진 적용',
