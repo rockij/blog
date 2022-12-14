@@ -40,14 +40,14 @@ function decrement() {
     numElement.textContent = newNumber;
   }
 
-  // if(newNumber == 10) {
-  //   liveRegion.setAttribute('aria-live', 'assertive');
-  //   liveRegion.setAttribute('role', 'alert');
-  //   setTimeout(function() {
-  //     liveRegion.removeAttribute('aria-live');
-  //     liveRegion.setAttribute('role', 'timer');
-  //   }, 999);
-  // }
+  if(newNumber == 10) {
+    liveRegion.setAttribute('aria-live', 'assertive');
+    liveRegion.setAttribute('role', 'alert');
+    // setTimeout(function() {
+    //   liveRegion.removeAttribute('aria-live');
+    //   liveRegion.setAttribute('role', 'timer');
+    // }, 999);
+  }
 }
 window.setInterval(function() {
   decrement();
