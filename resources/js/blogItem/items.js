@@ -1609,6 +1609,11 @@ let items = [
     category: 'slide',
     url: 'html/css_marquee_vertical.html',
   },
+  {
+    productName: '무한으로 흐르는 컨텐츠 토글 - 세로 (only css)',
+    category: 'slide',
+    url: 'html/css_marquee_wall.html',
+  },
   // {
   //   productName: '',
   //   category: '',
