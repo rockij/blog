@@ -1600,11 +1600,6 @@ let items = [
     url: 'html/css_marquee.html',
   },
   {
-    productName: '무한으로 흐르는 컨텐츠 - 가로 (only css)',
-    category: 'slide',
-    url: 'html/css_marquee.html',
-  },
-  {
     productName: '무한으로 흐르는 컨텐츠 - 세로 (only css)',
     category: 'slide',
     url: 'html/css_marquee_vertical.html',
