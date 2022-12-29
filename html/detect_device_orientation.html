@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+<title></title>
+<style>
+/* Only For Styling Purpose*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #4088f4;
+}
+.container {
+  font-size: 2.4em;
+  background-color: #ffffff;
+  width: 12em;
+  height: 12em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 4em 0;
+  display: grid;
+  place-items: center;
+  font-family: "Poppins", sans-serif;
+  color: #22203e;
+  border-radius: 0.5em;
+}
+/* IMP */
+.hide {
+  display: none;
+}
+@media screen and (max-width: 500px) {
+  .container {
+    font-size: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <button class="hide" id="check" onclick="orientationChange()">
+    Check Orientation
+  </button>
+  <p id="status"></p>
+</div>
+
+<script>
+const statusRef = document.getElementById('status');
+const checkOrientationButton = document.getElementById('check');
+
+// create the query
+const potraitMediaQuery = window.matchMedia('(orientation:potrait)');
+
+// 이벤트 수신기에 대한 콜백 기능 정의(화면 방향을 지원하지 않는 사파리/ios의 경우)
+const mediaOrientationChange = (mediaQuery) => {
+  if (!mediaQury.matches) {
+    statusRef.innerText = `Landscape`;
+  } else {
+    statusRef.innerText = `Potrait`;
+  }
+};
+
+// 방향이 변경될 때마다 변경 이벤트가 트리거
+window.screen.orientation.onchange = orientationChange = () => {
+  if (screen.orientation.type.includes('landscape')) {
+    statusRef.innerText = `Landscape`;
+  } else {
+    statusRef.innerText = `Potrait`;
+  }
+};
+
+// 파이어폭스의 경우에는 발사되지 않으므로 변경된 방향을 수동으로 표시하는 버튼을 추가
+window.onload = () => {
+  statusRef.innerText = '';
+  checkOrientationButton.classList.add('hide');
+  if ('mozOrientation' in screen) {
+    // for firefox
+    // 파이폭스 변경 시 문제가 발생했기 때문에 버튼은 단순히 변경 시 호출하는 기능을 호출
+    checkOrientationButton.classList.remove('hide');
+  } else if ('orientation' in screen) {
+    // 지원되는 브라우저
+    orientationChange();
+  } else {
+    // for safari
+    mediaOrientationChange(potraitMediaQuery);
+    potraitMediaQuery.addEventListener('change', mediaOrientationChange);
+  }
+};
+</script>
+
+</body>
+</html>

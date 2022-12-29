@@ -1609,6 +1609,21 @@ let items = [
     category: 'slide',
     url: 'html/css_marquee_wall.html',
   },
+  {
+    productName: 'Javascript를 사용하여 장치 방향 탐지',
+    category: 'layout',
+    url: 'html/detect_device_orientation.html',
+  },
+  {
+    productName: '깨진 이미지 스타일',
+    category: 'image',
+    url: 'html/style_broken_images.html',
+  },
+  {
+    productName: '마우스/터치 홀드 감지',
+    category: 'mouse-effect',
+    url: 'html/detect_mouse_touch_hold.html',
+  },
   // {
   //   productName: '',
   //   category: '',
