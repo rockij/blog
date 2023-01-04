@@ -1168,7 +1168,7 @@ let items = [
     productName: '박스 주변 테두리로 라인회전 animation',
     category: 'background-border',
     category2: 'animation',
-    url: 'rotating_border_animation.html',
+    url: 'html/rotating_border_animation.html',
   },
   {
     productName: '뾰족한 그림자가 양끝에 나와있는 카드',
@@ -1623,6 +1623,22 @@ let items = [
     productName: '마우스/터치 홀드 감지',
     category: 'mouse-effect',
     url: 'html/detect_mouse_touch_hold.html',
+  },
+  {
+    productName: '드래그 가능 슬라이더 탭',
+    category: 'navigation-list',
+    category2: 'mouse-effect',
+    url: 'html/draggable_slider_tabs.html',
+  },
+  {
+    productName: 'css를 이용한 input label 모션',
+    category: 'form',
+    url: 'html/css_input_label_animation.html',
+  },
+  {
+    productName: 'CSS object-view-box',
+    category: 'image',
+    url: 'html/css_object_view_box.html',
   },
   // {
   //   productName: '',
