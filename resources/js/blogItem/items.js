@@ -1640,6 +1640,24 @@ let items = [
     category: 'image',
     url: 'html/css_object_view_box.html',
   },
+  {
+    productName: '유리구슬 입자 애니메이션 효과',
+    category: 'icon-loading',
+    category2: 'animation',
+    url: 'html/glass_ball_particle_animation.html',
+  },
+  {
+    productName: '멋진 CSS 테두리 애니메이션',
+    category: 'background-border',
+    category2: 'animation',
+    url: 'html/awesome_border_animation_image.html',
+  },
+  {
+    productName: 'CSS 슈팅스타 애니메이션',
+    category: 'background-border',
+    category2: 'animation',
+    url: 'html/pure_css_shooting_star_animation.html',
+  },
   // {
   //   productName: '',
   //   category: '',
