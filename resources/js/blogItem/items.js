@@ -1658,6 +1658,18 @@ let items = [
     category2: 'animation',
     url: 'html/pure_css_shooting_star_animation.html',
   },
+  {
+    productName: 'CSS Creative 클립 경로 버튼 호버',
+    category: 'mouse-effect',
+    category2: 'animation',
+    url: 'html/css_creative_clip-path_button_hover.html',
+  },
+  {
+    productName: 'CSS3 & 바닐라 자바스크립트를 이용한 버튼 파급효과',
+    category: 'mouse-effect',
+    category2: 'animation',
+    url: 'html/button_ripple_effect_click_css_javascript.html',
+  },
   // {
   //   productName: '',
   //   category: '',
