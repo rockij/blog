@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+<title></title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  flex-direction: column;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+.container .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+.container .buttons .btn {
+  padding: 0 10px;
+  display: inline-flex;
+  background: #ddd;
+  color: #fff;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.container .buttons .btn.active {
+  background: #444;
+}
+.container .buttons .btn:nth-child(2) {
+  font-size: 1.5em;
+}
+.container .buttons .btn:nth-child(3) {
+  font-size: 2em;
+}
+.container .content {
+  font-size: 1em;
+  color: #444;
+}
+.container .content h2,
+.container .content p {
+  transition-duration: .5s;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="buttons">
+    <span class="btn active" onclick="document.getElementById('text').style.fontSize = '1em'">A</span>
+    <span class="btn" onclick="document.getElementById('text').style.fontSize = '1.25em'">A</span>
+    <span class="btn" onclick="document.getElementById('text').style.fontSize = '1.75em'">A</span>
+  </div>
+  <div class="content" id="text">
+    <h2>Change Font Size</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quaerat, ducimus cupiditate autem molestias iste tempore ipsam laudantium minus maiores. Eligendi provident deserunt repellendus. Vel commodi totam est voluptatum sint tenetur perferendis molestiae eaque labore modi, natus vero dolorum soluta dignissimos voluptas expedita delectus culpa quisquam excepturi iste hic aliquid earum quaerat reiciendis! Culpa quisquam quibusdam natus eum facere laborum illo perspiciatis, veniam reiciendis officia minus amet labore asperiores! Nostrum cumque exercitationem omnis asperiores sapiente deleniti. Quaerat corporis aspernatur saepe officiis quo libero, eligendi praesentium illum illo aut optio totam eum voluptates ad. Laborum culpa deleniti inventore minima. Tempore, voluptate.</p>
+  </div>
+</div>
+
+<script>
+let buttons = document.querySelector('.buttons');
+let btn = buttons.querySelectorAll('.btn');
+for (var i=0; i<btn.length; i++) {
+  btn[i].addEventListener('click', function() {
+    let current = document.getElementsByClassName('active');
+    current[0].className = current[0].className.replace('active', '');
+    this.className += ' active';
+  });
+}
+</script>
+
+</body>
+</html>

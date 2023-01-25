@@ -1670,6 +1670,22 @@ let items = [
     category2: 'animation',
     url: 'html/button_ripple_effect_click_css_javascript.html',
   },
+  {
+    productName: '마우스 오른쪽 단추 클릭, 복사, 잘라내기 및 붙여넣기 사용 안 함',
+    category: 'mouse-effect',
+    url: 'html/disable_right_click_copy_cut_paste.html',
+  },
+  {
+    productName: '글꼴 크기를 변경하려면 버튼을 클릭',
+    category: 'mouse-effect',
+    category2: 'text-effect',
+    url: 'html/click_button_change_font-size.html',
+  },
+  {
+    productName: '스크립트 필요없는 css 트리 보기',
+    category: 'navigation-list',
+    url: 'html/tree_views_in_css.html',
+  },
   // {
   //   productName: '',
   //   category: '',
