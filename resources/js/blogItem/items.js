@@ -854,12 +854,6 @@ let items = [
     url: 'html/3D_flip_card_image_hover.html',
   },
   {
-    productName: 'click - lottiefile을 이용한 축하 불꽃',
-    category: 'mouse-effect',
-    category2: 'animation',
-    url: 'html/add_amazing_animations_lottiefile.html',
-  },
-  {
     productName: 'hover - 박스 테두리 라인 선긋기',
     category: 'mouse-effect',
     category2: 'animation',
@@ -1615,11 +1609,6 @@ let items = [
     url: 'html/detect_device_orientation.html',
   },
   {
-    productName: '깨진 이미지 스타일',
-    category: 'image',
-    url: 'html/style_broken_images.html',
-  },
-  {
     productName: '마우스/터치 홀드 감지',
     category: 'mouse-effect',
     url: 'html/detect_mouse_touch_hold.html',
@@ -1686,9 +1675,36 @@ let items = [
     category: 'navigation-list',
     url: 'html/tree_views_in_css.html',
   },
+  {
+    productName: '웹 사이트 헤더에 대한 애니메이션 배경 사용',
+    category: 'background-border',
+    category2: 'animation',
+    url: 'html/animated_background_using_javascript.html',
+  },
+  {
+    productName: 'Html CSS 발광 텍스트 애니메이션',
+    category: 'text-effect',
+    category2: 'animation',
+    url: 'html/glowing_text_animation.html',
+  },
+  {
+    productName: 'css outline을 이용한 hover시 효과',
+    category: 'background-border',
+    url: 'html/animating_outlines.html',
+  },
+  {
+    productName: 'css empty 선택자',
+    category: 'basic',
+    url: 'html/css_empty.html',
+  },
+  {
+    productName: 'CSS를 사용하여 디자인 문자 간격을 html과 일치',
+    category: 'basic',
+    url: 'html/easily_match_design_letter-spacing_css.html',
+  },
   // {
   //   productName: '',
   //   category: '',
-  //   url: 'html/',
+  //   url: 'html/.html',
   // },
 ]
