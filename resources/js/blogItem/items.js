@@ -1702,6 +1702,11 @@ let items = [
     category: 'basic',
     url: 'html/easily_match_design_letter-spacing_css.html',
   },
+  {
+    productName: '단일 특성으로 이미지 로딩 성능 향상',
+    category: 'image',
+    url: 'html/improve_performance_one_attribute.html',
+  },
   // {
   //   productName: '',
   //   category: '',
