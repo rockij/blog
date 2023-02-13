@@ -38,6 +38,14 @@ input {
   outline:none;
   border-color:#bfbfbf;
 }
+/* chromeium & safari */
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+/* firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 input.text:is(:focus, :valid) {
   background: rgba(0,0,0,.1);
 }
@@ -63,10 +71,6 @@ input.valid:valid {
 </style>
 </head>
 <body>
-
-<h1>입력폼에 관해서</h1>
-
-<br><br>
 
 <div>
     <label for="number1">
@@ -127,6 +131,11 @@ input.valid:valid {
 
 <label for="month">month(min/max):</label>
 <input type="month" id="month" min="2000-01" max="2021-09">
+
+<br><br>
+
+<label for="number">number: inputmode</label>
+<input type="text" id="number" inputmode="numeric" pattern="[0-9]+">
 
 <br><br>
 

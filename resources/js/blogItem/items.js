@@ -1707,6 +1707,11 @@ let items = [
     category: 'image',
     url: 'html/improve_performance_one_attribute.html',
   },
+  {
+    productName: '드래그 앤 드롭 정렬 가능 목록',
+    category: 'navigation-list',
+    url: 'html/drag_drop_sortable_list.html',
+  },
   // {
   //   productName: '',
   //   category: '',
