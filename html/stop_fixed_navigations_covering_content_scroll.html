@@ -381,6 +381,22 @@ body {
   z-index: -1;
 }
 
+.lists {
+  margin-top: 20px;
+  display: flex;
+}
+.lists li {
+  border: 2px solid blue;  
+  padding: 10px;
+}
+.lists li:not(:first-child) {
+  margin-left: 10px;
+}
+
+.lists :target {
+  border-color: lime;
+}
+
 </style>
 </head>
 <body>
@@ -407,6 +423,16 @@ body {
 
     <section id="section-1" class="padding-block-600 surface-neutral-900 text-neutral-100">
         <div class="container flow">
+            <ul id="targets" class="nav-list">
+              <li><a href="#target1">target1</a></li>
+              <li><a href="#target2">target2</a></li>
+              <li><a href="#target3">target3</a></li>
+            </ul>
+            <ul class="lists">
+              <li id="target1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, tempore?</li>
+              <li id="target2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, tempore?</li>
+              <li id="target3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, tempore?</li>
+            </ul>
             <h2 class="fs-800">Section One</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus dolor ipsum odit, quam
                 ducimus consectetur fuga omnis fugiat amet dolore veritatis. Praesentium, maiores obcaecati?</p>

@@ -73,13 +73,13 @@ input.valid:valid {
 <body>
 
 <div>
-    <label for="number1">
-        <span class="blind">숫자입력 첫번째</span>
-        <input type="text" id="number1" class="text" placeholder="1234">
-    </label>
-    <br>
-    <label for="number1">숫자입력 두번째</label>
-    <input type="text" id="number2" class="text" placeholder="45">
+  <label for="number1">
+      <span class="blind">텍스트 첫번째</span>
+      <input type="text" id="number1" class="text" placeholder="1234">
+  </label>
+  <br>
+  <label for="number1">텍스트 두번째</label>
+  <input type="text" id="number2" class="text" placeholder="45">
 </div>
 
 <br>
@@ -134,7 +134,7 @@ input.valid:valid {
 
 <br><br>
 
-<label for="number">number: inputmode</label>
+<label for="number">text(number): inputmode</label>
 <input type="text" id="number" inputmode="numeric" pattern="[0-9]+">
 
 <br><br>
@@ -251,6 +251,26 @@ input.valid:valid {
 </form>
 
 <script>
+const numericInputs = document.querySelectorAll('[inputmode="numeric"]');
+numericInputs.forEach((input) => {
+  validateInput(input);
+});
+
+function validateInput(el) {
+  el.addEventListener("beforeinput", function(e) {
+    let beforeValue = el.value;
+    e.target.addEventListener(
+      "input",
+      function() {
+        if (el.validity.patternMismatch) {
+          el.value = beforeValue;
+          console.log('패턴미스');
+        }
+      },
+      {once:true}
+    );
+  });
+}
 </script>
 
 </body>

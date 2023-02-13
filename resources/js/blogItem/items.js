@@ -1712,6 +1712,16 @@ let items = [
     category: 'navigation-list',
     url: 'html/drag_drop_sortable_list.html',
   },
+  {
+    productName: '사용자 크기 조정이 가능한 요소',
+    category: 'layout',
+    url: 'html/make_user-resizeable_element_super_easily.html',
+  },
+  {
+    productName: 'pseudo-classes가 좀 더 할수 있는것',
+    category: 'layout',
+    url: 'html/pseudo-classes_might_think.html',
+  },
   // {
   //   productName: '',
   //   category: '',
