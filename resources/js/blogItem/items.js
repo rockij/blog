@@ -1722,6 +1722,16 @@ let items = [
     category: 'layout',
     url: 'html/pseudo-classes_might_think.html',
   },
+  {
+    productName: '단말기 사이즈에 따라 쉽게 이미지 바꾸기',
+    category: 'image',
+    url: 'html/easily_change_images.html',
+  },
+  {
+    productName: 'isolate를 이용한 가상선택자 뒤로보내기',
+    category: 'text-effect',
+    url: 'html/remember_css_property_isolate.html',
+  },
   // {
   //   productName: '',
   //   category: '',
