@@ -1732,6 +1732,41 @@ let items = [
     category: 'text-effect',
     url: 'html/remember_css_property_isolate.html',
   },
+  {
+    productName: 'n번째 유형의 범위 선택',
+    category: 'basic',
+    url: 'html/selecting_ranges_nth-of-type.html',
+  },
+  {
+    productName: 'margin-inline을 이용한 가운데 정렬',
+    category: 'layout',
+    url: 'html/modern_css_magic.html',
+  },
+  {
+    productName: 'css로 triangle 만들기',
+    category: 'basic',
+    url: 'html/css_triangle.html',
+  },
+  {
+    productName: 'placeholder-shown을 이용한 label 움직이기',
+    category: 'form',
+    url: 'html/css_placeholder-shown.html',
+  },
+  {
+    productName: 'css backgrund 멀티사용',
+    category: 'background-border',
+    url: 'html/css_multi_background.html',
+  },
+  {
+    productName: 'css ::selection을 이용한 텍스트 선택효과',
+    category: 'basic',
+    url: 'html/css_selection.html',
+  },
+  {
+    productName: 'css outline-offset를 이용한 border효과',
+    category: 'background-border',
+    url: 'html/css_outline-offset.html',
+  },
   // {
   //   productName: '',
   //   category: '',

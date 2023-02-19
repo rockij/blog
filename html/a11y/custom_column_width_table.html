@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+<title></title>
+<style>
+table {
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin: 1em auto;
+}
+table th,
+table td {
+  padding: 0.8em;
+  border: 1px solid black;
+}
+table th {
+  text-align: left;
+}
+
+.text-right {
+	text-align: end;
+	text-align: right;
+}
+.text-left {
+	text-align: start;
+}
+.text-center {
+	text-align: middle;
+}
+</style>
+</head>
+
+<body>
+
+<table>
+  <colgroup>
+    <col align="left"> <!-- 문서에 따르면 정렬은 더 이상 사용되지 않습니다. 또한 모든 브라우저에서 지원되지 않습니다 -->
+    <col width="250px">
+    <!-- 문서에 따르면 너비는 사양에 따라 더 이상 사용되지 않지만 모든 브라우저에서 계속 지원됩니다 -->
+    <col width="50%" class="text-right"> <!-- 클래스는 소수의 스타일 속성만 지원하며 텍스트 변환은 그 중 하나가 아닙니다. https://www.w3.org/TR/CSS21/tables.html#columns -->
+  </colgroup>
+  <thead>
+    <tr>
+      <th scope="col" id="header-01">One</th>
+      <th scope="col" id="header-02">Two</th>
+      <th scope="col" id="header-03">Three</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td header="header-01">one</td>
+      <td header="header-02">one two</td>
+      <td header="header-03">one three</td>
+    </tr>
+    <tr>
+      <td header="header-01">two one</td>
+      <td header="header-02">two two </td>
+      <td header="header-03">two three</td>
+    </tr>
+    <tr>
+      <td header="header-01">three one</td>
+      <td header="header-02">three two</td>
+      <td header="header-03">three three</td>
+    </tr>
+  </tbody>
+</table>
+
+<script></script>
+
+</body>
+</html>
