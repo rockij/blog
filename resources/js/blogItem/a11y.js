@@ -19,6 +19,21 @@ let a11y = [
     category: 'a11y',
     url: 'html/a11y/example_tabs_manual_activation.html',
   },
+  {
+    productName: '테이블 안 툴팁',
+    category: 'a11y',
+    url: 'html/a11y/tables_and_tooltips.html',
+  },
+  {
+    productName: '유효하지 않은 라디오 버튼',
+    category: 'a11y',
+    url: 'html/a11y/valid_radio_buttons.html',
+  },
+  {
+    productName: '접근 가능한 양식: 레이블 및 링크',
+    category: 'a11y',
+    url: 'html/a11y/associating_link_within_form.html',
+  },
   // {
   //   productName: '',
   //   category: 'a11y',

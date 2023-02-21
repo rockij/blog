@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+<title></title>
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Univers, Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0;
+  margin: 0 auto;
+}
+
+header,
+main,
+footer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  flex-shrink: none;
+}
+header > *,
+main > *,
+footer > * {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.info {
+  border: 1px solid indigo;
+  border-radius: 5px;
+  max-width: 90%;
+  margin: 0 auto 2rem auto;
+  background-color: lavender;
+  color: indigo;
+}
+.info ul {
+  margin-start: 0.1em;
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+.visually-hidden {
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.component__table table {
+  width: 90%;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  border-collapse: collapse;
+  margin: 0 auto;
+  border: 1px solid lightgray;
+}
+.component__table caption {
+  text-align: left;
+  font-size: 0.9em;
+}
+.component__table thead th {
+  background-color: #eaeaea;
+  color: #4d4d4d;
+}
+.component__table tr {
+  border-bottom: 1px solid lightgray;
+}
+.component__table th,
+.component__table td {
+  text-align: left;
+  padding: 0.5em 0.25em;
+}
+.component__table th.text--number,
+.component__table td.text--number {
+  text-align: right;
+}
+
+.status {
+  padding: 0.25em 0.25em 0.2em 0.5em;
+  border: 1px solid transparent;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.status--green {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='14' class='check-circle' aria-hidden='true'%3E%3Cpath d='M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z' /%3E%3C/svg%3E");
+  background-color: mintcream;
+  background-position-x: 10%;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+  border-color: darkgreen;
+  border-radius: 6px;
+  color: darkgreen;
+  padding-left: 20px;
+}
+
+[role=tooltip] {
+  display: none;
+}
+
+*:hover + [role=tooltip],
+*:focus + [role=tooltip] {
+  display: block;
+  z-index: 1;
+}
+
+.has-tooltip {
+  position: relative;
+}
+
+[role=tooltip] {
+  position: absolute;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  line-height: 1.2;
+  font-size: 0.9rem;
+  /* left/top/right/bottom values as required */
+}
+
+.has-toggletip {
+  position: relative;
+  display: inline-block;
+}
+
+/* the bubble element, added inside the toggletip live region */
+.toggletip-bubble {
+  display: inline-block;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 10em;
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  line-height: 1.2;
+  font-size: 0.9rem;
+}
+
+.toggletip {
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  border: 0;
+  text-align: center;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.toggletip:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem skyBlue;
+  cursor: pointer;
+}
+
+.w-90 {
+  width: 90%;
+  margin: 0 auto 2rem auto;
+}
+</style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Tables and Tooltips</h1>
+  </header>
+  <main>
+    <div class="info">
+      <p>
+        General guidance for tooltips/toggletips (from Inclusive Components):
+      </p>
+      <ul class="list-inside">
+        <li>If you have space, don't use tooltips or toggletips. Instead, provide clear labels and sufficient body text.</li>
+        <li>If it's a tooltip you are looking to use, decide whether the tip's content should be provided as the label or description and choose ARIA properties accordingly.</li>
+        <li>Don't rely on title attributes. They are not keyboard accessible and are not supported in many screen reader setups.</li>
+        <li>Don't describe toggletips with aria-describedby. It makes the subject button non-functional to screen reader users.</li>
+        <li><strong>Don't put interactive content in tooltips or toggletips. This is the job of more complex menu and dialog components.</strong></li>
+      </ul>
+    </div>
+    <p class="w-90">In the sample below, trying using both your mouse and your <code>TAB</code> key to reach the interactive elements in the table. You'll notice that on either hover or focus, the link in the first row will show a tooltip. In the second row, press <code>SPACE</code> or <code>ENTER</code> while focused on the info icon to show the "toggletip" (press <code>ESC</code> to dismiss). </p>
+  
+    <div class="component__table">
+      <table>
+        <caption>Meaningful instructions for use could be placed in this caption element. It could also be used to provide the title of the table.</caption>
+        <thead>
+          <tr>
+            <th>Server ID</th>
+            <th>Status</th>
+            <th>Version</th>
+            <th>Location</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Alpha</th>
+            <td><span class="status status--green">Up</span></td>
+            <td><span class="text--version">v.3.0.2</span></td>
+            <td>
+              <div class="has-tooltip">
+                <a href="#" aria-describedby="alpha-tooltip">us-west</a>
+                <div role="tooltip" id="alpha-tooltip">additional, non-interactive content goes here and shows up on hover or focus</div>
+              </div>
+            </td>
+            <td><span class="text--server-type">developer</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Bravo</th>
+            <td><span class="status status--green">Up</span></td>
+            <td><span class="text--version">v.2.8.3 </span></td>
+            <td>
+              <div class="has-toggletip">
+                <a href="#">us-east</a>
+                <button type="button" class="toggletip" aria-label="more info" data-toggletip-content="This clarifies whatever needs clarifying">
+                  <svg viewBox="0 0 512 512" width="14" aria-hidden="true">
+                    <path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z" />
+                  </svg>
+  
+                </button>
+                <span role="status"></span>
+              </div>
+            </td>
+            <td><span class="text--server-type">developer</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer>
+    <p>footer content here</p>
+  </footer>
+
+<script>
+const toggletips = document.querySelectorAll('[data-toggletip-content]');
+
+Array.prototype.forEach.call(toggletips, function(toggletip) {
+  // Get the message from the data-content element
+  const message = toggletip.getAttribute('data-toggletip-content');
+  const liveRegion = toggletip.nextElementSibling;
+
+  // toggle the message
+  toggletip.addEventListener('click', function() {
+    liveRegion.innerHTML = '';
+    window.setTimeout(function() {
+      liveRegion.innerHTML = 
+      `<span class="toggletip-bubble">${message}</span>`
+    }, 100);
+  });
+
+  // close on outside click
+  document.addEventListener('click', function(e) {
+    if (toggletip !== e.taget) {
+      liveRegion.innerHTML = '';
+    }
+  });
+
+  // remove toggle on ESC
+  toggletip.addEventListener('keydown', function(e) {
+    if ((e.keycode || e.which) === 27) liveRegion.innerHTML = '';
+  });
+
+  // remove on blur
+  toggletip.addEventListener('blur', function(e) {
+    liveRegion.innerHTML = '';
+  })
+})
+</script>
+
+</body>
+</html>
