@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+<title></title>
+<style>
+body {
+  font-family: "Roboto", "Open Sans", sans-serif;
+  font-size: 100%;
+  line-height: 1.2;
+}
+
+main {
+  padding: 0 5%;
+}
+main section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+}
+
+h2 > a {
+  align-items: center;
+  display: inline-flex;
+  font-size: 0.8em;
+  padding: 0 5px;
+  text-decoration: none;
+}
+h2 > a:hover {
+  text-decoration: underline;
+  margin-bottom: 2px;
+}
+
+pre {
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 6px;
+  color: white;
+  padding: 0 1rem;
+}
+
+fieldset {
+  margin-bottom: 1rem;
+}
+fieldset legend {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-flow: row wrap;
+}
+.form-group label {
+  font-size: 0.9rem;
+}
+.form-group input {
+  width: 100%;
+  border-radius: 6px;
+  line-height: 1.5;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+</style>
+</head>
+
+<body>
+
+  <main>
+    <h1>When to use a fieldset</h1>
+    <section>
+      <h2 id="sections"><a href="#sections">&sect;</a> Create Sections</h2>
+      <p>관련된 질문이 있는 양식을 가지고 있으며 이러한 질문을 섹션으로 나누고 싶다고 상상해 보십시오. 필드 세트 요소는 이것에 완벽합니다!</p>
+      <form action="" name="form-1">
+        <fieldset>
+          <legend>1. About You</legend>
+          <div class="form-group">
+            <label for="you-first">What is/are your first name(s)?</label>
+            <input type="text" id="you-first">
+          </div>
+          <div class="form-group">
+            <label for="you-last">What is/are your last name(s)?</label>
+            <input type="text" id="you-last">
+          </div>
+          <div class="form-group">
+            <label for="you-age">What is your age?</label>
+            <input type="number" id="you-age">
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>2. About Your Pets</legend>
+          <div class="form-group">
+            <label for="pets-childhood">How many pets did you have when you were a child?</label>
+            <input type="number" id="pets-childhood">
+          </div>
+          <div class="form-group">
+            <label for="pets-current">How many pets do you have now?</label>
+            <input type="number" id="pets-current">
+          </div>
+          <div class="form-group">
+            <label for="pets-future">How many pets do you think you will have in the future?</label>
+            <input type="number" id="pets-future">
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>3. About Your Hobbies</legend>
+          <div class="form-group">
+            <label for="hobbies-now">How many hobbies do you have?</label>
+            <input type="number" id="hobbies-now">
+          </div>
+          <div class="form-group">
+            <label for="hobbies-favorite">What is your favorite hobby?</label>
+            <input type="text" id="hobbies-favorite">
+          </div>
+          <div class="form-group">
+            <label for="hobbies-hustle">What hobby would you recommend as a side-hustle?</label>
+            <input type="text" id="hobbies-hustle">
+          </div>
+        </fieldset>
+      </form>
+      <p>오늘날, JS 앱의 대부분의 양식은 필드 세트 요소를 사용하는 대신 섹션을 페이지로 표시합니다. 하지만 그것은 완전히 합법적인 사용 사례입니다!</p>
+    </section>
+    <section>
+      <h2 id="radio"><a href="#radio">&sect;</a> Radio Buttons</h2>
+      <p>더 일반적인 사용 사례는 라디오 버튼 그룹에 대한 것이다. 이 라디오 버튼 그룹을 탭하면 화살표 키를 사용하여 목록을 위아래로 탐색할 수 있습니다. 이것은 기본 동작입니다.</p>
+      <form action="" name="form-2">
+        <fieldset>
+          <legend>Your Favorite Primary Color</legend>
+          <div class="form-group-inline">
+            <input type="radio" id="you-color-red" name="you-color" value="red" />
+            <label for="you-color-red">Red</label>
+          </div>
+          <div class="form-group-inline">
+            <input type="radio" id="you-color-yellow" name="you-color" value="yellow" />
+            <label for="you-color-yellow">Yellow</label>
+          </div>
+          <div class="form-group-inline">
+            <input type="radio" id="you-color-blue" name="you-color" value="blue" />
+            <label for="you-color-blue">Blue</label>
+          </div>
+        </fieldset>
+      </form>
+      <p>추신: 필드 세트 경계가 마음에 안 드세요? 당신은 그것을 완전히 CSS화할 수 있습니다! 단지 약간의 스타일링 때문에 양식을 분할하는 이 좋은 방법을 피하지 마세요! 그것에 대해 걱정하지 마세요, 그것은 정말 굉장해요!</p>
+      <p>Relevant Technique: <a href="https://www.w3.org/WAI/WCAG21/Techniques/html/H71">Providing a description for groups of form controls using fieldset and legend elements</a></p>
+    </section>
+  </main>
+
+</body>
+</html>

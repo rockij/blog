@@ -27,12 +27,37 @@ let a11y = [
   {
     productName: '유효하지 않은 라디오 버튼',
     category: 'a11y',
+    category2: 'form',
     url: 'html/a11y/valid_radio_buttons.html',
   },
   {
     productName: '접근 가능한 양식: 레이블 및 링크',
     category: 'a11y',
+    category2: 'form',
     url: 'html/a11y/associating_link_within_form.html',
+  },
+  {
+    productName: '필드 세트를 사용할 때',
+    category: 'a11y',
+    category2: 'form',
+    url: 'html/a11y/when_to_use_fieldset.html',
+  },
+  {
+    productName: '양식 입력에 대한 액세스 가능한 이름',
+    category: 'a11y',
+    category2: 'form',
+    url: 'html/a11y/accessible_name_form_inputs.html',
+  },
+  {
+    productName: '다중 입력 양식 필드',
+    category: 'a11y',
+    category2: 'form',
+    url: 'html/a11y/multi-input_form_field.html',
+  },
+  {
+    productName: 'accessible pagination',
+    category: 'a11y',
+    url: 'html/a11y/accessible_pagination.html',
   },
   // {
   //   productName: '',

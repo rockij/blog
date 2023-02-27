@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+<title></title>
+<style>
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+form {
+  width: 40rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+fieldset {
+  margin-top: 1rem;
+}
+
+legend {
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+  <form action="">
+    <fieldset>
+      <legend>Credit Card Information</legend>
+  
+      <label for="cc-num">CC Number</label>
+      <input type="text" id="cc-num" name="cc-num" value="" />
+  
+      <label for="cc-exp">Exp Date</label>
+      <input type="text" id="cc-exp" name="cc-exp" value="" />
+  
+      <label for="cc-csv">CSV</label>
+      <input type="text" id="cc-csv" name="cc-csv" value="" />
+  
+    </fieldset>
+    <fieldset>
+      <legend>Phone Number</legend>
+      <input type="text" aria-label="country code" placeholder="+1" />
+      <input type="text" aria-label="area code" placeholder="555">
+      <input type="text" aria-label="phone number" placeholder="555-5555">
+    </fieldset>
+  
+    <fieldset>
+      <legend>Phone Number (another option)</legend>
+      <label for="tel-cc">Country Code</label>
+      <input id="tel-cc" type="text" placeholder="+1" />
+  
+      <label for="tel-ac">Area Code</label>
+      <input id="tel-ac" type="text" placeholder="555">
+  
+      <label for="tel-ph">Phone Number</label>
+      <input id="tel-ph" type="text" placeholder="555-5555">
+    </fieldset>
+  </form>
+
+</body>
+</html>

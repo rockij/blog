@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+<title></title>
+<style>
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+}
+
+h2 > a {
+  align-items: center;
+  display: inline-flex;
+  font-size: 0.8em;
+  padding: 0 5px;
+  text-decoration: none;
+}
+h2 > a:hover {
+  text-decoration: underline;
+  margin-bottom: 2px;
+}
+
+.code-inline {
+  font-family: monospace;
+}
+
+section p {
+  margin: 0.5rem 0;
+}
+
+pre {
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 6px;
+  color: white;
+  padding: 0 1rem;
+}
+
+section ul {
+  padding: 0 1rem 1rem;
+  list-style-position: inside;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-group {
+  border: 1px solid rebeccapurple;
+  padding: 0.5rem;
+}
+.form-group input {
+  width: 100%;
+}
+</style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Accessible Name for Form Inputs</h1>
+  </header>
+  <main>
+  
+    <p class="intro">다음은 입력 요소에 액세스할 수 있는 이름을 제공하는 WCAG 준수 방법입니다. 이러한 예를 들어 Windows(FF + NVDA, Chrome + NVDA) 및 macOS(Safari + VoiceOver, Chrome + VoiceOver)로 테스트했습니다.</p>
+  
+    <section aria-labelledby="nest">
+      <h2 id="nest"><a href="#nest">&sect;</a> Nest It</h2>
+  
+      <p>입력 요소를 'label' 요소 내부에 중첩합니다:</p>
+      <pre><code>
+  &lt;label>
+   First Name
+   &lt;input type="text" />
+  &lt;/label>
+    </code></pre>
+  
+      <p>이것은 아마도 입력을 레이블과 연결하는 가장 쉬운 방법이지만, 일부는 이것이 너무 어려워서 제대로 스타일을 만들 수 없다고 말할 것이다. YMMV.</p>
+    </section>
+  
+    <section aria-labelledby="idfor">
+      <h2 id="idfor"><a href="#idfor">&sect;</a> Id/For</h2>
+  
+      <p>'label' 요소의 'for' 속성을 사용하여 'input' 요소와 연결합니다:</p>
+  
+      <pre><code>
+  &lt;label for="input-age">Your Age&lt;/label>
+  &lt;input id="input-age" type="number" />
+      </code></pre>
+  
+      <p>이것은 유연한 스타일을 제공하기 때문에 입력을 레이블과 연결하는 가장 인기 있는 방법일 것이다. for 속성과 id 속성은 동일한 값을 가져야 서로 연결되며 웹 페이지의 id 값은 고유해야 합니다.<p>
+    </section>
+  
+    <section>
+      <h2 id="multi"><a href="#multi">&sect;</a>Multi-element Name</h2>
+      <p>레이블을 입력과 연결하고 도움말 텍스트를 '입력' 요소의 아리아 레이블별 속성과 함께 지원합니다:</p>
+      <pre><code>
+  &lt;label id="input-name">Your Name&lt;/label>
+  &lt;span class="help-text" id="input-name-additional">
+    (Preferred)
+  &lt;/span>
+  &lt;input type="text" aria-labelledby="input-name input-name-additional" />
+      </code></pre>
+  
+      <p>여기서 우리는 여러 요소에서 접근 가능한 이름을 얻기 위해 aria-labelledby를 사용하고 있다. (이것은 최상의 예가 아닙니다, 죄송합니다)</p>
+    </section>
+  
+    <section>
+      <h2 id="inputhelp"><a href="#inputhelp">&sect;</a> Input with help text</h2>
+      <p>레이블을 입력과 연결하고 도움말 텍스트를 '입력' 요소의 aria-labelledby 속성과 함께 지원합니다:</p>
+      <pre><code>
+  &lt;label for="input-last">Your Last Name&lt;/label>
+  &lt;span class="help-text" id="input-last-help">
+    Multiple or Hyphenated last names are supported
+  &lt;/span>
+  &lt;input type="text" id="input-last" aria-describedby="input-last-help" />
+      </code></pre>
+  
+      <p>이것은 일반적으로 추가 도움말 텍스트와 함께 입력을 제공하는 방법입니다.</p>
+    </section>
+  
+    <!-- 	<section>
+      <h2 id=""><a href="#">&sect;</a> xx</h2>
+    </section> -->
+  
+    <h2 id="demo"><a href="#demo">&sect;</a> Demos (some good, some bad)</h2>
+    <p>때때로, 무언가를 진정으로 아는 유일한 방법은 스스로 시도하는 것입니다! 이것들 중 일부는 좋은 예이고 일부는 나쁜 예이다. 화면 판독기를 사용하여 이러한 입력 필드를 탐색하여 각 필드의 액세스 가능한 이름을 경험하십시오. 참고: MacOS에 있는 경우 브라우저 창을 먼저 엽니다.</p>
+    <section>
+      <h3>Example 1</h3>
+      <p>기대할 대상: 레이블 요소, 시각적으로 숨겨진 범위 및 입력 필드. 레이블은 레이블의 for 특성에 의한 입력과 연결됩니다</p>
+      <div class="form-group">
+        <label for="mel">Melanie</label>
+        <span class="hidden">Sumner</span>
+        <input type="text" id="mel" />
+      </div>
+      <p>분석: 입력에 액세스할 수 있는 이름이 있습니다. 시각적으로 숨겨진 범위는 전혀 포함되지 않습니다(도움말 텍스트가 시각적으로 표시된 경우 입력 필드와 전혀 연결되지 않습니다). </p>
+    </section>
+  
+    <section>
+      <h3>Example 2</h3>
+      <p>예상할 수 있는 것: ID가 있는 레이블. ID가 있는 시각적으로 숨겨진 스팬입니다. 값이 레이블 및 스팬 ID인 아리아 레이블이 있는 입력입니다.</p>
+      <div class="form-group">
+        <label id="mel-12" for="mel-12a">Melanie</label>
+        <span class="hidden" id="mel-22">Sumner</span>
+        <input type="text" id="mel-12a" aria-labelledby="mel-12 mel-22" />
+      </div>
+      <p>분석: 저는 이것을 작성자 오류라고 생각하지만, 보조 기술자가 수정하는 것처럼 보이는 오류입니다(접근 가능한 이름은 여러 번 읽지 않습니다). (참고: 만약 당신이 기술한 아리아로 표시된 아리아를 바꾸면 "제임스 본드" 효과를 얻을 수 있다: "멜라니, 멜라니 섬너".)</p>
+    </section>
+  
+    <section>
+      <h3>Example 3 </h3>
+      <p>기대할 수 있는 항목: for 특성이 있는 레이블입니다. ID가 있는 시각적으로 숨겨진 스팬입니다. 에 의해 설명된 id 및 아리아를 갖는 입력 요소, 에 의해 설명된 아리아의 값은 시각적으로 숨겨진 스팬이다.</p>
+      <div class="form-group">
+        <label for="mel-14">Melanie</label>
+        <span class="hidden" id="mel-24">Sumner is super awesome</span>
+        <input type="text" id="mel-14" aria-describedby="mel-24" />
+      </div>
+      <p>분석: 이것이 내가 보통 하는 일이다. 첨부할 레이블과 더 긴 설명이 있을 때 사용합니다.</p>
+    </section>
+  
+    <section>
+      <h3>Example 4</h3>
+      <p>기대할 수 있는 항목: ID가 있는 레이블입니다. ID가 있는 시각적으로 숨겨진 스팬입니다. 값이 레이블 및 범위인 아리아가 설명된 입력.</p>
+      <div class="form-group">
+        <label id="mel-15">Melanie</label>
+        <span class="hidden" id="mel-25">Sumner is super awesome</span>
+        <input type="text" aria-describedby="mel-15 mel-25" />
+      </div>
+      <p>분석: 이것은 기술적으로 정확하지만 본질적으로 "이 입력에는 레이블이 없지만 설명이 있습니다."라고 말합니다 또한 도끼 코어는 여기에 오류를 던지지만, 접근 가능한 설명에서 접근 가능한 이름을 얻을 수 있다고 생각합니다. 하지만 나는 실제로 이것을 하지 않을 것이다. 그래서 아마도 도끼는 이것에 오류를 던져 가장 좋은 것을 할 것이다.</p>
+    </section>
+  </main>
+
+</body>
+</html>
