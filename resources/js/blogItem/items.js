@@ -462,12 +462,6 @@ let items = [
     url: 'html/low_highlight_text.html',
   },
   {
-    productName: 'counting - per를 이용한 weight, bar 카운팅',
-    category: 'text-effect',
-    category2: 'animation',
-    url: 'html/weight_count/html.html',
-  },
-  {
     productName: '3D - 시간 순서에 따라 입체적 노출(gsap)',
     category: 'text-effect',
     category2: 'animation',
