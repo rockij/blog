@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<link href="../../resources/css/nuli.style.css" rel="stylesheet" />
+<script src="../../resources/js/wai-aria.ui.js/wai-aria.ui.js"></script>
+<title></title>
+</head>
+
+<body>
+
+<label for="input_email">이메일</label>
+<input type="text" aria-describedby="error_msg" aria-invalid="true" />
+<div role="alert" id="error_msg" style="display:none">이메일 형식이 아닙니다.</div>
+
+<br>
+<table class="tbl_aria">
+  <caption class="blind">
+    <strong>기본 입력 서식 오류 wai-aria 구성요소</strong>
+    <span>필수유무, role, property, state, 설명 정보 제공</span>
+  </caption>
+  <thead>
+    <tr>
+      <th class="need">필수유무</th>
+      <th class="role">role</th>
+      <th class="prop">property</th>
+      <th class="state">state</th>
+      <th class="exp">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="need">필수</td>
+      <td class="role">role="alert"</td>
+      <td class="prop"></td>
+      <td class="state"></td>
+      <td class="exp">알림</td>
+    </tr>
+    <tr>
+      <td class="need"></td>
+      <td class="role"></td>
+      <td class="prop">aria-describedby</td>
+      <td class="state"></td>
+      <td class="exp">편집창과 입력 가이드 및 에러 메시지를 연결</td>
+    </tr>
+    <tr>
+      <td class="need">필수</td>
+      <td class="role"></td>
+      <td class="prop">aria-invalid</td>
+      <td class="state"></td>
+      <td class="exp">
+        <li>true: 입력 값이 유효하지 않음</li>
+        <li>false : 기본값, 오류 없음</li>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<script></script>
+
+</body>
+</html>

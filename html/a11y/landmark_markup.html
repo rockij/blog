@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<link href="../../resources/css/nuli.style.css" rel="stylesheet" />
+<script src="../../resources/js/wai-aria.ui.js/wai-aria.ui.js"></script>
+<title></title>
+</head>
+
+<body>
+
+  <div role="banner" style="display: none;">
+    <h1><a href="/" aria-label="널리" role="image"></a></h1>
+    <div aria-label="메인 메뉴">
+      <ul>
+        <li><a href="#">체험</a></li>
+        <li><a href="#">지침</a></li>
+        <li><a href="#">교육</a></li>
+        <li><a href="#">세미나</a></li>
+        <li><a href="#" aria-current="true">커뮤니티</a></li>
+        <li><a href="#">개발도구</a></li>
+      </ul>
+    </div>
+  </div>
+  <div role="navigation" aria-label="커뮤니티" style="display: none;">
+    <h2>커뮤니티</h2>
+    <ul>
+      <li><a href="#" aria-current="true">아티클</a></li>
+      <li><a href="#">포럼</a></li>
+    </ul>
+  </div>
+  <div role="main" style="display: none;">
+    <h3>아티클</h3>
+    <ul>
+      <li>
+        <a href="#">
+          <strong>WAI-ARIA 바르게 사용하기 10부 - TreeView</strong>
+        </a>
+        </li>
+      <li>
+        <a href="#">
+          <strong>WCAG 3.0 첫번째 초안 문서를 기준으로 살펴보는 WCAG 변경된 사항</strong>
+        </a>
+        </li>
+    </ul>
+  </div>
+
+<br>
+
+<table class="tbl_aria">
+  <caption class="blind">
+    <strong>랜드마크 wai-aria 구성요소</strong>
+    <span>필수유무, role, property, state, 설명 정보 제공</span>
+  </caption>
+  <thead>
+    <tr>
+      <th class="need">필수유무</th>
+      <th class="role">role</th>
+      <th class="prop">property</th>
+      <th class="state">state</th>
+      <th class="exp">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="need"></td>
+      <td class="role">role="banner"</td>
+      <td class="prop"></td>
+      <td class="state"></td>
+      <td class="exp">페이지 상단의 로고, 검색 도구 등을 포함하는 영역</td>
+    </tr>
+    <tr>
+      <td class="need"></td>
+      <td class="role">role="navigation"</td>
+      <td class="prop"></td>
+      <td class="state"></td>
+      <td class="exp">메뉴</td>
+    </tr>
+    <tr>
+      <td class="need"></td>
+      <td class="role">role="main"</td>
+      <td class="prop"></td>
+      <td class="state"></td>
+      <td class="exp">페이지 본문</td>
+    </tr>
+    <tr>
+      <td class="need"></td>
+      <td class="role">role="complementary"</td>
+      <td class="prop"></td>
+      <td class="state"></td>
+      <td class="exp">주요 콘텐츠의 보조적인 정보</td>
+    </tr>
+    <tr>
+      <td class="need"></td>
+      <td class="role">role="contentinfo"</td>
+      <td class="prop"></td>
+      <td class="state"></td>
+      <td class="exp">페이지 하단에 제공되는 정보</td>
+    </tr>
+    <tr>
+      <td class="need"></td>
+      <td class="role">role="form"</td>
+      <td class="prop"></td>
+      <td class="state"></td>
+      <td class="exp">서식 영역</td>
+    </tr>
+    <tr>
+      <td class="need"></td>
+      <td class="role">role="region"</td>
+      <td class="prop"></td>
+      <td class="state"></td>
+      <td class="exp">사이트 제작자가 중요하다고 판단하는 콘텐츠</td>
+    </tr>
+    <tr>
+      <td class="need"></td>
+      <td class="role">role="search"</td>
+      <td class="prop"></td>
+      <td class="state"></td>
+      <td class="exp">검색 영역</td>
+    </tr>
+    <tr>
+      <td class="need"></td>
+      <td class="role"></td>
+      <td class="prop">aria-label<br>또는<br>aria-labelledby</td>
+      <td class="state"></td>
+      <td class="exp">한 페이지에 같은 종류의 랜드마크가 두 번 이상 마크업되거나 role="region" 적용 시 영역 정보 제공</td>
+    </tr>
+  </tbody>
+</table>
+
+<script></script>
+
+</body>
+</html>

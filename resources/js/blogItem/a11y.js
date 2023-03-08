@@ -95,6 +95,34 @@ let a11y = [
     category2: 'popup',
     url: 'html/a11y/dialog_focus_trapping.html',
   },
+  {
+    productName: '자동완성 편집 창',
+    category: 'a11y',
+    category2: 'form',
+    url: 'html/a11y/edit_auto-complete.html',
+  },
+  {
+    productName: '버튼',
+    category: 'a11y',
+    url: 'html/a11y/button_sample.html',
+  },
+  {
+    productName: '선택목록',
+    category: 'a11y',
+    category2: 'form',
+    url: 'html/a11y/select-list.html',
+  },
+  {
+    productName: '입력 서식 오류',
+    category: 'a11y',
+    category2: 'form',
+    url: 'html/a11y/input_formatting_error.html',
+  },
+  {
+    productName: '랜드마크',
+    category: 'a11y',
+    url: 'html/a11y/landmark_markup.html',
+  },
   // {
   //   productName: '',
   //   category: 'a11y',
