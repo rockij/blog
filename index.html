@@ -52,7 +52,7 @@ h1 img {
 }
 .active {
   background-color: darkkhaki;
-  color: #000;
+  color: #000 !important;
 }
 #products {
   padding: 20px 0;
@@ -214,6 +214,15 @@ for (let i of products.data) {
   document.getElementById('products').appendChild(card);
   name.addEventListener('mouseover', () => {
     preview.setAttribute('src', i.url);
+  });
+  let elements = document.querySelectorAll('.project-name');
+  name.addEventListener('click', () => {
+    elements.forEach((element, index) => {
+      element.classList.remove('active');
+    });
+    setTimeout(() => {
+      name.classList.add('active');
+    }, 500);
   });
 }
 

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title></title>
+<style>
+.UiSlider{
+    display: flex;
+    align-items: center;
+    margin: .5em 0;
+    padding: .5em 0;
+}
+.UiSlider__rail{
+    cursor: pointer;
+    position: relative;
+    width: 300px;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 4px;
+}
+.UiSlider__rail.focus{
+    background: #ababab;
+}
+.UiSlider__value{
+    width: 3em;
+    margin-left: 20px;
+    text-align: right;
+    font-size: 0.875rem;
+    color: #232323;
+}
+.UiSlider__thumb{
+    touch-action: none;
+    cursor:grab;
+    position: relative;
+    top: -3px;
+    left: 0;
+    width: 30px;
+    height: 12px;
+    background: #eaeaea;
+    box-shadow: 0 1px 5px rgba(0,0,0,.15);
+    border-radius: 4px;
+}
+.UiSlider__thumb:active{
+    cursor: grabbing;
+}
+.UiSlider__thumb:focus{
+    outline: none;
+}
+.UiSlider__thumb.focus{
+    box-sizing: border-box;
+    border:2px solid rgba(17, 17, 17, .35);
+    border-radius: 8px;
+    box-shadow: 0 4px 7px rgba(0,0,0,.15);
+}
+</style>
+</head>
+<body>
+
+<!-- 
+    가이드 https://www.youtube.com/watch?v=w7cRtkhHCPI
+    제작 https://www.youtube.com/watch?v=HGZ0FTr0S_A
+ -->
+
+<div class="UiSlider">
+    <div class="UiSlider__rail" style="width:200px">
+        <div class="UiSlider__thumb" tabindex="0" role="slider" aria-valuemin="0" aria-valuenow="0" aria-valuemax="100" aria-valuetext="0"></div>
+    </div>
+    <div class="UiSlider__value">0</div>
+</div>
+
+<div class="UiSlider">
+    <div class="UiSlider__rail" style="width:200px">
+        <div class="UiSlider__thumb" tabindex="0" role="slider" aria-valuemin="0" aria-valuenow="20" aria-valuemax="100" aria-valuetext="0"></div>
+    </div>
+    <div class="UiSlider__value">0</div>
+</div>
+
+<script>
+class UiSlider {
+    constructor(domNode){
+        this.sliderNode = domNode;
+        this.min = 0;
+        this.now = 0;
+        this.max = 100;
+        this.unit = '%';
+        this.railWidth = 0;
+        this.thumbWidth = 0;
+        this.thumbHeight = 0;
+        this.railNode = null;
+        this.thumbNode = null;
+        this.valueNode = null;
+    }
+    static keyCode = {
+        left: 37,
+        up: 38,
+        right: 39,
+        down: 40,
+        home: 36,
+        end: 35,
+        pageUp: 33,
+        pageDown: 34,
+    }
+    init(){
+        this._findDomNodeAndSettings();
+        this._bindEvents();
+        this.moveSliderTo(this.now);
+    }
+    _findDomNodeAndSettings(){
+        const { sliderNode } = this;
+        this.railNode = sliderNode.querySelector('.UiSlider__rail');
+        this.thumbNode = sliderNode.querySelector('.UiSlider__thumb');
+        this.valueNode = sliderNode.querySelector('.UiSlider__value');
+        // 설정
+        if(this.thumbNode.tabIndex != 0){
+            this.thumbNode.tabIndex = 0;
+        }
+        if(this.thumbNode.getAttribute('role') != 'slider'){
+            this.thumbNode.setAttribute('role', 'slider');
+        }
+        let valueMin = parseInt(this.thumbNode.getAttribute('aria-valuemin'), 10);
+        this.min = valueMin ? valueMin : this.min;
+        let valueMax = parseInt(this.thumbNode.getAttribute('aria-valuemax'), 10);
+        this.max = valueMax ? valueMax : this.max;
+        let valueNow = parseInt(this.thumbNode.getAttribute('aria-valuenow'), 10);
+        this.now = valueNow ? valueNow : this.now;
+        if(this.valueNode){
+            this.valueNode.textContent = this.now + this.unit;
+            this.thumbNode.setAttribute('aria-valuetext', this.now + this.unit);
+        }
+        // if(this.valueNode){ // 유투브 가이드 버전
+        //     this.valueNode.textContent = this.now + this.unit;
+        // }else{
+        //     this.thumbNode.setAttribute('aria-valuetext', this.now + this.unit);
+        // }
+        // railWidth, thumbWidth, thumbHeight
+        this.railWidth = this.railNode.getBoundingClientRect().width;
+        this.thumbWidth = this.thumbNode.getBoundingClientRect().width;
+        this.thumbHeight = this.thumbNode.getBoundingClientRect().height;
+     }
+    _bindEvents(){
+        const { thumbNode, railNode } = this;
+        thumbNode.addEventListener('keydown', this.handleThumbKeyDown.bind(this));
+        thumbNode.addEventListener('focus', this.handleThumbFocus.bind(this));
+        thumbNode.addEventListener('blur', this.handleThumbBlur.bind(this));
+        [
+            thumbNode,
+            railNode,
+        ].forEach((node) =>
+            node.addEventListener('pointerdown', this.handlePointerDown.bind(this))
+        );
+    }
+    moveSliderTo(value){
+        const {min, max, unit, thumbNode, valueNode, railWidth, thumbWidth} = this;
+        value = value < min ? min : value > max ? max : value;
+
+        if(valueNode){
+            valueNode.textContent = value + unit;
+            thumbNode.setAttribute('aria-valuetext', value + unit);
+        }
+        // valueNode // 유투브 가이드 버전
+        //     ? (valueNode.textContent = value + unit)
+        //     : thumbNode.setAttribute('aria-valuetext', value + unit);
+        
+        const thumbPosition = Math.round(railWidth * value / max - min) - thumbWidth / 2;
+        thumbNode.style.left = thumbPosition + 'px';
+        this.now = value;
+    }
+    handleThumbKeyDown(e){
+        const {left, up, right, down, home, end, pageUp, pageDown} = UiSlider.keyCode;
+        let { now, min, max } = this;
+        let isPressed = false;
+        switch (e.keyCode) {
+            case left:
+            case down:
+                console.log('현재값에서 -1 만큼 슬라이더 이동');
+                this.moveSliderTo(now - 1);
+                isPressed = true;
+                break;
+            case right:
+            case up:
+                console.log('현재값에서 +1 만큼 슬라이더 이동');
+                this.moveSliderTo(now + 1);
+                isPressed = true;
+                break;
+            case home:
+                console.log('최소값에서 슬라이더 이동');
+                this.moveSliderTo(min);
+                isPressed = true;
+                break;
+            case end:
+                console.log('최대값에서 슬라이더 이동');
+                this.moveSliderTo(max);
+                isPressed = true;
+                break;
+            case pageUp:
+                console.log('현재값에서 +10 슬라이더 이동');
+                this.moveSliderTo(now + 10);
+                isPressed = true;
+                break;
+            case pageDown:
+                console.log('현재값에서 -10 슬라이더 이동');
+                this.moveSliderTo(now - 10);
+                isPressed = true;
+                break;
+            default:
+        }
+        isPressed && e.preventDefault();
+    }
+    handlePointerDown(e){
+        const { railNode, max, min, railWidth } = this;
+        // move
+        const handleMove = (e) => {
+            const pointerPosition = e.pageX - railNode.getBoundingClientRect().x;
+            const pointerValue = Math.round(pointerPosition/railWidth * (max - min));
+            this.moveSliderTo(pointerValue);
+        }
+        // up
+        const handleUp = () => {
+            document.removeEventListener('pointermove', handleMove);
+            document.removeEventListener('pointerup', handleUp);
+        }
+        // down
+        // 포인터로 터치(클릭)한 위치의 좌표 값
+        const pointerPosition = e.pageX - railNode.getBoundingClientRect().x;
+        const pointerValue = Math.round(pointerPosition/railWidth * (max - min));
+        this.moveSliderTo(pointerValue);
+        document.addEventListener('pointermove', handleMove);
+        document.addEventListener('pointerup', handleUp);
+    }
+    handleThumbFocus(){
+        const { thumbNode, railNode } = this;
+        thumbNode.classList.add('focus');
+        railNode.classList.add('focus');
+    }
+    handleThumbBlur(){
+        const { thumbNode, railNode } = this;
+        thumbNode.classList.remove('focus');
+        railNode.classList.remove('focus');
+    }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const sliderDomNodes = document.querySelectorAll('.UiSlider');
+    [].forEach.call(sliderDomNodes, sliderDomNode => {
+        const slider = new UiSlider(sliderDomNode);
+        slider.init(); // 컴포넌트 초기화
+    });
+});
+</script>
+
+</body>
+</html>       

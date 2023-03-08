@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+<title></title>
+<style>
+dialog {
+    background-color: rgb(255, 255, 255);
+}
+dialog[open]:not(:focus-within) {
+    background-color: rgb(255, 255, 254);
+    transition: background-color 0.01s ease;
+}
+
+/* Polyfill for Dialog on FF, Safari etc */
+.no-dialog dialog {
+  display: none;
+}
+
+.no-dialog dialog[open] {
+  display: block;
+}
+</style>
+</head>
+
+<body>
+
+<button id="button">Open dialog</button>
+
+<dialog id="modal">
+  <form action="">
+    <small>Try navigating through inputs using TAB key</small>
+    <p>
+
+      <label>
+        Username
+        <input type="text" />
+      </label>
+    </p>
+    <p>
+      <label>
+        Password
+        <input type="password" />
+      </label>
+    </p>
+    <p>
+
+      <label><input type="checkbox" />Remember me</label>
+    </p>
+
+    <input type="submit" value="Login" />
+
+  </form>
+</dialog>
+
+<input style="opacity:0;" value="This is here just as a hack to keep focus remain inside Codepen's iframe" />
+
+<script>
+let isDialogSupported = true;
+if (!window.HTMLDialogElement) {
+  document.body.classList.add('no-dialog');
+  isDialogSupported = false;
+}
+button.onclick = () => {
+  if (isDialogSupported) {
+    modal.showModal();
+  } else {
+    modal.setAttribute('open', '');
+  }
+  modal.querySelector('input').focus();
+};
+
+modal.addEventListener('transitionend', e => {
+  modal.querySelector('input').focus();
+})
+</script>
+
+</body>
+</html>

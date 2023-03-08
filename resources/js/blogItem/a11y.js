@@ -59,6 +59,42 @@ let a11y = [
     category: 'a11y',
     url: 'html/a11y/accessible_pagination.html',
   },
+  {
+    productName: '그룹명 필수 항목 적용',
+    category: 'a11y',
+    url: 'html/a11y/required_item_group.html',
+  },
+  {
+    productName: '링크의 초점분리 이슈 개선하기',
+    category: 'a11y',
+    url: 'html/a11y/improving_focus_issues_on_link.html',
+  },
+  {
+    productName: '아코디언 패턴 구현(jquery)',
+    category: 'a11y',
+    url: 'html/a11y/sample_accordion.html',
+  },
+  {
+    productName: '커스텀 slider 컴포넌트',
+    category: 'a11y',
+    url: 'html/a11y/sample_slider_component.html',
+  },
+  {
+    productName: '그룹과 그룹명, 에러메시지',
+    category: 'a11y',
+    url: 'html/a11y/sample_group_name.html',
+  },
+  {
+    productName: '탭 콘텐츠 접근성 향상(jquery)',
+    category: 'a11y',
+    url: 'html/a11y/sample_tab_content.html',
+  },
+  {
+    productName: '모달팝업 초점 트래핑',
+    category: 'a11y',
+    category2: 'popup',
+    url: 'html/a11y/dialog_focus_trapping.html',
+  },
   // {
   //   productName: '',
   //   category: 'a11y',

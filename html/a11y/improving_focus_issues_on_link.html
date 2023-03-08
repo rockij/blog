@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title></title>
+<style>
+body > ul > li{
+    padding: 20px;
+    border:1px solid
+}
+</style>
+</head>
+<body>
+
+<!-- 
+    https://www.youtube.com/watch?v=-Q7YXgGljgQ&t=209s
+ -->
+
+<ul>
+   <li>
+       <a href="#;" class="js_defocus" aria-label="">
+        <span aria-hidden="true">
+            <span>초점 분리현상 대응하기</span>
+            <ul>
+                <li>상품명: 달콤한 딸기</li>
+                <li>가격: 20,000원</li>
+                <li>택배: 3,000원</li>
+            </ul>
+        </span>
+       </a>
+   </li> 
+   <li>
+       <a href="#;" class="js_defocus" aria-label="">
+           <span aria-hidden="true">
+               <span>초점 분리현상 대응하기2</span>
+               <ul>
+                   <li>상품명: 달콤한 사과</li>
+                   <li>가격: 10,000원</li>
+                   <li>택배: 3,500원</li>
+               </ul>
+           </span>
+       </a>
+   </li> 
+</ul>
+
+<script>
+$('.js_defocus').each(function(){
+    $(this).attr('aria-label', $(this).text().replace(/\s/gi, ""))
+});
+</script>
+
+</body>
+</html>       

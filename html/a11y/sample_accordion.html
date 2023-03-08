@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link rel="stylesheet" href="../../resources/css/reset.min.css">
+<script src="../../resources/js/jquery.min.3.4.1.js"></script>
+<title></title>
+<style>
+/*
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Courier Prime', monospace;
+    font-family: 'Oleo Script', cursive;
+    font-family: 'Open Sans', sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-family: 'Quicksand', sans-serif;
+*/
+.accordion{
+    border:1px solid #000;
+    border-radius: 10px;
+}
+.accordion__header{
+    display: flex;
+    flex-flow: column;
+    border-top: 1px solid #000;
+}
+.accordion__header:first-child{
+    border-top:0
+}
+.accordion__header > button{
+    border:0;
+    padding: .5em;
+    background-color: transparent;
+    text-align: left;
+}
+.accordion__header > button.active{
+    pointer-events: none;
+}
+.accordion__panel{
+    border-top: 1px solid #000;
+    display: none;
+}
+</style>
+</head>
+<body>
+
+<!-- 
+    초기에는 모든 패널이 닫혀있고
+    단 하나의 패널만 열림
+    열려 있는 패널을 재선택 하면 닫히는
+    https://www.youtube.com/watch?v=rAzipoUdcX8
+    https://www.youtube.com/watch?v=bhGiKvmcdTM
+ -->
+
+ <div class="accordion">
+     <h2 id="accordion-header-1" class="accordion__header"><button type="button" aria-expanded="false" aria-controls="accordion-panel-1">메뉴1</button></h2>
+     <div id="accordion-panel-1" class="accordion__panel" role="region" aria-labelledby="accordion-header-1">
+         <ul>
+             <li>메뉴1아이템1</li>
+             <li>메뉴1아이템2</li>
+             <li>메뉴1아이템1</li>
+         </ul>
+     </div>
+     <h2 id="accordion-header-2" class="accordion__header"><button type="button" aria-expanded="false" aria-controls="accordion-panel-2">메뉴2</button></h2>
+     <div id="accordion-panel-2" class="accordion__panel" role="region" aria-labelledby="accordion-header-2">
+         <ul>
+             <li>메뉴2아이템1</li>
+             <li>메뉴2아이템2</li>
+             <li>메뉴2아이템3</li>
+         </ul>
+     </div>
+     <h2 id="accordion-header-3" class="accordion__header"><button type="button" aria-expanded="false" aria-controls="accordion-panel-3">메뉴3</button></h2>
+     <div id="accordion-panel-3" class="accordion__panel" role="region" aria-labelledby="accordion-header-3">
+         <ul>
+             <li>메뉴3아이템1</li>
+             <li>메뉴3아이템2</li>
+             <li>메뉴3아이템3</li>
+         </ul>
+     </div>
+ </div>
+
+<script>
+$('.accordion__header > button').on('click', togglePanel);
+$('.accordion__header > button').on('keydown', bindKey);
+
+function togglePanel(){
+    var $header = $(this).parent('.accordion__header');
+    var $panel = $('#' + this.getAttribute('aria-controls'));
+    toggleCurrentPanel($header, $panel);
+    closeOtherPanels($header, $panel);
+}
+
+function toggleCurrentPanel(currHeader, currPanel){
+    function toggleExpanded(_, val){
+        return val === 'true' ? 'false' : 'true';
+    }
+    $(currHeader).find('button').attr('aria-expanded', toggleExpanded).addClass('active');
+    $(currPanel).slideToggle(300);
+    setTimeout(function(){
+        $(currHeader).find('button').removeClass('active')
+    }, 300)
+}
+
+function closeOtherPanels(currHeader, currPanel){
+    var $headers = $('.accordion__header').not(currHeader);
+    var $panels = $('.accordion__panel').not(currPanel);
+    $headers.find('button').attr('aria-expanded', 'false')
+    $panels.slideUp();
+}
+
+function bindKey(event){
+    var key = event.code.toLowerCase();
+    var currHeader = $(this).parent('.accordion__header');
+    switch (key){
+        case 'arrowdown':
+            moveHeader(currHeader, 1);
+            break;
+        case 'arrowup':
+            moveHeader(currHeader, -1);
+            break;
+        case 'home':
+            moveFirstHeader();
+            break;
+        case 'end':
+            moveLastHeader();
+            break;
+    }
+}
+
+function moveHeader(currHeader, direction){
+    var next = null;
+    var $headers = $('.accordion__header');
+    var currIdx = $headers.index(currHeader);
+
+    if(direction > 0){
+        next = $headers[(currIdx + direction) % $headers.length];
+    }else{
+        next = $headers[(currIdx || $headers.length) + direction];
+    }
+
+    setTimeout(function(){
+        $(next).find('button').focus();
+    }, 0)
+}
+
+function moveFirstHeader(){
+    var $firstBtn = $('.accordion__header').eq(0).find('button');
+    $firstBtn.focus();
+}
+
+function moveLastHeader(){
+    var $lastBtn = $('.accordion__header').eq(-1).find('button');
+    $lastBtn.focus();
+}
+
+</script>
+
+</body>
+</html>       

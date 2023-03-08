@@ -185,11 +185,6 @@ let items = [
     url: 'html/responsive_slider_slickjs/index.html',
   },
   {
-    productName: "gsap를 이용한 세로로 부드럽게 슬라이드",
-    category: 'slide',
-    url: 'html/vertical_content_slider.html',
-  },
-  {
     productName: "수직 카드 슬라이딩 애니메이션(only css)",
     category: 'slide',
     url: 'html/vertical_card_sliding_animation.html',
@@ -208,12 +203,6 @@ let items = [
     productName: "이미지 반사 효과 3D 슬라이더",
     category: 'slide',
     url: 'html/3D_image_slider_reflection_Materialize.html',
-    linkType: 'outlink',
-  },
-  {
-    productName: "Glide.js를 사용한 놀라운 효과의 이미지 슬라이드",
-    category: 'slide',
-    url: 'html/glide/index.html',
   },
   {
     productName: "Javascript를 사용 Mousemove에서 이미지 회전 제어",
@@ -297,7 +286,7 @@ let items = [
     url: 'html/moon_night_meteor_canvas_animation.html',
   },
   {
-    productName: '배경에 눈내리는(Canvas + Vanilla JS',
+    productName: '배경에 눈내리는(Canvas + Vanilla JS)',
     category: 'animation',
     category2: 'background-border',
     url: 'html/falling_snow_animations.html',

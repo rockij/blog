@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link rel="stylesheet" href="../../resources/css/reset.min.css">
+<script src="../../resources/js/jquery.min.3.4.1.js"></script>
+<title></title>
+<style>
+.tab__list{
+    display: flex;
+}
+.tab__list li{
+    padding:10px;
+    border:1px solid #000
+}
+.tab__panel{
+    padding:10px;
+    border:1px solid #000
+}
+</style>
+<script>
+    $(function(){
+        var tabContainer = $('.tab__container');
+        if(!tabContainer) return;
+    
+        $(tabContainer).on('click', '.tab__button', handleClickEvent);
+        $(tabContainer).on('keydown', '.tab__list', handleKeyEvent);
+    
+        function handleClickEvent(event){
+            event = event || window.event;
+            event.stopPropagation();
+            var currTab = event.currentTarget;
+    
+            activateTab(currTab);
+            activateTabPanel(currTab);
+        }
+    
+        function activateTab(tab){
+            if(!tab) return;
+            $(tab)
+                .addClass('tab__button-active')
+                .attr({
+                    'tabindex' : '0',
+                    'aria-selected' : 'true'
+                })
+                .focus()
+                .siblings()
+                    .removeClass('tab__button-active')
+                    .attr({
+                        'tabindex' : '-1',
+                        'aria-selected' : 'false'
+                    })
+        }
+        function activateTabPanel(tab){
+            if(!tab) return;
+            $('#' + tab.getAttribute('aria-controls'))
+                .attr({
+                    'tabindex' : '0'
+                })
+                .prop({
+                    'hidden' : false
+                })
+                .addClass('tab__panel-active')
+                .siblings('.tab__panel')
+                    .attr({
+                        'tabindex' : '-1'
+                    })
+                    .prop({
+                        'hidden' : true
+                    })
+                    .removeClass('tab__panel-active')
+        }
+    
+        function handleKeyEvent(event){
+            event = event || window.event;
+            event.stopPropagation();
+            var keycode = event.keyCode || event.which;
+    
+            switch(keycode){
+                case 37:
+                    if(event.target.previousElementSibling){
+                        $(event.target).attr({'tabindex' : '-1'});
+                        setTimeout(function(){
+                            $(event.target).prev().attr({'tabindex' : '0'}).focus();
+                        }, 0)
+    
+                    }else{
+                        $(event.target).attr({'tabindex' : '-1'});
+                        setTimeout(function(){
+                            $(event.target).siblings(':last').attr({'tabindex' : '0'}).focus();
+                        }, 0)
+                    }
+                    break;
+                case 39:
+                    if(event.target.nextElementSibling){
+                        $(event.target).attr({'tabindex' : '-1'}).next().attr({'tabindex' : '0'}).focus();
+                    }else{
+                        $(event.target).attr({'tabindex' : '-1'}).siblings(':first').attr({'tabindex' : '0'}).focus();
+                    }
+                    break;
+                case 32:
+                case 13:
+                    event.preventDefault();
+                    activateTab(event.target);
+                    activateTabPanel(event.target);
+                    break;
+            }
+        }
+    
+        $('.tab__button:first-of-type', tabContainer).trigger('click'); //첫번째 탭 선택
+    });
+</script>
+</head>
+<body>
+
+<div class="wrap">
+    <header>
+        <h1>Tab Pattern</h1>
+    </header>
+    <div class="tab__container">
+        <ul class="tab__list" role="tablist"  aria-label="한국소설"> <!-- 기획단계에서 탭 제목에 대한 것이 도출되어야 한다 -->
+            <li id="tab-button-1" class="tab__button" role="tab" aria-controls="tab-panel-1">청춘예찬</li> <!-- 이 탭이 어떤 요소에 대한 컨트롤인지 참조 tabpanel id값 -->
+            <li id="tab-button-2" class="tab__button" role="tab" aria-controls="tab-panel-2">별헤는 밤</li>
+            <li id="tab-button-3" class="tab__button" role="tab" aria-controls="tab-panel-3">혈의 누</li>
+            <li id="tab-button-4" class="tab__button" role="tab" aria-controls="tab-panel-4">소년의 비애</li>
+        </ul>
+        <div id="tab-panel-1" class="tab__panel" role="tabpanel" aria-describedby="tab-button-1" hidden> <!-- 내용과 연관된 탭 연결 tab의 id값 -->
+            청춘예찬청춘예찬청춘예찬청춘예찬
+        </div>
+        <div id="tab-panel-2" class="tab__panel" role="tabpanel" aria-describedby="tab-button-2" hidden>
+            별헤는 밤별헤는 밤별헤는 밤별헤는 밤
+        </div>
+        <div id="tab-panel-3" class="tab__panel" role="tabpanel" aria-describedby="tab-button-3" hidden>
+            혈의 누혈의 누혈의 누혈의 누
+        </div>
+        <div id="tab-panel-4" class="tab__panel" role="tabpanel" aria-describedby="tab-button-4" hidden>
+            소년의 비애소년의 비애소년의 비애소년의 비애
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
