@@ -1033,11 +1033,6 @@ let items = [
     url: 'html/responsive_fixed_navigation_bar.html',
   },
   {
-    productName: 'accordion - css, js 이용 faq스타일',
-    category: 'navigation-list',
-    url: 'html/accordion_faq_es6.html',
-  },
-  {
     productName: 'tweenmax를 이용한 전체 화면이 움직임',
     category: 'layout',
     category2: 'animation',
@@ -1749,6 +1744,11 @@ let items = [
     productName: 'css outline-offset를 이용한 border효과',
     category: 'background-border',
     url: 'html/css_outline-offset.html',
+  },
+  {
+    productName: 'javascript 이용한 년도, 월, 오늘 선택가능한 달력',
+    category: 'calendar',
+    url: 'html/calendar_pure_javascript.html',
   },
   // {
   //   productName: '',
