@@ -123,6 +123,11 @@ let a11y = [
     category: 'a11y',
     url: 'html/a11y/landmark_markup.html',
   },
+  {
+    productName: 'carousel 접근성 향상',
+    category: 'a11y',
+    url: 'html/a11y/carousel_sample.html',
+  },
   // {
   //   productName: '',
   //   category: 'a11y',

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+
+<script src="../../resources/js/jquery.min.3.4.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<title></title>
+<style>
+:root {
+  --swiper-pagination-bullet-inactive-color: #888;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-inactive-width: 20px;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+img{
+  height: 300px;
+}
+:focus {
+  outline: 2px solid #000;
+}
+.swiper {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  row-gap: 1.5rem;
+  width: 640px;
+}
+.swiper-controller__container {
+  order: 1;
+}
+.swiper-wrapper {
+  order: 2;
+}
+.swiper-slide a {
+  display: block;
+}
+.swiper-slide a:focus {
+  outline-offset: -2px;
+}
+.swiper-message {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+}
+.swiper-pagination {
+  position: static;
+  order: 3;
+}
+.swiper-pagination-bullet {
+  border-radius: 4px;
+  transition: width .3s;
+}
+.swiper-pagination-bullet-active {
+  width: var(--swiper-pagination-bullet-inactive-width);
+}
+</style>
+</head>
+
+<body>
+
+<div
+  role="region"
+  aria-label="갤러리"
+  aria-roledescription="carousel"
+  class="swiper"
+>
+  <div class="swiper-controller__container">
+    <button class="slide-controller swiper-controller--prev">이전</button>  
+    <button class="slide-controller swiper-controller--autoplay">자동 넘김 일시정지</button>  
+    <button class="slide-controller swiper-controller--next">다음</button>
+  </div>
+  <div class="swiper-pagination" role="tablist"></div>
+  <div class="swiper-message"></div>
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" role="tabpanel" aria-labelledby="slide1"><a href="#;"><img id="slide1" src="../../resources/image/image1.jpg" alt="이미지 설명1" /></a></div>
+    <div class="swiper-slide" role="tabpanel" aria-labelledby="slide2"><a href="#;"><img id="slide2" src="../../resources/image/image3.jpg" alt="이미지 설명3" /></a></div>
+    <div class="swiper-slide" role="tabpanel" aria-labelledby="slide3"><a href="#;"><img id="slide3" src="../../resources/image/image2.jpg" alt="이미지 설명2" /></a></div>
+  </div>  
+</div>
+
+<script>
+function handleInert(swiper) {
+  const $currSlide = $(swiper.slides[swiper.activeIndex]);
+  $currSlide
+    .find(`a`)
+      .removeAttr(`tabindex`)
+      .attr(`aria-hidden`, `false`);
+  $currSlide
+    .siblings()
+    .find(`a`)
+      .attr(`tabindex`, `-1`)
+      .attr(`aria-hidden`, `true`);
+}
+
+function toggleAutoplayState(event) {
+  const $control = $(event.target);
+  const $notifyEl = $(this.el).find(`.swiper-message`);
+  if (this.autoplay.running) {
+    $control.text(`자동 넘김 시작`);
+    $notifyEl.attr(`aria-live`, `polite`);
+    this.autoplay.stop();
+  } else {
+    $control.text(`자동 넘김 일시 정지`);
+    $notifyEl.removeAttr(`aria-live`);
+    this.autoplay.start();
+  }
+}
+
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    renderBullet: function(idx, className) {
+      return `<button
+        type="button"
+        class="${className}"
+        aria-labelledby="slide${idx + 1}"
+        role="tab"
+        aria-selected="${idx === this.realIndex}"
+      ></button>`
+    }
+  },
+  navigation: {
+    nextEl: '.swiper-controller--next',
+    prevEl: '.swiper-controller--prev',
+  },
+  autoplay: {
+    delay: 3000,
+  },
+  on: {
+    init() {
+      const $control = $(this.el).find(`.swiper-controller--autoplay`);
+      $control.on(`click`, toggleAutoplayState.bind(this));
+      handleInert(this);
+    },
+    slideChange() {
+      handleInert(this);
+    },
+    paginationUpdate(swiper, el) {
+      for (let i = -1, bullet; bullet = swiper.pagination.bullets(++i);) {
+        bullet.setAttribute(`aria-selected`, (swiper.realIndex === i).toString());
+      }
+    }
+  }
+  // scrollbar: {
+  //   el: '.swiper-scrollbar',
+  // },
+});
+</script>
+
+</body>
+</html>
