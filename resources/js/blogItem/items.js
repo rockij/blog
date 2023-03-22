@@ -1750,6 +1750,37 @@ let items = [
     category: 'calendar',
     url: 'html/calendar_pure_javascript.html',
   },
+  {
+    productName: 'JavaScript에서 플래시 제목 알림 생성',
+    category: 'text-effect',
+    url: 'html/flash_title_notification.html',
+  },
+  {
+    productName: '다크모드 가이드',
+    category: 'layout',
+    category2: 'basic',
+    url: 'html/darkmode_guide.html',
+  },
+  {
+    productName: '자바스크립트 전체 체크박스 선택',
+    category: 'form',
+    url: 'html/check-all_javascript.html',
+  },
+  {
+    productName: 'svg를 이용한 세모만들기',
+    category: 'icon-loading',
+    url: 'html/triangle_rounded.html',
+  },
+  {
+    productName: 'round가 들어간 하단 라인',
+    category: 'background-border',
+    url: 'html/rounded_dashes.html',
+  },
+  {
+    productName: '반응형 및 정렬가능 테이블',
+    category: 'layout',
+    url: 'html/responsive_sortable_tables.html',
+  },
   // {
   //   productName: '',
   //   category: '',

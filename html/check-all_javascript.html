@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<title></title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.check-list {
+  margin: 10px;
+}
+
+.check-list li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.check-list li:last-child {
+  margin-bottom: 0;
+}
+
+.check-list li label:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<ul class="check-list">
+  <li>
+    <input id="check-all" type="checkbox" id="checkboxes">
+    <label for="check-all">Select All</label>
+  </li>
+  <li>
+    <input type="checkbox" id="whatever_1" class="checkboxes" name="whatever_1">
+    <label for="whatever_1">Whatever 1</label>
+  </li>
+  <li>
+    <input type="checkbox" id="whatever_2" class="checkboxes" name="whatever_2">
+    <label for="whatever_2">Whatever 2</label>
+  </li>
+  <li>
+    <input type="checkbox" id="whatever_3" class="checkboxes" name="whatever_3">
+    <label for="whatever_3">Whatever 3</label>
+  </li>
+</ul>
+
+<script>
+let checkedAll = false;
+let checkAllButton = document.querySelector('#check-all');
+let targetCheckboxes = document.querySelectorAll('.checkboxes');
+
+targetCheckboxes.forEach(function(checkbox) {
+  checkbox.addEventListener('change', function() {
+    let unchecked = Array.prototype.slice.call(targetCheckboxes).filter(checkbox => !checkbox.checked);
+    if(unchecked.length) {
+      checkedAll = false;
+      checkAllButton.checked = false;
+    } else {
+      checkedAll = true;
+      checkAllButton.checked = true;
+    }
+  });
+});
+
+checkAllButton.addEventListener('click', function() {
+  checkedAll = !checkedAll;
+  targetCheckboxes.forEach(function(checkbox) {
+    checkbox.checked = checkedAll;
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<meta name="color-scheme" content="dark light">
+<title></title>
+<style>
+:root {
+  color-scheme: light dark;
+}
+body {
+  --text-color: #222;
+  --bkg-color: #fff;
+}
+body.dark-theme {
+  --text-color: #eee;
+  --bkg-color: #121212;
+}
+body.dark-theme img {
+  filter: brightness(.8) contrast(1.2);
+}
+body.dark-theme svg.icon path {
+  fill: #efefef;
+}
+picture{display: block}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --text-color: #eee;
+    --bkg-color: #121212;
+  }
+  body.light-theme {
+    --text-color: #222;
+    --bkg-color: #fff;
+  }
+  img {
+    filter: brightness(.8) contrast(1.2);
+  }
+}
+
+body {
+  background: var(--bkg-color);
+  color: var(--text-color);
+}
+</style>
+</head>
+
+<body>
+
+<button class="btn-toggle">Toggle Dark-Mode</button>
+<h1>다크모드에 대한 가이드</h1>
+
+<hr/>
+<a href="https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/" target="_blank">css-trick 다크모드 가이드 참고</a>
+<hr/>
+
+<h2>다크 모드 이미지</h2>
+좋은 규칙은 어두운 배경에 있을 때 눈에 편안하게 보이도록 이미지의 밝기와 대비를 약간 줄이는 것입니다. 매우 어두운 배경의 매우 밝은 이미지는 흔들릴 수 있으며 이미지를 어둡게 하면 강한 대비가 일부 감소합니다.
+<br/>
+<img src="../resources/image/image1.jpg" alt="">
+<br/>
+&lt;picture&gt;다른 버전의 이미지를 로드하는 요소를 사용하여 마크업에서 동일한 종류의 작업을 직접 수행할 수 있습니다
+<picture>
+  <!-- Use this image if the user's OS setting is light or unset -->
+  <source srcset="../resources/image/image1.jpg" media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
+  <!-- Use this image if the user's OS setting is dark -->
+  <source srcset="../resources/image/image4.jpg" media="(prefers-color-scheme: dark)">
+  <img src="../resources/image/image1.jpg" alt="">
+</picture>
+
+<hr/>
+
+<h2>다크 모드 그림자</h2>
+다크 모드 그림자는 까다롭습니다. 단순히 밝은 색상을 사용하여 어두운 그림자를 반전시키면 어두운 배경에 밝은 그림자가 있는 이 펑키한 것을 얻게 됩니다...보기에 좋지 않습니다.<br/>
+어두운 모드에서 어두운 그림자를 사용하는 것이 가능하지만 배경색은 그림자를 실제로 볼 수 있도록 충분한 대비를 제공할 수 있을 만큼 충분히 "밝아야" 합니다<br/>
+불투명도를 사용하여 깊이를 전달하고 불투명도가 높은 영역은 깊이가 낮습니다. 즉, 고도가 높은 요소는 배경에 깊이가 "가까운" 요소보다 불투명도가 낮아야 합니다.
+
+<hr/>
+
+<h2>다크 모드 타이포그래피</h2>
+대비의 균형을 맞춰야 합니다. 너무 무거운 글꼴을 사용하면 화면에서 벗어나고 싶게 만드는 요란한 텍스트가 나타납니다. 너무 밝은 글꼴을 사용하면 자세히 보기 위해 화면 쪽으로 조금씩 이동하면서 눈이 피로해집니다.
+
+<hr/>
+
+<h2>다크 모드 아이콘</h2>
+아이콘은 일종의 텍스트와 이미지 사이의 교차점이기 때문에 이 "까다로운" 범주에 속합니다. 하지만 SVG 아이콘으로 작업하는 경우 CSS로 채우기를 변경할 수 있습니다. 반면에 글꼴 아이콘을 사용하는 경우 색상 속성을 대신 변경할 수 있습니다.<br/>
+텍스트에 적용되는 동일한 디자인 고려 사항이 일반적으로 아이콘에도 적용됩니다. 예를 들어 전체 흰색과 두꺼운 윤곽선을 사용하지 않아야 합니다.
+
+<hr/>
+
+<h2>다크 모드 색상</h2>
+순수한 검은색 배경에 순수한 흰색 텍스트가 어색해 보일 것입니다. 여기서 요령은 텍스트에 미색을 사용하고 배경에 미색을 사용하는 것입니다. 예를 들어 머티리얼 디자인 가이드라인은#121212 배경에 대해 권장합니다.
+
+<hr/>
+
+<h2>다크 모드 색상 팔레트</h2>
+대부분의 것들은 한 가지로 귀결됩니다: 대비 . 그렇기 때문에 색상을 결정하기 전에 첫 번째 팁은 대비 검사기를 통해 아이디어를 실행하여 색상 비율 이 4.5:1의 명암비인 AA 등급 이상에 대한 WCAG의 지침을 준수하는지 확인하는 것입니다<br/>
+즉, 어두운 모드 디자인으로 작업할 때 채도가 낮은 색상이 친구가 됩니다. 지나치게 밝은 이미지를 방지하고 효과적인 명암비를 생성할 수 있는 충분한 공간을 제공합니다<br/>
+다음으로 강조 색상은 향상을 의미한다는 점을 기억하십시오. 어두운 테마 배경색보다 밝을 가능성이 높으므로 원색이나 큰 컨테이너의 배경색처럼 사용하면 밝은 이미지나 두꺼운 흰색 텍스트만큼 눈에 거슬리고 눈이 피로합니다
+대조가 우리가 치고자 하는 균형이라면 어두운 모드는 검정과 회색 이상이라는 점을 기억하십시오
+
+
+<script>
+const btn = document.querySelector('.btn-toggle');
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme == 'dark') {
+  document.body.classList.toggle('dark-theme');
+} else if (currentTheme == 'light') {
+  document.body.classList.toggle('light-theme');
+}
+
+btn.addEventListener('click', function() {
+  if (prefersDarkScheme.matches) {
+    document.body.classList.toggle('light-theme');
+    let theme = document.body.classList.contains('light-theme')
+      ? 'light'
+      : 'dark';
+  } else {
+    document.body.classList.toggle('dark-theme');
+    let theme = document.body.classList.contains('dark-theme')
+      ? 'dark'
+      : 'light';
+  }
+  localStorage.setItem('theme', theme);
+});
+</script>
+
+</body>
+</html>
