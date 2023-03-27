@@ -1781,6 +1781,17 @@ let items = [
     category: 'layout',
     url: 'html/responsive_sortable_tables.html',
   },
+  {
+    productName: '위성 애니메이션',
+    category: 'animation',
+    category2: 'icon-loading',
+    url: 'html/satellite_animation.html',
+  },
+  {
+    productName: '텍스트 줄임표 정리',
+    category: 'text-effect',
+    url: 'html/text-ellipsis_case.html',
+  },
   // {
   //   productName: '',
   //   category: '',

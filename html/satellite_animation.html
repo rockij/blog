@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<title></title>
+<style>
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #341264;
+}
+.container {
+  height: 31.25rem;
+  width: 31.25rem;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+}
+.planet {
+  height: 15.62rem;
+  width: 15.62rem;
+  background-color: #f5d302;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.planet::before {
+  content:'';
+  position: absolute;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #d69d00;
+  top: 6rem;
+  left: 3rem;
+  border-radius: 50%;
+  box-shadow: 2rem 5rem 0 .6rem #d69d00, 2rem -2rem 0 1rem #d69d00;
+}
+.satellite {
+  height: 2rem;
+  width: 2rem;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+  left: 5rem;
+  bottom: -20rem;
+  animation: spin 3s infinite;
+  z-index: 1;
+}
+@keyframes spin {
+  49% {
+    z-index: 1;
+  }
+  50% {
+    bottom: -9.3rem;
+    left: 23rem;
+    z-index: -1;
+  }
+  100% {
+    z-index: -1;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="planet"></div>
+  <div class="satellite"></div>
+</div>
+
+<script></script>
+
+</body>
+</html>
