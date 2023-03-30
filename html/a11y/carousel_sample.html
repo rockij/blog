@@ -80,7 +80,6 @@ img{
     <button class="slide-controller swiper-controller--next">다음</button>
   </div>
   <div class="swiper-pagination" role="tablist"></div>
-  <div class="swiper-message"></div>
   <div class="swiper-wrapper">
     <div class="swiper-slide" role="tabpanel" aria-labelledby="slide1"><a href="#;"><img id="slide1" src="../../resources/image/image1.jpg" alt="이미지 설명1" /></a></div>
     <div class="swiper-slide" role="tabpanel" aria-labelledby="slide2"><a href="#;"><img id="slide2" src="../../resources/image/image3.jpg" alt="이미지 설명3" /></a></div>
@@ -104,14 +103,11 @@ function handleInert(swiper) {
 
 function toggleAutoplayState(event) {
   const $control = $(event.target);
-  const $notifyEl = $(this.el).find(`.swiper-message`);
   if (this.autoplay.running) {
     $control.text(`자동 넘김 시작`);
-    $notifyEl.attr(`aria-live`, `polite`);
     this.autoplay.stop();
   } else {
     $control.text(`자동 넘김 일시 정지`);
-    $notifyEl.removeAttr(`aria-live`);
     this.autoplay.start();
   }
 }
@@ -155,9 +151,6 @@ const swiper = new Swiper('.swiper', {
       }
     }
   }
-  // scrollbar: {
-  //   el: '.swiper-scrollbar',
-  // },
 });
 </script>
 

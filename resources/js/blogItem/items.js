@@ -1792,6 +1792,24 @@ let items = [
     category: 'text-effect',
     url: 'html/text-ellipsis_case.html',
   },
+  {
+    productName: 'iOS Switch',
+    category: 'form',
+    category2: 'animation',
+    url: 'html/iOS_Switch.html',
+  },
+  {
+    productName: 'Simple Switch Animation',
+    category: 'form',
+    category2: 'animation',
+    url: 'html/simple_switch_animation.html',
+  },
+  {
+    productName: '빛나는 점프 선물',
+    category: 'icon-loading',
+    category2: 'animation',
+    url: 'html/shiny_jumping_present.html',
+  },
   // {
   //   productName: '',
   //   category: '',

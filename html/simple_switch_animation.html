@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+<title></title>
+<style>
+* {
+  box-sizing: border-box;
+}
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+.switch {
+  cursor: pointer;
+  padding: 0;
+  width: 13rem;
+  height: 6.5rem;
+  border-radius: 6.5rem;
+  background: #fff;
+  position: relative;
+}
+.switch .switch-slider {
+  width: 12.3rem;
+  height: 5.8rem;
+  position: absolute;
+  left: 0.35rem;
+  top: 0.35rem;
+  transition: all 0.3s ease;
+  background: #ff7b7b;
+  border-radius: 50%;
+  transform: scaleX(0.4758);
+  transform-origin: left center;
+}
+.switch input[type=checkbox] {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.switch.activate .switch-slider {
+  -webkit-animation: activate 0.5s ease forwards;
+          animation: activate 0.5s ease forwards;
+}
+.switch.deactivate .switch-slider {
+  transform: scaleX(0.4758) translateX(0rem);
+  -webkit-animation: deactivate 0.5s ease forwards;
+          animation: deactivate 0.5s ease forwards;
+}
+
+@-webkit-keyframes activate {
+  50% {
+    transform-origin: left center;
+    border-radius: 5.8rem;
+    transform: scaleX(1);
+    background: #ff7b7b;
+  }
+  50.1% {
+    transform-origin: right center;
+  }
+  100% {
+    transform-origin: right center;
+    transform: scaleX(0.4758) translateX(0rem);
+    background: #82ea9e;
+  }
+}
+
+@keyframes activate {
+  50% {
+    transform-origin: left center;
+    border-radius: 5.8rem;
+    transform: scaleX(1);
+    background: #ff7b7b;
+  }
+  50.1% {
+    transform-origin: right center;
+  }
+  100% {
+    transform-origin: right center;
+    transform: scaleX(0.4758) translateX(0rem);
+    background: #82ea9e;
+  }
+}
+@-webkit-keyframes deactivate {
+  0% {
+    transform-origin: right center;
+    border-radius: 50%;
+    transform: scaleX(0.4758) translateX(0rem);
+    background: #82ea9e;
+  }
+  50% {
+    transform: scaleX(1) translateX(0rem);
+    border-radius: 5.8rem;
+    transform-origin: right center;
+    background: #82ea9e;
+  }
+  50.1% {
+    transform-origin: left center;
+  }
+  100% {
+    transform-origin: left center;
+    transform: scaleX(0.4758);
+    background: #ff7b7b;
+  }
+}
+@keyframes deactivate {
+  0% {
+    transform-origin: right center;
+    border-radius: 50%;
+    transform: scaleX(0.4758) translateX(0rem);
+    background: #82ea9e;
+  }
+  50% {
+    transform: scaleX(1) translateX(0rem);
+    border-radius: 5.8rem;
+    transform-origin: right center;
+    background: #82ea9e;
+  }
+  50.1% {
+    transform-origin: left center;
+  }
+  100% {
+    transform-origin: left center;
+    transform: scaleX(0.4758);
+    background: #ff7b7b;
+  }
+}
+body {
+  --toggle-color-off: #ff7b7b;
+  --toggle-color-on: #82ea9e;
+  --background: var(--toggle-color-off);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  transition: background 0.5s 0.25s ease;
+}
+body .social-media {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+body .social-media a {
+  display: inline-block;
+  color: #fff;
+}
+body .social-media a:not(:last-of-type) {
+  margin-right: 0.5rem;
+}
+body .social-media:hover {
+  opacity: 1;
+}
+</style>
+</head>
+
+<body>
+
+<label class="switch">
+  <input type="checkbox" value="0" />
+  <div class="switch-slider">
+  </div>
+</label>
+
+<script>
+class Switch {
+  constructor(element) {
+    this._element = element;
+    this._input = element.querySelector('input[type="checkbox"]');
+    this._value = this._input.value;
+    this._canAnimate = true;
+
+    this._bindEventListeners();
+  }
+
+  _bindEventListeners() {
+    this._element.addEventListener("change", () => {
+      if (this._canAnimate) {
+        this._value = this._input.value == 0 ? 1 : 0;
+        this._canAnimate = false;
+
+        if (this._input.value == 0) {
+          this._value = 1;
+          this._element.classList.remove("deactivate");
+          this._element.classList.add("activate");
+        } else {
+          this._value = 0;
+          this._element.classList.remove("activate");
+          this._element.classList.add("deactivate");
+        }
+
+        this._input.value = this._value;
+        this._setBodyBackground();
+
+        setTimeout(() => {
+          this._canAnimate = true;
+        }, 500);
+      }
+    });
+  }
+
+  _setBodyBackground() {
+    let state;
+
+    if (this._value == 1) {
+      state = "on";
+    } else {
+      state = "off";
+    }
+
+    document.body.style.setProperty(
+      "--background",
+      `var(--toggle-color-${state})`
+    );
+  }
+}
+
+document.querySelectorAll(".switch").forEach((element) => {
+  new Switch(element);
+});
+</script>
+
+</body>
+</html>
