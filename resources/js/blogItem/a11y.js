@@ -128,6 +128,12 @@ let a11y = [
     category: 'a11y',
     url: 'html/a11y/carousel_sample.html',
   },
+  {
+    productName: '로딩 적용 사례',
+    category: 'a11y',
+    category2: 'icon-loading',
+    url: 'html/a11y/loading.html',
+  },
   // {
   //   productName: '',
   //   category: 'a11y',

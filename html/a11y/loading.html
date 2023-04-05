@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+<title></title>
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+}
+</style>
+</head>
+
+<body>
+
+<div id="loading-start" aria-live="assertive"></div>
+<div id="loading-end" aria-live="assertive"></div>
+
+<script>
+const loadStart = document.querySelector('#loading-start');
+const loadEnd = document.querySelector('#loading-end');
+loadStart.setAttribute('role','alert');
+loadStart.innerHTML =
+  `<div class="offscreen">please wait while we gather your information, Loading...</div>`;
+
+window.setTimeout(function() {
+  loadStart.querySelector('.offscreen').remove();
+  loadEnd.innerHTML =
+  `<div class="offscreen">Loading has been completed</div>`;
+}, 1000);
+
+window.setTimeout(function() {
+  loadEnd.querySelector('.offscreen').remove();
+  loadStart.removeAttribute('role');
+}, 1500);
+</script>
+
+</body>
+</html>

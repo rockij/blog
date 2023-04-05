@@ -122,19 +122,18 @@ body {
 
     <div class="container-calendar">
         <h3 id="monthAndYear"></h3>
-        
-      
-        <div class="button-container-calendar">
+
+        <div class="button-container-calendar" role="navigation" aria-labelledby="monthAndYear">
             <button id="todays" onclick="todays()">Today</button>
             <button id="previous" onclick="previous()">&#8249;</button>
             <button id="next" onclick="next()">&#8250;</button>
         </div>
-        
-        <table class="table-calendar" id="calendar" data-lang="ko">
+
+        <table class="table-calendar" id="calendar" data-lang="ko" role="grid">
             <thead id="thead-month"></thead>
             <tbody id="calendar-body"></tbody>
         </table>
-        
+
         <div class="footer-container-calendar">
              <label for="month">Jump To: </label>
              <select id="month" onchange="jump()">
@@ -151,11 +150,11 @@ body {
                  <option value=10>Nov</option>
                  <option value=11>Dec</option>
              </select>
-             <select id="year" onchange="jump()"></select>       
+            <select id="year" onchange="jump()" title="select start date month/year"></select>
         </div>
 
     </div>
-    
+
 </div>
 
 <script>
@@ -199,9 +198,9 @@ if (lang == 'en') {
     days = dayDefault;
 }
 
-let $dataHead = '<tr>';
+let $dataHead = '<tr role="row">';
 for (dhead in days) {
-  $dataHead += `<th data-days="${days[dhead]}">${days[dhead]}</th>`;
+  $dataHead += `<th role="columnheader" data-days="${days[dhead]}">${days[dhead]}</th>`;
 }
 $dataHead += '</tr>';
 
@@ -263,6 +262,7 @@ function showCalendar(month, year) {
         cellText = document.createTextNode('');
         cell.appendChild(cellText);
         row.appendChild(cell);
+        row.setAttribute('role','row');
       } else if (date > daysInMonth(month, year)) {
         break;
       } else {
@@ -271,6 +271,9 @@ function showCalendar(month, year) {
         cell.setAttribute('data-month', month + 1);
         cell.setAttribute('data-year', year);
         cell.setAttribute('data-month_name', months[month]);
+        cell.setAttribute('role','gridcell');
+        cell.setAttribute('tabindex','-1');
+        cell.setAttribute('aria-label',`${year}년${month + 1}월${date}일`);
         cell.className = 'date-picker';
         cell.innerHTML = `<button onclick="daySelect(${year}, ${month + 1}, ${date})"> ${date} </button>`;
         if ( date === today.getDate() && year === today.getFullYear() && month === today.getMonth() ) {
