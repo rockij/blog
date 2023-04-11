@@ -137,9 +137,9 @@ body {
         <h3 id="monthAndYear" aria-live="assertive"></h3>
 
         <div class="button-container-calendar" role="navigation" aria-labelledby="monthAndYear">
-            <button id="todays" onclick="todays()">Today</button>
-            <button id="previous" onclick="previous()">&#8249;</button>
-            <button id="next" onclick="next()">&#8250;</button>
+            <button id="todays" onclick="todays()" title="오늘 이동">Today</button>
+            <button id="previous" onclick="previous()" title="이전달 이동">&#8249;</button>
+            <button id="next" onclick="next()" title="다음달 이동">&#8250;</button>
         </div>
 
         <table class="table-calendar" id="calendar" data-lang="ko" role="grid" aria-labelledby="current-year">
@@ -262,7 +262,7 @@ function showCalendar(month, year) {
   let firstDay = (new Date(year, month)).getDay();
   tbl = document.getElementById('calendar-body');
   tbl.innerHTML = '';
-  monthAndYear.innerHTML = months[month] + ' ' + year;
+  monthAndYear.innerHTML = `${year}년 ${months[month]}`;
   selectYear.value = year;
   selectMonth.value = month;
 
@@ -286,9 +286,8 @@ function showCalendar(month, year) {
         cell.setAttribute('data-month_name', months[month]);
         cell.setAttribute('role','gridcell');
         cell.setAttribute('tabindex','-1');
-        cell.setAttribute('aria-label',`${year}년${month + 1}월${date}일`);
         cell.className = 'date-picker';
-        cell.innerHTML = `<button onclick="daySelect(${year}, ${month + 1}, ${date})"> ${date} </button>`;
+        cell.innerHTML = `<button aria-label="${year}년${month + 1}월${date}일" onclick="daySelect(${year}, ${month + 1}, ${date})"> ${date} </button>`;
         if ( date === today.getDate() && year === today.getFullYear() && month === today.getMonth() ) {
           cell.className = "date-picker today";
         }
