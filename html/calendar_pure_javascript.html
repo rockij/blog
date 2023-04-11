@@ -134,7 +134,7 @@ body {
   <div class="wrapper">
 
     <div class="container-calendar">
-        <h3 id="monthAndYear" aria-live="assertive"></h3>
+        <h3 id="monthAndYear"></h3>
 
         <div class="button-container-calendar" role="navigation" aria-labelledby="monthAndYear">
             <button id="todays" onclick="todays()" title="오늘 이동">Today</button>
@@ -171,6 +171,7 @@ body {
 </div>
 
 <script>
+alert(1);
 function generate_year_range(start, end) {
   let years = '';
   for (let year = start; year <= end; year++) {
@@ -254,6 +255,7 @@ function daySelect(year, month, date) {
     dayDates[i].classList.remove('selected');
     if(date == dayDates[i].dataset.date && year == dayDates[i].dataset.year && month == dayDates[i].dataset.month) {
       dayDates[i].classList.add('selected');
+      dayDates[i].querySelector('button').setAttribute('aria-current','date');
     }
   }
 }
