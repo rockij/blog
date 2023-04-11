@@ -113,6 +113,19 @@ body {
     border-radius: 3px;
     padding: 5px 1em;
 }
+
+.sr-only {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+	white-space: nowrap !important; /* 3 */
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+	clip-path: inset(50%) !important; /* 2 */
+}
 </style>
 </head>
 
@@ -121,7 +134,7 @@ body {
   <div class="wrapper">
 
     <div class="container-calendar">
-        <h3 id="monthAndYear"></h3>
+        <h3 id="monthAndYear" aria-live="assertive"></h3>
 
         <div class="button-container-calendar" role="navigation" aria-labelledby="monthAndYear">
             <button id="todays" onclick="todays()">Today</button>
@@ -129,7 +142,7 @@ body {
             <button id="next" onclick="next()">&#8250;</button>
         </div>
 
-        <table class="table-calendar" id="calendar" data-lang="ko" role="grid">
+        <table class="table-calendar" id="calendar" data-lang="ko" role="grid" aria-labelledby="current-year">
             <thead id="thead-month"></thead>
             <tbody id="calendar-body"></tbody>
         </table>

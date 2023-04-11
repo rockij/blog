@@ -1017,13 +1017,13 @@ let items = [
   },
   {
     productName: 'gsap를 이용한 svg gooey pagination2',
-    category: 'mouse-effect',
+    category: 'navigation-list',
     category2: 'animation',
     url: 'html/gooey_pagination2.html',
   },
   {
     productName: 'gsap를 이용한 gooey pagination',
-    category: 'mouse-effect',
+    category: 'navigation-list',
     category2: 'animation',
     url: 'html/gooey_pagination.html',
   },
@@ -1748,6 +1748,7 @@ let items = [
   {
     productName: 'javascript 이용한 년도, 월, 오늘 선택가능한 달력',
     category: 'calendar',
+    category2: 'a11y',
     url: 'html/calendar_pure_javascript.html',
   },
   {
@@ -1827,6 +1828,29 @@ let items = [
     category: 'icon-loading',
     category2: 'animation',
     url: 'html/ring-ring.html',
+  },
+  {
+    productName: '여러개의 태그를 이용한 디테일한 원 파장',
+    category: 'animation',
+    category2: 'icon-loading',
+    url: 'html/css_pulse_example.html',
+  },
+  {
+    productName: '랜덤으로 내리는 눈',
+    category: 'background-border',
+    category2: 'animation',
+    url: 'html/random_snowball.html',
+  },
+  {
+    productName: '가운데를 중심으로 다양하게 위치를 잡는 툴팁',
+    category: 'popup',
+    url: 'html/random_position_arrow_popup.html',
+  },
+  {
+    productName: 'css만을 이용 선택할때 꽃가루가 날리는 하트',
+    category: 'icon-loading',
+    category2: 'animation',
+    url: 'html/no-sprite_css_heart_animation.html',
   },
   // {
   //   productName: '',
