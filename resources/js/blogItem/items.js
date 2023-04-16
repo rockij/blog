@@ -1852,6 +1852,22 @@ let items = [
     category2: 'animation',
     url: 'html/no-sprite_css_heart_animation.html',
   },
+  {
+    productName: 'css만을 이용한 슬라이딩 탭',
+    category: 'navigation-list',
+    category2: 'animation',
+    url: 'html/sliding-tabs_only_css.html',
+  },
+  {
+    productName: 'css만을 이용한 순환 진행률 표시줄(모션X)',
+    category: 'chart-graph',
+    url: 'html/circular_progress_bar_only-css.html',
+  },
+  {
+    productName: 'password 유효성 검사',
+    category: 'form',
+    url: 'html/password_validation_check.html',
+  },
   // {
   //   productName: '',
   //   category: '',
