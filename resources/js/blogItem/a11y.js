@@ -68,12 +68,7 @@ let a11y = [
     productName: '링크의 초점분리 이슈 개선하기',
     category: 'a11y',
     url: 'html/a11y/improving_focus_issues_on_link.html',
-  },
-  {
-    productName: '아코디언 패턴 구현(jquery)',
-    category: 'a11y',
-    url: 'html/a11y/sample_accordion.html',
-  },
+  },  
   {
     productName: '커스텀 slider 컴포넌트',
     category: 'a11y',

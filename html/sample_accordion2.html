@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<title></title>
+<style>
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+button {
+  border:0;
+  background: none;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #E3F2FD;
+}
+.accordion{
+    max-width: 530px;
+    width: 100%;
+    background: #FFF;
+    margin: 0 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow:  0 0 4px rgba(0,0,0,0.2);
+}
+.accordion_header button {
+  display: flex;
+  width: 100%;
+  min-height: 50px;
+  padding: 0 15px;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+.accordion_header .title{
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+.accordion_header i{
+  font-size: 15px;
+  color: #333;
+}
+.accordion_panel{
+  overflow: hidden;
+  height: 0;
+  font-size: 12px;
+  color: #333;
+  font-weight: 400;
+  padding: 0 15px;
+  transition: all 0.2s linear;
+  border: 1px solid #FFD6B3;
+}
+</style>
+</head>
+
+<body>
+
+  <div class="accordion">
+
+    <header id="accordion-header-1" class="accordion_header">
+      <button type="button" aria-expanded="false" aria-controls="accordion-panel-1">
+        <span class="title">What do you mean by Accordion?</span>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </header>
+    <div id="accordion-panel-1" role="region" aria-labelledby="accordion-header-1" class="accordion_panel">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non enim numquam voluptatem?
+    </div>
+
+    <header id="accordion-header-2" class="accordion_header">
+      <button type="button" aria-expanded="false" aria-controls="accordion-panel-2">
+        <span class="title">What do you mean by Accordion?</span>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </header>
+    <div id="accordion-panel-2" role="region" aria-labelledby="accordion-header-2" class="accordion_panel">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non enim numquam voluptatem?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non enim numquam voluptatem?
+    </div>
+
+    <header id="accordion-header-3" class="accordion_header">
+      <button type="button" aria-expanded="false" aria-controls="accordion-panel-3">
+        <span class="title">What do you mean by Accordion?</span>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </header>
+    <div id="accordion-panel-3" role="region" aria-labelledby="accordion-header-3" class="accordion_panel">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non enim numquam voluptatem?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non enim numquam voluptatem?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non enim numquam voluptatem?
+    </div>
+
+</div>
+
+<script>
+
+const a11yBtnExpand = {
+  removeOpen(targetIndex) { // all close
+    const expandButtonsAll = document.querySelectorAll('[role="button"][aria-expanded], button[aria-expanded]');
+    expandButtonsAll.forEach((expandButtonAll, index) => {
+      const expandElAll = document.querySelector("#" + expandButtonAll.getAttribute("aria-controls"));
+      if(targetIndex != index) {
+        expandElAll.style.height = '0px';
+        expandButtonAll.setAttribute("aria-expanded", false);
+        expandButtonAll.querySelector('i').classList.replace('fa-minus', 'fa-plus');
+      }
+    });
+  },
+  a11yBtnExpand() {
+    const expandButtons = document.querySelectorAll('[role="button"][aria-expanded], button[aria-expanded]');
+    expandButtons.forEach(function (expandButton, index) {
+      expandButton.addEventListener('click', () => {
+        const expandEl = document.querySelector("#" + expandButton.getAttribute("aria-controls"));
+        if (expandButton.getAttribute('aria-expanded') === 'true') {
+          expandEl.style.height = '0px';
+          expandButton.setAttribute("aria-expanded", false);
+          expandButton.querySelector('i').classList.replace('fa-minus', 'fa-plus');
+        } else {
+          expandEl.style.height = `${expandEl.scrollHeight}px`;
+          expandButton.setAttribute("aria-expanded", true);
+          expandButton.querySelector('i').classList.replace('fa-plus', 'fa-minus');
+        }
+        a11yBtnExpand.removeOpen(index);
+      });
+    });
+  },
+};
+a11yBtnExpand.a11yBtnExpand();
+
+</script>
+
+</body>
+</html>

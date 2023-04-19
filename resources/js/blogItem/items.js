@@ -1,5 +1,10 @@
 let items = [
   {
+    productName: '작업에 필요한 기본 css',
+    category: 'workspace',
+    url: 'resources/css/work-base.css',
+  },
+  {
     productName: "item정렬 방식 flex vs grid",
     category: 'layout',
     url: 'html/flex_grid_item_layout_compare.html',
@@ -1867,6 +1872,18 @@ let items = [
     productName: 'password 유효성 검사',
     category: 'form',
     url: 'html/password_validation_check.html',
+  },
+  {
+    productName: '아코디언 패턴 구현(jquery)',
+    category: 'a11y',
+    category2: 'navigation-list',
+    url: 'html/sample_accordion.html',
+  },
+  {
+    productName: '아코디언 패턴 구현(javascript)',
+    category: 'a11y',
+    category2: 'navigation-list',
+    url: 'html/sample_accordion2.html',
   },
   // {
   //   productName: '',
