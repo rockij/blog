@@ -1885,6 +1885,12 @@ let items = [
     category2: 'navigation-list',
     url: 'html/sample_accordion2.html',
   },
+  {
+    productName: 'CSS QR 코드 스캐너',
+    category: 'animation',
+    category2: 'etc',
+    url: 'html/css_qr_code_scanner.html',
+  },
   // {
   //   productName: '',
   //   category: '',
