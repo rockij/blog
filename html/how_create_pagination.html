@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+<title></title>
+<style>
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  background: #4070f4;
+}
+body,
+.container,
+.button,
+.links,
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  padding: 20px;
+  border-radius: 8px;
+  column-gap: 12px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.button {
+  border: none;
+}
+.button i {
+  pointer-events: none;
+}
+.button:disabled {
+  color: #b3b3b3;
+  pointer-events: none;
+}
+.button,
+.link {
+  height: 45px;
+  width: 45px;
+  font-size: 20px;
+  color: #666666;
+  background-color: #f2f2f2;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.links {
+  column-gap: 12px;
+}
+.link {
+  font-weight: 500;
+  text-decoration: none;
+}
+.button:hover,
+.link:hover {
+  color: #fff;
+  background: #4070f4;
+}
+.link.active {
+  color: #fff;
+  background: #4070f4;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <button class="button" id="startBtn" disabled>
+    <i class="fa-solid fa-angles-left"></i>
+  </button>
+  <button class="button prevNext" id="prev" disabled>
+    <i class="fa-solid fa-angle-left"></i>
+  </button>
+
+  <div class="links">
+    <a href="#" class="link active">1</a>
+    <a href="#" class="link">2</a>
+    <a href="#" class="link">3</a>
+    <a href="#" class="link">4</a>
+    <a href="#" class="link">5</a>
+  </div>
+
+  <button class="button prevNext" id="next">
+    <i class="fa-solid fa-angle-right"></i>
+  </button>
+  <button class="button" id="endBtn">
+    <i class="fa-solid fa-angles-right"></i>
+  </button>
+</div>
+  
+<script>
+const startBtn = document.querySelector('#startBtn'),
+      endBtn = document.querySelector('#endBtn'),
+      prevNext = document.querySelectorAll('.prevNext'),
+      numbers = document.querySelectorAll('.link');
+
+let currentStep = 0;
+
+const updateBtn = () => {
+  if (currentStep === 4) {
+    endBtn.disabled = true;
+    prevNext[1].disabled = true;
+    startBtn.disabled = false;
+    prevNext[0].disabled = false;
+  } else if (currentStep === 0) {
+    endBtn.disabled = false;
+    prevNext[1].disabled = false;
+    startBtn.disabled = true;
+    prevNext[0].disabled = true;
+  } else {
+    endBtn.disabled = false;
+    prevNext[1].disabled = false;
+    startBtn.disabled = false;
+    prevNext[0].disabled = false;
+  }
+};
+
+// add event listeners to the number links
+numbers.forEach((number, numIndex) => {
+  number.addEventListener('click', (e) => {
+    e.preventDefault();
+    currentStep = numIndex;
+    document.querySelector('.active').classList.remove('active');
+    number.classList.add('active');
+    updateBtn();
+  });
+});
+
+// add event listeners to the 'previous' and 'next' buttons
+prevNext.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    console.log(e.target.id);
+    // 클릭한 버튼을 기준으로 현재 단계 증가 또는 감소
+    currentStep += e.target.id === 'next' ? 1 : -1;
+    numbers.forEach((number, numIndex) => {
+      // 현재 단계를 기준으로 숫자 링크의 "active" 클래스를 전환
+      number.classList.toggle('active', numIndex === currentStep);
+      updateBtn();
+    });
+  });
+});
+
+// add event listener to the 'start' button
+startBtn.addEventListener('click', () => {
+  document.querySelector('.active').classList.remove('active');
+  numbers[0].classList.add('active');
+  currentStep = 0;
+  updateBtn();
+  endBtn.disabled = false;
+  prevNext[1].disabled = false;
+});
+
+// add evnet listener to the 'end' button
+endBtn.addEventListener('click', () => {
+  document.querySelector('.active').classList.remove('active');
+  numbers[4].classList.add('active');
+  currentStep = 4;
+  updateBtn();
+  startBtn.disabled = false;
+  prevNext[0].disabled = false;
+});
+</script>
+
+</body>
+</html>

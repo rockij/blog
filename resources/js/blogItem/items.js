@@ -989,7 +989,7 @@ let items = [
   },
   {
     productName: '선택된 메뉴 bar 따라다니기',
-    category: 'mouse-effect',
+    category: 'navigation-list',
     category2: 'animation',
     url: 'html/menu_indicator_animate.html',
   },
@@ -1890,6 +1890,27 @@ let items = [
     category: 'animation',
     category2: 'etc',
     url: 'html/css_qr_code_scanner.html',
+  },
+  {
+    productName: '링크이동 없는 pagination',
+    category: 'navigation-list',
+    url: 'html/how_create_pagination.html',
+  },
+  {
+    productName: '버튼 클릭 작은 거품 나타남',
+    category: 'mouse-effect',
+    category2: 'animation',
+    url: 'html/button_click_animation.html',
+  },
+  {
+    productName: '사용자 목록에서 여러 옵션 선택',
+    category: 'form',
+    url: 'html/multiple_options_selectmenu.html',
+  },
+  {
+    productName: '클립보드 텍스트 복사 붙여넣을',
+    category: 'mouse-effect',
+    url: 'html/copy_text_clipboard.html',
   },
   // {
   //   productName: '',
