@@ -1877,13 +1877,13 @@ let items = [
     productName: '아코디언 패턴 구현(jquery)',
     category: 'a11y',
     category2: 'navigation-list',
-    url: 'html/sample_accordion.html',
+    url: 'html/accordion_case.html',
   },
   {
     productName: '아코디언 패턴 구현(javascript)',
     category: 'a11y',
     category2: 'navigation-list',
-    url: 'html/sample_accordion2.html',
+    url: 'html/accordion_case2.html',
   },
   {
     productName: 'CSS QR 코드 스캐너',
@@ -1911,6 +1911,12 @@ let items = [
     productName: '클립보드 텍스트 복사 붙여넣을',
     category: 'mouse-effect',
     url: 'html/copy_text_clipboard.html',
+  },
+  {
+    productName: 'grid, height:auto를 활용한 accordion',
+    category: 'a11y',
+    category2: 'navigation-list',
+    url: 'html/accordion_case3.html',
   },
   // {
   //   productName: '',
