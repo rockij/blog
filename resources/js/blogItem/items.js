@@ -1,10 +1,5 @@
 let items = [
   {
-    productName: '작업에 필요한 기본 css',
-    category: 'workspace',
-    url: 'resources/css/work-base.css',
-  },
-  {
     productName: "item정렬 방식 flex vs grid",
     category: 'layout',
     url: 'html/flex_grid_item_layout_compare.html',
@@ -1917,6 +1912,12 @@ let items = [
     category: 'a11y',
     category2: 'navigation-list',
     url: 'html/accordion_case3.html',
+  },
+  {
+    productName: '드래그가 가능한 하단팝업',
+    category: 'popup',
+    category2: 'mouse-effect',
+    url: 'html/draggable_bottom_sheet_modal.html',
   },
   // {
   //   productName: '',

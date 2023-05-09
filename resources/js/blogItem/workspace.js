@@ -1,10 +1,5 @@
 let workspace = [
   {
-    productName: "guide - 웹퍼블리싱 가이드 sample",
-    category: "workspace",
-    url: "https://rockij.github.io/portfolio/project/min/010pay/resources/html/ui/template.html",
-  },
-  {
     productName: "CSS 변수 모음 Open-Props",
     category: "workspace",
     url: "https://open-props.style/",
