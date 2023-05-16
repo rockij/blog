@@ -1919,6 +1919,11 @@ let items = [
     category2: 'mouse-effect',
     url: 'html/draggable_bottom_sheet_modal.html',
   },
+  {
+    productName: '순수 JavaScript으로 드래그 가능한 카드 슬라이더',
+    category: 'slide',
+    url: 'html/draggable_card_slider.html',
+  },
   // {
   //   productName: '',
   //   category: '',
