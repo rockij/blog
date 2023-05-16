@@ -23,7 +23,7 @@ body {
 }
 body.hidden {
   overflow: hidden;
-  position: fixed;
+  /* position: fixed; */
 }
 .show-modal {
   outline: none;
@@ -193,7 +193,7 @@ dragIcon.addEventListener('mousedown', dragStart);
 document.addEventListener('mousemove', dragging);
 
 document.addEventListener('touchend', dragStop);
-dragIcon.addEventListener('touchmove', dragStart);
+dragIcon.addEventListener('touchstart', dragStart);
 document.addEventListener('touchmove', dragging);
 
 showModalBtn.addEventListener('click', showBottomSheet);
