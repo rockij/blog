@@ -21,6 +21,10 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
+body.hidden {
+  overflow: hidden;
+  position: fixed;
+}
 .show-modal {
   outline: none;
   border: none;
@@ -149,13 +153,13 @@ let isDragging = false, startY, startHeight;
 
 const showBottomSheet = () => {
   bottomSheet.classList.add('show');
-  document.body.style.overflowY = 'hidden';
+  document.body.classList.add('hidden');
   updateSheetHeight(50);
 }
 
 const hideBottomSheet = () => {
   bottomSheet.classList.remove('show');
-  document.body.style.overflowY = '';
+  document.body.classList.remove('hidden');
 }
 
 const updateSheetHeight = (height) => {
