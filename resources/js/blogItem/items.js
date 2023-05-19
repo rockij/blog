@@ -1924,6 +1924,37 @@ let items = [
     category: 'slide',
     url: 'html/draggable_card_slider.html',
   },
+  {
+    productName: 'sticky fixed처럼 위치 고정시키기',
+    category: 'layout',
+    url: 'html/position_sticky_stick.html',
+  },
+  {
+    productName: 'html,css만을 이용한 스크롤 캐러셀',
+    category: 'slide',
+    category2: 'scroll-parallax',
+    url: 'html/scrolly_carousel.html',
+  },
+  {
+    productName: 'HTML 요소에서 클래스를 순환하는 방법',
+    category: 'mouse-effect',
+    url: 'html/class_cycle.html',
+  },
+  {
+    productName: '기본 JavaScript로 스크롤 트리거 애니메이션을 만드는 방법',
+    category: 'scroll-parallax',
+    url: 'html/pure_js_scroll_trigger.html',
+  },
+  {
+    productName: 'JavaScript 대화 상자를 새 HTML 대화 상자 요소로 바꾸기',
+    category: 'popup',
+    url: 'html/alert_confirm_prompt_dialog.html',
+  },
+  {
+    productName: 'CSS 링크 호버 효과를 위한 6가지 창의적인 아이디어',
+    category: 'mouse-effect',
+    url: 'html/css_link_hover_effects.html',
+  },
   // {
   //   productName: '',
   //   category: '',

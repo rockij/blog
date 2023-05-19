@@ -260,6 +260,13 @@ let outlink = [
     url: 'https://accessibilityinsights.io/downloads/',
     linkType: 'outlink',
   },
+  {
+    productName: '지금 구현할 수 있는 5가지 접근성 빠른 성과',
+    category: 'a11y',
+    category2: 'css-trick',
+    url: 'https://css-tricks.com/5-accessibility-quick-wins-you-can-implement-today/',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
