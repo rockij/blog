@@ -91,7 +91,6 @@ let items = [
     productName: "배경반복 값 space에 대해서",
     category: 'background-border',
     url: 'html/background_repeat_space.html',
-    linkType: 'outlink',
   },
   {
     productName: "다른 색상의 CSS 이중 테두리",
@@ -263,11 +262,6 @@ let items = [
     productName: 'GSAP + Barba.js 이용한 페이지 전환 animation',
     category: 'animation',
     url: 'html/page_transition_barbajs_gsap/index.html',
-  },
-  {
-    productName: 'Landing Page Animation GSAP',
-    category: 'animation',
-    url: 'html/landing_page_animation/index.html',
   },
   {
     productName: 'GSAP를 사용한 사각 입자 애니메이션',
@@ -1954,6 +1948,21 @@ let items = [
     productName: 'CSS 링크 호버 효과를 위한 6가지 창의적인 아이디어',
     category: 'mouse-effect',
     url: 'html/css_link_hover_effects.html',
+  },
+  {
+    productName: '이미지 일러스트 필터',
+    category: 'image',
+    url: 'html/css_halftone_filter.html',
+  },
+  {
+    productName: '물결 모양 및 패턴 만들기',
+    category: 'background-border',
+    url: 'html/wavy_shapes_patterns.html',
+  },
+  {
+    productName: '테이블 열에서 가짜 최소 너비',
+    category: 'basic',
+    url: 'html/faking_min_width_table_column.html',
   },
   // {
   //   productName: '',

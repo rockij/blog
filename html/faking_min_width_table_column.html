@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+<title></title>
+<style>
+body {
+  font-family: system-ui;
+  box-sizing: border-box;
+}
+body * {
+  box-sizing: inherit;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+  border-top: 1px solid #999;
+  border-left: 1px solid #999;
+}
+
+th,
+td {
+  padding: 5px;
+  vertical-align: top;
+  border-bottom: 1px solid #999;
+  border-right: 1px solid #999;
+}
+th:first-child,
+td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+th {
+  background-color: #efefef;
+  font-weight: 500;
+  text-align: left;
+}
+
+td {
+  background-color: #fff;
+}
+
+label {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.col-200 {
+  width: 200px;
+}
+
+.col-input {
+  width: 220px;
+}
+
+.col-date {
+  width: 260px;
+}
+
+.col-edit {
+  width: 160px;
+}
+</style>
+</head>
+
+<body>
+
+<table>
+  <colgroup>
+    <col class="col-200" />
+    <col />
+    <col class="col-input" />
+    <col class="col-date" />
+    <col class="col-edit" />
+  </colgroup>
+  
+  <thead>
+    <tr>
+      <th colspan="2">Project name</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <td colspan="2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint accusamus amet doloremque labore quibusdam vero optio similique, voluptate obcaecati adipisci, quod ab ducimus quas quia, harum ad eius impedit aliquid?</td>
+      <td>
+        <label for="amount-input">Amount</label>
+        <input id="amount-input" type="text" />  
+      </td>
+      <td>24-12-2021</td>
+      <td><button>Edit</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<script></script>
+
+</body>
+</html>
