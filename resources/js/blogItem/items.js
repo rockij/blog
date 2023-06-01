@@ -1964,6 +1964,11 @@ let items = [
     category: 'basic',
     url: 'html/faking_min_width_table_column.html',
   },
+  {
+    productName: '네모곡선 형태의 border 박스',
+    category: 'background-border',
+    url: 'html/Inverted_border_radius.html',
+  },
   // {
   //   productName: '',
   //   category: '',
