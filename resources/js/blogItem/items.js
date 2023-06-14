@@ -1287,11 +1287,6 @@ let items = [
     url: 'html/select_all_text_input_clicked.html',
   },
   {
-    productName: 'Copy - 입력 요소에서 클립보드로 복사',
-    category: 'form',
-    url: 'html/copy_clipboard_input_element.html',
-  },
-  {
     productName: 'upload - 업로드하기 전에 여러 이미지 미리 보기',
     category: 'form',
     url: 'html/rpeview_multiple_images_before_upload.html',
