@@ -337,12 +337,6 @@ let items = [
     url: 'html/intro_text_animation_simple_text.html',
   },
   {
-    productName: '100년 카운팅 모션(only css)',
-    category: 'text-effect',
-    category2: 'animation',
-    url: 'html/100years(only-css).html',
-  },
-  {
     productName: 'splitting.js 이용한 시간차 점핑 텍스트 animation',
     category: 'text-effect',
     category2: 'animation',
@@ -449,12 +443,6 @@ let items = [
     category: 'text-effect',
     category2: 'animation',
     url: 'html/3D_text_effect_animation_gsap.html',
-  },
-  {
-    productName: 'counting - counterup.js 텍스트 카운팅',
-    category: 'text-effect',
-    category2: 'animation',
-    url: 'html/animated_counter_up_effect_redefined.html',
   },
   {
     productName: 'clitch text effect',
@@ -1418,9 +1406,14 @@ let items = [
     url: 'html/morphing_form_search_icon_to_search_bar.html',
   },
   {
-    productName: 'textarea - 쓰는 글의 크기만큼 자동 리사이징',
+    productName: 'textarea - 쓰는 글 입력수 체크',
     category: 'form',
     url: 'html/live_character_count_es6.html',
+  },
+  {
+    productName: 'textarea - 쓰는 글의 크기만큼 자동 리사이징',
+    category: 'form',
+    url: 'html/how_to_auto_resize_textarea.html',
   },
   {
     productName: 'input - placeholder focus 입력박스 바깥으로 움직임',
