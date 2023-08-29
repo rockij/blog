@@ -1957,6 +1957,12 @@ let items = [
     category: 'background-border',
     url: 'html/Inverted_border_radius.html',
   },
+  {
+    productName: '버튼 hover시 안 박스가 좌/우로 움직이는',
+    category: 'mouse-effect',
+    category2: 'animation',
+    url: 'html/right_left_box_animation.html',
+  },
   // {
   //   productName: '',
   //   category: '',
