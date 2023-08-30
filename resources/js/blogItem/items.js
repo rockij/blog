@@ -1963,6 +1963,22 @@ let items = [
     category2: 'animation',
     url: 'html/right_left_box_animation.html',
   },
+  {
+    productName: '심장 두근두근 애니메이션',
+    category: 'icon-loading',
+    category2: 'animation',
+    url: 'html/heart_beat_animation.html',
+  },
+  {
+    productName: '5가지 반응형 레이아웃',
+    category: 'layout',
+    url: 'html/5_responsive_layout.html',
+  },
+  {
+    productName: 'flex & grid 가로 센터 정렬',
+    category: 'layout',
+    url: 'html/flex_grid_center.html',
+  },
   // {
   //   productName: '',
   //   category: '',

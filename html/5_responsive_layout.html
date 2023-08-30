@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ko-KR" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<title></title>
+<style>
+.cluster {
+  outline: 5px solid hotpink;
+  padding: 1rem;
+
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.flexible-grid {
+  outline: 5px solid hotpink;
+  padding: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.flexible-grid > * {
+  flex: 1;
+}
+
+.auto-grid {
+  outline: 5px solid hotpink;
+  padding: 1rem;
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
+}
+
+.reel {
+  outline: 5px solid hotpink;
+  padding: 1rem;
+
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 45%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 1rem;
+}
+
+.reel > * {
+  scroll-snap-align: start;
+}
+
+.main-with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1em;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.main-with-sidebar > :first-child {
+  flex-basis: 500px;
+  flex-grow: 9999;
+}
+.main-with-sidebar > :last-child {
+  flex-basis: 300px;
+  flex-grow: 1;
+}
+
+/* general style not specific to the layouts */
+
+section {
+  padding: 3rem;
+}
+
+section:nth-child(even) {
+  background-color: hsl(0 0% 100% / 0.05);
+}
+
+.child {
+  border: 3px solid hsl(230, 75%, 75%);
+  padding: 0.5rem;
+  background: hsl(230, 75%, 25%);
+}
+
+/* general styling */
+
+:root {
+  /* either --dark-mode or --no-dark-mode */
+  --color-scheme: var(--dark-mode);
+
+  --font-family: system-ui;
+
+  --fs-300: clamp(0.94rem, calc(0.92rem + 0.08vw), 0.98rem);
+  --fs-400: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
+  --fs-500: clamp(1.35rem, calc(1.21rem + 0.69vw), 1.75rem);
+  --fs-600: clamp(1.62rem, calc(1.37rem + 1.24vw), 2.33rem);
+  --fs-700: clamp(1.94rem, calc(1.54rem + 2.03vw), 3.11rem);
+  --fs-800: clamp(2.33rem, calc(1.7rem + 3.15vw), 4.14rem);
+  --fs-900: clamp(2.8rem, calc(1.85rem + 4.74vw), 5.52rem);
+
+  --clr-primary-300: hsl(219, 76%, 55%);
+  --clr-primary-400: hsl(219, 76%, 40%);
+  --clr-primary-500: hsl(219, 76%, 25%);
+  --clr-secondary-300: hsl(269, 75%, 55%);
+  --clr-secondary-400: hsl(269, 75%, 40%);
+  --clr-secondary-500: hsl(269, 75%, 25%);
+  --clr-accent-300: hsl(358, 72%, 65%);
+  --clr-accent-400: hsl(358, 72%, 50%);
+  --clr-accent-500: hsl(358, 72%, 35%);
+
+  /* settings */
+  --no-dark-mode: light;
+  --dark-mode: dark light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: var(--color-scheme);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--fs-400);
+  line-height: 1.6;
+}
+
+.tutorial-link {
+  position: fixed;
+  inset: auto 1.5rem 1.5rem auto;
+  background: hsl(3, 60%, 47%);
+  padding: 1rem 2rem;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tutorial-link:hover {
+  background: hsl(3, 60%, 30%);
+}
+
+.tutorial-link:focus-visible {
+  outline: 3px solid hsl(3, 60%, 30%);
+  outline-offset: 6px;
+}
+
+</style>
+</head>
+
+<body>
+
+<section>
+  <div class="cluster">
+    <div class="child">Lorem</div>
+    <div class="child">Illum</div>
+    <div class="child">Minima</div>
+    <div class="child">Blanditiis</div>
+    <div class="child">Assumenda</div>
+    <div class="child">Enim</div>
+    <div class="child">Ullam</div>
+    <div class="child">Dignissimos</div>
+    <div class="child">Ab</div>
+    <div class="child">Quasi</div>
+  </div>
+</section>
+<section>
+  <div class="flexible-grid">
+    <div class="child">Lorem</div>
+    <div class="child">Illum</div>
+    <div class="child">Minima</div>
+    <div class="child">Blanditiis</div>
+    <div class="child">Assumenda</div>
+    <div class="child">Enim</div>
+    <div class="child">Ullam</div>
+    <div class="child">Dignissimos</div>
+    <div class="child">Ab</div>
+    <div class="child">Quasi</div>
+  </div>
+</section>
+
+<section>
+  <div class="auto-grid">
+    <div class="child">Lorem</div>
+    <div class="child">Illum</div>
+    <div class="child">Minima</div>
+    <div class="child">Blanditiis</div>
+    <div class="child">Assumenda</div>
+    <div class="child">Enim</div>
+    <div class="child">Ullam</div>
+    <div class="child">Dignissimos</div>
+    <div class="child">Ab</div>
+    <div class="child">Quasi</div>
+  </div>
+</section>
+
+<section>
+  <div class="reel">
+    <div class="child">Lorem</div>
+    <div class="child">Illum</div>
+    <div class="child">Minima</div>
+    <div class="child">Blanditiis</div>
+    <div class="child">Assumenda</div>
+    <div class="child">Enim</div>
+    <div class="child">Ullam</div>
+    <div class="child">Dignissimos</div>
+    <div class="child">Ab</div>
+    <div class="child">Quasi</div>
+  </div>
+</section>
+
+<section>
+
+  <div class="main-with-sidebar parent ">
+    <main class="child">
+      <h2>Lorem ipsum dolor sit.</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam perferendis ducimus repellat deserunt culpa hic laborum sed earum eligendi quod odio aut dolorem vero consequuntur voluptas assumenda, rem aliquid iusto!</p>
+      <p>Quo, ad dolor excepturi debitis minima, recusandae repellat animi voluptatum, fugit vero totam! Modi, voluptatum voluptatibus! Ad autem ipsam asperiores enim eaque impedit libero alias? Dolor sapiente itaque dolore cum.</p>
+      <p>In dolor praesentium labore facere dicta omnis tempora nulla explicabo sint ab? Aut, dolor minima quam commodi, ipsa accusamus est necessitatibus maxime debitis, in odio. Dicta est quibusdam ex nulla.</p>
+      <p>Velit suscipit accusamus voluptas veniam magni cumque non fuga corrupti quia ratione minima voluptatum vitae quod qui rerum recusandae necessitatibus porro at corporis dolor, odit, iusto excepturi. Nihil, saepe eius?</p>
+      <p>Sapiente, quis quisquam! Excepturi voluptate quam dignissimos veritatis nemo dolor earum tempore suscipit, totam quibusdam. Fuga provident, laboriosam commodi dignissimos, ab odio ratione quasi saepe nobis veritatis porro itaque explicabo?</p>
+      <p>Dolore esse iusto sed. Ipsam fugiat ad enim possimus cumque officiis dolorem earum placeat corrupti laborum est temporibus unde atque voluptatum doloremque consequatur, corporis quod deleniti voluptatibus mollitia aut animi!</p>
+      <p>Doloremque quia optio unde repellat eius reprehenderit sint cum saepe voluptas quae dolore veritatis repudiandae dignissimos accusantium, dolores odio odit et cupiditate amet. Qui voluptate repellendus temporibus molestiae in minus!</p>
+      <p>Blanditiis quaerat tempora tempore rerum itaque voluptates possimus odit ex unde sapiente facere voluptatum voluptate, sed nulla, dolorem quas, non porro libero commodi! Quas assumenda, provident vel obcaecati et blanditiis.</p>
+      <p>Dicta sunt corrupti doloremque porro quis aspernatur nulla omnis quae, ullam libero ipsum consequuntur asperiores quam veritatis odio nemo a. Recusandae optio quis repellendus unde commodi doloremque veniam at dolore!</p>
+      <p>Maiores, placeat exercitationem. Molestias magnam placeat esse natus est, blanditiis non harum sunt exercitationem, nisi ratione repellendus, optio recusandae dolorem eligendi quasi voluptate accusamus repellat! Nam, iste eos! Reprehenderit, minus!</p>
+    </main>
+    <aside class="child">
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Officiis facere perspiciatis odit assumenda.</p>
+      <p>Architecto culpa facilis nostrum minus!</p>
+      <p>Fugit voluptatibus maiores iusto officia?</p>
+    </aside>
+  </div>
+
+</section>
+  
+<a href="https://youtu.be/p3_xN2Zp1TY" class="tutorial-link">YT tutorial</a>
+
+</body>
+</html>
