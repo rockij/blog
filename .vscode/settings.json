@@ -1,10 +1,13 @@
 {
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "editor.detectIndentation": false,
   "prettier.tabWidth": 2,
   "vetur.format.options.tabSize": 2,
   "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
   "editor.useTabStops": true,
   "diffEditor.ignoreTrimWhitespace": true,
-  "editor.fontSize": 13
+  "editor.fontSize": 13,
+"files.autoSave": "onFocusChange",
+"editor.wordWrap": "on",
+"editor.minimap.enabled": false
 }

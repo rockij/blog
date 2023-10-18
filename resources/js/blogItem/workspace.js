@@ -104,6 +104,12 @@ let workspace = [
     url: "https://9elements.github.io/fancy-border-radius/",
     linkType: 'outlink',
   },
+  {
+    productName: "html 검사기 - Nu",
+    category: "workspace",
+    url: "https://validator.w3.org/nu/",
+    linkType: 'outlink',
+  },
   // {
   //   productName: "",
   //   category: "workspace",
