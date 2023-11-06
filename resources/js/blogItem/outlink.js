@@ -267,6 +267,37 @@ let outlink = [
     url: 'https://css-tricks.com/5-accessibility-quick-wins-you-can-implement-today/',
     linkType: 'outlink',
   },
+  {
+    productName: '브래드 우즈 디지털 가든',
+    category: 'workspace',
+    url: 'https://garden.bradwoods.io/',
+    linkType: 'outlink',
+  },
+  {
+    productName: 'CSS에서 변수 이름 지정',
+    category: 'workspace',
+    category2: 'basic',
+    url: 'https://jwdallas.com/posts/namingcssvariables/',
+    linkType: 'outlink',
+  },
+  {
+    productName: '멋진 다각형 패턴 생성기',
+    category: 'workspace',
+    url: 'https://trianglify.io/',
+    linkType: 'outlink',
+  },
+  {
+    productName: '더욱 복잡한 애니메이션을 위한 매우 멋진 CSS 애니메이션 도구',
+    category: 'workspace',
+    url: 'https://keyframes.app/',
+    linkType: 'outlink',
+  },
+  {
+    productName: '유용한 패턴 도구 디자인 툴',
+    category: 'workspace',
+    url: 'https://click.convertkit-mail.com/xmu4mz59z4b6hr8e8l7h5/kkhmh6h8r74p3msk/aHR0cDovL3d3dy5wYXR0ZXJuaWZ5LmNvbS8=',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
