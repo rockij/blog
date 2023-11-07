@@ -298,6 +298,12 @@ let outlink = [
     url: 'https://click.convertkit-mail.com/xmu4mz59z4b6hr8e8l7h5/kkhmh6h8r74p3msk/aHR0cDovL3d3dy5wYXR0ZXJuaWZ5LmNvbS8=',
     linkType: 'outlink',
   },
+  {
+    productName: ' wekbit 기반 브라우저에서 쉽게 테스트',
+    category: 'workspace',
+    url: 'https://click.convertkit-mail.com/75u380x503b8hkkp26viz/e0hph7hkop6ddma7/aHR0cHM6Ly9qb3lvZmNvZGUueHl6L3Rlc3QteW91ci1zaXRlLWluLWV2ZXJ5LWJyb3dzZXI=',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
