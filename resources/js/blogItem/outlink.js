@@ -304,6 +304,12 @@ let outlink = [
     url: 'https://click.convertkit-mail.com/75u380x503b8hkkp26viz/e0hph7hkop6ddma7/aHR0cHM6Ly9qb3lvZmNvZGUueHl6L3Rlc3QteW91ci1zaXRlLWluLWV2ZXJ5LWJyb3dzZXI=',
     linkType: 'outlink',
   },
+  {
+    productName: '현대적이고 대화형 오픈 소스 차트 APEXCHARTS',
+    category: 'chart-graph',
+    url: 'https://apexcharts.com/',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
