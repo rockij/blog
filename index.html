@@ -103,8 +103,6 @@ nav a {
   .button-value {
     padding: 10px 20px;
   }
-  nav {
-  }
   nav a {
     margin-right: 0;
     padding: 10px;
@@ -128,7 +126,6 @@ nav a {
 }
 </style>
 </head>
-
 
 <body>
 
@@ -260,25 +257,6 @@ function filterProduct(value) {
     }
   });
 }
-
-// search button click
-// document.getElementById('search').addEventListener('click', () => {
-//   let searchInput = document.getElementById('search-input').value;
-//   let elements = document.querySelectorAll('.product-name');
-//   let cards = document.querySelectorAll('.card');
-
-//   // loop through all elements
-//   elements.forEach((element, index) => {
-//     // 텍스트에 검색 값이 포함되어 있는지 확인
-//     if (element.innerText.includes(searchInput.toLowerCase())) {
-//       // display matching card
-//       cards[index].classList.remove('hide');
-//     } else {
-//       // hide others
-//       cards[index].classList.add('hide');
-//     }
-//   });
-// });
 
 window.onload = () => {
   filterProduct('all');
