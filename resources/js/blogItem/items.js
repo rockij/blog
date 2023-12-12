@@ -1979,6 +1979,29 @@ let items = [
     category: 'layout',
     url: 'html/flex_grid_center.html',
   },
+  {
+    productName: '스켈레톤 로딩 화면 애니메이션',
+    category: 'icon-loading',
+    category2: 'animation',
+    url: 'html/loading_skeleton_screen_animation.html',
+  },
+  {
+    productName: '스켈레톤 로딩 화면 애니메이션2',
+    category: 'icon-loading',
+    category2: 'animation',
+    url: 'html/loading_skeleton_animation.html',
+  },
+  {
+    productName: '비디오 썸네일 설정',
+    category: 'basic',
+    category2: 'image',
+    url: 'html/set_video_thumbnail.html',
+  },
+  {
+    productName: 'width(min), margin-inline을 이용한 컨텐츠 레이아웃',
+    category: 'layout',
+    url: 'html/layout_width_margin_auto.html',
+  },
   // {
   //   productName: '',
   //   category: '',
