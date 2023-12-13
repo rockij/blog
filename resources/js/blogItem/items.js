@@ -2002,6 +2002,23 @@ let items = [
     category: 'layout',
     url: 'html/layout_width_margin_auto.html',
   },
+  {
+    productName: '버튼 클릭 시 색종이 조각효과',
+    category: 'mouse-effect',
+    category2: 'animation',
+    url: 'html/button_confetti_click.html',
+  },
+  {
+    productName: '배경 색종이 조각효과',
+    category: 'background-border',
+    category2: 'animation',
+    url: 'html/background_confetti_effect.html',
+  },
+  {
+    productName: '간단한 드래그 & 드롭',
+    category: 'mouse-effect',
+    url: 'html/button_simple_drag_drop.html',
+  },
   // {
   //   productName: '',
   //   category: '',
