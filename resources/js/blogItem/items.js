@@ -1,242 +1,217 @@
 let items = [
   {
-    productName: "item정렬 방식 flex vs grid",
+    productName: 'item정렬 방식 flex vs grid',
     category: 'layout',
     url: 'html/flex_grid_item_layout_compare.html',
   },
   {
-    productName: "CSS로 목록 스타일을 개선하는 2가지 방법",
-    category: "basic",
+    productName: 'CSS로 목록 스타일을 개선하는 2가지 방법',
+    category: 'basic',
     url: 'html/2ways_improve_list_styling.html',
   },
   {
-    productName: "div 요소의 내용 인쇄",
-    category: "basic",
+    productName: 'div 요소의 내용 인쇄',
+    category: 'basic',
     url: 'html/print_contents_div_element.html',
   },
   {
-    productName: "grid를 이용한 덜 절대적인 위치 잡기",
+    productName: 'grid를 이용한 덜 절대적인 위치 잡기',
     category: 'layout',
     url: 'html/grid/absolute_positioning_modern.html',
   },
   {
-    productName: "css focus-visible(:focus 대신 사용)",
+    productName: 'css focus-visible(:focus 대신 사용)',
     category: 'mouse-effect',
     url: 'html/css_focus-visible(instead-focus).html',
   },
   {
-    productName: "css all 속성에 대해서",
-    category: "basic",
+    productName: 'css all 속성에 대해서',
+    category: 'basic',
     url: 'html/css_all.html',
   },
   {
-    productName: "반응형 전체 화면 배경",
+    productName: '반응형 전체 화면 배경',
     category: 'background-border',
     url: 'html/responsive_full-screen_background.html',
   },
   {
-    productName: "논리적 속성을 사용하여 더 나은 CSS 작성",
-    category: "basic",
+    productName: '논리적 속성을 사용하여 더 나은 CSS 작성',
+    category: 'basic',
     url: 'html/write_better_css_logical_properties.html',
   },
   {
-    productName: "투명한 PNG 이미지 그림자 적용",
+    productName: '투명한 PNG 이미지 그림자 적용',
     category: 'image',
     category2: 'background-border',
     url: 'html/shadows_transparent_PNG.html',
   },
   {
-    productName: "프로젝트에서 사용할 수 있는 flexbox 디자인 패턴",
+    productName: '프로젝트에서 사용할 수 있는 flexbox 디자인 패턴',
     category: 'layout',
     url: 'html/flex/flexbox_design_patterns_projects.html',
   },
   {
-    productName: "css auto-margin 정렬",
+    productName: 'css auto-margin 정렬',
     category: 'layout',
     category2: 'layout',
     url: 'html/auto_margin.html',
   },
   {
-    productName: "그리드로 쉽게 콘텐츠 겹침",
+    productName: '그리드로 쉽게 콘텐츠 겹침',
     category: 'layout',
     url: 'html/grid/easily_overlap_content.html',
   },
   {
-    productName: "배경 비디오를 만드는 방법",
+    productName: '배경 비디오를 만드는 방법',
     category: 'background-border',
     url: 'html/how_to_create_background_video.html',
   },
   {
-    productName: "background-blend-mode에 대해서",
+    productName: 'background-blend-mode에 대해서',
     category: 'background-border',
     url: 'html/css_background_blend_mode.html',
   },
   {
-    productName: "css calc() 에 대해서",
-    category: "basic",
+    productName: 'css calc() 에 대해서',
+    category: 'basic',
     url: 'html/css_calc().html',
   },
   {
-    productName: "css object-fit을 사용하여 이미지를 제어하는 방법",
+    productName: 'css object-fit을 사용하여 이미지를 제어하는 방법',
     category: 'image',
     url: 'html/css_object-fit.html',
   },
   {
-    productName: "미디어 쿼리가 없는 반응형 CSS 그리드!",
+    productName: '미디어 쿼리가 없는 반응형 CSS 그리드!',
     category: 'flex-grid',
     category: 'layout',
     url: 'html/grid/responsive_no_media_queries.html',
   },
   {
-    productName: "배경반복 값 space에 대해서",
+    productName: '배경반복 값 space에 대해서',
     category: 'background-border',
     url: 'html/background_repeat_space.html',
   },
   {
-    productName: "다른 색상의 CSS 이중 테두리",
+    productName: '다른 색상의 CSS 이중 테두리',
     category: 'background-border',
     url: 'html/double_border_width_diffrent_colors.html',
   },
   {
-    productName: "영리한 고정 바닥글 기법",
+    productName: '영리한 고정 바닥글 기법',
     category: 'layout',
     url: 'html/sticky_footer_technique.html',
   },
   {
-    productName: "그림자 그라디언트",
+    productName: '그림자 그라디언트',
     category: 'background-border',
     url: 'html/grdient_drop_shadow.html',
   },
   {
-    productName: "줄무늬 배경",
+    productName: '줄무늬 배경',
     category: 'background-border',
     url: 'html/stiped_background_pattern.html',
   },
   {
-    productName: "도트 배경",
+    productName: '도트 배경',
     category: 'background-border',
     url: 'html/dot_background_pattern.html',
   },
   {
-    productName: "css touch-action 한눈에보기",
+    productName: 'css touch-action 한눈에보기',
     category: 'mouse-effect',
     url: 'html/touch-action.html',
   },
   {
-    productName: "css 가상요소 선택자 - marker",
+    productName: 'css 가상요소 선택자 - marker',
     category: 'basic',
     url: 'html/css가상요소_marker.html',
   },
   {
-    productName: "mix-blend-mode 사용 예시 (isolation)",
+    productName: 'mix-blend-mode 사용 예시 (isolation)',
     category: 'background-border',
     url: 'html/css_mix-blend-mode_사용.html',
   },
   {
-    productName: "inset을 이용한 full 레이아웃",
+    productName: 'inset을 이용한 full 레이아웃',
     category: 'layout',
     url: 'html/css_inset_layout.html',
   },
   {
-    productName: "input에 관하여",
+    productName: 'input에 관하여',
     category: 'form',
     category2: 'basic',
     url: 'html/input.html',
   },
   {
-    productName: "유동적인 타이포그래피 css함수 - clamp()",
+    productName: '유동적인 타이포그래피 css함수 - clamp()',
     category: 'text-effect',
     url: 'html/유동적인_타이포그래피_clamp().html',
   },
   {
-    productName: "반전 그림자 표현 reflected text",
+    productName: '반전 그림자 표현 reflected text',
     category: 'text-effect',
     url: 'html/reflected_text.html',
   },
   {
-    productName: "skeleton screen",
+    productName: 'skeleton screen',
     category: 'icon-loading',
     url: 'html/skeleton_screen.html',
   },
   {
-    productName: "skeleton screen 여러개",
+    productName: 'skeleton screen 여러개',
     category: 'icon-loading',
     url: 'html/skeleton_screen2.html',
   },
   {
-    productName: "flex margin-top 이용한 footer고정",
+    productName: 'flex margin-top 이용한 footer고정',
     category: 'layout',
     url: 'html/footer_flex(margin).html',
   },
   {
-    productName: "와인샵 컨셉_반응형 슬라이더(GREENSOCK)",
-    category: 'slide',
-    url: 'html/wine_shop_concept_responsive_slider.html',
-  },
-  {
-    productName: "응답성이 뛰어난 최소 포트폴리오 웹 사이트",
-    category: 'slide',
-    url: 'html/minimal_portfolio/index.html',
-  },
-  {
-    productName: "고급스러운 반응형 슬라이드 slick.js",
-    category: 'slide',
-    url: 'html/responsive_slider_slickjs/index.html',
-  },
-  {
-    productName: "수직 카드 슬라이딩 애니메이션(only css)",
-    category: 'slide',
-    url: 'html/vertical_card_sliding_animation.html',
-  },
-  {
-    productName: "계속 반복되는 한줄이미지 배너(only css)",
-    category: 'slide',
-    url: 'html/infinite_autoplay_carousel(only-css).html',
-  },
-  {
-    productName: "멀티플 슬라이드 순수 자바스크립트",
+    productName: '멀티플 슬라이드 순수 자바스크립트',
     category: 'slide',
     url: 'html/multiple_slideshow_loop.html',
   },
   {
-    productName: "이미지 반사 효과 3D 슬라이더",
+    productName: '이미지 반사 효과 3D 슬라이더',
     category: 'slide',
     url: 'html/3D_image_slider_reflection_Materialize.html',
   },
   {
-    productName: "Javascript를 사용 Mousemove에서 이미지 회전 제어",
+    productName: 'Javascript를 사용 Mousemove에서 이미지 회전 제어',
     category: 'slide',
     url: 'html/control_image_rotation_mousemove.html',
   },
   {
-    productName: "circular rotating reflection",
+    productName: 'circular rotating reflection',
     category: 'slide',
     url: 'html/css_circular_rotating_slider_reflection.html',
   },
   {
-    productName: "swiper 슬라이드 IE 호환성 문제 해결",
+    productName: 'swiper 슬라이드 IE 호환성 문제 해결',
     category: 'slide',
     url: 'html/swiper-4.5.1/demos/010-default.html',
   },
   {
-    productName: "오직css만을 이용한 슬라이드(auto)",
+    productName: '오직css만을 이용한 슬라이드(auto)',
     category: 'slide',
     url: 'html/css-only_carousel_slider.html',
   },
   {
-    productName: "canvas + javascript를 이용한 부드럽게 그라디언트 움직임",
+    productName: 'canvas + javascript를 이용한 부드럽게 그라디언트 움직임',
     category: 'background-border',
     category2: 'animation',
     url: 'html/background_gradient_embraced.html',
   },
   {
-    productName: "배경 이미지의 불투명도를 낮추다",
-    category: "background-border",
-    category2: "image",
+    productName: '배경 이미지의 불투명도를 낮추다',
+    category: 'background-border',
+    category2: 'image',
     url: 'html/lower_opacity_background_image.html',
   },
   {
-    productName: "컨테이너 내부 전체 너비 케이스",
+    productName: '컨테이너 내부 전체 너비 케이스',
     category: 'background-border',
     category2: 'layout',
     url: 'html/full-width_background_inside_container.html',
@@ -257,11 +232,6 @@ let items = [
     category: 'background-border',
     category2: 'animation',
     url: 'html/background_animation_christmas_GSAP.html',
-  },
-  {
-    productName: 'GSAP + Barba.js 이용한 페이지 전환 animation',
-    category: 'animation',
-    url: 'html/page_transition_barbajs_gsap/index.html',
   },
   {
     productName: 'GSAP를 사용한 사각 입자 애니메이션',
@@ -360,12 +330,6 @@ let items = [
     url: 'html/text_typing_neon_light_border_animation.html',
   },
   {
-    productName: 'text flying 애니메이션(gsap)',
-    category: 'text-effect',
-    category2: 'animation',
-    url: 'html/flying_text_animation_GSAP.html',
-  },
-  {
     productName: 'box형태로 텍스트 밑줄긋기 애니메이션(gsap)',
     category: 'text-effect',
     category2: 'animation',
@@ -382,12 +346,6 @@ let items = [
     category: 'text-effect',
     category2: 'animation',
     url: 'html/rainbow_text_animation.html',
-  },
-  {
-    productName: '순차적 커졌다 작아지는 텍스트 animation (AnimeJS)',
-    category: 'text-effect',
-    category2: 'animation',
-    url: 'html/big_small_text_animation.html',
   },
   {
     productName: 'counting - up&down카운팅',
@@ -423,12 +381,6 @@ let items = [
     url: 'html/gradient_background_animation.html',
   },
   {
-    productName: 'blur효과가 들어간 좁혀졌다 넓어졌다 animation',
-    category: 'text-effect',
-    category2: 'animation',
-    url: 'html/text_reveal_animation.html',
-  },
-  {
     productName: 'repeating-linear-gradient를 이용한 텍스트 패턴 배경',
     category: 'text-effect',
     url: 'html/layered_text_hover.html',
@@ -437,12 +389,6 @@ let items = [
     productName: '그라이언트를 이용한 텍스트 밑줄 한줄만',
     category: 'text-effect',
     url: 'html/low_highlight_text.html',
-  },
-  {
-    productName: '3D - 시간 순서에 따라 입체적 노출(gsap)',
-    category: 'text-effect',
-    category2: 'animation',
-    url: 'html/3D_text_effect_animation_gsap.html',
   },
   {
     productName: 'clitch text effect',
@@ -500,12 +446,14 @@ let items = [
     url: 'html/typewiter_effect_css.html',
   },
   {
-    productName: 'scrollTrigger - GSAP의 ScrollTrigger 플러그인을 사용하여 페이지 스크롤에 요소 표시',
+    productName:
+      'scrollTrigger - GSAP의 ScrollTrigger 플러그인을 사용하여 페이지 스크롤에 요소 표시',
     category: 'scroll-parallax',
     url: 'html/reveal_elements_on_page_scroll.html',
   },
   {
-    productName: 'fullpage - 풀페이지 반응형 구간에 따라 풀페이지 죽이고 살리기',
+    productName:
+      'fullpage - 풀페이지 반응형 구간에 따라 풀페이지 죽이고 살리기',
     category: 'scroll-parallax',
     url: 'html/fullpage.js_destory_and_rebuild_base.html',
   },
@@ -548,7 +496,8 @@ let items = [
     url: 'html/stunning_parallax_scrolling.html',
   },
   {
-    productName: 'scrollTrigger - 스크롤시 고정되다가 다시 올라가는 애니메이션(scrollMagic)',
+    productName:
+      'scrollTrigger - 스크롤시 고정되다가 다시 올라가는 애니메이션(scrollMagic)',
     category: 'scroll-parallax',
     category2: 'layout',
     url: 'html/scrollMagic_library_fixed_again_scrolling.html',
@@ -576,7 +525,8 @@ let items = [
     url: 'html/reveal_nav_on_scroll.html',
   },
   {
-    productName: 'header - 스크롤 시작하면 헤더 노출 맨위로 올라가면 없어짐(js)',
+    productName:
+      'header - 스크롤 시작하면 헤더 노출 맨위로 올라가면 없어짐(js)',
     category: 'scroll-parallax',
     category2: 'layout',
     url: 'html/hide_header_on_scroll_up_show.html',
@@ -604,12 +554,6 @@ let items = [
     url: 'html/fullscreen_video_background_fadeout_scroll.html',
   },
   {
-    productName: 'parallax - 다른 이미지들 순차적적 움직임',
-    category: 'scroll-parallax',
-    category2: 'image',
-    url: 'html/parallax_scrolling_effects_mountain.html',
-  },
-  {
     productName: 'scrollTrigger - 스크롤시 시차 물결 효과',
     category: 'scroll-parallax',
     category2: 'background-border',
@@ -622,7 +566,8 @@ let items = [
     url: 'html/transform_effects_on_scroll_skewed.html',
   },
   {
-    productName: 'scroll-behavior - 탭선택시, 스크롤시 부드러운 화면 스크롤(no js)',
+    productName:
+      'scroll-behavior - 탭선택시, 스크롤시 부드러운 화면 스크롤(no js)',
     category: 'scroll-parallax',
     url: 'html/simple_sticky_navbar_smooth_scroll.html',
   },
@@ -675,7 +620,8 @@ let items = [
     url: 'html/scroll_progress_indicator_with_mouse_follow.html',
   },
   {
-    productName: 'sticky - 세로바 풀로 체워지고 텍스트 움직이는 scrolling(no js)',
+    productName:
+      'sticky - 세로바 풀로 체워지고 텍스트 움직이는 scrolling(no js)',
     category: 'scroll-parallax',
     category2: 'background-border',
     url: 'html/scrolling_sticky_텍스트움직임.html',
@@ -825,7 +771,8 @@ let items = [
     url: 'html/advanced_hover_animation.html',
   },
   {
-    productName: 'hover - 텍스트 영역 안에서 움직이고 텍스트도 마우스 움직임에 따라 조금씩 움직임',
+    productName:
+      'hover - 텍스트 영역 안에서 움직이고 텍스트도 마우스 움직임에 따라 조금씩 움직임',
     category: 'mouse-effect',
     category2: 'animation',
     url: 'html/animated_cursor_cool_link_hover_effect.html',
@@ -983,7 +930,8 @@ let items = [
     url: 'html/drag_drop_list_js_draggable.html',
   },
   {
-    productName: 'menu - 검색 필드가 있는 응답형 드롭다운 메뉴 표시줄(only css)',
+    productName:
+      'menu - 검색 필드가 있는 응답형 드롭다운 메뉴 표시줄(only css)',
     category: 'navigation-list',
     url: 'html/menu_dropdown_search_field_responsive.html',
   },
@@ -1466,7 +1414,8 @@ let items = [
     url: 'html/search_bar_auto-complete_suggestions_js.html',
   },
   {
-    productName: 'input - 비밀번호 입력값 보기 끄기, 입력란 배경색 바뀌는 animate',
+    productName:
+      'input - 비밀번호 입력값 보기 끄기, 입력란 배경색 바뀌는 animate',
     category: 'form',
     category2: 'animate',
     url: 'html/show_hide_password_stunning_transitions_js.html',
@@ -1531,7 +1480,7 @@ let items = [
     productName: '세로로 잘라지면서 3D Flip animation',
     category: 'image',
     url: 'html/3Dflip_hover_animation.html',
-  },  
+  },
   {
     productName: 'SVG TV 노이즈 효과',
     category: 'etc',
@@ -1547,16 +1496,6 @@ let items = [
     productName: 'OTP 입력 필드',
     category: 'form',
     url: 'html/otp_input_field.html',
-  },
-  {
-    productName: '무한으로 흐르는 컨텐츠 (only css)',
-    category: 'slide',
-    url: 'html/css_marquee.html',
-  },
-  {
-    productName: '무한으로 흐르는 컨텐츠 - 세로 (only css)',
-    category: 'slide',
-    url: 'html/css_marquee_vertical.html',
   },
   {
     productName: '무한으로 흐르는 컨텐츠 토글 - 세로 (only css)',
@@ -1620,7 +1559,8 @@ let items = [
     url: 'html/button_ripple_effect_click_css_javascript.html',
   },
   {
-    productName: '마우스 오른쪽 단추 클릭, 복사, 잘라내기 및 붙여넣기 사용 안 함',
+    productName:
+      '마우스 오른쪽 단추 클릭, 복사, 잘라내기 및 붙여넣기 사용 안 함',
     category: 'mouse-effect',
     url: 'html/disable_right_click_copy_cut_paste.html',
   },
@@ -2019,9 +1959,15 @@ let items = [
     category: 'mouse-effect',
     url: 'html/button_simple_drag_drop.html',
   },
+  {
+    productName: '이미지와 outline 안으로 이동 중첩',
+    category: 'image',
+    category2: 'animation',
+    url: 'html/outline_image_animation.html',
+  },
   // {
   //   productName: '',
   //   category: '',
   //   url: 'html/.html',
   // },
-]
+];

@@ -7,7 +7,9 @@
   "editor.useTabStops": true,
   "diffEditor.ignoreTrimWhitespace": true,
   "editor.fontSize": 13,
-"files.autoSave": "onFocusChange",
-"editor.wordWrap": "on",
-"editor.minimap.enabled": false
+  "files.autoSave": "onFocusChange",
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

@@ -1,66 +1,67 @@
-let outlink = [  
+let outlink = [
   {
-    productName: "Testing the New CSS Reset",
-    category: "basic",
-    url: "https://codepen.io/robinrendle/pen/VwzPJrL?editors=1100",
+    productName: 'Testing the New CSS Reset',
+    category: 'basic',
+    url: 'https://codepen.io/robinrendle/pen/VwzPJrL?editors=1100',
     linkType: 'outlink',
   },
   {
-    productName: "처음으로 css grid 배우기",
+    productName: '처음으로 css grid 배우기',
     category: 'layout',
-    url: "https://dev.to/thouravi/learning-css-grid-for-the-first-time-5amb",
+    url: 'https://dev.to/thouravi/learning-css-grid-for-the-first-time-5amb',
     linkType: 'outlink',
   },
   {
-    productName: "@supports selector()",
+    productName: '@supports selector()',
     category: 'basic',
     category2: 'css-trick',
-    url: "https://css-tricks.com/supports-selector/",
+    url: 'https://css-tricks.com/supports-selector/',
     linkType: 'outlink',
   },
   {
-    productName: "CSS scroll-behavior",
+    productName: 'CSS scroll-behavior',
     category: 'css-trick',
     category2: 'scroll-parallax',
-    url: "https://css-tricks.com/almanac/properties/s/scroll-behavior/",
+    url: 'https://css-tricks.com/almanac/properties/s/scroll-behavior/',
     linkType: 'outlink',
   },
   {
-    productName: "CSS 재설정으로 :where() 의 특수성 사용",
+    productName: 'CSS 재설정으로 :where() 의 특수성 사용',
     category: 'css-trick',
     category2: 'basic',
-    url: "https://css-tricks.com/using-the-specificity-of-where-as-a-css-reset/",
+    url: 'https://css-tricks.com/using-the-specificity-of-where-as-a-css-reset/',
     linkType: 'outlink',
   },
   {
-    productName: ":fullscreen 선택자",
+    productName: ':fullscreen 선택자',
     category: 'css-trick',
     category2: 'basic',
-    url: "https://css-tricks.com/almanac/selectors/f/fullscreen/",
+    url: 'https://css-tricks.com/almanac/selectors/f/fullscreen/',
     linkType: 'outlink',
   },
   {
-    productName: "종속성 없이 순수 JavaScript로 작성된 가볍고 강력하며 유연한 슬라이더(splide)",
+    productName:
+      '종속성 없이 순수 JavaScript로 작성된 가볍고 강력하며 유연한 슬라이더(splide)',
     category: 'slide',
-    url: "https://splidejs.com/",
+    url: 'https://splidejs.com/',
     linkType: 'outlink',
   },
   {
-    productName: "가장 현대적인 모바일 터치 슬라이더 - swiper",
+    productName: '가장 현대적인 모바일 터치 슬라이더 - swiper',
     category: 'slide',
-    url: "https://swiperjs.com/",
+    url: 'https://swiperjs.com/',
     linkType: 'outlink',
   },
   {
-    productName: "js가 가벼운 자동정지/시작이 가능한 슬라이드(glide)",
+    productName: 'js가 가벼운 자동정지/시작이 가능한 슬라이드(glide)',
     category: 'slide',
-    url: "https://glidejs.com/",
+    url: 'https://glidejs.com/',
     linkType: 'outlink',
   },
   {
-    productName: "js가 가벼운 슬라이드(glider)",
+    productName: 'js가 가벼운 슬라이드(glider)',
     category: 'slide',
-    url: "https://nickpiscitelli.github.io/Glider.js/",
+    url: 'https://nickpiscitelli.github.io/Glider.js/',
     linkType: 'outlink',
   },
   {
@@ -104,7 +105,8 @@ let outlink = [
     linkType: 'outlink',
   },
   {
-    productName: 'parallax - 자바 스크립트로 시차 효과를 얻는 가장 쉬운 방법 simplePARALLAX.js',
+    productName:
+      'parallax - 자바 스크립트로 시차 효과를 얻는 가장 쉬운 방법 simplePARALLAX.js',
     category: 'scroll-parallax',
     url: 'https://simpleparallax.com/',
     linkType: 'outlink',
@@ -316,4 +318,4 @@ let outlink = [
   //   url: '',
   //   linkType: 'outlink',
   // },
-]
+];
