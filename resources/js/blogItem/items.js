@@ -900,12 +900,6 @@ let items = [
     url: 'html/responsive_sticky_navigation_bar.html',
   },
   {
-    productName: 'menu - gsap 사용한 최소한의 풀스크린 내비게이션',
-    category: 'navigation-list',
-    category2: 'animation',
-    url: 'html/fullscreen_navigation_gsap/index.html',
-  },
-  {
     productName: 'menu - 물흐르는듯한 끈적한 효과',
     category: 'navigation-list',
     category2: 'animation',
@@ -1116,12 +1110,6 @@ let items = [
     category: 'icon-loading',
     category2: 'animation',
     url: 'html/bounce_animation.html',
-  },
-  {
-    productName: 'bounce - 공이 통통 튀는',
-    category: 'icon-loading',
-    category2: 'animation',
-    url: 'html/bouncing_ball.html',
   },
   {
     productName: 'bubble - background 비눗방울 전체 날림',
