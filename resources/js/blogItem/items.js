@@ -447,12 +447,6 @@ let items = [
   },
   {
     productName:
-      'scrollTrigger - GSAP의 ScrollTrigger 플러그인을 사용하여 페이지 스크롤에 요소 표시',
-    category: 'scroll-parallax',
-    url: 'html/reveal_elements_on_page_scroll.html',
-  },
-  {
-    productName:
       'fullpage - 풀페이지 반응형 구간에 따라 풀페이지 죽이고 살리기',
     category: 'scroll-parallax',
     url: 'html/fullpage.js_destory_and_rebuild_base.html',
@@ -583,11 +577,6 @@ let items = [
     url: 'html/scroll_indicator.html',
   },
   {
-    productName: 'scroll-snap - fullpage scroll',
-    category: 'scroll-parallax',
-    url: 'html/fullpage_scrolling_pure_css_scroll.html',
-  },
-  {
     productName: 'smooth scrolling - 스크롤시 부드럽게',
     category: 'scroll-parallax',
     url: 'html/add_smooth_scrolling_experience_vanilla.html',
@@ -651,16 +640,6 @@ let items = [
     productName: '동일한 target 값으로 열고 닫기',
     category: 'popup',
     url: 'html/custom_alert_popup_js.html',
-  },
-  {
-    productName: '화살표 함수를 이용한 열고 닫기',
-    category: 'popup',
-    url: 'html/popup-share_modal.html',
-  },
-  {
-    productName: 'mousemove - 스크래치 카드',
-    category: 'mouse-effect',
-    url: 'html/scratch_card_with_javascript.html',
   },
   {
     productName: 'active - Easiest 3D 버튼',
@@ -808,12 +787,6 @@ let items = [
     url: 'html/css3D_isometric_social_media_icon_hover.html',
   },
   {
-    productName: 'hover - 버튼 테두리 라인치기',
-    category: 'mouse-effect',
-    category2: 'animation',
-    url: 'html/draw_border_hover.html',
-  },
-  {
     productName: 'hover - 눈알 따라다님 입움직임',
     category: 'mouse-effect',
     url: 'html/eyes_follow_mouse_cursor_vanilla.html',
@@ -835,12 +808,6 @@ let items = [
     category: 'navigation-list',
     category2: 'animation',
     url: 'html/hover-text_image_effect_gsap.html',
-  },
-  {
-    productName: 'mouseMove - 마우스 좌우 움직임에 따라 이미지 보임',
-    category: 'mouse-effect',
-    category2: 'image',
-    url: 'html/image_comparision_slider_vanilla.html',
   },
   {
     productName: 'hover - 커서의 처음을 기준으로 채움',
@@ -870,11 +837,6 @@ let items = [
     productName: 'menu - PC메뉴를 복사하여 모바일용 메뉴 구현하기',
     category: 'navigation-list',
     url: 'html/pc-clone_mobile_menu.html',
-  },
-  {
-    productName: 'menu - 반응형 구간에서는 작동하지 않는 메뉴 애니메이션',
-    category: 'navigation-list',
-    url: 'html/2depth_hover_submenu.html',
   },
   {
     productName: 'menu - 팝업 코너 메뉴',
@@ -952,21 +914,10 @@ let items = [
     url: 'html/gooey_pagination.html',
   },
   {
-    productName: 'menu - 반응형 상단고정 navbar 선택시 노출모션',
-    category: 'navigation-list',
-    url: 'html/responsive_fixed_navigation_bar.html',
-  },
-  {
     productName: 'tweenmax를 이용한 전체 화면이 움직임',
     category: 'layout',
     category2: 'animation',
     url: 'html/minimal_navigation_html_css_jquery_gsap.html',
-  },
-  {
-    productName: 'tweenmax를 이용한 메뉴 선택시 전체를 덮으면서 메뉴 노출',
-    category: 'layout',
-    category2: 'animation',
-    url: 'html/responsive_dropdown_navigation_menu.html',
   },
   {
     productName: 'ribbon - 박스 모서리 리본 모양을 만드는 방법',
@@ -1081,12 +1032,6 @@ let items = [
     category: 'icon-loading',
     category2: 'animation',
     url: 'html/confetti_fallling.html',
-  },
-  {
-    productName: 'line - SVG그리기 애니메이션',
-    category: 'icon-loading',
-    category2: 'animation',
-    url: 'html/svg_stroke_animation.html',
   },
   {
     productName: 'wifi animation',
@@ -1208,11 +1153,6 @@ let items = [
     productName: 'upload - 업로드하기 전에 여러 이미지 미리 보기',
     category: 'form',
     url: 'html/rpeview_multiple_images_before_upload.html',
-  },
-  {
-    productName: '두 날짜 사이의 일 계산기',
-    category: 'form',
-    url: 'html/days_between_two_dates_calculator.html',
   },
   {
     productName: 'select - 사용자 지정 선택 메뉴',
@@ -1501,12 +1441,6 @@ let items = [
     url: 'html/detect_mouse_touch_hold.html',
   },
   {
-    productName: '드래그 가능 슬라이더 탭',
-    category: 'navigation-list',
-    category2: 'mouse-effect',
-    url: 'html/draggable_slider_tabs.html',
-  },
-  {
     productName: 'css를 이용한 input label 모션',
     category: 'form',
     url: 'html/css_input_label_animation.html',
@@ -1521,12 +1455,6 @@ let items = [
     category: 'icon-loading',
     category2: 'animation',
     url: 'html/glass_ball_particle_animation.html',
-  },
-  {
-    productName: '멋진 CSS 테두리 애니메이션',
-    category: 'background-border',
-    category2: 'animation',
-    url: 'html/awesome_border_animation_image.html',
   },
   {
     productName: 'CSS 슈팅스타 애니메이션',
@@ -1777,12 +1705,6 @@ let items = [
     productName: 'password 유효성 검사',
     category: 'form',
     url: 'html/password_validation_check.html',
-  },
-  {
-    productName: '아코디언 패턴 구현(jquery)',
-    category: 'a11y',
-    category2: 'navigation-list',
-    url: 'html/accordion_case.html',
   },
   {
     productName: '아코디언 패턴 구현(javascript)',
