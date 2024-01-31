@@ -1,267 +1,321 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="Content-Language" content="ko-KR" />
-<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-<title>KIJ Portfolio</title>
-<style>
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  border: none;
-  outline: none;
-}
-html, body {
-  background-color: #101010;
-}
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: transparent;
-  }
-}
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: #101010;
-  }
-}
-.wrapper {
-  width: 95%;
-  margin: 0 auto;
-}
-h1 {
-  padding: 20px 0 5px;
-  position: absolute;
-  right: 20px;
-  top: 0;
-}
-h1 img {
-  width: 60px;
-}
-#buttons {
-  width: 50%;
-}
-.button-value {
-  border: 2px solid darkkhaki;
-  padding: 7px 16px;
-  border-radius: 3em;
-  margin-top: 10px;
-  background-color: transparent;
-  color: darkkhaki;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-.active {
-  background-color: darkkhaki;
-  color: #000 !important;
-}
-#products {
-  padding: 20px 0;
-}
-.card {
-  margin-top: 10px;
-}
-.card a {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: #999;
-}
-.outlink::after {
-  content:'➜';
-  margin-left: 4px;
-}
-.hide {
-  display: none;
-}
-nav {
-  display: flex;
-  padding: 30px 0;
-}
-nav a {
-  color: darkkhaki;
-  padding-right: 30px;
-}
-#preview {
-  position: fixed;
-  top: 0; right: 0;
-  height: 100vh;
-  width: 49%;
-  border-width: 2px 0 0 2px;
-  border-style:  solid;
-  border-color: #333;
-}
-@media (max-width: 1024px) { 
-  #preview {
-    display: none;
-  }
-  #buttons {
-    width: auto;
-  }
-  .button-value {
-    padding: 10px 20px;
-  }
-  nav a {
-    margin-right: 0;
-    padding: 10px;
-  }
-}
-.sdword {
-  margin-bottom: 10px;
-}
-.sdword ul {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  list-style: none;
-  margin-top: 5px;
-}
-.sdword li {
-  background-color: rgb(119, 116, 67);
-  padding: 5px;
-  font-size: 12px;
-  color: #fff;
-}
-</style>
-</head>
-
-<body>
-
-<div class="wrapper">
-  <h1>
-    <img
-      src="https://rockij.github.io/portfolio/resource/image/logo-ijung.png"
-      alt="logo"
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
-  </h1>
-  <nav>
-    <a href="https://rockij.github.io/portfolio">Portfolio</a>
-    <a href="https://rockij.github.io/blog">Blog</a>
-  </nav>
-  <div class="sdword">
-    <ul>
-      <li>:is</li>
-      <li>:where</li>
-      <li>:has</li>
-      <li>font preconnect</li>
-      <li>lodash.js</li>
-      <li>grid</li>
-      <li>anim.js</li>
-      <li>houdini</li>
-      <li>inset</li>
-      <li>markdown</li>
-      <li>svgator</li>
-      <li>all(css)</li>
-    </ul>
-  </div>
-  <div id="buttons">
-    <button class="button-value" onclick="filterProduct('all')">all</button>
-    <button class="button-value" onclick="filterProduct('basic')">basic</button>
-    <button class="button-value" onclick="filterProduct('workspace')">workspace</button>
-    <button class="button-value" onclick="filterProduct('image')">image</button>
-    <button class="button-value" onclick="filterProduct('form')">form</button>
-    <button class="button-value" onclick="filterProduct('layout')">layout</button>
-    <button class="button-value" onclick="filterProduct('popup')">popup</button>
-    <button class="button-value" onclick="filterProduct('navigation-list')">navigation-list</button>
-    <button class="button-value" onclick="filterProduct('icon-loading')">icon-loading</button>
-    <button class="button-value" onclick="filterProduct('background-border')">background-border</button>
-    <button class="button-value" onclick="filterProduct('text-effect')">text-effect</button>
-    <button class="button-value" onclick="filterProduct('mouse-effect')">mouse-effect</button>
-    <button class="button-value" onclick="filterProduct('scroll-parallax')">scroll-parallax</button>
-    <button class="button-value" onclick="filterProduct('slide')">slide</button>
-    <button class="button-value" onclick="filterProduct('chart-graph')">chart-graph</button>
-    <button class="button-value" onclick="filterProduct('animation')">animation</button>
-    <button class="button-value" onclick="filterProduct('css-trick')">css-trick</button>
-    <button class="button-value" onclick="filterProduct('calendar')">calendar</button>
-    <button class="button-value" onclick="filterProduct('a11y')">a11y</button>
-    <button class="button-value" onclick="filterProduct('etc')">etc</button>
-  </div>
-  <div id="products"></div>
-  <iframe id="preview" src="" frameborder="0"></iframe>
-</div>
-
-<script src="resources/js/blogItem/workspace.js"></script>
-<script src="resources/js/blogItem/items.js"></script>
-<script src="resources/js/blogItem/a11y.js"></script>
-<script src="resources/js/blogItem/outlink.js"></script>
-<script>
-let products = {
-  data: [
-    ...workspace,
-    ...items,
-    ...outlink,
-    ...a11y,
-  ]
-};
-for (let i of products.data) {
-  // create card
-  let card = document.createElement('div');
-  let preview = document.querySelector('#preview');
-  // 카드에는 범주가 있어야 하며 처음에는 숨겨져 있어야 한다.
-  card.classList.add('card', i.category, i.category2, 'hide');
-  // container
-  let container = document.createElement('div');
-  container.classList.add('container');
-  // product name
-  let name = document.createElement('a');
-  name.setAttribute('href', i.url);
-  name.setAttribute('target', '_blank');
-  name.classList.add('project-name');
-  name.classList.add(i.linkType);
-  name.innerText = i.productName.toLowerCase();
-  container.appendChild(name);
-  card.appendChild(container);
-  document.getElementById('products').appendChild(card);
-  name.addEventListener('mouseover', () => {
-    preview.setAttribute('src', i.url);
-  });
-  let elements = document.querySelectorAll('.project-name');
-  name.addEventListener('click', () => {
-    elements.forEach((element, index) => {
-      element.classList.remove('active');
-    });
-    setTimeout(() => {
-      name.classList.add('active');
-    }, 500);
-  });
-}
-
-function filterProduct(value) {
-  let buttons = document.querySelectorAll('.button-value');
-  buttons.forEach((button) => {
-    // 값이 내부 값인지 확인
-    // console.log(value);
-    // console.log(button.innerText);
-    if (value.toLowerCase() == button.innerText.toLowerCase()) {
-      button.classList.add('active');
-    } else {
-      button.classList.remove('active');
-    }
-  });
-
-  // select all cards
-  let elements = document.querySelectorAll('.card');
-  // loop through all cards
-  elements.forEach((element) => {
-    // 'all' 버튼 클릭 시 모든 카드 표시
-    if (value == 'all') {
-      element.classList.remove('hide');
-    } else {
-      if (element.classList.contains(value)) {
-        element.classList.remove('hide');
-      } else {
-        element.classList.add('hide');
+    <title>KIJ Portfolio</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
       }
-    }
-  });
-}
+      html,
+      body {
+        background-color: #101010;
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: transparent;
+        }
+      }
+      @media (prefers-color-scheme: light) {
+        body {
+          background-color: #101010;
+        }
+      }
+      .wrapper {
+        width: 95%;
+        margin: 0 auto;
+      }
+      h1 {
+        padding: 20px 0 5px;
+        position: absolute;
+        right: 20px;
+        top: 0;
+      }
+      h1 img {
+        width: 60px;
+      }
+      #buttons {
+        width: 50%;
+      }
+      .button-value {
+        border: 2px solid darkkhaki;
+        padding: 7px 16px;
+        border-radius: 3em;
+        margin-top: 10px;
+        background-color: transparent;
+        color: darkkhaki;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+      .active {
+        background-color: darkkhaki;
+        color: #000 !important;
+      }
+      #products {
+        padding: 20px 0;
+      }
+      .card {
+        margin-top: 10px;
+      }
+      .card a {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #999;
+      }
+      .outlink::after {
+        content: '➜';
+        margin-left: 4px;
+      }
+      .hide {
+        display: none;
+      }
+      nav {
+        display: flex;
+        padding: 30px 0;
+      }
+      nav a {
+        color: darkkhaki;
+        padding-right: 30px;
+      }
+      #preview {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 49%;
+        border-width: 2px 0 0 2px;
+        border-style: solid;
+        border-color: #333;
+      }
+      @media (max-width: 1024px) {
+        #preview {
+          display: none;
+        }
+        #buttons {
+          width: auto;
+        }
+        .button-value {
+          padding: 10px 20px;
+        }
+        nav a {
+          margin-right: 0;
+          padding: 10px;
+        }
+      }
+      .sdword {
+        margin-bottom: 10px;
+      }
+      .sdword ul {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        list-style: none;
+        margin-top: 5px;
+      }
+      .sdword li {
+        background-color: rgb(119, 116, 67);
+        padding: 5px;
+        font-size: 12px;
+        color: #fff;
+      }
+    </style>
+  </head>
 
-window.onload = () => {
-  filterProduct('all');
-}
-</script>
+  <body>
+    <div class="wrapper">
+      <h1>
+        <img
+          src="https://rockij.github.io/portfolio/resource/image/logo-ijung.png"
+          alt="logo"
+        />
+      </h1>
+      <nav>
+        <a href="https://rockij.github.io/portfolio">Portfolio</a>
+        <a href="https://rockij.github.io/blog">Blog</a>
+      </nav>
+      <div class="sdword">
+        <ul>
+          <li>:is</li>
+          <li>:where</li>
+          <li>:has</li>
+          <li>font preconnect</li>
+          <li>lodash.js</li>
+          <li>grid</li>
+          <li>anim.js</li>
+          <li>houdini</li>
+          <li>inset</li>
+          <li>markdown</li>
+          <li>svgator</li>
+          <li>all(css)</li>
+          <li>
+            <a href="https://aoa.gitbook.io/skymimo/" target="_blank"
+              >접근성 적용사례</a
+            >
+          </li>
+          <li>
+            <a href="https://www.matuzo.at/til/" target="_blank"
+              >TIL(소스참고)</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://dev.to/christopherkade/unusual-html-tags-worth-knowing-3gbk"
+              target="_blank"
+              >특이한HTML</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div id="buttons">
+        <button class="button-value" onclick="filterProduct('all')">all</button>
+        <button class="button-value" onclick="filterProduct('basic')">
+          basic
+        </button>
+        <button class="button-value" onclick="filterProduct('workspace')">
+          workspace
+        </button>
+        <button class="button-value" onclick="filterProduct('image')">
+          image
+        </button>
+        <button class="button-value" onclick="filterProduct('form')">
+          form
+        </button>
+        <button class="button-value" onclick="filterProduct('layout')">
+          layout
+        </button>
+        <button class="button-value" onclick="filterProduct('popup')">
+          popup
+        </button>
+        <button class="button-value" onclick="filterProduct('navigation-list')">
+          navigation-list
+        </button>
+        <button class="button-value" onclick="filterProduct('icon-loading')">
+          icon-loading
+        </button>
+        <button
+          class="button-value"
+          onclick="filterProduct('background-border')"
+        >
+          background-border
+        </button>
+        <button class="button-value" onclick="filterProduct('text-effect')">
+          text-effect
+        </button>
+        <button class="button-value" onclick="filterProduct('mouse-effect')">
+          mouse-effect
+        </button>
+        <button class="button-value" onclick="filterProduct('scroll-parallax')">
+          scroll-parallax
+        </button>
+        <button class="button-value" onclick="filterProduct('slide')">
+          slide
+        </button>
+        <button class="button-value" onclick="filterProduct('chart-graph')">
+          chart-graph
+        </button>
+        <button class="button-value" onclick="filterProduct('animation')">
+          animation
+        </button>
+        <button class="button-value" onclick="filterProduct('css-trick')">
+          css-trick
+        </button>
+        <button class="button-value" onclick="filterProduct('calendar')">
+          calendar
+        </button>
+        <button class="button-value" onclick="filterProduct('a11y')">
+          a11y
+        </button>
+        <button class="button-value" onclick="filterProduct('etc')">etc</button>
+      </div>
+      <div id="products"></div>
+      <iframe id="preview" src="" frameborder="0"></iframe>
+    </div>
 
-</body>
+    <script src="resources/js/blogItem/workspace.js"></script>
+    <script src="resources/js/blogItem/items.js"></script>
+    <script src="resources/js/blogItem/a11y.js"></script>
+    <script src="resources/js/blogItem/outlink.js"></script>
+    <script>
+      let products = {
+        data: [...workspace, ...items, ...outlink, ...a11y],
+      };
+      for (let i of products.data) {
+        // create card
+        let card = document.createElement('div');
+        let preview = document.querySelector('#preview');
+        // 카드에는 범주가 있어야 하며 처음에는 숨겨져 있어야 한다.
+        card.classList.add('card', i.category, i.category2, 'hide');
+        // container
+        let container = document.createElement('div');
+        container.classList.add('container');
+        // product name
+        let name = document.createElement('a');
+        name.setAttribute('href', i.url);
+        name.setAttribute('target', '_blank');
+        name.classList.add('project-name');
+        name.classList.add(i.linkType);
+        name.innerText = i.productName.toLowerCase();
+        container.appendChild(name);
+        card.appendChild(container);
+        document.getElementById('products').appendChild(card);
+        name.addEventListener('mouseover', () => {
+          preview.setAttribute('src', i.url);
+        });
+        let elements = document.querySelectorAll('.project-name');
+        name.addEventListener('click', () => {
+          elements.forEach((element, index) => {
+            element.classList.remove('active');
+          });
+          setTimeout(() => {
+            name.classList.add('active');
+          }, 500);
+        });
+      }
+
+      function filterProduct(value) {
+        let buttons = document.querySelectorAll('.button-value');
+        buttons.forEach((button) => {
+          // 값이 내부 값인지 확인
+          // console.log(value);
+          // console.log(button.innerText);
+          if (value.toLowerCase() == button.innerText.toLowerCase()) {
+            button.classList.add('active');
+          } else {
+            button.classList.remove('active');
+          }
+        });
+
+        // select all cards
+        let elements = document.querySelectorAll('.card');
+        // loop through all cards
+        elements.forEach((element) => {
+          // 'all' 버튼 클릭 시 모든 카드 표시
+          if (value == 'all') {
+            element.classList.remove('hide');
+          } else {
+            if (element.classList.contains(value)) {
+              element.classList.remove('hide');
+            } else {
+              element.classList.add('hide');
+            }
+          }
+        });
+      }
+
+      window.onload = () => {
+        filterProduct('all');
+      };
+    </script>
+  </body>
 </html>
