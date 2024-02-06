@@ -312,6 +312,12 @@ let outlink = [
     url: 'https://apexcharts.com/',
     linkType: 'outlink',
   },
+  {
+    productName: 'inputmode 적용화면 테스트',
+    category: 'basic',
+    url: 'https://better-mobile-inputs.netlify.app/',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
