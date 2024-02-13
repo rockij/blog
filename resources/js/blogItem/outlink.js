@@ -318,6 +318,12 @@ let outlink = [
     url: 'https://better-mobile-inputs.netlify.app/',
     linkType: 'outlink',
   },
+  {
+    productName: 'SVG 로딩 스피너 만들기',
+    category: 'icon-loading',
+    url: 'https://fffuel.co/svg-spinner/',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
