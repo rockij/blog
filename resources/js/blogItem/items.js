@@ -1875,6 +1875,39 @@ let items = [
     category2: 'animation',
     url: 'html/outline_image_animation.html',
   },
+  {
+    productName: 'css없이 타입별로 list 기정',
+    category: 'basic',
+    url: 'html/list_type_attribute.html',
+  },
+  {
+    productName: '기본 file 스타일',
+    category: 'basic',
+    category2: 'form',
+    url: 'html/input_file_style.html',
+  },
+  {
+    productName: '부드러운 느낌의 skeleton screen',
+    category: 'icon-loading',
+    category2: 'animation',
+    url: 'html/smooth_skeletons.html',
+  },
+  {
+    productName: 'radio 선택시 해당영역 박스이동',
+    category: 'form',
+    category2: 'animation',
+    url: 'html/radios_sliding_focus.html',
+  },
+  {
+    productName: 'animation-timeline 이용 스크롤시 일부 영역 강조',
+    category: 'scroll-parallax',
+    url: 'html/scroll_driven_text_highlights.html',
+  },
+  {
+    productName: '동그라미가 flat하게 회전하는 로딩',
+    category: 'icon-loading',
+    url: 'html/flat_preloader.html',
+  },
   // {
   //   productName: '',
   //   category: '',

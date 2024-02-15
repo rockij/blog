@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title></title>
+    <style>
+      [type='file']::file-selector-button {
+        background-color: hotpink;
+        padding: 0.5rem 1rem;
+        border: 2px solid fuchsia;
+        margin-block-end: 1rem;
+        display: block;
+        border-radius: 3px;
+      }
+
+      [type='file']::file-selector-button:hover {
+        background-color: aqua;
+      }
+
+      [type='file'] {
+        margin-block-start: 1rem;
+      }
+
+      body {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <label for="upload">Select file</label><br />
+    <input type="file" id="upload" />
+  </body>
+</html>
