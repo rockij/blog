@@ -324,6 +324,12 @@ let outlink = [
     url: 'https://fffuel.co/svg-spinner/',
     linkType: 'outlink',
   },
+  {
+    productName: 'range-input.css',
+    category: 'form',
+    url: 'https://range-input-css.netlify.app/',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
