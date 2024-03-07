@@ -1,75 +1,93 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="Content-Language" content="ko-KR" />
-<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
-/>
-<link href="../resources/css/font-poppins.css" rel="stylesheet" />
-<title></title>
-<style>
-*, *:after {
-  box-sizing: border-box;
-}
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <link href="../resources/css/font-poppins.css" rel="stylesheet" />
+    <title></title>
+    <style>
+        *,
+        *:after {
+            box-sizing: border-box;
+        }
 
-nav {
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 1em;
-}
+        nav {
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+        }
 
-ul {
-  display: flex;
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-}
-ul li {
-  border-right-width: 0;
-  border: 1px solid #bbbbbb;
-}
-ul li:last-of-type {
-  border: 1px solid #bbbbbb;
-}
-ul li a {
-  display: flex;
-  padding: 1em;
-  text-decoration: none;
-}
-ul li a:hover, ul li a:focus {
-  background-color: #ddd;
-  text-decoration: underline;
-}
-ul li a[aria-current=page] {
-  background-color: red;
-  border-color: red;
-  border-width: 3px;
-  color: white;
-}
-ul li a[aria-current=page]:hover, ul li a[aria-current=page]:focus {
-  background-color: #990000;
-}
-</style>
+        ul {
+            display: flex;
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        ul li {
+            border-right-width: 0;
+            border: 1px solid #bbbbbb;
+        }
+
+        ul li:last-of-type {
+            border: 1px solid #bbbbbb;
+        }
+
+        ul li a {
+            display: flex;
+            padding: 1em;
+            text-decoration: none;
+        }
+
+        ul li a:hover,
+        ul li a:focus {
+            background-color: #ddd;
+            text-decoration: underline;
+        }
+
+        ul li a[aria-current=page] {
+            background-color: red;
+            border-color: red;
+            border-width: 3px;
+            color: white;
+        }
+
+        ul li a[aria-current=page]:hover,
+        ul li a[aria-current=page]:focus {
+            background-color: #990000;
+        }
+    </style>
 </head>
 
 <body>
 
-<nav aria-label="pagination navigation">
-  <ul>
-    <li><a href="/page-2">Previous</a></li>
-    <li><a href="/page-1">1</a></li>
-    <li><a href="/page-2" aria-current="page" class="active">2</a></li>
-    <li><a href="/page-3">3</a></li>
-    <li><a href="/page-4">4</a></li>
-    <li><a href="/page-5">5</a></li>
-    <li><a href="/page-3">Next</a></li>
-  </ul>
-</nav>
+    <nav aria-label="pagination navigation">
+        <ul>
+            <li><a href="/page-2">Previous</a></li>
+            <li><a href="/page-1">1</a></li>
+            <li><a href="/page-2" aria-current="page" class="active">2</a></li>
+            <li><a href="/page-3">3</a></li>
+            <li><a href="/page-4">4</a></li>
+            <li><a href="/page-5">5</a></li>
+            <li><a href="/page-3">Next</a></li>
+        </ul>
+    </nav>
+
+    <nav aria-label="Breadcrumb">
+        <ol>
+            <li>신청</li>
+            <li aria-current="step">심사</li>
+            <li>발급/배송</li>
+            <li>완료</li>
+        </ol>
+    </nav>
 
 </body>
+
 </html>
