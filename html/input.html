@@ -128,9 +128,13 @@
 
 <body>
 
+    <div>
+        <input type="range" min="0" max="100" value="50" id="slider"><span id="output">50</span>
+    </div>
+
     <div id="range-input-container">
         <label class="hide-label" for="range-input"> Demo Range Input </label>
-        <input type="range" id="range-input">
+        <input type="range" id="range-input" min="1" max="10" value="2" step="1">
     </div>
 
     <br><br>
@@ -344,5 +348,23 @@
     </script>
 
 </body>
+
+<script>
+    var slider = document.getElementById("slider");
+    var output = document.getElementById("output");
+
+    // Set up an event handler for when the slider is changed
+    // To accomodate all browsers (IE), two events need to be set up.
+    slider.addEventListener("input", fixSlider);
+    slider.addEventListener("change", fixSlider);
+
+    function fixSlider(evt) {
+        // If the value goes below 50, reset it to 50
+        if (parseInt(this.value, 10) < 20) {
+            this.value = 20;
+        }
+        output.textContent = this.value;
+    }
+</script>
 
 </html>
