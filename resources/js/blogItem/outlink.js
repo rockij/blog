@@ -330,6 +330,12 @@ let outlink = [
     url: 'https://range-input-css.netlify.app/',
     linkType: 'outlink',
   },
+  {
+    productName: 'Device Simulator & Tester',
+    category: 'workspace',
+    url: 'https://device-simulator.vercel.app/?utm_source=CSS-Weekly&utm_campaign=Issue-581&utm_medium=web',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
