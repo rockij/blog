@@ -336,6 +336,19 @@ let outlink = [
     url: 'https://device-simulator.vercel.app/?utm_source=CSS-Weekly&utm_campaign=Issue-581&utm_medium=web',
     linkType: 'outlink',
   },
+  {
+    productName: '유용한 CSS 생성기가 많이 있는 css-generators.com',
+    category: 'workspace',
+    url: 'https://css-generators.com/?utm_source=convertkit&utm_medium=email&utm_campaign=Tech%20conferences,%20outages,%20and%20CSS%20resources%20-%2011180100',
+    linkType: 'outlink',
+  },
+  {
+    productName: 'animation 움직이는 느낌 쉽게 확인',
+    category: 'workspace',
+    category2: 'animation',
+    url: 'https://epiceasing.com/?utm_source=CSS-Weekly&utm_campaign=Issue-572&utm_medium=web&curve=0.470%2C0.000%2C0.745%2C0.715&language=scss&animation=width',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
