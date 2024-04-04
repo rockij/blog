@@ -1908,6 +1908,12 @@ let items = [
     category: 'icon-loading',
     url: 'html/flat_preloader.html',
   },
+  {
+    productName: '텍스트 줄 바꿈으로 안정한 제목',
+    category: 'text-effect',
+    category2: 'basic',
+    url: 'html/text_wrap_balancing.html',
+  },
   // {
   //   productName: '',
   //   category: '',

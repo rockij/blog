@@ -349,6 +349,12 @@ let outlink = [
     url: 'https://epiceasing.com/?utm_source=CSS-Weekly&utm_campaign=Issue-572&utm_medium=web&curve=0.470%2C0.000%2C0.745%2C0.715&language=scss&animation=width',
     linkType: 'outlink',
   },
+  {
+    productName: '배경 패턴의 가장 큰 컬렉션',
+    category: 'background-border',
+    url: 'https://css-pattern.com/',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
