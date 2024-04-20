@@ -1914,6 +1914,37 @@ let items = [
     category2: 'basic',
     url: 'html/text_wrap_balancing.html',
   },
+  {
+    productName: '서든 애니매이션 데모',
+    category: 'basic',
+    category2: 'animation',
+    url: 'html/sudden_animations_demo.html',
+  },
+
+  {
+    productName: '빅 대 미묘 애니메이션',
+    category: 'basic',
+    category2: 'animation',
+    url: 'html/big_subtle_animation.html',
+  },
+  {
+    productName: '속성별 다양한 이징',
+    category: 'basic',
+    category2: 'animation',
+    url: 'html/varying_easings_per_property.html',
+  },
+  {
+    productName: '더 많은 게임을 지연',
+    category: 'basic',
+    category2: 'animation',
+    url: 'html/play_more_with_delay.html',
+  },
+  {
+    productName: '애니메이션 팁 시각화',
+    category: 'basic',
+    category2: 'animation',
+    url: 'html/animation_tips_visualized.html',
+  },
   // {
   //   productName: '',
   //   category: '',

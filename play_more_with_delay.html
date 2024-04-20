@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      :root {
+        font-family: 'Asap', sans-serif;
+      }
+
+      html,
+      body {
+        height: 100%;
+        background: #fcfcfc;
+      }
+
+      body {
+        display: grid;
+        place-content: center;
+      }
+
+      .sentence {
+        font-size: clamp(1.5rem, calc(1rem + 3vw), 4rem);
+        overflow: visible;
+        padding: 0.5em;
+      }
+
+      .letter {
+        opacity: 0;
+        transform: translateY(-0.25em);
+        display: inline-block;
+        -webkit-animation: burst_in 3s cubic-bezier(0, 1.62, 1, 1.6) infinite;
+        animation: burst_in 3s cubic-bezier(0, 1.62, 1, 1.6) infinite;
+        color: #101820;
+      }
+
+      @-webkit-keyframes burst_in {
+        25%,
+        80% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes burst_in {
+        25%,
+        80% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .sentence-2 .letter:nth-of-type(1) {
+        -webkit-animation-delay: 0.06s;
+        animation-delay: 0.06s;
+      }
+
+      .sentence-3 .letter:nth-of-type(1) {
+        -webkit-animation-delay: 0.0035s;
+        animation-delay: 0.0035s;
+      }
+
+      .sentence-4 .letter:nth-of-type(1) {
+        -webkit-animation-delay: 0.0000075s;
+        animation-delay: 0.0000075s;
+      }
+
+      .sentence-5 .letter:nth-of-type(1) {
+        -webkit-animation-delay: 0.59s;
+        animation-delay: 0.59s;
+      }
+
+      .sentence-6 .letter:nth-of-type(1) {
+        -webkit-animation-delay: 0.2058823529s;
+        animation-delay: 0.2058823529s;
+      }
+
+      .sentence-2 .letter:nth-of-type(2) {
+        -webkit-animation-delay: 0.12s;
+        animation-delay: 0.12s;
+      }
+
+      .sentence-3 .letter:nth-of-type(2) {
+        -webkit-animation-delay: 0.014s;
+        animation-delay: 0.014s;
+      }
+
+      .sentence-4 .letter:nth-of-type(2) {
+        -webkit-animation-delay: 0.00012s;
+        animation-delay: 0.00012s;
+      }
+
+      .sentence-5 .letter:nth-of-type(2) {
+        -webkit-animation-delay: 0.5825s;
+        animation-delay: 0.5825s;
+      }
+
+      .sentence-6 .letter:nth-of-type(2) {
+        -webkit-animation-delay: 0.1235294118s;
+        animation-delay: 0.1235294118s;
+      }
+
+      .sentence-2 .letter:nth-of-type(3) {
+        -webkit-animation-delay: 0.18s;
+        animation-delay: 0.18s;
+      }
+
+      .sentence-3 .letter:nth-of-type(3) {
+        -webkit-animation-delay: 0.0315s;
+        animation-delay: 0.0315s;
+      }
+
+      .sentence-4 .letter:nth-of-type(3) {
+        -webkit-animation-delay: 0.0006075s;
+        animation-delay: 0.0006075s;
+      }
+
+      .sentence-5 .letter:nth-of-type(3) {
+        -webkit-animation-delay: 0.57s;
+        animation-delay: 0.57s;
+      }
+
+      .sentence-6 .letter:nth-of-type(3) {
+        -webkit-animation-delay: 0.0529411765s;
+        animation-delay: 0.0529411765s;
+      }
+
+      .sentence-2 .letter:nth-of-type(4) {
+        -webkit-animation-delay: 0.24s;
+        animation-delay: 0.24s;
+      }
+
+      .sentence-3 .letter:nth-of-type(4) {
+        -webkit-animation-delay: 0.056s;
+        animation-delay: 0.056s;
+      }
+
+      .sentence-4 .letter:nth-of-type(4) {
+        -webkit-animation-delay: 0.00192s;
+        animation-delay: 0.00192s;
+      }
+
+      .sentence-5 .letter:nth-of-type(4) {
+        -webkit-animation-delay: 0.5525s;
+        animation-delay: 0.5525s;
+      }
+
+      .sentence-6 .letter:nth-of-type(4) {
+        -webkit-animation-delay: -0.0058823529s;
+        animation-delay: -0.0058823529s;
+      }
+
+      .sentence-2 .letter:nth-of-type(5) {
+        -webkit-animation-delay: 0.3s;
+        animation-delay: 0.3s;
+      }
+
+      .sentence-3 .letter:nth-of-type(5) {
+        -webkit-animation-delay: 0.0875s;
+        animation-delay: 0.0875s;
+      }
+
+      .sentence-4 .letter:nth-of-type(5) {
+        -webkit-animation-delay: 0.0046875s;
+        animation-delay: 0.0046875s;
+      }
+
+      .sentence-5 .letter:nth-of-type(5) {
+        -webkit-animation-delay: 0.53s;
+        animation-delay: 0.53s;
+      }
+
+      .sentence-6 .letter:nth-of-type(5) {
+        -webkit-animation-delay: -0.0529411765s;
+        animation-delay: -0.0529411765s;
+      }
+
+      .sentence-2 .letter:nth-of-type(6) {
+        -webkit-animation-delay: 0.36s;
+        animation-delay: 0.36s;
+      }
+
+      .sentence-3 .letter:nth-of-type(6) {
+        -webkit-animation-delay: 0.126s;
+        animation-delay: 0.126s;
+      }
+
+      .sentence-4 .letter:nth-of-type(6) {
+        -webkit-animation-delay: 0.00972s;
+        animation-delay: 0.00972s;
+      }
+
+      .sentence-5 .letter:nth-of-type(6) {
+        -webkit-animation-delay: 0.5025s;
+        animation-delay: 0.5025s;
+      }
+
+      .sentence-6 .letter:nth-of-type(6) {
+        -webkit-animation-delay: -0.0882352941s;
+        animation-delay: -0.0882352941s;
+      }
+
+      .sentence-2 .letter:nth-of-type(7) {
+        -webkit-animation-delay: 0.42s;
+        animation-delay: 0.42s;
+      }
+
+      .sentence-3 .letter:nth-of-type(7) {
+        -webkit-animation-delay: 0.1715s;
+        animation-delay: 0.1715s;
+      }
+
+      .sentence-4 .letter:nth-of-type(7) {
+        -webkit-animation-delay: 0.0180075s;
+        animation-delay: 0.0180075s;
+      }
+
+      .sentence-5 .letter:nth-of-type(7) {
+        -webkit-animation-delay: 0.47s;
+        animation-delay: 0.47s;
+      }
+
+      .sentence-6 .letter:nth-of-type(7) {
+        -webkit-animation-delay: -0.1117647059s;
+        animation-delay: -0.1117647059s;
+      }
+
+      .sentence-2 .letter:nth-of-type(8) {
+        -webkit-animation-delay: 0.48s;
+        animation-delay: 0.48s;
+      }
+
+      .sentence-3 .letter:nth-of-type(8) {
+        -webkit-animation-delay: 0.224s;
+        animation-delay: 0.224s;
+      }
+
+      .sentence-4 .letter:nth-of-type(8) {
+        -webkit-animation-delay: 0.03072s;
+        animation-delay: 0.03072s;
+      }
+
+      .sentence-5 .letter:nth-of-type(8) {
+        -webkit-animation-delay: 0.4325s;
+        animation-delay: 0.4325s;
+      }
+
+      .sentence-6 .letter:nth-of-type(8) {
+        -webkit-animation-delay: -0.1235294118s;
+        animation-delay: -0.1235294118s;
+      }
+
+      .sentence-2 .letter:nth-of-type(9) {
+        -webkit-animation-delay: 0.54s;
+        animation-delay: 0.54s;
+      }
+
+      .sentence-3 .letter:nth-of-type(9) {
+        -webkit-animation-delay: 0.2835s;
+        animation-delay: 0.2835s;
+      }
+
+      .sentence-4 .letter:nth-of-type(9) {
+        -webkit-animation-delay: 0.0492075s;
+        animation-delay: 0.0492075s;
+      }
+
+      .sentence-5 .letter:nth-of-type(9) {
+        -webkit-animation-delay: 0.39s;
+        animation-delay: 0.39s;
+      }
+
+      .sentence-6 .letter:nth-of-type(9) {
+        -webkit-animation-delay: -0.1235294118s;
+        animation-delay: -0.1235294118s;
+      }
+
+      .sentence-2 .letter:nth-of-type(10) {
+        -webkit-animation-delay: 0.6s;
+        animation-delay: 0.6s;
+      }
+
+      .sentence-3 .letter:nth-of-type(10) {
+        -webkit-animation-delay: 0.35s;
+        animation-delay: 0.35s;
+      }
+
+      .sentence-4 .letter:nth-of-type(10) {
+        -webkit-animation-delay: 0.075s;
+        animation-delay: 0.075s;
+      }
+
+      .sentence-5 .letter:nth-of-type(10) {
+        -webkit-animation-delay: 0.3425s;
+        animation-delay: 0.3425s;
+      }
+
+      .sentence-6 .letter:nth-of-type(10) {
+        -webkit-animation-delay: -0.1117647059s;
+        animation-delay: -0.1117647059s;
+      }
+
+      .sentence-2 .letter:nth-of-type(11) {
+        -webkit-animation-delay: 0.66s;
+        animation-delay: 0.66s;
+      }
+
+      .sentence-3 .letter:nth-of-type(11) {
+        -webkit-animation-delay: 0.4235s;
+        animation-delay: 0.4235s;
+      }
+
+      .sentence-4 .letter:nth-of-type(11) {
+        -webkit-animation-delay: 0.1098075s;
+        animation-delay: 0.1098075s;
+      }
+
+      .sentence-5 .letter:nth-of-type(11) {
+        -webkit-animation-delay: 0.29s;
+        animation-delay: 0.29s;
+      }
+
+      .sentence-6 .letter:nth-of-type(11) {
+        -webkit-animation-delay: -0.0882352941s;
+        animation-delay: -0.0882352941s;
+      }
+
+      .sentence-2 .letter:nth-of-type(12) {
+        -webkit-animation-delay: 0.72s;
+        animation-delay: 0.72s;
+      }
+
+      .sentence-3 .letter:nth-of-type(12) {
+        -webkit-animation-delay: 0.504s;
+        animation-delay: 0.504s;
+      }
+
+      .sentence-4 .letter:nth-of-type(12) {
+        -webkit-animation-delay: 0.15552s;
+        animation-delay: 0.15552s;
+      }
+
+      .sentence-5 .letter:nth-of-type(12) {
+        -webkit-animation-delay: 0.2325s;
+        animation-delay: 0.2325s;
+      }
+
+      .sentence-6 .letter:nth-of-type(12) {
+        -webkit-animation-delay: -0.0529411765s;
+        animation-delay: -0.0529411765s;
+      }
+
+      .sentence-2 .letter:nth-of-type(13) {
+        -webkit-animation-delay: 0.78s;
+        animation-delay: 0.78s;
+      }
+
+      .sentence-3 .letter:nth-of-type(13) {
+        -webkit-animation-delay: 0.5915s;
+        animation-delay: 0.5915s;
+      }
+
+      .sentence-4 .letter:nth-of-type(13) {
+        -webkit-animation-delay: 0.2142075s;
+        animation-delay: 0.2142075s;
+      }
+
+      .sentence-5 .letter:nth-of-type(13) {
+        -webkit-animation-delay: 0.17s;
+        animation-delay: 0.17s;
+      }
+
+      .sentence-6 .letter:nth-of-type(13) {
+        -webkit-animation-delay: -0.0058823529s;
+        animation-delay: -0.0058823529s;
+      }
+
+      .sentence-2 .letter:nth-of-type(14) {
+        -webkit-animation-delay: 0.84s;
+        animation-delay: 0.84s;
+      }
+
+      .sentence-3 .letter:nth-of-type(14) {
+        -webkit-animation-delay: 0.686s;
+        animation-delay: 0.686s;
+      }
+
+      .sentence-4 .letter:nth-of-type(14) {
+        -webkit-animation-delay: 0.28812s;
+        animation-delay: 0.28812s;
+      }
+
+      .sentence-5 .letter:nth-of-type(14) {
+        -webkit-animation-delay: 0.1025s;
+        animation-delay: 0.1025s;
+      }
+
+      .sentence-6 .letter:nth-of-type(14) {
+        -webkit-animation-delay: 0.0529411765s;
+        animation-delay: 0.0529411765s;
+      }
+
+      .sentence-2 .letter:nth-of-type(15) {
+        -webkit-animation-delay: 0.9s;
+        animation-delay: 0.9s;
+      }
+
+      .sentence-3 .letter:nth-of-type(15) {
+        -webkit-animation-delay: 0.7875s;
+        animation-delay: 0.7875s;
+      }
+
+      .sentence-4 .letter:nth-of-type(15) {
+        -webkit-animation-delay: 0.3796875s;
+        animation-delay: 0.3796875s;
+      }
+
+      .sentence-5 .letter:nth-of-type(15) {
+        -webkit-animation-delay: 0.03s;
+        animation-delay: 0.03s;
+      }
+
+      .sentence-6 .letter:nth-of-type(15) {
+        -webkit-animation-delay: 0.1235294118s;
+        animation-delay: 0.1235294118s;
+      }
+
+      .sentence-2 .letter:nth-of-type(16) {
+        -webkit-animation-delay: 0.96s;
+        animation-delay: 0.96s;
+      }
+
+      .sentence-3 .letter:nth-of-type(16) {
+        -webkit-animation-delay: 0.896s;
+        animation-delay: 0.896s;
+      }
+
+      .sentence-4 .letter:nth-of-type(16) {
+        -webkit-animation-delay: 0.49152s;
+        animation-delay: 0.49152s;
+      }
+
+      .sentence-5 .letter:nth-of-type(16) {
+        -webkit-animation-delay: -0.0475s;
+        animation-delay: -0.0475s;
+      }
+
+      .sentence-6 .letter:nth-of-type(16) {
+        -webkit-animation-delay: 0.2058823529s;
+        animation-delay: 0.2058823529s;
+      }
+
+      .sentence-2 .letter:nth-of-type(17) {
+        -webkit-animation-delay: 1.02s;
+        animation-delay: 1.02s;
+      }
+
+      .sentence-3 .letter:nth-of-type(17) {
+        -webkit-animation-delay: 1.0115s;
+        animation-delay: 1.0115s;
+      }
+
+      .sentence-4 .letter:nth-of-type(17) {
+        -webkit-animation-delay: 0.6264075s;
+        animation-delay: 0.6264075s;
+      }
+
+      .sentence-5 .letter:nth-of-type(17) {
+        -webkit-animation-delay: -0.13s;
+        animation-delay: -0.13s;
+      }
+
+      .sentence-6 .letter:nth-of-type(17) {
+        -webkit-animation-delay: 0.3s;
+        animation-delay: 0.3s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Each letter animates together all at once  -->
+    <div class="sentence sentence-1">
+      <span class="letter"> Play more with delay </span>
+    </div>
+
+    <!-- A linear delay; second letter is delayed 2n seconds, third is delayed 3n seconds, etc. -->
+    <div class="sentence sentence-2">
+      <span class="letter">P</span><span class="letter">l</span
+      ><span class="letter">a</span><span class="letter">y</span>
+      <span class="letter">m</span><span class="letter">o</span
+      ><span class="letter">r</span><span class="letter">e</span>
+      <span class="letter">w</span><span class="letter">i</span
+      ><span class="letter">t</span><span class="letter">h</span>
+      <span class="letter">d</span><span class="letter">e</span
+      ><span class="letter">l</span><span class="letter">a</span
+      ><span class="letter">y</span>
+    </div>
+
+    <!-- A quadratic delay; each letter's delay grows by the power of two -->
+    <div class="sentence sentence-3">
+      <span class="letter">P</span><span class="letter">l</span
+      ><span class="letter">a</span><span class="letter">y</span>
+      <span class="letter">m</span><span class="letter">o</span
+      ><span class="letter">r</span><span class="letter">e</span>
+      <span class="letter">w</span><span class="letter">i</span
+      ><span class="letter">t</span><span class="letter">h</span>
+      <span class="letter">d</span><span class="letter">e</span
+      ><span class="letter">l</span><span class="letter">a</span
+      ><span class="letter">y</span>
+    </div>
+
+    <!-- A cubic delay; each delay increases by the power of three  -->
+    <div class="sentence sentence-4">
+      <span class="letter">P</span><span class="letter">l</span
+      ><span class="letter">a</span><span class="letter">y</span>
+      <span class="letter">m</span><span class="letter">o</span
+      ><span class="letter">r</span><span class="letter">e</span>
+      <span class="letter">w</span><span class="letter">i</span
+      ><span class="letter">t</span><span class="letter">h</span>
+      <span class="letter">d</span><span class="letter">e</span
+      ><span class="letter">l</span><span class="letter">a</span
+      ><span class="letter">y</span>
+    </div>
+
+    <!-- A backwards quadratic delay  -->
+    <div class="sentence sentence-5">
+      <span class="letter">P</span><span class="letter">l</span
+      ><span class="letter">a</span><span class="letter">y</span>
+      <span class="letter">m</span><span class="letter">o</span
+      ><span class="letter">r</span><span class="letter">e</span>
+      <span class="letter">w</span><span class="letter">i</span
+      ><span class="letter">t</span><span class="letter">h</span>
+      <span class="letter">d</span><span class="letter">e</span
+      ><span class="letter">l</span><span class="letter">a</span
+      ><span class="letter">y</span>
+    </div>
+
+    <!-- A delay that makes the letters appear from the inside out. Don't ask me how I did it; I just played with numbers until this happened. -->
+    <div class="sentence sentence-6">
+      <span class="letter">P</span><span class="letter">l</span
+      ><span class="letter">a</span><span class="letter">y</span>
+      <span class="letter">m</span><span class="letter">o</span
+      ><span class="letter">r</span><span class="letter">e</span>
+      <span class="letter">w</span><span class="letter">i</span
+      ><span class="letter">t</span><span class="letter">h</span>
+      <span class="letter">d</span><span class="letter">e</span
+      ><span class="letter">l</span><span class="letter">a</span
+      ><span class="letter">y</span>
+    </div>
+  </body>
+</html>

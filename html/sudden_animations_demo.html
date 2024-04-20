@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      h2 {
+        animation-name: rotate;
+        animation-duration: 2.4s;
+        animation-iteration-count: infinite;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border: 2px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        font-size: inherit;
+        font-family: sans-serif;
+        text-align: center;
+        padding: 10px;
+      }
+
+      h2:first-of-type {
+        animation-timing-function: cubic-bezier(0.9, 0.03, 0.69, 0.22);
+      }
+
+      h2:nth-of-type(2) {
+        animation-timing-function: cubic-bezier(0.17, 0.84, 0.44, 1);
+      }
+
+      h2:nth-of-type(3) {
+        animation-timing-function: cubic-bezier(0.62, 0.16, 0.13, 1.01);
+      }
+
+      h2:nth-of-type(4) {
+        animation-timing-function: cubic-bezier(0.5, -0.53, 0.14, 1.23);
+      }
+
+      :root {
+        --unit: clamp(1rem, calc(0.5rem + 1.5vw), 3rem);
+      }
+
+      * {
+        box-sizing: border-box;
+        color: inherit;
+      }
+
+      body {
+        font-size: var(--unit);
+        margin: 0;
+        padding: calc(var(--unit) * 3);
+        gap: calc(var(--unit) * 3);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+        color: #101820;
+        background: #fcfcfc;
+      }
+
+      @keyframes rotate {
+        50%,
+        100% {
+          transform: rotate(1turn);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Sudden end</h2>
+
+    <h2>Sudden start</h2>
+
+    <h2>Smooth</h2>
+
+    <h2>Inertia</h2>
+  </body>
+</html>
