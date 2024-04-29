@@ -1945,6 +1945,17 @@ let items = [
     category2: 'animation',
     url: 'html/animation_tips_visualized.html',
   },
+  {
+    productName: '점선 border generator',
+    category: 'background-border',
+    url: 'html/dashed_border_generator.html',
+  },
+  {
+    productName: '단일페이지 전환 모션',
+    category: 'layout',
+    category2: 'animation',
+    url: 'html/single_page_view_transition.html',
+  },
   // {
   //   productName: '',
   //   category: '',
