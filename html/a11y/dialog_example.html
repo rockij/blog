@@ -18,6 +18,10 @@
         display: none;
       }
 
+      :focus {
+        outline: 1px solid red;
+      }
+
       [role='dialog'] {
         box-sizing: border-box;
         padding: 15px;
@@ -319,7 +323,10 @@
           </div>
           <div class="dialog_form_actions">
             <a href="#" onclick="openDialog('dialog4', this)">link to help</a>
-            <button type="button" onclick="openDialog('dialog4', this)">
+            <button
+              type="button"
+              onclick="openDialog('dialog4', this, 'dialog4_desc')"
+            >
               accepting an alternative form
             </button>
             <button type="button" onclick="closeDialog(this)">Close</button>
@@ -361,7 +368,7 @@
           aria-modal="true"
         >
           <h2 id="dialog4_label" class="dialog_label">End of the Road!</h2>
-          <p id="dialog4_desc" class="dialog_desc">
+          <p tabindex="-1" id="dialog4_desc" class="dialog_desc">
             You activated a fake link or button that goes nowhere! The link or
             button is present for demonstration purposes only.
           </p>
@@ -379,11 +386,6 @@
     </div>
 
     <script>
-      /*
-       *   This content is licensed according to the W3C Software License at
-       *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
-       */
-
       'use strict';
 
       var aria = aria || {};
