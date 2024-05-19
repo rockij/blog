@@ -21,13 +21,13 @@
   </head>
 
   <body>
-    <h3>aria-label</h3>
+    <h3>title과 aria-label 차이</h3>
     <button type="button" title="닫기">X(title)</button>
     <button type="button" aria-label="닫기">X(aria-label)</button>
 
     <br /><br />
 
-    <h3>aria-labelledby</h3>
+    <h3>role="switch", aria-labelledby연결</h3>
     <span id="night-mode-label">체크박스 이름</span>
     <span
       role="switch"
@@ -39,11 +39,26 @@
 
     <br /><br />
 
-    <h3>aria-labelledby : multi</h3>
-    <button id="download-button" aria-labelledby="download-details">
-      Download2
+    <h3>버튼과 도움 같이 읽어주기</h3>
+    <button
+      id="download-button"
+      aria-labelledby="download-button download-details"
+    >
+      Download
     </button>
     <span id="download-details">PDF, 2.4 MB</span>
+
+    <br /><br />
+
+    <h3>입력필드 label과 도움말 읽어주기</h3>
+    <label for="subscribe_checkbox">입력필드</label>
+    <input
+      type="checkbox"
+      name="subscribe"
+      id="subscribe_checkbox"
+      aria-describedby="subscribe_checkbox_msg"
+    />
+    <p id="subscribe_checkbox_msg">다시 입력해주세요</p>
 
     <script></script>
   </body>

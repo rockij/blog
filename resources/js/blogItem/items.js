@@ -1963,9 +1963,9 @@ let items = [
     url: 'html/a11y/list_simple.html',
   },
   {
-    productName: 'aria와 관련된 예제',
+    productName: 'aria, role와 관련된 예제',
     category2: 'a11y',
-    url: 'html/a11y/aria_sample.html',
+    url: 'html/a11y/aria_role_sample.html',
   },
   // {
   //   productName: '',
