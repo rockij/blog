@@ -21,18 +21,21 @@
   </head>
 
   <body>
+    <h3>aria-label</h3>
     <button type="button" title="닫기">X(title)</button>
     <button type="button" aria-label="닫기">X(aria-label)</button>
 
     <br /><br />
 
-    <span id="night-mode-label">Night mode</span>
+    <h3>aria-labelledby</h3>
+    <span id="night-mode-label">체크박스 이름</span>
     <span
       role="switch"
       aria-checked="false"
       tabindex="0"
       aria-labelledby="night-mode-label"
-    ></span>
+      >checkbox</span
+    >
 
     <script></script>
   </body>
