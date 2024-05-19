@@ -17,35 +17,23 @@
       body {
         font-family: 'Poppins', sans-serif;
       }
-      ul {
-        list-style-type: '';
-        padding: 0;
-        margin: 0;
-      }
-      [role='list'],
-      [role='listitem'] {
-        display: block;
-      }
     </style>
   </head>
 
   <body>
-    <ul>
-      <li>리스트1</li>
-      <li>리스트2</li>
-    </ul>
+    <button type="button" title="닫기">X(title)</button>
+    <button type="button" aria-label="닫기">X(aria-label)</button>
 
-    <ul>
-      <li>
-        리스트그룹
-        <span><span>리스트1</span><span>리스트2</span></span>
-      </li>
-      <li>리스트2</li>
-    </ul>
+    <br /><br />
 
-    <span role="list"
-      ><span role="listitem">리스트1</span
-      ><span role="listitem">리스트2</span></span
-    >
+    <span id="night-mode-label">Night mode</span>
+    <span
+      role="switch"
+      aria-checked="false"
+      tabindex="0"
+      aria-labelledby="night-mode-label"
+    ></span>
+
+    <script></script>
   </body>
 </html>
