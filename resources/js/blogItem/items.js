@@ -1964,8 +1964,14 @@ let items = [
   },
   {
     productName: 'aria, role와 관련된 예제',
-    category2: 'a11y',
+    category: 'a11y',
     url: 'html/a11y/aria_role_sample.html',
+  },
+  {
+    productName: 'role dialog 예제',
+    category: 'popup',
+    category2: 'a11y',
+    url: 'html/a11y/dialog_example.html',
   },
   // {
   //   productName: '',
