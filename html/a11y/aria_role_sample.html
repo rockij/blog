@@ -60,6 +60,38 @@
     />
     <p id="subscribe_checkbox_msg">다시 입력해주세요</p>
 
+    <br />
+
+    <h3>aria-valuetext</h3>
+    <span id="battery-label">Battery</span>
+    <span
+      role="meter"
+      aria-labelledby="battery-label"
+      aria-valuenow="5"
+      aria-valuetext="5%, 18 minutes remaining."
+    >
+    </span>
+    <hr />
+    <span id="ph_alkaline_meter_label">미터가 포함된 범위 속성</span>
+    <div
+      role="meter"
+      aria-valuenow="9"
+      aria-valuemin="7"
+      aria-valuemax="14"
+      aria-labelledby="ph_alkaline_meter_label"
+    ></div>
+    <hr />
+    <span id="ph_alkaline_meter_label"
+      >기본값인 0 aria-valuemin과 100과 다른 범위를 갖는 미터의 예</span
+    >
+    <div
+      role="meter"
+      aria-valuenow="9"
+      aria-valuemin="7"
+      aria-valuemax="14"
+      aria-labelledby="ph_alkaline_meter_label"
+    ></div>
+
     <script></script>
   </body>
 </html>
