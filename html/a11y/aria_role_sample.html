@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>title과 aria-label 차이</h3>
+    <button type="button" title="닫기">X(title)</button>
+    <button type="button" aria-label="닫기">X(aria-label)</button>
+
+    <br /><br />
+
+    <h3>role="switch", aria-labelledby연결</h3>
+    <span id="night-mode-label">체크박스 이름</span>
+    <span
+      role="switch"
+      aria-checked="false"
+      tabindex="0"
+      aria-labelledby="night-mode-label"
+      >checkbox</span
+    >
+
+    <br /><br />
+
+    <h3>버튼과 도움 같이 읽어주기</h3>
+    <button
+      id="download-button"
+      aria-labelledby="download-button download-details"
+    >
+      Download
+    </button>
+    <span id="download-details">PDF, 2.4 MB</span>
+
+    <br /><br />
+
+    <h3>입력필드 label과 도움말 읽어주기</h3>
+    <label for="subscribe_checkbox">입력필드</label>
+    <input
+      type="checkbox"
+      name="subscribe"
+      id="subscribe_checkbox"
+      aria-describedby="subscribe_checkbox_msg"
+    />
+    <p id="subscribe_checkbox_msg">다시 입력해주세요</p>
+
+    <br />
+
+    <h3>aria-valuetext</h3>
+    <span id="battery-label">Battery</span>
+    <span
+      role="meter"
+      aria-labelledby="battery-label"
+      aria-valuenow="5"
+      aria-valuetext="5%, 18 minutes remaining."
+    >
+    </span>
+    <hr />
+    <span id="ph_alkaline_meter_label">미터가 포함된 범위 속성</span>
+    <div
+      role="meter"
+      aria-valuenow="9"
+      aria-valuemin="7"
+      aria-valuemax="14"
+      aria-labelledby="ph_alkaline_meter_label"
+    ></div>
+    <hr />
+    <span id="ph_alkaline_meter_label"
+      >기본값인 0 aria-valuemin과 100과 다른 범위를 갖는 미터의 예</span
+    >
+    <div
+      role="meter"
+      aria-valuenow="9"
+      aria-valuemin="7"
+      aria-valuemax="14"
+      aria-labelledby="ph_alkaline_meter_label"
+    ></div>
+
+    <script></script>
+  </body>
+</html>

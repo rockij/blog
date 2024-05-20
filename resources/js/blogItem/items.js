@@ -1956,6 +1956,23 @@ let items = [
     category2: 'animation',
     url: 'html/single_page_view_transition.html',
   },
+  {
+    productName: '리스트 테스트',
+    category: 'navigation-list',
+    category2: 'a11y',
+    url: 'html/a11y/list_simple.html',
+  },
+  {
+    productName: 'aria, role와 관련된 예제',
+    category: 'a11y',
+    url: 'html/a11y/aria_role_sample.html',
+  },
+  {
+    productName: 'role dialog 예제',
+    category: 'popup',
+    category2: 'a11y',
+    url: 'html/a11y/dialog_example.html',
+  },
   // {
   //   productName: '',
   //   category: '',
