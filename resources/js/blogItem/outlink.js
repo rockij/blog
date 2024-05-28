@@ -355,6 +355,13 @@ let outlink = [
     url: 'https://css-pattern.com/',
     linkType: 'outlink',
   },
+  {
+    productName: 'A11Y Slider',
+    category: 'slide',
+    category2: 'a11y',
+    url: 'https://a11yslider.js.org/',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
