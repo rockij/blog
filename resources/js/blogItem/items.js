@@ -1915,7 +1915,7 @@ let items = [
     url: 'html/text_wrap_balancing.html',
   },
   {
-    productName: '서든 애니매이션 데모',
+    productName: '다양한 회전 움직임',
     category: 'basic',
     category2: 'animation',
     url: 'html/sudden_animations_demo.html',
@@ -1928,7 +1928,7 @@ let items = [
     url: 'html/big_subtle_animation.html',
   },
   {
-    productName: '속성별 다양한 이징',
+    productName: '속성별 다양한 움직임',
     category: 'basic',
     category2: 'animation',
     url: 'html/varying_easings_per_property.html',
@@ -1972,6 +1972,11 @@ let items = [
     category: 'popup',
     category2: 'a11y',
     url: 'html/a11y/dialog_example.html',
+  },
+  {
+    productName: '속성별 다양한 움직임',
+    category: '',
+    url: 'html/varying_easings_per_property.html',
   },
   // {
   //   productName: '',
