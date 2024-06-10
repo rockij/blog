@@ -1975,8 +1975,25 @@ let items = [
   },
   {
     productName: '속성별 다양한 움직임',
-    category: '',
+    category: 'animation',
     url: 'html/varying_easings_per_property.html',
+  },
+  {
+    productName: '실시간 메시지 상태 읽기',
+    category: 'a11y',
+    category2: 'popup',
+    url: 'live_status_message',
+  },
+  {
+    productName: '리스트 추가 실시간 상태 읽기',
+    category: 'a11y',
+    category2: 'navigation-list',
+    url: 'basic_live_region_list',
+  },
+  {
+    productName: '변경될때 마자 실시간 상태 읽기',
+    category: 'a11y',
+    url: 'html/basic_aria_atomic.html',
   },
   // {
   //   productName: '',

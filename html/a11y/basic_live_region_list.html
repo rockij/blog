@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      body {
+        background: #fff;
+        padding: 5vw;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
+      }
+
+      button {
+        font-size: inherit;
+        padding: 0.35em 1em;
+        border-radius: 4px;
+        font: inherit;
+      }
+
+      [aria-live] {
+        padding: 1.5rem;
+        border: 3px dashed #aaa;
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul id="list" aria-live="assertive">
+      <li>First item in list</li>
+      <li>Second item in list</li>
+    </ul>
+
+    <button type="button" id="list-adder">Add item to list</button>
+
+    <script>
+      var listAdder = document.getElementById('list-adder');
+      var list = document.getElementById('list');
+
+      listAdder.addEventListener('click', function () {
+        var newItem = document.createElement('li');
+        newItem.innerHTML = 'another item has been added to list.';
+        list.appendChild(newItem);
+      });
+    </script>
+  </body>
+</html>

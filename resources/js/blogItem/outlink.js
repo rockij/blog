@@ -362,6 +362,18 @@ let outlink = [
     url: 'https://a11yslider.js.org/',
     linkType: 'outlink',
   },
+  {
+    productName: '엄청많은 단일 로딩요소',
+    category: 'icon-loading',
+    url: 'https://css-loaders.com/',
+    linkType: 'outlink',
+  },
+  {
+    productName: '스무스하고 깔끔한 단일 로딩요소',
+    category: 'icon-loading',
+    url: 'https://www.loadership.com/',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
