@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+        /* JS 사용 가능 및 모션 OK */
+      }
+
+      @media (scripting: none), (prefers-reduced-motion) {
+        /* JS 비활성화 또는 축소 모션 활성화 */
+        .no-scripting {
+          display: flex;
+          color: green;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="no-scripting">
+      No scripting so here's a specific set of content and styles
+    </div>
+  </body>
+</html>

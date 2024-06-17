@@ -1995,6 +1995,16 @@ let items = [
     category: 'a11y',
     url: 'html/basic_aria_atomic.html',
   },
+  {
+    productName: 'CSS 전용 scroll to top 트릭',
+    category: 'scroll-parallax',
+    url: 'html/scroll_to_top_sticky.html',
+  },
+  {
+    productName: '스크립팅 지원을 위한 CSS 미디어 쿼리',
+    category: 'basic',
+    url: 'html/media_query_scripting_support.html',
+  },
   // {
   //   productName: '',
   //   category: '',
