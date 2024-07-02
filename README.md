@@ -1,3 +1,14 @@
+# 작업 환경 설정
+
+## vscode
+
+- auto save (onWindowChange)
+- font size : 13 (작은화면12)
+- tab size : 4(html), 2(css,js)
+- Word Wrap(줄바꿈) : on
+- 검색제외 설정 : 설정(ctrl + ,) -> 검색 exclude -> file 패턴추가
+- 코드 블록 sticky : 설정(ctrl + ,) -> Sticky Scroll: enabled 체크
+
 # vscode 익스텐션
 
 ## 기본
