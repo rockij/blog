@@ -42,6 +42,10 @@
 - vue language features(volar)
 - vue peek
 
+## 접근성
+
+- 최소 터치 사이즈는 겹치지 않는 않는 기준으로 24px
+
 # Infomation
 
 Thanks for downloading this template!
