@@ -103,11 +103,6 @@ let items = [
     url: "html/sticky_footer_technique.html",
   },
   {
-    productName: "그림자 그라디언트",
-    category: "background-border",
-    url: "html/grdient_drop_shadow.html",
-  },
-  {
     productName: "줄무늬 배경",
     category: "background-border",
     url: "html/stiped_background_pattern.html",
@@ -468,11 +463,6 @@ let items = [
     url: "html/horizontal_media_scroller.html",
   },
   {
-    productName: "scrollTrigger - 스크롤 마지막에 리스트 추가 (lodash.min.js)",
-    category: "scroll-parallax",
-    url: "html/infnite_scrolling_throttled.html",
-  },
-  {
     productName: "scrollTrigger - Typography 모션 효과(GSAP)",
     category: "scroll-parallax",
     category2: "text-effect",
@@ -616,15 +606,10 @@ let items = [
     url: "html/scrolling_sticky_텍스트움직임.html",
   },
   {
-    productName: "scrollTrigger - scrolling 전체영역 한칸씩 덮기(gsap)",
+    productName: "scrollTrigger - scrolling 전체영역 한칸씩 덮기",
     category: "scroll-parallax",
     category2: "layout",
     url: "html/Smooth_scrolling_on_full_landing_sections.html",
-  },
-  {
-    productName: "쿠키 동의",
-    category: "popup",
-    url: "html/cookie_consent_banner.html",
   },
   {
     productName: "backdrop and dialog animation",
@@ -691,12 +676,6 @@ let items = [
     url: "html/awesome_hover_buttons.html",
   },
   {
-    productName: "hover - 양쪽으로 고무줄처럼 늘어나고 텍스트 점핑 GSAP",
-    category: "mouse-effect",
-    category2: "animation",
-    url: "html/read_more_button.html",
-  },
-  {
     productName: "hamburger - 라인이 fade 효과가 들어간",
     category: "mouse-effect",
     category2: "animation",
@@ -707,18 +686,6 @@ let items = [
     category: "mouse-effect",
     category2: "animation",
     url: "html/hamburger_pure_css_menu2.html",
-  },
-  {
-    productName: "hamburger - 회전을 빨리하며 노멀한",
-    category: "mouse-effect",
-    category2: "animation",
-    url: "html/hamburger_pure_css_menu.html",
-  },
-  {
-    productName: "hamburger - 당기는듯한 다이나믹",
-    category: "mouse-effect",
-    category2: "animation",
-    url: "html/hamburger_icon_css3_animation.html",
   },
   {
     productName: "hover - 박스안을 원이 커지며 채워지는",
@@ -856,12 +823,6 @@ let items = [
     url: "html/sns_buttons_interaction.html",
   },
   {
-    productName: "menu - 반응형 스틱네비게이션 바",
-    category: "navigation-list",
-    category2: "animation",
-    url: "html/responsive_sticky_navigation_bar.html",
-  },
-  {
     productName: "menu - 물흐르는듯한 끈적한 효과",
     category: "navigation-list",
     category2: "animation",
@@ -886,12 +847,6 @@ let items = [
     url: "html/drag_drop_list_js_draggable.html",
   },
   {
-    productName:
-      "menu - 검색 필드가 있는 응답형 드롭다운 메뉴 표시줄(only css)",
-    category: "navigation-list",
-    url: "html/menu_dropdown_search_field_responsive.html",
-  },
-  {
     productName: "반응성 필터 가능 이미지 갤러리",
     category: "navigation-list",
     url: "html/list_responsive_filterable_image_gallery.html",
@@ -914,12 +869,6 @@ let items = [
     url: "html/gooey_pagination.html",
   },
   {
-    productName: "tweenmax를 이용한 전체 화면이 움직임",
-    category: "layout",
-    category2: "animation",
-    url: "html/minimal_navigation_html_css_jquery_gsap.html",
-  },
-  {
     productName: "ribbon - 박스 모서리 리본 모양을 만드는 방법",
     category: "icon-loading",
     url: "html/make_ribbon_shape.html",
@@ -935,12 +884,6 @@ let items = [
     category: "icon-loading",
     category2: "animation",
     url: "html/rainy_cloud_animation.html",
-  },
-  {
-    productName: "--i, box-shadow을 활용한 흩어졌다 다시 모이는 애니메이션",
-    category: "icon-loading",
-    category2: "animation",
-    url: "html/circle_animation_hover_css.html",
   },
   {
     productName: "3D박스 그래프처럼 아래위로 움직임",
@@ -1806,12 +1749,6 @@ let items = [
     productName: "네모곡선 형태의 border 박스",
     category: "background-border",
     url: "html/Inverted_border_radius.html",
-  },
-  {
-    productName: "버튼 hover시 안 박스가 좌/우로 움직이는",
-    category: "mouse-effect",
-    category2: "animation",
-    url: "html/right_left_box_animation.html",
   },
   {
     productName: "심장 두근두근 애니메이션",

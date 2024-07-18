@@ -6,37 +6,10 @@ let outlink = [
     linkType: "outlink",
   },
   {
-    productName: "처음으로 css grid 배우기",
-    category: "layout",
-    url: "https://dev.to/thouravi/learning-css-grid-for-the-first-time-5amb",
-    linkType: "outlink",
-  },
-  {
-    productName: "@supports selector()",
-    category: "basic",
-    category2: "css-trick",
-    url: "https://css-tricks.com/supports-selector/",
-    linkType: "outlink",
-  },
-  {
     productName: "CSS scroll-behavior",
     category: "css-trick",
     category2: "scroll-parallax",
     url: "https://css-tricks.com/almanac/properties/s/scroll-behavior/",
-    linkType: "outlink",
-  },
-  {
-    productName: "CSS 재설정으로 :where() 의 특수성 사용",
-    category: "css-trick",
-    category2: "basic",
-    url: "https://css-tricks.com/using-the-specificity-of-where-as-a-css-reset/",
-    linkType: "outlink",
-  },
-  {
-    productName: ":fullscreen 선택자",
-    category: "css-trick",
-    category2: "basic",
-    url: "https://css-tricks.com/almanac/selectors/f/fullscreen/",
     linkType: "outlink",
   },
   {
@@ -119,12 +92,6 @@ let outlink = [
     linkType: "outlink",
   },
   {
-    productName: "scrollTrigger - AOS 애니메이션 sample(codepen)",
-    category: "scroll-parallax",
-    url: "https://codepen.io/letsbleachthis/pen/zewKYE",
-    linkType: "outlink",
-  },
-  {
     productName: "parallax - 경량의 js Library(Rellax.js)",
     category: "scroll-parallax",
     url: "https://dixonandmoe.com/rellax/",
@@ -143,42 +110,10 @@ let outlink = [
     linkType: "outlink",
   },
   {
-    productName: "hover - jQuery를 위한 60+fps 경량 시차 호버 효과 - tilt.js",
-    category: "mouse-effect",
-    category2: "animation",
-    url: "https://gijsroge.github.io/tilt.js/",
-    linkType: "outlink",
-  },
-  {
-    productName: "hover 라이브러리(hover.css)",
-    category: "mouse-effect",
-    category2: "animation",
-    url: "https://ianlunn.github.io/Hover/",
-    linkType: "outlink",
-  },
-  {
-    productName: "현재 15 개의 아이콘 세트 와 4,623개의 아이콘 - SVGBox",
-    category: "icon-loading",
-    url: "https://svgbox.net/iconsets",
-    linkType: "outlink",
-  },
-  {
-    productName: "프로그레스 바 프리 로더 Pace JS",
-    category: "icon-loading",
-    url: "https://codebyzach.github.io/pace/",
-    linkType: "outlink",
-  },
-  {
     productName: "icon - Sprite의 모든 SVG를 보기 위한 스니펫",
     category: "icon-loading",
     category2: "css-trick",
     url: "https://css-tricks.com/a-snippet-to-see-all-svgs-in-a-sprite/",
-    linkType: "outlink",
-  },
-  {
-    productName: "3D - 개체를 움직이는 마우스 오버 효과 (ztext.js)",
-    category: "text-effect",
-    url: "https://bennettfeely.com/ztext/",
     linkType: "outlink",
   },
   {
@@ -193,13 +128,6 @@ let outlink = [
     category: "background-border",
     category2: "css-trick",
     url: "https://css-tricks.com/adding-shadows-to-svg-icons-with-css-and-svg-filters/",
-    linkType: "outlink",
-  },
-  {
-    productName: "linechart - SVG원뿔형 그라디언트 사용 애니메이션화",
-    category: "background-border",
-    category2: "css-trick",
-    url: "https://css-tricks.com/my-struggle-to-use-and-animate-a-conic-gradient-in-svg/",
     linkType: "outlink",
   },
   {
@@ -267,12 +195,6 @@ let outlink = [
     category: "a11y",
     category2: "css-trick",
     url: "https://css-tricks.com/5-accessibility-quick-wins-you-can-implement-today/",
-    linkType: "outlink",
-  },
-  {
-    productName: "브래드 우즈 디지털 가든",
-    category: "workspace",
-    url: "https://garden.bradwoods.io/",
     linkType: "outlink",
   },
   {
