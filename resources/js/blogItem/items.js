@@ -498,6 +498,12 @@ let items = [
     url: "html/infinite_images_on_scroll.html",
   },
   {
+    productName: "infinite scroll update시 로딩 추가",
+    category: "scroll-parallax",
+    category2: "image",
+    url: "html/infinite_scroll_on_loading.html",
+  },
+  {
     productName: "scrollbar - 크리에이티브 페이지 스크롤 진행률 표시줄(js)",
     category: "scroll-parallax",
     url: "html/creative_page_scroll_progress_bar.html",
@@ -1946,6 +1952,44 @@ let items = [
     productName: "섹션별 모양 꾸미기",
     category: "background-border",
     url: "html/creative_section_shapes.html",
+  },
+  {
+    productName: "CSS 중첩 기능 감지, 방법",
+    category: "workspace",
+    url: "html/css_nesting_feature_detection.html",
+  },
+  {
+    productName: "grid를 사용해 엘리먼트 가로 스크롤 왼쪽 패딩",
+    category: "layout",
+    category2: "scroll-parallax",
+    url: "html/layout_horizon_sroll_grid.html",
+  },
+  {
+    productName: "아래/위로 업다운 크로스 텍스트 모션",
+    category: "text-effect",
+    category2: "animation",
+    url: "html/animated_text_updown.html",
+  },
+  {
+    productName: "아치형 토글 스위치",
+    category: "form",
+    url: "html/arched_toggle_switch.html",
+  },
+  {
+    productName: "부드러운 고무버튼 모션",
+    category: "mouse-effect",
+    category2: "animation",
+    url: "html/rubber_button.html",
+  },
+  {
+    productName: "스크롤 연결 애니메이션 고정 헤더",
+    category: "",
+    url: "html/scroll_parallax_sticky_header.html",
+  },
+  {
+    productName: "Profile Card UI",
+    category: "etc",
+    url: "profile.html",
   },
   // {
   //   productName: '',

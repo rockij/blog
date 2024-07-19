@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <title></title>
+    <style>
+        html {
+            --supports-nesting: ;
+            --not-supports-nesting: initial;
+
+            & body {
+                --supports-nesting: initial;
+                --not-supports-nesting: ;
+            }
+        }
+
+        .has-nesting {
+            display: var(--supports-nesting, block) var(--not-supports-nesting, none);
+        }
+
+        .no-nesting {
+            display: var(--supports-nesting, none) var(--not-supports-nesting, block);
+        }
+
+
+        .no-support,
+        .has-support {
+            margin: 1em 0;
+            padding: 1em;
+            border: 1px solid #ccc;
+        }
+
+        .no-support {
+            background-color: #ff00002b;
+        }
+
+        .has-support {
+            background-color: #00ff002b;
+        }
+
+        pre {
+            border: 1px solid #dedede;
+            padding: 1em;
+            background: #f7f7f7;
+            font-family: "Courier 10 Pitch", Courier, monospace;
+            overflow-x: auto;
+        }
+
+        aside {
+            margin-top: 10rem;
+            border-top: 1px solid #333;
+            padding: 0.5em 0;
+            opacity: 0.7;
+        }
+
+        aside> :first-child {
+            margin-top: 0;
+        }
+
+        aside> :last-child {
+            margin-bottom: 0;
+        }
+
+        aside .active {
+            font-weight: bold;
+        }
+
+        html {
+            max-width: 84ch;
+            padding: 3rem 2rem;
+            margin: auto;
+            line-height: 1.5;
+            font-size: 1.25rem;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        a,
+        a:visited {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Nesting Feature Detection <em>(Space Toggle)</em></h1>
+
+    <p id="output">Does your browser support <a href="https://drafts.csswg.org/css-nesting/" target="_top">CSS
+            Nesting</a> and Style Queries?</p>
+
+    <p class="has-support has-nesting">✅ Your browser supports CSS nesting</p>
+    <p class="no-support no-nesting">❌ Your browser does not support CSS nesting</p>
+
+    <aside>
+        <p>More ways of testing</p>
+        <ul>
+            <li><a href="https://codepen.io/bramus/pen/oNdrypM" target="_top">Method 1a – Nesting affecting classes</a>
+            </li>
+            <li><a href="https://codepen.io/bramus/pen/LYmKBEq" target="_top" class="active">Method 1b – Nesting driving
+                    a Space Toggle</a></li>
+            <li><a href="https://codepen.io/bramus/pen/XWqLOaR" target="_top">Method 2 – <code>@supports</code>, with a
+                    caveat</a></li>
+        </ul>
+    </aside>
+
+</body>
+
+</html>

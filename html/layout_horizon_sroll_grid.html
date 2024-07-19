@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns:
+                [full-width-start] minmax(2rem, 1fr) [inner-start] minmax(0, 40rem) [inner-end] minmax(2rem, 1fr) [full-width-end];
+        }
+
+        .grid>* {
+            grid-column: inner;
+            outline: 2px solid hsl(250 50% 50% / 0.1);
+        }
+
+        .slider-container {
+            /*   background: lightblue; */
+            grid-column: full-width;
+            overflow-x: scroll;
+        }
+
+        .slider {
+            grid-column: inner;
+
+            display: grid;
+            gap: 1rem;
+            grid-auto-flow: column;
+            grid-auto-columns: 400px;
+
+            width: max-content;
+            /* (100vw - widthToMatch) / 2 , the min in the minmax() + the gap */
+            padding-right: max(((100vw - 40rem) / 2), 2rem + 1rem);
+        }
+
+        .slider>* {
+            padding: 3rem;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, sequi? Sapiente iure quae quam quia ullam
+            vero tenetur vel, dicta tempora laborum qui labore aut pariatur doloremque voluptatum, aliquid adipisci!</p>
+        <p>Amet, dicta cumque voluptatibus, deleniti sint neque, quo maxime delectus totam temporibus quaerat
+            perferendis sed ipsa! Est quod hic voluptates quidem, asperiores, mollitia, iure nulla reprehenderit quos
+            fuga natus explicabo.</p>
+        <p>Fugit ratione exercitationem officiis culpa sed similique quidem, eveniet in sint repellat nulla rem
+            excepturi dolores, expedita sapiente ipsum a earum? Corporis ullam enim nisi quisquam harum cupiditate, est
+            alias.</p>
+        <div class="grid slider-container">
+            <div class="slider">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae pariatur doloremque enim ducimus neque at
+            magni magnam, tempora minus quae velit in culpa hic, harum asperiores veritatis, qui porro distinctio!</p>
+        <p>Dolor suscipit, voluptatibus id porro, eveniet fugiat doloribus enim laudantium vel maiores ex voluptatum
+            voluptate beatae accusantium? Ratione alias eum voluptatum natus sed! Laborum eveniet harum nisi, velit
+            magnam corporis?</p>
+        <p>Provident corporis nobis reiciendis veritatis minus ad eaque officiis magni, dolorum, consectetur dolores
+            ducimus exercitationem dignissimos voluptatum et expedita nulla! Qui iste temporibus esse illo numquam
+            adipisci aut molestias sed?</p>
+    </div>
+
+    <script></script>
+
+</body>
+
+</html>
