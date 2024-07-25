@@ -1983,13 +1983,29 @@ let items = [
   },
   {
     productName: "스크롤 연결 애니메이션 고정 헤더",
-    category: "",
+    category: "navigation-list",
+    category2: "scroll-parallax",
     url: "html/scroll_parallax_sticky_header.html",
   },
   {
     productName: "Profile Card UI",
     category: "etc",
     url: "profile.html",
+  },
+  {
+    productName: "전폭 분할 화면 최종",
+    category: "layout",
+    url: "html/full_width_split_screen_final.html",
+  },
+  {
+    productName: "gradient borders",
+    category: "background-border",
+    url: "html/gradient_borders.html",
+  },
+  {
+    productName: "container query card",
+    category: "layout",
+    url: "html/container_query_card.html",
   },
   // {
   //   productName: '',
