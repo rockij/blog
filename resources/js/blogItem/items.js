@@ -2007,6 +2007,22 @@ let items = [
     category: "layout",
     url: "html/container_query_card.html",
   },
+  {
+    productName: "인접 선택자 범위 지정",
+    category: "basic",
+    url: "html/sibling_scopes.html",
+  },
+  {
+    productName: "동그라미 배경 점선",
+    category: "background-border",
+    url: "html/circle_dashed_border.html",
+  },
+  {
+    productName: "이미지, 배경 Lazy 로딩",
+    category: "image",
+    category2: "icon-loading",
+    url: "html/lazy_loading_background_images.html",
+  },
   // {
   //   productName: '',
   //   category: '',

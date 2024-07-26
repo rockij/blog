@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <title></title>
+    <style>
+        .from~ :has(~ .to) {
+            outline: 1px solid red;
+        }
+
+        /* Non-demo styles below */
+        @layer base {
+            @layer layout {
+                html {
+                    max-width: 84ch;
+                    padding: 3rem 2rem;
+                    margin: auto;
+                    line-height: 1.5;
+                    font-size: 1.25rem;
+                }
+
+                body {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                a,
+                a:visited {
+                    color: blue;
+                }
+
+                h2 {
+                    margin-top: 2em;
+                }
+            }
+
+            @layer code {
+                pre {
+                    border: 1px solid #dedede;
+                    padding: 1em;
+                    background: #f7f7f7;
+                    font-family: "Courier 10 Pitch", Courier, monospace;
+                    overflow-x: auto;
+                    border-left: 0.4em solid cornflowerblue;
+                    tab-size: 4;
+                }
+
+                code:not(pre code) {
+                    background: #f7f7f7;
+                    border: 1px solid rgb(0 0 0 / 0.2);
+                }
+            }
+
+            @layer support {
+
+                .no-support,
+                .has-support {
+                    margin: 1em 0;
+                    padding: 1em;
+                    border: 1px solid #ccc;
+                }
+
+                .no-support {
+                    background-color: #ff00002b;
+                    display: block;
+                }
+
+                .no-support[data-level="warn"] {
+                    background-color: #ffff002b;
+                }
+
+                .has-support {
+                    background-color: #00ff002b;
+                    display: none;
+                }
+
+                :is(.has-support, .no-support)> :first-child {
+                    margin-top: 0;
+                }
+
+                :is(.has-support, .no-support)> :last-child {
+                    margin-bottom: 0;
+                }
+
+                @supports selector(:has(*)) {
+                    .no-support[data-support="css-has-basic"] {
+                        display: none;
+                    }
+
+                    .has-support[data-support="css-has-basic"] {
+                        display: block;
+                    }
+                }
+
+                @supports selector(:has(+ *)) {
+                    .no-support[data-support="css-has-relative"] {
+                        display: none;
+                    }
+
+                    .has-support[data-support="css-has-relative"] {
+                        display: block;
+                    }
+                }
+
+                @supports selector(:nth-child(1 of .foo)) {
+                    .no-support[data-support="css-nth-child-of-s"] {
+                        display: none;
+                    }
+
+                    .has-support[data-support="css-nth-child-of-s"] {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        @layer reset {}
+    </style>
+</head>
+
+<body>
+
+    <h1>Sibling Scopes</h1>
+
+    <p><em>Demo for <a href="https://brm.us/css-sibling-scope" target="_top">https://brm.us/css-sibling-scope</a></em>
+    </p>
+
+    <h2>The code</h2>
+
+    <p><em>“Select all siblings between the <code>.from</code> and <code>.to</code> element”</em></p>
+
+    <pre><code>.from ~ :has(~ .to) {
+	outline: 1px solid red;
+}</code></pre>
+
+    <h2>Demo</h2>
+
+    <div class="no-support" data-support="css-has-basic">
+        <p>🚨 Your browser does not support CSS <code>:has()</code>, so this demo will not work correctly.</p>
+    </div>
+    <div class="no-support" data-support="css-has-relative">
+        <p>🚨 Your browser does not support relative selectors in CSS <code>:has()</code>, so this demo will not work
+            correctly.</p>
+    </div>
+
+    <h3>One .from and one .to</h3>
+    <ul>
+        <li>outside</li>
+        <li class="from">from</li>
+        <li>in-between</li>
+        <li>in-between</li>
+        <li>in-between</li>
+        <li>in-between</li>
+        <li class="to">to</li>
+        <li>outside</li>
+    </ul>
+
+    <h3>One .from and one .to + nested outside</h3>
+    <ul>
+        <li>outside</li>
+        <li class="from">from</li>
+        <li>in-between</li>
+        <li>in-between</li>
+        <li>in-between</li>
+        <li>in-between</li>
+        <li class="to">to</li>
+        <li>outside</li>
+        <li>
+            outside
+            <ul>
+                <li>outside</li>
+                <li class="from">from</li>
+                <li>in-between</li>
+                <li>in-between</li>
+                <li>in-between</li>
+                <li>in-between</li>
+                <li class="to">to</li>
+                <li>outside</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>One .from and one .to + nested inside</h3>
+    <ul>
+        <li>outside</li>
+        <li class="from">from</li>
+        <li>in-between</li>
+        <li>in-between</li>
+        <li>
+            inside
+            <ul>
+                <li>outside</li>
+                <li class="from">from</li>
+                <li>in-between</li>
+                <li>in-between</li>
+                <li>in-between</li>
+                <li>in-between</li>
+                <li class="to">to</li>
+                <li>outside</li>
+            </ul>
+        </li>
+        <li>in-between</li>
+        <li class="to">to</li>
+        <li>outside</li>
+    </ul>
+
+    <h3>Two adjacent .from and .to pairs</h3>
+    <p>⚠️ The <code>.from ~ :has(~ .to)</code> selector is greedy, and spans from first <code>.from</code> to the last
+        <code>.to</code>
+    </p>
+    <ul>
+        <li>outside</li>
+        <li class="from">from</li>
+        <li>in-between</li>
+        <li>in-between</li>
+        <li class="to">to</li>
+        <li>outside</li>
+        <li>outside</li>
+        <li class="from">from</li>
+        <li>in-between</li>
+        <li>in-between</li>
+        <li>in-between</li>
+        <li class="to">to</li>
+        <li>outside</li>
+    </ul>
+
+</body>
+
+</html>

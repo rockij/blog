@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <title></title>
+    <style>
+        .box {
+            --n: 20;
+            /* control the number of dashes */
+            --d: 8deg;
+            /* control the distance between dashes */
+            --t: 5px;
+            /* control the thickness of border*/
+            --c: red;
+            /* control the coloration */
+
+            width: 120px;
+            aspect-ratio: 1;
+            display: inline-grid;
+            place-content: center;
+            margin: 10px;
+            position: relative;
+        }
+
+        .box::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            padding: var(--t);
+            background: var(--c);
+            mask:
+                linear-gradient(#0000 0 0) content-box intersect,
+                repeating-conic-gradient(from calc(var(--d)/2), #000 0 calc(360deg/var(--n) - var(--d)), #0000 0 calc(360deg/var(--n)));
+        }
+
+        body {
+            background: linear-gradient(90deg, #dfdfdf, #0000);
+            font-size: 40px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">20</div>
+    <div class="box" style="--n:3;--t:8px;--d:10deg;--c:linear-gradient(45deg,red,blue)">3</div>
+    <div class="box"
+        style="--n:6;--t:12px;--d:20deg;--c:repeating-conic-gradient(purple 0 calc(360deg/(2*var(--n))),orange 0 calc(360deg/var(--n)))">
+        6</div>
+    <div class="box"
+        style="--n:30;--t:3px;--d:4deg;--c:repeating-conic-gradient(red 0 calc(360deg/var(--n)),blue 0 calc(2*360deg/var(--n)))">
+        30</div>
+    <div class="box" style="--n:2;--t:10px;--d:45deg;--c:green">2</div>
+    <div class="box" style="--n:4;--t:5px;--d:45deg">4</div>
+
+
+</body>
+
+</html>
