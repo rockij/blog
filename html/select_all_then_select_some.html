@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <title></title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            margin: 0;
+            color: #5e3254;
+            background-color: #dbe0e4;
+            text-align: center;
+            font: 1.25rem/1 'Rubik', sans-serif;
+        }
+
+        .wrapper {
+            width: 650px;
+            max-width: 100vw;
+            padding: 5px 20px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: 2.5rem;
+        }
+
+        p {
+            margin: 0 0 20px;
+            line-height: 1.25;
+        }
+
+        pre {
+            margin: 0;
+            font: 1rem/1.5 'Roboto Mono', monospace;
+        }
+
+        code {
+            -webkit-user-select: all;
+            user-select: all;
+            display: block;
+            padding: 20px;
+            border: 2px dashed #c9baa7;
+            color: #31808c;
+            background-color: #f5f4ef;
+            text-align: left;
+            font-family: inherit;
+            overflow: auto;
+        }
+
+        code:focus {
+            border: 2px dashed #31808c;
+            outline: none;
+            animation: select 100ms step-end forwards;
+        }
+
+        @keyframes select {
+            to {
+                -webkit-user-select: text;
+                user-select: text;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h1>Here's Your Code Snippet!</h1>
+        <p>Click below to select all. Click again to clear so you can select a portion of the snippet.</p>
+        <pre><code tabindex="0">function wall(x, y, width, height) {
+        return Matter.Bodies.rectangle(x, y, width, height, {
+          chamfer: { radius: 10 }
+        });
+      }</code></pre>
+    </div>
+
+</body>
+
+</html>

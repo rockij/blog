@@ -1380,6 +1380,11 @@ let items = [
     url: "html/css_marquee_wall.html",
   },
   {
+    productName: "무한으로 흐르는 컨텐츠 토글 - 가로 (js)",
+    category: "slide",
+    url: "html/infinite_horizontal_scroll.html",
+  },
+  {
     productName: "Javascript를 사용하여 장치 방향 탐지",
     category: "layout",
     url: "html/detect_device_orientation.html",
@@ -2022,6 +2027,27 @@ let items = [
     category: "image",
     category2: "icon-loading",
     url: "html/lazy_loading_background_images.html",
+  },
+  {
+    productName: "테두리 안쪽의 페이딩 콘텐츠",
+    category: "background-border",
+    url: "html/fading_content_inside_border.html",
+  },
+  {
+    productName: "파이 무란 로더",
+    category: "icon-loading",
+    url: "html/infinity_preloader.html",
+  },
+  {
+    productName: "모두 선택... 그런 다음 일부 선택",
+    category: "text-effect",
+    url: "html/select_all_then_select_some.html",
+  },
+  {
+    productName: "has, nesting을 이용한 테이블 열 hover",
+    category: "etc",
+    category2: "mouse-effect",
+    url: "html/table_column_hover_effect.html",
   },
   // {
   //   productName: '',
