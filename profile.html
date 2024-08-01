@@ -27,14 +27,16 @@
             min-height: 100vh;
             display: flex;
             flex-wrap: wrap;
-            padding: 20px;
+            padding: 0;
+            margin: 0;
         }
 
         .card {
-            max-width: 340px;
+            position: absolute;
+            inset: 0;
             margin: auto;
+            max-width: 340px;
             overflow-y: auto;
-            position: relative;
             z-index: 1;
             overflow-x: hidden;
             background-color: white;
@@ -46,7 +48,7 @@
         }
 
         .card[data-state="#about"] {
-            height: 495px;
+            height: fit-content;
         }
 
         .card[data-state="#about"] .card-main {
@@ -363,11 +365,13 @@
             font-family: "DM Sans", sans-serif;
             line-height: 1.6;
             cursor: pointer;
+            text-wrap: balance;
+            word-break: keep-all;
         }
 
         .card-contact .tag {
             flex-shrink: 0;
-            width: 40px;
+            width: fit-content;
             margin-right: 12px;
             transition: 0.3s;
             padding-right: 12px;
@@ -413,8 +417,8 @@
             <div class="card-section is-active" id="about">
                 <div class="card-content">
                     <div class="card-subtitle">ABOUT</div>
-                    <p class="card-desc">금융쪽 중심의 다양한 분야의 프로젝트 경험을 가지고 있습니다.<br />지금껏 많은 프로젝트를 진행하며 쌓아온 노하우로 다른 파트의
-                        작업자와 원활 커뮤니케이션이 가능합니다.</p>
+                    <p class="card-desc">금융쪽 중심의 프로젝트 경험이 많습니다<br />접근성, 반응형, 하이브리드앱 등 많은 프로젝트 작업 경험으로 완성도 높은 결과물을
+                        자신합니다.</p>
                 </div>
                 <div class="card-social">
                     <a href="mailto:rockij83@nate.com"><img
@@ -438,7 +442,7 @@
                             <div class="card-item-desc">
                                 2023.09 ~ 2023.12<br />
                                 PA<br />
-                                vuejs, scss, javascript, git
+                                vuejs, vuetify, scss, javascript, git
                             </div>
                             <div class="card-item-title">KB Pay 자산 고도화</div>
                             <div class="card-item-desc">
@@ -452,21 +456,21 @@
                             <div class="card-item-desc">
                                 2022.03 ~ 2023.02<br />
                                 PL<br />
-                                vuejs, scss, javascript, git
+                                vuejs, vuetify, scss, javascript, git
                             </div>
                         </div>
                         <div class="card-item" data-year="2021">
-                            <div class="card-item-title">KB리브메이트 마이데이터 고도화</div>
+                            <div class="card-item-title">KB리브메이트 마이데이터 구축</div>
                             <div class="card-item-desc">
                                 2021.04 ~ 2021.12<br />
                                 PL<br />
-                                html, css, javascript
+                                html, css, javascript(jquery)
                             </div>
                             <div class="card-item-title">KB스타 CMS 리뉴얼</div>
                             <div class="card-item-desc">
                                 2021.02 ~ 2021.03<br />
                                 PA<br />
-                                html, css, javascript
+                                html, css, javascript(jquery)
                             </div>
                         </div>
                     </div>
@@ -481,7 +485,10 @@
                             vuejs, javascript, html, css, scss
                         </div>
                         <div class="card-contact">
-                            <span class="tag">환경</span>vscode, git, figma, zeplin, photoshop
+                            <span class="tag">환경</span>vscode, git, nodejs, figma, zeplin, xd, photoshop
+                        </div>
+                        <div class="card-contact">
+                            <span class="tag">키워드</span>접근성, 반응형웹, 모바일웹, 하이브리드앱, css animation, vuetify, vueuse, chartjs
                         </div>
                     </div>
                 </div>
