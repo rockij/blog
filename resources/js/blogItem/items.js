@@ -2049,6 +2049,16 @@ let items = [
     category2: "mouse-effect",
     url: "html/table_column_hover_effect.html",
   },
+  {
+    productName: "div 드래그",
+    category: "mouse-effect",
+    url: "html/draggable_element.html",
+  },
+  {
+    productName: "1개의 요소를 포함하는 단일 숫자 입력",
+    category: "form",
+    url: "html/single_digit_inputs_one_element.html",
+  },
   // {
   //   productName: '',
   //   category: '',
