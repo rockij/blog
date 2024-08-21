@@ -2059,6 +2059,11 @@ let items = [
     category: "form",
     url: "html/single_digit_inputs_one_element.html",
   },
+  {
+    productName: "스크롤 중 해당영역 위치하면 해당 탭 이동",
+    category: "scroll-parallax",
+    url: "html/scroll_section_in_tab_move.html",
+  },
   // {
   //   productName: '',
   //   category: '',

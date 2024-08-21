@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .tab-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #333;
+            color: white;
+            padding: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+            z-index: 1000;
+        }
+
+        .tab {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 5px;
+            background: #555;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            background: #ff5722;
+        }
+
+        .section {
+            padding: 100px 20px;
+            height: 600px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .section:nth-child(odd) {
+            background: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tab-container">
+        <div class="tab" data-section="section1">Section 1</div>
+        <div class="tab" data-section="section2">Section 2</div>
+        <div class="tab" data-section="section3">Section 3</div>
+        <div class="tab" data-section="section4">Section 4</div>
+        <div class="tab" data-section="section5">Section 5</div>
+        <div class="tab" data-section="section6">Section 6</div>
+        <div class="tab" data-section="section7">Section 7</div>
+    </div>
+    <div class="section" id="section1">Section 1</div>
+    <div class="section" id="section2">Section 2</div>
+    <div class="section" id="section3">Section 3</div>
+    <div class="section" id="section4">Section 4</div>
+    <div class="section" id="section5">Section 5</div>
+    <div class="section" id="section6">Section 6</div>
+    <div class="section" id="section7">Section 7</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab');
+            const sections = document.querySelectorAll('.section');
+            const tabContainer = document.querySelector('.tab-container');
+
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        const activeTab = document.querySelector(`.tab[data-section="${sectionId}"]`);
+
+                        tabs.forEach(tab => tab.classList.remove('active'));
+                        activeTab.classList.add('active');
+
+                        // Scroll to the active tab
+                        const tabOffset = activeTab.offsetLeft;
+                        const tabContainerWidth = tabContainer.clientWidth;
+                        const activeTabWidth = activeTab.clientWidth;
+
+                        if (tabOffset + activeTabWidth > tabContainer.scrollLeft + tabContainerWidth ||
+                            tabOffset < tabContainer.scrollLeft) {
+                            tabContainer.scrollTo({
+                                left: tabOffset - (tabContainerWidth - activeTabWidth) / 2,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => observer.observe(section));
+        });
+
+
+    </script>
+
+</body>
+
+</html>
