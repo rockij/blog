@@ -27,6 +27,7 @@
 - htmltagwrap
 - CodeSnap
 - SVG Sprite Viewer and Generator
+- CSS Compatibility
 
 ## vue
 

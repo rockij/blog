@@ -322,6 +322,18 @@ let outlink = [
     url: 'https://easings.net/',
     linkType: 'outlink',
   },
+  {
+    productName: 'CSS 로 만든 CSS 전용 삼각형 모양',
+    category: 'workspace',
+    url: 'https://css-generators.com/triangle-shapes/',
+    linkType: 'outlink',
+  },
+  {
+    productName: 'ARIA DevTools',
+    category: 'workspace',
+    url: 'https://chromewebstore.google.com/detail/aria-devtools/dneemiigcbbgbdjlcdjjnianlikimpck',
+    linkType: 'outlink',
+  },
   // {
   //   productName: '',
   //   category: '',
