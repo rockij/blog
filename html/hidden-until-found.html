@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      body {
+  font-family: system-ui, sans-serif;
+  margin: 1em auto;
+  max-width: 60em;
+  padding: 1em;
+}
+
+.title {
+  cursor: pointer;
+}
+.title::before {
+  content: "⬇️ ";
+}
+.collapsed > .title::before {
+  content: "➡️ ";
+}
+
+.details > div {
+  max-width: 40em;
+  padding: 0.5em;
+  margin-bottom: 2em;
+  border: 2px solid #999;
+}
+
+    </style>
+  </head>
+
+  <body>
+    Click into this demo (without opening any sections) then use in-page-find to search for a word, such as "ginger":
+<div class="section collapsed">
+  <h2 class="title">Introduction</h1>
+    <div hidden="until-found" class="details">
+      <div>Green tea ginger lemongrass agave green tea guacamole summer fruit salad fruit smash pumpkin orange zesty tofu pad thai roasted butternut squash blueberry chia seed jam green papaya salad.</div>
+    </div>
+</div>
+
+<div class="section collapsed">
+  <h2 class="title">Thesis</h1>
+    <div hidden="until-found" class="details">
+      <div>Picnic chia seeds kale caesar salad elderberry fall Thai curry mocha chocolate appetizer mediterranean vegetables cranberry chickpea spritzer potato mediterranean luxury bowl edamame lemongrass citrusy crumbled lentils.</div>
+    </div>
+</div>
+
+<div class="section collapsed">
+  <h2 class="title">Conclusion</h1>
+    <div hidden="until-found" class="details">
+      <div>Oranges chili pepper delightful blueberry scones chickpea crust pizza cozy cinnamon oatmeal second course crispy iceberg lettuce tempeh. Quinoa flatbread arugula salad with earl grey latte strawberries leek blueberry pops golden cayenne pepper Italian pepperoncini shaved almonds salted picnic salad hemp seeds cilantro tahini drizzle cherry bomb mangos alfalfa sprouts spring.</div>
+    </div>
+</div>
+
+    <script>
+        document.querySelectorAll(".section").forEach((section) => {
+  section.onbeforematch = () => {
+    section.classList.remove("collapsed");
+  };
+  section.querySelector(".title").onclick = () => {
+    section.classList.toggle("collapsed");
+
+    const details = section.querySelector(".details");
+    if (section.classList.contains("collapsed")) {
+      details.hidden = "until-found";
+    } else {
+      details.removeAttribute("hidden");
+    }
+  };
+});
+
+    </script>
+  </body>
+</html>
