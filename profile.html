@@ -211,7 +211,7 @@
         transition: 0.3s;
       }
 
-      .card-social a {
+      .card-social a[href^='mailto'] {
         color: #8797a1;
         height: 32px;
         width: 32px;
@@ -444,9 +444,15 @@
             </p>
           </div>
           <div class="card-social">
-            <a href="mailto:rockij83@nate.com"
-              ><img src="resources/image/email-svgrepo-com.svg" /></a
-            >rockij83@nate.com
+            <a href="mailto:rockij83@nate.com" title="이메일보내기"
+              ><img src="resources/image/email-svgrepo-com.svg"
+            /></a>
+            <a
+              href="https://rockij.github.io/blog/"
+              target="_blank"
+              title="새창열림"
+              >blog</a
+            >
           </div>
         </div>
         <div class="card-section" id="experience">
