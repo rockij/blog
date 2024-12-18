@@ -2086,6 +2086,27 @@ let items = [
     category: 'layout',
     url: 'html/column_break-inside.html',
   },
+  {
+    productName: '최신 CSS를 사용한 옐로우 페이드 기법',
+    category: 'animation',
+    url: 'html/yellow_fade_technique.html',
+  },
+  {
+    productName: '최신 css를 이용한 simple default popover',
+    category: 'popup',
+    url: 'html/simple_default_popover.html',
+  },
+  {
+    productName: '첫 번째 줄 + 피라미드 레이아웃의 중앙 항목',
+    category: 'layout',
+    url: 'html/center_items_first_row_pyramid_layout.html',
+  },
+  {
+    productName: '호버링 시 부드러운 빛나는 테두리 애니메이션',
+    category: 'animation',
+    category2: 'background-border',
+    url: 'html/glowing_border_animation_hover_smooth_stop.html',
+  },
   // {
   //   productName: '',
   //   category: '',

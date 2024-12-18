@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      .grid-stack {
+        display: grid;
+        grid-template-columns: repeat(calc(var(--columns) * 2), 1fr);
+
+        > * {
+          grid-column-end: span 2;
+        }
+
+        > :first-child {
+          grid-column-start: 2;
+        }
+      }
+
+      .grid-stack-6 {
+        --columns: 3;
+
+        > :first-child {
+          grid-column-start: 3;
+        }
+
+        > :nth-child(2) {
+          grid-column-start: 2;
+        }
+      }
+
+      .grid-stack-10 {
+        --columns: 4;
+
+        > :first-child {
+          grid-column-start: 4;
+        }
+
+        > :nth-child(2) {
+          grid-column-start: 3;
+        }
+
+        > :nth-child(4) {
+          grid-column-start: 2;
+        }
+      }
+
+      .grid-stack-15 {
+        --columns: 5;
+
+        > :first-child {
+          grid-column-start: 5;
+        }
+
+        > :nth-child(2) {
+          grid-column-start: 4;
+        }
+
+        > :nth-child(4) {
+          grid-column-start: 3;
+        }
+
+        > :nth-child(7) {
+          grid-column-start: 2;
+        }
+      }
+
+      /* Other demo styles */
+      :root {
+        --gutter: clamp(0.2rem, 3vw, 0.4rem);
+      }
+
+      body {
+        padding: var(--gutter);
+        margin-block: 5rem;
+        font-family: system-ui, sans-serif;
+      }
+
+      ul {
+        gap: var(--gutter);
+        margin-inline: auto;
+        max-inline-size: 30rem;
+      }
+
+      ul + ul {
+        margin-top: 4rem;
+      }
+
+      li {
+        aspect-ratio: 16 / 9;
+        background-color: hotpink;
+        border-radius: 0.125rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul class="grid-stack" style="--columns: 2">
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <ul class="grid-stack" style="--columns: 3">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <ul class="grid-stack" style="--columns: 4">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <ul class="grid-stack grid-stack-6">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <ul class="grid-stack grid-stack-10">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <ul class="grid-stack grid-stack-15">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>
