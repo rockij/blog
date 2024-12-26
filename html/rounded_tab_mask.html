@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      .rounded-tab {
+        --r: 0.8em; /* control the curvature*/
+
+        border-inline: var(--r) solid #0000;
+        border-radius: calc(2 * var(--r)) calc(2 * var(--r)) 0 0 / var(--r);
+        mask: radial-gradient(var(--r) at var(--r) 0, #0000 98%, #000 101%)
+            calc(-1 * var(--r)) 100%/100% var(--r) repeat-x,
+          conic-gradient(#000 0 0) padding-box;
+      }
+      .rounded-tab.left {
+        border-left-width: 0;
+        border-top-left-radius: var(--r);
+      }
+      .rounded-tab.right {
+        border-right-width: 0;
+        border-top-right-radius: var(--r);
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        gap: 30px;
+        place-content: center;
+        place-items: center;
+      }
+
+      .rounded-tab {
+        font-family: system-ui, sans-serif;
+        font-size: 45px;
+        font-weight: bold;
+        color: #fff;
+        line-height: 1.8; /* control the height */
+        padding-inline: 0.5em;
+        background: linear-gradient(60deg, #bd5532, #601848) border-box; /* border-box is mandatory */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="rounded-tab">CSS round tab</div>
+    <div class="rounded-tab left">CSS left tab</div>
+    <div class="rounded-tab right">CSS right tab</div>
+  </body>
+</html>

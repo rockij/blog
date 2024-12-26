@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      .sprite {
+        width: 100px;
+        aspect-ratio: 1;
+        /* There are 6 images horizontally so we animate from left to right */
+        background: url(../resources/image/ccc.webp) left/600% auto;
+        animation: s 1s steps(6, jump-none) infinite;
+      }
+      @keyframes s {
+        to {
+          background-position: right;
+        }
+      }
+      .sprite-alt {
+        width: 100%;
+        height: 60px;
+        /* There are 2 images vertically so we animate from top to bottom */
+        background: url(../resources/image/BdGY6tH.png) top/auto 200%;
+        animation: s-alt 1s steps(2, jump-none) infinite;
+      }
+      @keyframes s-alt {
+        to {
+          background-position: bottom;
+        }
+      }
+      .loader {
+        width: fit-content;
+        font-size: 50px;
+        font-family: monospace;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #0000;
+        -webkit-text-stroke: 1px #000;
+        background: conic-gradient(#000 0 0) 0/0% 100% text no-repeat;
+        /* 7 letters but we start from no-letter so from 0 to 7 = 8 */
+        animation: load 2s steps(8, jump-none) infinite;
+      }
+      @keyframes load {
+        to {
+          background-size: 100% 100%;
+        }
+      }
+
+      .color {
+        width: 100px;
+        aspect-ratio: 1;
+        /* animating between two colors */
+        animation: color 1s infinite steps(2, jump-none);
+      }
+      @keyframes color {
+        0% {
+          background: red;
+        }
+        100% {
+          background: blue;
+        }
+      }
+
+      body {
+        background: #999;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sprite"></div>
+    <div class="sprite-alt"></div>
+    <div class="loader">Loading</div>
+    <div class="color"></div>
+  </body>
+</html>

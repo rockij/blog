@@ -17,7 +17,7 @@ let items = [
   {
     productName: 'grid를 이용한 덜 절대적인 위치 잡기',
     category: 'layout',
-    url: 'html/grid/absolute_positioning_modern.html',
+    url: 'html/absolute_positioning_modern.html',
   },
   {
     productName: 'css focus-visible(:focus 대신 사용)',
@@ -48,7 +48,7 @@ let items = [
   {
     productName: '프로젝트에서 사용할 수 있는 flexbox 디자인 패턴',
     category: 'layout',
-    url: 'html/flex/flexbox_design_patterns_projects.html',
+    url: 'html/flexbox_design_patterns_projects.html',
   },
   {
     productName: 'css auto-margin 정렬',
@@ -59,7 +59,7 @@ let items = [
   {
     productName: '그리드로 쉽게 콘텐츠 겹침',
     category: 'layout',
-    url: 'html/grid/easily_overlap_content.html',
+    url: 'html/easily_overlap_content.html',
   },
   {
     productName: '배경 비디오를 만드는 방법',
@@ -85,7 +85,7 @@ let items = [
     productName: '미디어 쿼리가 없는 반응형 CSS 그리드!',
     category: 'flex-grid',
     category: 'layout',
-    url: 'html/grid/responsive_no_media_queries.html',
+    url: 'html/responsive_no_media_queries.html',
   },
   {
     productName: '배경반복 값 space에 대해서',
@@ -182,11 +182,6 @@ let items = [
     productName: 'circular rotating reflection',
     category: 'slide',
     url: 'html/css_circular_rotating_slider_reflection.html',
-  },
-  {
-    productName: 'swiper 슬라이드 IE 호환성 문제 해결',
-    category: 'slide',
-    url: 'html/swiper-4.5.1/demos/010-default.html',
   },
   {
     productName: '오직css만을 이용한 슬라이드(auto)',
@@ -2106,6 +2101,91 @@ let items = [
     category: 'animation',
     category2: 'background-border',
     url: 'html/glowing_border_animation_hover_smooth_stop.html',
+  },
+  {
+    productName: 'grid를 이용한 고정 레이아웃',
+    category: 'layout',
+    url: 'html/grid_alignment_header_fix.html',
+  },
+  {
+    productName: '반응형 막대 차트(틱 포함)',
+    category: 'chart-graph',
+    url: 'html/responsive_bar_chart_ticks.html',
+  },
+  {
+    productName: 'steps animation 예제',
+    category: 'animation',
+    url: 'html/animation_steps_example.html',
+  },
+  {
+    productName: 'clip-path에서 circle, ellipse 예제',
+    category: 'image',
+    url: 'html/clip-path_circle_ellipse.html',
+  },
+  {
+    productName: '호버링 시 회전을 부드럽게 멈춤',
+    category: 'animation',
+    url: 'html/smoothly_stop_rotation_hover.html',
+  },
+  {
+    productName: 'css mask를 이용한 둥근 물결 구분선',
+    category: 'background-border',
+    url: 'html/mask_wavy_divider.html',
+  },
+  {
+    productName: 'CSS 마스크를 사용한 둥근 탭',
+    category: 'navigation-list',
+    url: 'html/rounded_tab_mask.html',
+  },
+  {
+    productName: '여러개의 입력을 한 요소로 자릿수 입력',
+    category: 'form',
+    url: 'html/single-digit_inputs_one_element.html',
+  },
+  {
+    productName: '원 둘레를 도는 모션',
+    category: 'animation',
+    category2: 'icon-loading',
+    url: 'html/simple_orbit_animation.html',
+  },
+  {
+    productName: '원 둘레를 앞/뒤로 도는 모션',
+    category: 'animation',
+    category2: 'icon-loading',
+    url: 'html/simple_orbit_animation2.html',
+  },
+  {
+    productName: '배경 클립을 사용한 회전 경계 광채 효과',
+    category: 'animation',
+    category2: 'mouse-effect',
+    url: 'html/rotating_border_glow_background_clip.html',
+  },
+  {
+    productName: '최신 css view-transtion을 이용한 카운트',
+    category: 'animation',
+    category2: 'mouse-effect',
+    url: 'html/start_view_counter.html',
+  },
+  {
+    productName: '다이나믹한 css linear easing 종류',
+    category: 'animation',
+    url: 'html/linear_easing_function.html',
+  },
+  {
+    productName: 'css만을 이용한 도넛',
+    category: 'chart-graph',
+    url: 'html/another_variation_progress_circle.html',
+  },
+  {
+    productName: '고정 열과 행이 있는 CSS 테이블',
+    category: 'layout',
+    url: 'html/css_table_fixed_column_rows.html',
+  },
+  {
+    productName: '현재 탭-교차로 옵저버 업데이트',
+    category: 'navigation-list',
+    category2: 'scroll-parallax',
+    url: 'html/update_current_tab-Intersection_observer.html',
   },
   // {
   //   productName: '',

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      img {
+        width: 250px;
+        clip-path: circle(); /* equal to circle(closest-side at center) */
+      }
+      img + img {
+        aspect-ratio: 1.5;
+        object-fit: cover;
+        clip-path: ellipse(
+
+        ); /* equal to ellipse(closest-side closest-side at center) */
+      }
+      /* you have the behavior of border-radius: 50%;
+   ellipse() works for any ratio 
+   and circle() is the particular case when ratio is equal to 1
+*/
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        grid-auto-flow: column;
+        place-content: center;
+        place-items: center;
+        gap: 30px;
+        background: #f2f2f2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="../resources/image/image1.jpg" alt="" />
+    <img src="../resources/image/image2.jpg" alt="" />
+  </body>
+</html>

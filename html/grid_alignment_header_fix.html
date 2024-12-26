@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      :root {
+        --text: #1a1228;
+        --header-bg: #6366f1;
+        --hero-bg: #a1a7f4;
+        --main-bg: #c9d2fa;
+      }
+
+      body,
+      html {
+        margin: 0;
+        font-family: 'Instrument Sans', sans-serif;
+        font-weight: medium;
+        font-size: 16px;
+        color: var(--text);
+        display: grid;
+        grid-template-rows: min-content 1fr;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      .above-the-fold-spacer {
+        height: 100vh;
+        grid-column: 1 / -1;
+        grid-row: 1 / span 2;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        grid-column-start: 1;
+        grid-row-start: 1;
+        padding: 2rem;
+        background-color: var(--header-bg);
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+
+      .hero {
+        padding: 5rem 2rem;
+        grid-column-start: 1;
+        grid-row-start: 2;
+        background-color: var(--hero-bg);
+      }
+
+      .main {
+        min-height: 55rem;
+        padding: 5rem 2rem;
+        background-color: var(--main-bg);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="above-the-fold-spacer"></div>
+    <header class="header">Header Content</header>
+    <section class="hero">Hero Content</section>
+    <main class="main">Main Content</main>
+  </body>
+</html>

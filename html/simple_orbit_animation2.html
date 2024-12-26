@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      @property --angle {
+        syntax: '<angle>';
+        inherits: true;
+        initial-value: 0deg;
+      }
+
+      @property --z {
+        syntax: '<integer>';
+        inherits: true;
+        initial-value: 0;
+      }
+
+      @keyframes revolve {
+        from {
+          --angle: 0deg;
+          --z: -1;
+        }
+        to {
+          --angle: 360deg;
+          --z: 0;
+        }
+      }
+
+      html {
+        overflow: hidden;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #141733;
+        overflow: clip;
+      }
+
+      .planet,
+      .moon {
+        grid-area: 1 / 1;
+        padding: 10px;
+        border: 4px dashed #f4ead5;
+        border-radius: 50%;
+        background-color: #215a6d;
+      }
+
+      .moon {
+        --x-amplitude: 150px;
+        --y-amplitude: 40px;
+        --x: calc(cos(var(--angle)) * var(--x-amplitude));
+        --y: calc(sin(var(--angle)) * var(--y-amplitude));
+        translate: var(--x) var(--y);
+        z-index: calc(var(--z)); /* calc() is for Safari */
+        animation: revolve 6s linear infinite;
+      }
+
+      img {
+        display: block;
+      }
+
+      .planet img {
+        width: 150px;
+      }
+
+      .moon img {
+        width: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="planet">
+      <img src="../resources/image/planet.svg" alt="planet" />
+    </div>
+    <div class="moon">
+      <img src="../resources/image/moon.svg" alt="moon" />
+    </div>
+  </body>
+</html>
