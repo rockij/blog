@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="ko-KR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <style>
+        body {
+            height: 2000px;
+            padding: 20px;
+        }
+
+        .output {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+
+    <title>스크롤중 이벤트 충돌 방지</title>
+</head>
+
+<body>
+
+    <div class="output">Scroll position: 0</div>
+
+    <script src="../resources/js/work.base.js"></script>
+    <script>
+        let output = document.querySelector('.output');
+        function updateScrollPosition() {
+            output.textContent = 'Scroll position: ' + window.scrollY;
+        }
+        window.addEventListener('scroll', throttle(updateScrollPosition, 1000));
+
+    </script>
+
+</body>
+
+</html>
