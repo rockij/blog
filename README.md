@@ -28,20 +28,7 @@
 - CodeSnap
 - SVG Sprite Viewer and Generator
 - CSS Compatibility
-
-## vue
-
-- powershell
-- bracket pair colorization toggler
-- css peek
-- es6-string-html
-- esLint
-- HTML CSS Support
-- HTML to CSS autocompletion
-- import cost
-- vetur
-- vue language features(volar)
-- vue peek
+- clamp it
 
 ## 접근성
 
