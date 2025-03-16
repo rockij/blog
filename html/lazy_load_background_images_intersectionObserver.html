@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Defer Offscreen Background Images</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../resources/image/flowers-01.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="../resources/image/flowers-02.jpg" as="image" fetchpriority="high">
+    <style>
+        body {
+            font-size: 16px;
+            font-family: sans-serif;
+            width: 50rem;
+            max-width: 90vw;
+            margin: 1.25rem auto;
+        }
+
+        div {
+            max-width: 90vw;
+            margin: 1.25rem auto;
+            aspect-ratio: 800 / 533;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bg-p {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            text-align: center;
+            background-color: royalblue;
+            padding: 2rem 2.5rem;
+        }
+
+        .bg-1 {
+            background: #d6d6d6 url("../resources/image/flowers-01.jpg") no-repeat;
+        }
+
+        .bg-2 {
+            background: #d6d6d6 url("../resources/image/flowers-02.jpg") no-repeat;
+        }
+
+        .bg-3 {
+            background: #d6d6d6 url("../resources/image/flowers-03.jpg") no-repeat;
+        }
+
+        .bg-4 {
+            background: #d6d6d6 url("../resources/image/flowers-04.jpg") no-repeat;
+        }
+
+        .bg-5 {
+            background: #d6d6d6 url("../resources/image/flowers-05.jpg") no-repeat;
+        }
+
+        .bg-6 {
+            background: #d6d6d6 url("../resources/image/flowers-06.jpg") no-repeat;
+        }
+
+        .bg-7 {
+            background: #d6d6d6 url("../resources/image/flowers-07.jpg") no-repeat;
+        }
+
+        .bg-8 {
+            background: #d6d6d6 url("../resources/image/flowers-08.jpg") no-repeat;
+        }
+
+        .bg-9 {
+            background: #d6d6d6 url("../resources/image/flowers-09.jpg") no-repeat;
+        }
+
+        .deferred {
+            background-image: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-1">
+        <p class="bg-p">CTA Area 01</p>
+    </div>
+    <div class="bg-2">
+        <p class="bg-p">CTA Area 02</p>
+    </div>
+    <div class="bg-3">
+        <p class="bg-p">CTA Area 03</p>
+    </div>
+    <div class="bg-4 deferred">
+        <p class="bg-p">CTA Area 04</p>
+    </div>
+    <div class="bg-5 deferred">
+        <p class="bg-p">CTA Area 05</p>
+    </div>
+    <div class="bg-6 deferred">
+        <p class="bg-p">CTA Area 06</p>
+    </div>
+    <div class="bg-7 deferred">
+        <p class="bg-p">CTA Area 07</p>
+    </div>
+    <div class="bg-8 deferred">
+        <p class="bg-p">CTA Area 08</p>
+    </div>
+    <div class="bg-9 deferred">
+        <p class="bg-p">CTA Area 09</p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // selects and stores the deferred elements
+            const deferredElements = document.querySelectorAll(".deferred");
+
+            // creates the observer
+            const elementObserver = new IntersectionObserver((entries, observer) =>
+
+            // callback function
+            {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove("deferred");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+
+                // properties of the observer
+                {
+                    root: null,
+                    rootMargin: '200px 0px',
+                    threshold: 0
+                });
+
+            // starts observing the deferred elements
+            deferredElements.forEach(element => elementObserver.observe(element));
+
+        });
+    </script>
+
+</body>
+
+</html>
