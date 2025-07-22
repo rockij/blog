@@ -2213,6 +2213,11 @@ let items = [
         category: 'scroll-parallax',
         url: 'html/stay_bottom_scrolling_scroll-anchor.html',
     },
+    {
+        productName: '탭이동 영역 가두기',
+        category: 'a11y',
+        url: 'html/focus_trapping.html',
+    },
     // {
     //   productName: '',
     //   category: '',
