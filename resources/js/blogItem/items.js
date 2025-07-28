@@ -2218,6 +2218,12 @@ let items = [
         category: 'a11y',
         url: 'html/focus_trapping.html',
     },
+    {
+        productName: 'gsap를 이용한 물결 무한 캐러셀',
+        category: 'scroll-parallax',
+        category2: 'animation',
+        url: 'html/infinite_marquee_gsap.html',
+    },
     // {
     //   productName: '',
     //   category: '',
