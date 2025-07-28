@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Carousel Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+    <style>
+        /* Carousel Wrap */
+        .carousel-wrap {
+            overflow: hidden;
+            cursor: grab;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            margin-top: 10px;
+            margin-bottom: 50px;
+            overflow: visible;
+            will-change: transform;
+            opacity: 0;
+        }
+
+        .thumbs-wrapper {
+            display: flex;
+            position: absolute;
+            z-index: 1;
+            height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .card-context {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            width: 40vw;
+            max-width: 146px;
+            height: 0;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-context .txt {
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 7px 15px 22px;
+            gap: 6px;
+            word-break: break-word;
+            word-wrap: break-word;
+            z-index: 1;
+        }
+
+        .card-context .txt .txt-sub {
+            font-family: Pretendard;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-all;
+        }
+
+        .card-context .txt .txt-name {
+            font-family: Pretendard;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            letter-spacing: -1px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-all;
+        }
+
+        .card-context .card-inner {
+            position: absolute;
+            display: block;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            top: 0;
+            left: 0;
+            height: 0;
+            width: 100%;
+            padding-bottom: 171%;
+            z-index: 1;
+            cursor: pointer;
+            transform-origin: center;
+        }
+
+        .card-context .card-inner * {
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .card-context .card-inner :has(.inner-link) {
+            pointer-events: auto;
+            z-index: 10;
+        }
+
+        .card-context .card-inner .card-img {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            z-index: 1;
+        }
+
+        .card-context .card-inner img {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            vertical-align: middle;
+            transform-origin: center;
+        }
+
+        .card-context .card-inner .card-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 79%;
+            border-radius: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 15px 0 rgba(0, 0, 0, .1), 0 2px 0 0 rgba(255, 255, 255, .2) inset;
+            z-index: 0;
+        }
+
+        /* Adjust carousel wrap for different screen sizes */
+        @media screen and (max-width: 768px) {
+            .card-context {
+                width: 50vw;
+                /* Adjust card width for smaller screens */
+                max-width: 120px;
+            }
+
+            .carousel-wrap {
+                margin-bottom: 30px;
+                /* Adjust margin for small screens */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .card-context {
+                width: 60vw;
+                /* Adjust card width for very small screens */
+                max-width: 100px;
+            }
+
+            .carousel-wrap {
+                margin-bottom: 20px;
+                /* Adjust margin for very small screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="carousel-wrap">
+        <div class="card-context">
+            <div class="card-inner">
+                <a class="inner-link" href="#">Link 1</a>
+                <div class="txt-name">Card 1</div>
+            </div>
+        </div>
+        <div class="card-context">
+            <div class="card-inner">
+                <a class="inner-link" href="#">Link 2</a>
+                <div class="txt-name">Card 2</div>
+            </div>
+        </div>
+        <div class="card-context">
+            <div class="card-inner">
+                <a class="inner-link" href="#">Link 1</a>
+                <div class="txt-name">Card 1</div>
+            </div>
+        </div>
+        <div class="card-context">
+            <div class="card-inner">
+                <a class="inner-link" href="#">Link 2</a>
+                <div class="txt-name">Card 2</div>
+            </div>
+        </div>
+        <div class="card-context">
+            <div class="card-inner">
+                <a class="inner-link" href="#">Link 1</a>
+                <div class="txt-name">Card 1</div>
+            </div>
+        </div>
+        <div class="card-context">
+            <div class="card-inner">
+                <a class="inner-link" href="#">Link 2</a>
+                <div class="txt-name">Card 2</div>
+            </div>
+        </div>
+        <div class="card-context">
+            <div class="card-inner">
+                <a class="inner-link" href="#">Link 1</a>
+                <div class="txt-name">Card 1</div>
+            </div>
+        </div>
+        <div class="card-context">
+            <div class="card-inner">
+                <a class="inner-link" href="#">Link 2</a>
+                <div class="txt-name">Card 2</div>
+            </div>
+        </div>
+        <div class="card-context">
+            <div class="card-inner">
+                <a class="inner-link" href="#">Link 1</a>
+                <div class="txt-name">Card 1</div>
+            </div>
+        </div>
+        <div class="card-context">
+            <div class="card-inner">
+                <a class="inner-link" href="#">Link 2</a>
+                <div class="txt-name">Card 2</div>
+            </div>
+        </div>
+        <!-- Add more .card-context items as needed -->
+    </div>
+
+    <script>
+        "use strict";
+        function initCarousel() {
+            console.log("Carousel initialized!");
+            gsap.set(".carousel-wrap", {
+                height: `${document.querySelector(".card-context .card-inner").clientHeight}px`,
+                onComplete: () => [carousel()]
+            });
+        }
+
+        function carousel() {
+            console.log("Carousel animation triggered!");
+            gsap.to(".carousel-wrap", { opacity: 1, duration: 0.3, ease: "power1.inOut", delay: 0.1 });
+            gsap.ticker.fps(60);
+            const e = document.querySelector(".carousel-wrap");
+            const t = document.querySelectorAll(".card-context");
+            let n = e.clientWidth;
+            let o = t[0].clientWidth + 10;
+            let r = t.length * o;
+            let i = 0;
+            let s = 1;
+            let a = 10;
+            let c = 10;
+            let l = 10;
+            let p = true;
+            let u = false;
+            let d, g = 0, y = 0, m = false;
+
+            t.forEach(t => {
+                if (t.querySelector(".txt-name").clientHeight > 50) {
+                    e.classList.add("has-long-name");
+                }
+            });
+
+            const w = () => {
+                p = false;
+                clearTimeout(d);
+            };
+
+            const S = t => {
+                g = t.clientX || t.touches[0].clientX;
+                m = true;
+                e.classList.add("is-dragging");
+                p = false;
+                w();
+            };
+
+            const h = e => {
+                if (m) {
+                    if (u) u = false;
+                    y = e.clientX || e.touches[0].clientX;
+                    c += 1.5 * (y - g);
+                    g = y;
+                }
+            };
+
+            const v = () => {
+                m = false;
+                e.classList.remove("is-dragging");
+            };
+
+            e.addEventListener("touchstart", S);
+            e.addEventListener("touchmove", h);
+            e.addEventListener("touchend", v);
+            e.addEventListener("mousedown", S);
+            e.addEventListener("mousemove", h);
+            e.addEventListener("mouseleave", v);
+            e.addEventListener("mouseup", v);
+
+            const x = e => {
+                gsap.set(t, {
+                    x: t => t * o + e,
+                    y: e => {
+                        const n = e * o / o;
+                        const r = gsap.utils.wrap(-1, t.length - 1, n);
+                        return 25 * Math.sin(1 * r - i);
+                    },
+                    modifiers: {
+                        x: (e, t) => `${gsap.utils.wrap(-o, r - o, parseInt(e))}px`
+                    }
+                });
+            };
+
+            x(0);
+
+            gsap.ticker.add(() => {
+                var e;
+                if (!u) {
+                    if (p) {
+                        c -= s;
+                    }
+                    l = l * (1 - (e = .1)) + c * e;
+                    x(l);
+                    if (!p) {
+                        s = l - a;
+                        a = l;
+                    }
+                    p ? i += .05 : (i = .0075 * a, a = l);
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
+                gsap.set(".carousel-wrap", { height: `${document.querySelector(".card-context .card-inner").clientHeight}px` });
+                n = e.clientWidth;
+                o = t[0].clientWidth + 10;
+                r = t.length * o;
+            });
+        }
+
+        initCarousel();
+    </script>
+
+</body>
+
+</html>
