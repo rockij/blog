@@ -184,6 +184,13 @@ img {
   flex-shrink: 0;
 }
 
+.editor-photo2 {
+  width: 35px;
+  overflow: hidden;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
 .editor-info {
   flex: 1;
 }
@@ -238,6 +245,9 @@ img {
   text-align: center;
 }
 
+.helps {
+  margin-top: 20px;
+}
 .helps-header {
   display: flex;
   flex-direction: column;
@@ -247,6 +257,9 @@ img {
 }
 
 .helps .item {
+  width: 100%;
+}
+.-youtube .item {
   width: 100%;
 }
 
