@@ -35,7 +35,7 @@ img {
 .newsletter {
   width: 100%;
   max-width: 640px;
-  margin: 0 auto;
+  margin-left: 24px;
   background: #ffffff;
   padding: 24px 32px 40px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.06);
